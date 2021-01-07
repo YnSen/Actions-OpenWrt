@@ -55,7 +55,7 @@ git clone https://github.com/sirpdboy/luci-app-autopoweroff package/luci-app-aut
 git clone https://github.com/rufengsuixing/luci-app-onliner.git package/luci-app-onliner
 
 #腾讯ddns
-git clone https://github.com/msylgj/luci-app-tencentddns package/luci-app-tencentddns
+git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-ddns package/luci-app-tencentddns
 
 #dnspod
 git clone https://github.com/ntlf9t/luci-app-dnspod package/luci-app-dnspod
