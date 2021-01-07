@@ -21,7 +21,7 @@ git clone https://github.com/lisaac/luci-lib-docker package/luci-lib-docker
 git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
 
 #amule
-git clone https://github.com/garypang13/luci-app-amule package/luci-app-amule
+#git clone https://github.com/garypang13/luci-app-amule package/luci-app-amule
 
 #lucitheme Argon
 pushd package/lean
