@@ -60,8 +60,6 @@ git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-d
 #dnspod
 git clone https://github.com/ntlf9t/luci-app-dnspod package/luci-app-dnspod
 
-sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
-
 # sed -i '$a src-git luciappwrtbwmon https://github.com/brvphoenix/luci-app-wrtbwmon' feeds.conf.default
 # sed -i '$a src-git wrtbwmon https://github.com/brvphoenix/wrtbwmon' feeds.conf.default
 # sed -i '$a src-git smartdns https://github.com/pymumu/smartdns' feeds.conf.default
