@@ -14,8 +14,10 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 sed -i -e '/^#/d' feeds.conf.default
 # Add a feed source
-#sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 #sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
+
+#liuruan001 pasckages
+sed -i '$a src-git liuran001_packages https://github.com/liuran001/openwrt-packages' feeds.conf.default
 
 #Lienol packages
 sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
@@ -32,8 +34,6 @@ sed -i '$a src-git openwrt_passwall https://github.com/xiaorouji/openwrt-passwal
 #hjp521openwrt常用软件包
 #sed -i '$a src-git OpenWrt_hjp521 https://github.com/hjp521/OpenWrt-packages' feeds.conf.default
 
-#liuruan001 pasckages
-sed -i '$a src-git liuran001_packages https://github.com/liuran001/openwrt-packages' feeds.conf.default
 
 #sirpdboy
 #sed -i '$a src-git sirpdboy_package https://github.com/sirpdboy/sirpdboy-package' feeds.conf.default
