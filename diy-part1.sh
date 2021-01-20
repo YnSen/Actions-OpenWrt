@@ -58,7 +58,7 @@ git clone https://github.com/rufengsuixing/luci-app-onliner.git package/luci-app
 git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-ddns package/luci-app-tencentddns
 
 #dnspod
-git clone https://github.com/ntlf9t/luci-app-dnspod package/luci-app-dnspod
+#git clone https://github.com/ntlf9t/luci-app-dnspod package/luci-app-dnspod
 
 # sed -i '$a src-git luciappwrtbwmon https://github.com/brvphoenix/luci-app-wrtbwmon' feeds.conf.default
 # sed -i '$a src-git wrtbwmon https://github.com/brvphoenix/wrtbwmon' feeds.conf.default
