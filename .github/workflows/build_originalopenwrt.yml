@@ -20,7 +20,7 @@ on:
         default: 'true'
 
 env:
-  REPO_URL: https://github.com/openwrt/openwrt/tree/master
+  REPO_URL: https://github.com/openwrt/openwrt/tree/openwrt-19.07
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .orconfig
