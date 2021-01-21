@@ -27,4 +27,4 @@ git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerma
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 
 #luci-app-argon-config
-git clone https://github.com/jerrykuku/luci-app-argon-config/tree/92d63919cace3f934f06513b6f530e9201d03c78 package/luci-app-argon-config
+#git clone https://github.com/jerrykuku/luci-app-argon-config/tree/92d63919cace3f934f06513b6f530e9201d03c78 package/luci-app-argon-config
