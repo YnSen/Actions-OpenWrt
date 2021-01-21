@@ -24,7 +24,7 @@ git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerma
 #git clone https://github.com/garypang13/luci-app-amule package/luci-app-amule
 
 #lucitheme Argon
-pushd package/lean
-rm -rf luci-theme-argon
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
-popd
+#pushd package/lean
+#rm -rf luci-theme-argon
+#git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
+#popd
