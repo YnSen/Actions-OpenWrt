@@ -28,3 +28,6 @@ pushd package/lean
 rm -rf luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
 popd
+
+#luci-app-argon-config
+git clone https://github.com/jerrykuku/luci-app-argon-config/tree/92d63919cace3f934f06513b6f530e9201d03c78 package/luci-app-argon-config
