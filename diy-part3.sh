@@ -69,7 +69,7 @@ git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 git clone https://github.com/jerrykuku/luci-app-vssr package/luci-app-vssr
 
 #zerotier
-gitclone https://github.com/rufengsuixing/luci-app-zerotier package/luci-app-zerotier 
+git clone https://github.com/rufengsuixing/luci-app-zerotier package/luci-app-zerotier 
 
 # sed -i '$a src-git luciappwrtbwmon https://github.com/brvphoenix/luci-app-wrtbwmon' feeds.conf.default
 # sed -i '$a src-git wrtbwmon https://github.com/brvphoenix/wrtbwmon' feeds.conf.default
