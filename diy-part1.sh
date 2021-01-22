@@ -38,6 +38,9 @@ sed -i '$a src-git openwrt_passwall https://github.com/xiaorouji/openwrt-passwal
 #sirpdboy
 #sed -i '$a src-git sirpdboy_package https://github.com/sirpdboy/sirpdboy-package' feeds.conf.default
 
+#微信推送
+git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
+
 # Add ServerChan-DINGDING
 git clone https://github.com/zzsj0928/luci-app-serverchand package/luci-app-serverchand
 
