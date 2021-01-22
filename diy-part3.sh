@@ -62,6 +62,9 @@ git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-d
 #dnspod
 #git clone https://github.com/ntlf9t/luci-app-dnspod package/luci-app-dnspod
 
+#OpenAppFilter
+git clone https://github.com/destan19/OpenAppFilter.git package/
+
 #helloworld
 git clone https://github.com/jerrykuku/luci-app-vssr package/luci-app-vssr
 
