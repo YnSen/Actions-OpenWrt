@@ -16,20 +16,12 @@ sed -i -e '/^#/d' feeds.conf.default
 # Add a feed source
 #sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
 
-#liuruan001 pasckages
-sed -i '$a src-git liuran001_packages https://github.com/liuran001/openwrt-packages' feeds.conf.default
+#liuruan001 pasckages18.06
+#sed -i '$a src-git liuran001_packages https://github.com/liuran001/openwrt-packages' feeds.conf.default
 
-#lean package
-#git clone https://github.com/coolsnowwolf/lede/tree/master/package/lean/luci-app-zerotier package/luci-app-zerotier
-#git clone https://github.com/coolsnowwolf/lede/tree/master/package/lean/luci-app-nfs package/luci-app-nfs
-#git clone https://github.com/coolsnowwolf/lede/tree/master/package/lean/luci-app-cifsd package/luci-app-cifsd
-#git clone https://github.com/coolsnowwolf/lede/tree/master/package/lean/luci-app-netdata package/luci-app-netdata
-#git clone https://github.com/coolsnowwolf/lede/tree/master/package/lean/luci-app-usb-printer package/luci-app-usb-printer
-#git clone https://github.com/coolsnowwolf/lede/tree/master/package/lean/luci-app-mwan3helper package/luci-app-mwan3helper
-#git clone https://github.com/coolsnowwolf/lede/tree/master/package/lean/luci-app-sfe package/luci-app-sfe
 
-#Lienol packages
-sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
+#Lienol packages18.06
+#sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 
 #PassWall依赖
 #sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
