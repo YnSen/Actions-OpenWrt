@@ -23,14 +23,15 @@ sed -i -e '/^#/d' feeds.conf.default
 #Lienol packages18.06
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 
+#openwrt常用软件包不定期更新kenzo
+#sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+
 #PassWall依赖
-#sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
+sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
 
 #Passwall
 sed -i '$a src-git openwrt_passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
 
-#openwrt常用软件包不定期更新kenzo
-#sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
 
 #hjp521openwrt常用软件包
 #sed -i '$a src-git OpenWrt_hjp521 https://github.com/hjp521/OpenWrt-packages' feeds.conf.default
@@ -60,6 +61,9 @@ git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-d
 
 #dnspod
 #git clone https://github.com/ntlf9t/luci-app-dnspod package/luci-app-dnspod
+
+#helloworld
+git clone https://github.com/jerrykuku/luci-app-vssr package/luci-app-vssr
 
 # sed -i '$a src-git luciappwrtbwmon https://github.com/brvphoenix/luci-app-wrtbwmon' feeds.conf.default
 # sed -i '$a src-git wrtbwmon https://github.com/brvphoenix/wrtbwmon' feeds.conf.default
