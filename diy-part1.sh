@@ -15,6 +15,8 @@
 
 # Add a feed source
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
+#Lienol packages
+sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 # KoolProxyR去广告插件
 git clone https://github.com/jefferymvp/luci-app-koolproxyR package/luci-app-koolproxyR
 # 微信推送插件
