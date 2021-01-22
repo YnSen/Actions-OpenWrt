@@ -24,7 +24,7 @@ sed -i -e '/^#/d' feeds.conf.default
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 
 #openwrt常用软件包不定期更新kenzo
-#sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
 
 #PassWall依赖
 sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
