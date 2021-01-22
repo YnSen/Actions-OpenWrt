@@ -63,7 +63,7 @@ git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-d
 #git clone https://github.com/ntlf9t/luci-app-dnspod package/luci-app-dnspod
 
 #OpenAppFilter
-git clone https://github.com/destan19/OpenAppFilter.git package/
+git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
 #helloworld
 git clone https://github.com/jerrykuku/luci-app-vssr package/luci-app-vssr
