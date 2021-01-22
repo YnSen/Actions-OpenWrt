@@ -17,17 +17,17 @@ sed -i -e '/^#/d' feeds.conf.default
 #sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
 
 #liuruan001 pasckages18.06
-#sed -i '$a src-git liuran001_packages https://github.com/liuran001/openwrt-packages' feeds.conf.default
+sed -i '$a src-git liuran001_packages https://github.com/liuran001/openwrt-packages' feeds.conf.default
 
 
 #Lienol packages18.06
-#sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
+sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 
 #openwrt常用软件包不定期更新kenzo
-sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+#sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
 
 #PassWall依赖
-sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
+#sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
 
 #Passwall
 sed -i '$a src-git openwrt_passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
@@ -63,10 +63,10 @@ git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-d
 #git clone https://github.com/ntlf9t/luci-app-dnspod package/luci-app-dnspod
 
 #OpenAppFilter
-git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+#git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
 #helloworld
-git clone https://github.com/jerrykuku/luci-app-vssr package/luci-app-vssr
+#git clone https://github.com/jerrykuku/luci-app-vssr package/luci-app-vssr
 
 #zerotier
 git clone https://github.com/rufengsuixing/luci-app-zerotier package/luci-app-zerotier 
