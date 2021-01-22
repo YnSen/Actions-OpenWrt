@@ -34,6 +34,15 @@ git clone -b lede https://github.com/pymumu/luci-app-smartdns package/luci-app-s
 git clone https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
 #自动关机插件
 git clone https://github.com/sirpdboy/luci-app-autopoweroff package/luci-app-autopoweroff
+# Add Onliner
+# git clone https://github.com/rufengsuixing/luci-app-onliner.git feeds/luci/applications/luci-app-onliner
+git clone https://github.com/rufengsuixing/luci-app-onliner.git package/luci-app-onliner
+#腾讯ddns
+git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-ddns package/luci-app-tencentddns
+#Docker lib api
+git clone https://github.com/lisaac/luci-lib-docker package/luci-lib-docker
+#Docker
+git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
 
 # argon主题
 pushd package/lean
@@ -42,10 +51,3 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon luci-theme-argo
 popd
 # Edge主题
 git clone -b 18.06 https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
-
-# Add Onliner
-# git clone https://github.com/rufengsuixing/luci-app-onliner.git feeds/luci/applications/luci-app-onliner
-git clone https://github.com/rufengsuixing/luci-app-onliner.git package/luci-app-onliner
-
-#腾讯ddns
-git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-ddns package/luci-app-tencentddns
