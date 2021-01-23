@@ -17,6 +17,8 @@
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 #Lienol packages
 sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
+#ssrplus
+sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
 #Passwall
 sed -i '$a src-git openwrt_passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
 # KoolProxyR去广告插件
