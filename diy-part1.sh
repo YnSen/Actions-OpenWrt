@@ -33,6 +33,8 @@ git clone https://github.com/zzsj0928/luci-app-serverchand package/luci-app-serv
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
 # Clash插件
 git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
+#OpenClash
+git clone https://github.com/vernesong/OpenClash/tree/master/luci-app-openclash package/luci-app-openclash
 # SmartDNS插件
 git clone https://github.com/pymumu/openwrt-smartdns package/openwrt-smartdns
 git clone -b lede https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
