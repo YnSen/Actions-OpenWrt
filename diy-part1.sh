@@ -74,3 +74,7 @@ echo "luci-app-openclash" >> .git/info/sparse-checkout
 git pull origin master
 git branch --set-upstream-to=origin/master master
 popd
+# 编译 po2lmo (如果有po2lmo可跳过)
+pushd luci-app-openclash/tools/po2lmo
+make && sudo make install
+popd
