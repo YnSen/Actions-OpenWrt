@@ -35,20 +35,7 @@ git clone https://github.com/zzsj0928/luci-app-serverchand package/luci-app-serv
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
 # Clash插件
 git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
-#OpenClash
-mkdir package/luci-app-openclash
-cd package/luci-app-openclash
-git init
-git remote add -f origin https://github.com/vernesong/OpenClash.git
-git config core.sparsecheckout true
-echo "luci-app-openclash" >> .git/info/sparse-checkout
-git pull origin master
-git branch --set-upstream-to=origin/master master
 
-# 编译 po2lmo (如果有po2lmo可跳过)
-pushd package/luci-app-openclash/luci-app-openclash/tools/po2lmo
-make && sudo make install
-popd
 # SmartDNS插件
 git clone https://github.com/pymumu/openwrt-smartdns package/openwrt-smartdns
 git clone -b lede https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
@@ -75,3 +62,18 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon luci-theme-argo
 popd
 # Edge主题
 git clone -b 18.06 https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
+
+#OpenClash
+mkdir package/luci-app-openclash
+cd package/luci-app-openclash
+git init
+git remote add -f origin https://github.com/vernesong/OpenClash.git
+git config core.sparsecheckout true
+echo "luci-app-openclash" >> .git/info/sparse-checkout
+git pull origin master
+git branch --set-upstream-to=origin/master master
+
+# 编译 po2lmo (如果有po2lmo可跳过)
+pushd package/luci-app-openclash/luci-app-openclash/tools/po2lmo
+make && sudo make install
+popd
