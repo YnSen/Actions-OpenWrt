@@ -17,12 +17,14 @@
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 #Lienol packages
 sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
-#ssrplus
-sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
 #PassWall依赖
-#sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
+sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
+#openwrt常用软件包不定期更新kenzo
+sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
 #Passwall
 sed -i '$a src-git openwrt_passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
+#ssrplus
+sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
 # KoolProxyR去广告插件
 git clone https://github.com/jefferymvp/luci-app-koolproxyR package/luci-app-koolproxyR
 # 微信推送插件
@@ -34,7 +36,7 @@ git clone https://github.com/zzsj0928/luci-app-serverchand package/luci-app-serv
 # adguardhome插件
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
 # Clash插件
-git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
+#git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
 
 # SmartDNS插件
 git clone https://github.com/pymumu/openwrt-smartdns package/openwrt-smartdns
@@ -62,19 +64,3 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon luci-theme-argo
 popd
 # Edge主题
 git clone -b 18.06 https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
-
-#OpenClash
-pushd package
-mkdir package/luci-app-openclash
-cd package/luci-app-openclash
-git init
-git remote add -f origin https://github.com/vernesong/OpenClash.git
-git config core.sparsecheckout true
-echo "luci-app-openclash" >> .git/info/sparse-checkout
-git pull origin master
-git branch --set-upstream-to=origin/master master
-popd
-# 编译 po2lmo (如果有po2lmo可跳过)
-pushd luci-app-openclash/tools/po2lmo
-make && sudo make install
-popd
