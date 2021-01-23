@@ -19,6 +19,8 @@
 sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 #ssrplus
 sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
+#PassWall依赖
+#sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
 #Passwall
 sed -i '$a src-git openwrt_passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
 # KoolProxyR去广告插件
@@ -34,7 +36,19 @@ git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app
 # Clash插件
 git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
 #OpenClash
-git clone https://github.com/vernesong/OpenClash/tree/master/luci-app-openclash package/luci-app-openclash
+mkdir package/luci-app-openclash
+cd package/luci-app-openclash
+git init
+git remote add -f origin https://github.com/vernesong/OpenClash.git
+git config core.sparsecheckout true
+echo "luci-app-openclash" >> .git/info/sparse-checkout
+git pull origin master
+git branch --set-upstream-to=origin/master master
+
+# 编译 po2lmo (如果有po2lmo可跳过)
+pushd package/luci-app-openclash/luci-app-openclash/tools/po2lmo
+make && sudo make install
+popd
 # SmartDNS插件
 git clone https://github.com/pymumu/openwrt-smartdns package/openwrt-smartdns
 git clone -b lede https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
