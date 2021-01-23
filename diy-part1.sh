@@ -64,6 +64,7 @@ popd
 git clone -b 18.06 https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
 
 #OpenClash
+pushd package
 mkdir package/luci-app-openclash
 cd package/luci-app-openclash
 git init
