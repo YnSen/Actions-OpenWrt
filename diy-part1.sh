@@ -17,6 +17,8 @@
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 #Lienol packages
 sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
+#Passwall
+sed -i '$a src-git openwrt_passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
 # KoolProxyR去广告插件
 git clone https://github.com/jefferymvp/luci-app-koolproxyR package/luci-app-koolproxyR
 # 微信推送插件
@@ -41,6 +43,8 @@ git clone https://github.com/sirpdboy/luci-app-autopoweroff package/luci-app-aut
 git clone https://github.com/rufengsuixing/luci-app-onliner.git package/luci-app-onliner
 #腾讯ddns
 git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-ddns package/luci-app-tencentddns
+#helloworld
+git clone https://github.com/jerrykuku/luci-app-vssr package/luci-app-vssr
 #Docker lib api
 git clone https://github.com/lisaac/luci-lib-docker package/luci-lib-docker
 #Docker
