@@ -27,6 +27,12 @@ sed -i '$a src-git liuran001_packages https://github.com/liuran001/openwrt-packa
 sed -i '$a src-git openwrt_passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
 #ssrplus
 #sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
+#删除后面重复插件
+pushd feeds/liuran001_packages
+rm -rf luci-app-koolproxyR
+rm -rf luci-app-adguardhome
+rm -rf luci-app-oaf
+popd
 # KoolProxyR去广告插件
 git clone https://github.com/jefferymvp/luci-app-koolproxyR package/luci-app-koolproxyR
 # 微信推送插件
@@ -57,9 +63,6 @@ git clone https://github.com/lisaac/luci-lib-docker package/luci-lib-docker
 #Docker
 git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
 #oaf
-pushd feeds/liuran001_packages
-rm -rf luci-app-oaf
-popd
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
 # argon主题
