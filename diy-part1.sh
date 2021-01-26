@@ -56,6 +56,8 @@ git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-d
 git clone https://github.com/lisaac/luci-lib-docker package/luci-lib-docker
 #Docker
 git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
+#oaf
+git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
 # argon主题
 pushd package/lean
