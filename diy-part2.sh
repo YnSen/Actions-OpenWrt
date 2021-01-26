@@ -60,13 +60,3 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon luci-theme-argo
 popd
 # Edge主题
 git clone -b 18.06 https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
-# Modify default IP
-#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
-# Modify default IP
-#sed -i 's/192.168.1.1/192.168.50.1/g' package/base-files/files/bin/config_generate
-sed -i 's/192.168.1.1/192.168.3.1/g' package/base-files/files/bin/config_generate
-sed -i 's/bootstrap/argon/g' feeds/luci/collections/luci/Makefile
-# Modify default PassWord
-#sed -i 's/root::0:0:99999:7:::/root:$1$ScQIGKsX$q0qEf\/tAQ2wpTR6zIUIjo.:0:0:99999:7:::/g' package/base-files/files/etc/shadow
-#删除默认密码
-sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
