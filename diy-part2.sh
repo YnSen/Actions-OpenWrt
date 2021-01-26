@@ -10,6 +10,12 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
+#删除后面重复插件
+pushd feeds/liuran001_packages
+rm -rf luci-app-koolproxyR
+rm -rf luci-app-adguardhome
+rm -rf luci-app-oaf
+popd
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 # Modify default IP
