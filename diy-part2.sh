@@ -17,7 +17,6 @@ rm -rf luci-app-adguardhome
 rm -rf luci-app-oaf
 rm -rf luci-app-ssr-plus
 rm -rf luci-app-passwall-plus
-rm -rf luci-app-vssr-plus
 rm -rf open-app-filter
 rm -rf oaf
 popd
