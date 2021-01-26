@@ -57,6 +57,9 @@ git clone https://github.com/lisaac/luci-lib-docker package/luci-lib-docker
 #Docker
 git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
 #oaf
+pushd feeds/liuran001_packages
+rm -rf luci-app-oaf
+popd
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
 # argon主题
