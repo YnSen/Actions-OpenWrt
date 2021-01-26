@@ -15,6 +15,11 @@ pushd feeds/liuran001_packages
 rm -rf luci-app-koolproxyR
 rm -rf luci-app-adguardhome
 rm -rf luci-app-oaf
+rm -rf luci-app-ssr-plus
+rm -rf luci-app-passwall-plus
+rm -rf luci-app-vssr-plus
+rm -rf open-app-filter
+rm -rf oaf
 popd
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
