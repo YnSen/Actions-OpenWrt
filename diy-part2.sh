@@ -15,7 +15,6 @@ pushd feeds/liuran001_packages
 rm -rf luci-app-koolproxyR
 rm -rf luci-app-adguardhome
 rm -rf luci-app-oaf
-rm -rf luci-app-ssr-plus
 rm -rf luci-app-passwall-plus
 rm -rf open-app-filter
 rm -rf oaf
