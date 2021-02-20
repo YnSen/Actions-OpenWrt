@@ -32,7 +32,7 @@ git clone https://github.com/zzsj0928/luci-app-serverchand package/luci-app-serv
 # Clash插件
 #git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
 #liuran001 packages
-git clone -b 19.07 https://github.com/liuran001/openwrt-packages/tree/packages package/openwrt-packages
+git clone -b packages-19.07 https://github.com/liuran001/openwrt-packages package/openwrt-packages
 # SmartDNS插件
 #git clone https://github.com/pymumu/openwrt-smartdns package/openwrt-smartdns
 #git clone -b lede https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
