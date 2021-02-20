@@ -46,14 +46,14 @@ git clone https://github.com/rufengsuixing/luci-app-onliner.git package/luci-app
 #腾讯ddns
 git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-ddns package/luci-app-tencentddns
 #Docker lib api
-git clone https://github.com/lisaac/luci-lib-docker package/luci-lib-docker
+#git clone https://github.com/lisaac/luci-lib-docker package/luci-lib-docker
 #Docker
-git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
+#git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
 #oaf
 #git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
 # argon主题
-pushd package/lean
+pushd package/openwrt-packages
 rm -rf luci-theme-argon
 git clone https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
 popd
