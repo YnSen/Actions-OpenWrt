@@ -51,6 +51,12 @@ git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-d
 #git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
 #oaf
 #git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+#zerotier
+git clone https://github.com/rufengsuixing/luci-app-zerotier package/luci-app-zerotier
+#netdata
+git clone https://github.com/sirpdboy/luci-app-netdata package/luci-app-netdata
+#nfs
+git clone https://github.com/simonsmh/luci-app-nfs package/luci-app-nfs 
 
 # argon主题
 pushd package/openwrt-packages
