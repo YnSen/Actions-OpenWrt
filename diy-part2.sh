@@ -16,11 +16,12 @@ rm -rf luci-app-koolproxyR
 rm -rf luci-app-adguardhome
 rm -rf luci-app-oaf
 rm -rf luci-app-passwall-plus
+rm -rf luci-app-vssr-plus
 rm -rf open-app-filter
 rm -rf oaf
 popd
 # KoolProxyR去广告插件
-git clone https://github.com/jefferymvp/luci-app-koolproxyR package/luci-app-koolproxyR
+#git clone https://github.com/jefferymvp/luci-app-koolproxyR package/luci-app-koolproxyR
 # 微信推送插件
 #git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 # Add ServerChan-DINGDING钉钉推送插件
@@ -28,7 +29,7 @@ git clone https://github.com/zzsj0928/luci-app-serverchand package/luci-app-serv
 # 京东签到插件
 #git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/luci-app-jd-dailybonus
 # adguardhome插件
-git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
+#git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
 # Clash插件
 #git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
 
