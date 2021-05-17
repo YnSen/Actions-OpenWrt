@@ -32,7 +32,7 @@ git clone https://github.com/zzsj0928/luci-app-serverchand package/luci-app-serv
 # Clash插件
 #git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
 #liuran001 packages
-git clone -b packages-19.07 https://github.com/liuran001/openwrt-packages package/openwrt-packages
+git clone -b packages-19.07 https://github.com/liuran001/openwrt-packages package/
 # SmartDNS插件
 #git clone https://github.com/pymumu/openwrt-smartdns package/openwrt-smartdns
 #git clone -b lede https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
@@ -70,7 +70,7 @@ git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.1/g' package/base-files/files/bin/config_generate
-sed -i 's/192.168.1.1/192.168.3.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.3.5/g' package/base-files/files/bin/config_generate
 sed -i 's/bootstrap/argon/g' feeds/luci/collections/luci/Makefile
 # Modify default PassWord
 #sed -i 's/root::0:0:99999:7:::/root:$1$ScQIGKsX$q0qEf\/tAQ2wpTR6zIUIjo.:0:0:99999:7:::/g' package/base-files/files/etc/shadow
