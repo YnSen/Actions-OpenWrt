@@ -32,7 +32,7 @@ git clone https://github.com/zzsj0928/luci-app-serverchand package/luci-app-serv
 # Clash插件
 #git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
 #liuran001 packages
-git clone -b packages-19.07 https://github.com/liuran001/openwrt-packages package/
+git clone -b packages-19.07 https://github.com/liuran001/openwrt-packages package/openwrt-packages
 # SmartDNS插件
 #git clone https://github.com/pymumu/openwrt-smartdns package/openwrt-smartdns
 #git clone -b lede https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
@@ -58,21 +58,20 @@ git clone https://github.com/sirpdboy/luci-app-netdata package/luci-app-netdata
 #nfs
 git clone https://github.com/fshh1988/luci-app-nfs package/luci-app-nfs
 
-pushd feeds/liuran001_packages
+pushd package/openwrt-packages
 #rm -rf luci-app-koolproxyR
 #rm -rf luci-app-adguardhome
 #rm -rf luci-app-oaf
 rm -rf luci-app-vssr-plus
 rm -rf luci-app-passwall-plus
+rm -rf luci-theme-edge
+rm -rf luci-theme-argon
 #rm -rf open-app-filter
 #rm -rf oaf
 popd
 
 # argon主题
-pushd package/openwrt-packages
-rm -rf luci-theme-argon
-git clone https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
-popd
+git clone https://github.com/jerrykuku/luci-theme-argon luci-theme-argon package/luci-theme-argon
 # Edge主题
 git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
 
