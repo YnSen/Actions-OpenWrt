@@ -58,6 +58,16 @@ git clone https://github.com/sirpdboy/luci-app-netdata package/luci-app-netdata
 #nfs
 git clone https://github.com/fshh1988/luci-app-nfs package/luci-app-nfs
 
+pushd feeds/liuran001_packages
+#rm -rf luci-app-koolproxyR
+#rm -rf luci-app-adguardhome
+#rm -rf luci-app-oaf
+rm -rf luci-app-vssr-plus
+rm -rf luci-app-passwall-plus
+#rm -rf open-app-filter
+#rm -rf oaf
+popd
+
 # argon主题
 pushd package/openwrt-packages
 rm -rf luci-theme-argon
