@@ -56,7 +56,7 @@ git clone https://github.com/rufengsuixing/luci-app-zerotier package/luci-app-ze
 #netdata
 git clone https://github.com/sirpdboy/luci-app-netdata package/luci-app-netdata
 #nfs
-git clone https://github.com/fshh1988/luci-app-nfs package/luci-app-nfs
+#git clone https://github.com/fshh1988/luci-app-nfs package/luci-app-nfs
 
 pushd package/openwrt-packages
 #rm -rf luci-app-koolproxyR
