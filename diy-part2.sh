@@ -13,8 +13,6 @@
 #删除后面重复插件
 pushd feeds/liuran001_packages
 rm -rf luci-app-koolproxyR
-rm -rf xray-core
-rm -rf xray-plugin
 rm -rf luci-app-dockerman
 rm -rf luci-app-jd-dailybonus
 rm -rf luci-app-adguardhome
