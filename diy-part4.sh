@@ -10,7 +10,7 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
-#删除后面重复插件
+#删除后面重复插件18.06
 #pushd feeds/liuran001_packages
 #rm -rf luci-app-koolproxyR
 #rm -rf luci-app-dockerman
