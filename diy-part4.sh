@@ -56,7 +56,7 @@ git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerma
 #liuran001软件包
 git clone -b packages-19.07 https://github.com/liuran001/openwrt-packages package/openwrt-packages
 pushd package/openwrt-packages
-rm -rf luci-theme-argon && luci-theme-edge
+rm -rf luci-theme-argon && rm -rf luci-theme-edge
 
 # argon主题
 git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
