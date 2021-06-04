@@ -11,17 +11,17 @@
 #
 
 #删除后面重复插件
-pushd feeds/liuran001_packages
-rm -rf luci-app-koolproxyR
-rm -rf luci-app-dockerman
-rm -rf luci-app-jd-dailybonus
-rm -rf luci-app-adguardhome
-rm -rf luci-app-oaf
-rm -rf luci-app-passwall-plus
-rm -rf luci-app-vssr-plus
-rm -rf open-app-filter
-rm -rf oaf
-popd
+#pushd feeds/liuran001_packages
+#rm -rf luci-app-koolproxyR
+#rm -rf luci-app-dockerman
+#rm -rf luci-app-jd-dailybonus
+#rm -rf luci-app-adguardhome
+#rm -rf luci-app-oaf
+#rm -rf luci-app-passwall-plus
+#rm -rf luci-app-vssr-plus
+#rm -rf open-app-filter
+#rm -rf oaf
+#popd
 # KoolProxyR去广告插件
 #git clone https://github.com/jefferymvp/luci-app-koolproxyR package/luci-app-koolproxyR
 # 微信推送插件
@@ -52,15 +52,12 @@ git clone https://github.com/lisaac/luci-lib-docker package/luci-lib-docker
 #Docker
 git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
 #oaf
-git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+#git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
 # argon主题
-pushd package/lean
-rm -rf luci-theme-argon
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
-popd
+#git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 # Edge主题
-git clone -b 18.06 https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
+#git clone -b 18.06 https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
 
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
