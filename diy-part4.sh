@@ -55,11 +55,14 @@ git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerma
 #git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 #liuran001软件包
 git clone -b packages-19.07 https://github.com/liuran001/openwrt-packages package/openwrt-packages
+pushd package/openwrt-packages
+rm -rf luci-theme-argon && luci-theme-edge
 
 # argon主题
-#git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 # Edge主题
-#git clone -b 18.06 https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
+git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
+popd
 
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
