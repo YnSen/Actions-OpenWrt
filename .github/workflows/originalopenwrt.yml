@@ -58,29 +58,8 @@ jobs:
       run: |
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
-        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-        
-    - name: Load custom feeds
-      run: |
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
-        chmod +x $DIY_P3_SH
-        cd openwrt && git checkout v19.07.7
-        $GITHUB_WORKSPACE/$DIY_P3_SH
-                
-    - name: Update feeds
-      run: cd openwrt && ./scripts/feeds update -a
+        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt && cd openwrt && git checkout v19.07.7
 
-    - name: Install feeds
-      run: cd openwrt && ./scripts/feeds install -a
-    
-    - name: Load custom configuration
-      run: |
-        [ -e files ] && mv files openwrt/files
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x $DIY_P4_SH
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P4_SH
-      
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
       if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
