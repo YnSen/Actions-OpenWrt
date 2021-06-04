@@ -53,6 +53,8 @@ git clone https://github.com/lisaac/luci-lib-docker package/luci-lib-docker
 git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
 #oaf
 #git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+#liuran001软件包
+git clone -b packages-19.07 https://github.com/liuran001/openwrt-packages
 
 # argon主题
 #git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
