@@ -64,7 +64,6 @@ jobs:
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P3_SH
-        cd openwrt
         cd openwrt && git checkout v19.07.7
         $GITHUB_WORKSPACE/$DIY_P3_SH
                 
