@@ -62,6 +62,7 @@ jobs:
       
     - name: Load custom feeds
       run: |
+        [ -e $FEEDS_CONF ]
         chmod +x $DIY_P3_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P3_SH
@@ -74,6 +75,8 @@ jobs:
     
     - name: Load custom configuration
       run: |
+        [ -e files ]
+        [ -e $CONFIG_FILE ]
         chmod +x $DIY_P4_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P4_SH
