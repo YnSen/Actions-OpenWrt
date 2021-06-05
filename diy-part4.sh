@@ -59,9 +59,9 @@ pushd package/openwrt-packages
 rm -rf luci-theme-argon && rm -rf luci-theme-edge
 
 # argon主题
-git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+git clone https://github.com/jerrykuku/luci-theme-argon
 # Edge主题
-git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
+git clone https://github.com/garypang13/luci-theme-edge
 popd
 
 # Modify default IP
