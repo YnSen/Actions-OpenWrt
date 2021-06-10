@@ -13,7 +13,6 @@
 #删除后面重复插件
 pushd feeds/liuran001_packages
 rm -rf luci-app-koolproxyR
-rm -rf luci-app-dockerman
 rm -rf luci-app-jd-dailybonus
 rm -rf luci-app-adguardhome
 rm -rf luci-app-oaf
@@ -48,9 +47,9 @@ git clone https://github.com/rufengsuixing/luci-app-onliner.git package/luci-app
 #腾讯ddns
 git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-ddns package/luci-app-tencentddns
 #Docker lib api
-git clone https://github.com/lisaac/luci-lib-docker package/luci-lib-docker
+#git clone https://github.com/lisaac/luci-lib-docker package/luci-lib-docker
 #Docker
-git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
+#git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
 #oaf
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
