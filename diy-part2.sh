@@ -27,7 +27,7 @@
 # KoolProxyR去广告插件
 #git clone https://github.com/jefferymvp/luci-app-koolproxyR package/luci-app-koolproxyR
 # 微信推送插件
-#git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
+git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 # Add ServerChan-DINGDING钉钉推送插件
 git clone https://github.com/zzsj0928/luci-app-serverchand package/luci-app-serverchand
 # 京东签到插件
