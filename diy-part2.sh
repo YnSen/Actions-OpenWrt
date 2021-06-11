@@ -16,6 +16,8 @@ rm -rf luci-app-koolproxyR
 rm -rf luci-app-jd-dailybonus
 rm -rf luci-app-adguardhome
 rm -rf luci-app-oaf
+rm -rf luci-lib-docker
+rm -rf luci-app-dockerman
 rm -rf luci-app-passwall-plus
 rm -rf luci-app-vssr-plus
 rm -rf open-app-filter
