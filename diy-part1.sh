@@ -27,17 +27,3 @@ sed -i '$a src-git liuran001_packages https://github.com/liuran001/openwrt-packa
 sed -i '$a src-git openwrt_passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
 #ssrplus
 sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
-#删除后面重复插件
-pushd package/feeds/liuran001_packages
-rm -rf luci-app-koolproxyR
-rm -rf luci-app-ssr-plus
-rm -rf luci-app-jd-dailybonus
-rm -rf luci-app-adguardhome
-rm -rf luci-app-oaf
-rm -rf luci-lib-docker
-rm -rf luci-app-dockerman
-rm -rf luci-app-passwall-plus
-rm -rf luci-app-vssr-plus
-rm -rf open-app-filter
-rm -rf oaf
-popd
