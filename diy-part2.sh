@@ -10,7 +10,20 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
-
+#删除后面重复插件
+pushd package/feeds/liuran001_packages
+rm -rf luci-app-koolproxyR
+rm -rf luci-app-ssr-plus
+rm -rf luci-app-jd-dailybonus
+rm -rf luci-app-adguardhome
+rm -rf luci-app-oaf
+rm -rf luci-lib-docker
+rm -rf luci-app-dockerman
+rm -rf luci-app-passwall-plus
+rm -rf luci-app-vssr-plus
+rm -rf open-app-filter
+rm -rf oaf
+popd
 # KoolProxyR去广告插件
 #git clone https://github.com/jefferymvp/luci-app-koolproxyR package/luci-app-koolproxyR
 # 微信推送插件
