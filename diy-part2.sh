@@ -13,17 +13,17 @@
 #删除后面重复插件
 #pushd package/feeds/liuran001_packages
 #rm -rf luci-app-koolproxyR
-#rm -rf luci-app-ssr-plus
+rm -rf luci-app-ssr-plus
 #rm -rf luci-app-jd-dailybonus
 #rm -rf luci-app-adguardhome
 #rm -rf luci-app-oaf
-#rm -rf luci-lib-docker
-#rm -rf luci-app-dockerman
+rm -rf luci-lib-docker
+rm -rf luci-app-dockerman
 #rm -rf luci-app-passwall-plus
-#rm -rf luci-app-vssr-plus
+rm -rf luci-app-vssr-plus
 #rm -rf open-app-filter
 #rm -rf oaf
-#popd
+popd
 
 pushd package
 # KoolProxyR去广告插件
@@ -40,6 +40,8 @@ git clone https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
 #git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
 #openclash插件
 #git clone https://github.com/vernesong/OpenClash.git package/OpenClash
+#ssrplus
+git clone https://github.com/fw876/helloworld.git
 
 # SmartDNS插件
 #git clone https://github.com/pymumu/openwrt-smartdns
