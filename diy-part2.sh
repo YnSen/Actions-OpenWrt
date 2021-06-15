@@ -23,7 +23,7 @@ rm -rf luci-app-dockerman
 rm -rf luci-app-vssr-plus
 #rm -rf open-app-filter
 #rm -rf oaf
-#popd
+popd
 # KoolProxyR去广告插件
 #git clone https://github.com/jefferymvp/luci-app-koolproxyR package/luci-app-koolproxyR
 # 微信推送插件
