@@ -29,7 +29,7 @@ rm -rf luci-app-vssr-plus
 # 微信推送插件
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 # Add ServerChan-DINGDING钉钉推送插件
-git clone https://github.com/zzsj0928/luci-app-serverchand package/luci-app-serverchand
+git clone https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
 # 京东签到插件
 #git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/luci-app-jd-dailybonus
 # adguardhome插件
@@ -50,7 +50,7 @@ git clone https://github.com/sirpdboy/luci-app-autopoweroff package/luci-app-aut
 # git clone https://github.com/rufengsuixing/luci-app-onliner.git feeds/luci/applications/luci-app-onliner
 git clone https://github.com/rufengsuixing/luci-app-onliner.git package/luci-app-onliner
 #腾讯ddns
-git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-ddns package/luci-app-tencentddns
+git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-ddns package/tencentcloud-openwrt-plugin-ddns
 #Docker lib api
 #git clone https://github.com/lisaac/luci-lib-docker package/luci-lib-docker
 #Docker
