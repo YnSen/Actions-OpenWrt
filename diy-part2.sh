@@ -17,8 +17,8 @@ rm -rf luci-app-ssr-plus
 #rm -rf luci-app-jd-dailybonus
 #rm -rf luci-app-adguardhome
 #rm -rf luci-app-oaf
-#rm -rf luci-lib-docker
-#rm -rf luci-app-dockerman
+rm -rf luci-lib-docker
+rm -rf luci-app-dockerman
 #rm -rf luci-app-passwall-plus
 rm -rf luci-app-vssr-plus
 #rm -rf open-app-filter
@@ -37,9 +37,7 @@ git clone https://github.com/zzsj0928/luci-app-serverchand package/luci-app-serv
 # Clash插件
 #git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
 #openclash插件
-git clone https://github.com/vernesong/OpenClash.git package/OpenClash
-#vssr(HelloWorld)插件
-git clone https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
+#git clone https://github.com/vernesong/OpenClash.git package/OpenClash
 
 # SmartDNS插件
 #git clone https://github.com/pymumu/openwrt-smartdns package/openwrt-smartdns
