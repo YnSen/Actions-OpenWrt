@@ -13,7 +13,7 @@
 #删除后面重复插件
 pushd package/feeds/liuran001_packages
 #rm -rf luci-app-koolproxyR
-#rm -rf luci-app-ssr-plus
+rm -rf luci-app-ssr-plus
 #rm -rf luci-app-jd-dailybonus
 #rm -rf luci-app-adguardhome
 #rm -rf luci-app-oaf
