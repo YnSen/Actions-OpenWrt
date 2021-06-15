@@ -19,7 +19,7 @@ rm -rf luci-app-ssr-plus
 #rm -rf luci-app-oaf
 rm -rf luci-lib-docker
 rm -rf luci-app-dockerman
-#rm -rf luci-app-passwall-plus
+rm -rf luci-app-passwall-plus
 rm -rf luci-app-vssr-plus
 #rm -rf open-app-filter
 #rm -rf oaf
