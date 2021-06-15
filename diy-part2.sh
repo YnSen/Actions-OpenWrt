@@ -28,7 +28,7 @@ rm -rf luci-app-vssr-plus
 #git clone https://github.com/jefferymvp/luci-app-koolproxyR package/luci-app-koolproxyR
 # 微信推送插件
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
-# Add ServerChan-DINGDING钉钉推送插件
+# Add Pushbot-原钉钉推送插件
 git clone https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
 # 京东签到插件
 #git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/luci-app-jd-dailybonus
