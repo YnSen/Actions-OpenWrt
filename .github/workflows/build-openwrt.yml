@@ -81,7 +81,7 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-        pushd ~/work/Actions-OpenWrt/Actions-OpenWrt && cp tencentddns.lua ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package/tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller && popd
+    ##    pushd ~/work/Actions-OpenWrt/Actions-OpenWrt && cp tencentddns.lua ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package/tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller && popd
     
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
