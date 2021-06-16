@@ -65,6 +65,7 @@ git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-d
 
 # Edge主题
 git clone -b 18.06 https://github.com/garypang13/luci-theme-edge
+git clone https://github.com/jerrykuku/luci-app-argon-config
 popd
 # argon主题
 pushd package/lean
