@@ -39,10 +39,10 @@ git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-d
 git clone -b 18.06 https://github.com/garypang13/luci-theme-edge
 #argon主题设置
 #git clone https://github.com/jerrykuku/luci-app-argon-config
-popd
-
 #liuran001软件包
 git clone https://github.com/liuran001/openwrt-packages.git
+popd
+
 #删除后面重复插件
 pushd openwrt-packages
 rm -rf luci-app-koolproxyR
