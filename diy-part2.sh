@@ -10,21 +10,6 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
-#删除后面重复插件
-#pushd package/feeds/liuran001_packages
-#rm -rf luci-app-koolproxyR
-#rm -rf luci-app-ssr-plus
-#rm -rf luci-app-jd-dailybonus
-#rm -rf luci-app-adguardhome
-#rm -rf luci-app-oaf
-#rm -rf luci-lib-docker
-#rm -rf luci-app-dockerman
-#rm -rf luci-app-passwall-plus
-#rm -rf luci-app-vssr-plus
-#rm -rf open-app-filter
-#rm -rf oaf
-#popd
-
 pushd package
 # KoolProxyR去广告插件
 #git clone https://github.com/jefferymvp/luci-app-koolproxyR
@@ -42,6 +27,23 @@ git clone https://github.com/zzsj0928/luci-app-pushbot
 git clone https://github.com/vernesong/OpenClash.git
 #ssrplus
 git clone https://github.com/fw876/helloworld.git
+
+#liuran001软件包
+git clone https://github.com/liuran001/openwrt-packages.git
+#删除后面重复插件
+pushd 
+#rm -rf luci-app-koolproxyR
+#rm -rf luci-app-ssr-plus
+#rm -rf luci-app-jd-dailybonus
+#rm -rf luci-app-adguardhome
+#rm -rf luci-app-oaf
+#rm -rf luci-lib-docker
+#rm -rf luci-app-dockerman
+#rm -rf luci-app-passwall-plus
+#rm -rf luci-app-vssr-plus
+#rm -rf open-app-filter
+#rm -rf oaf
+#popd
 
 # SmartDNS插件
 #git clone https://github.com/pymumu/openwrt-smartdns
