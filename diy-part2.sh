@@ -29,9 +29,9 @@ pushd package
 # KoolProxyR去广告插件
 #git clone https://github.com/jefferymvp/luci-app-koolproxyR
 # 微信推送插件
-git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
+git clone https://github.com/tty228/luci-app-serverchan
 # Add Pushbot-原钉钉推送插件
-git clone https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
+git clone https://github.com/zzsj0928/luci-app-pushbot
 # 京东签到插件
 #git clone https://github.com/jerrykuku/luci-app-jd-dailybonus 
 # adguardhome插件
@@ -39,7 +39,7 @@ git clone https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
 # Clash插件
 #git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
 #openclash插件
-git clone https://github.com/vernesong/OpenClash.git package/OpenClash
+git clone https://github.com/vernesong/OpenClash.git
 #ssrplus
 git clone https://github.com/fw876/helloworld.git
 
