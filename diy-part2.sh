@@ -1,14 +1,4 @@
 #!/bin/bash
-#
-# Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
-#
-# This is free software, licensed under the MIT License.
-# See /LICENSE for more information.
-#
-# https://github.com/P3TERX/Actions-OpenWrt
-# File name: diy-part2.sh
-# Description: OpenWrt DIY script part 2 (After Update feeds)
-#
 
 pushd package
 # KoolProxyR去广告插件
@@ -24,27 +14,9 @@ git clone https://github.com/zzsj0928/luci-app-pushbot
 # Clash插件
 #git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
 #openclash插件
-git clone https://github.com/vernesong/OpenClash.git
+#git clone https://github.com/vernesong/OpenClash.git
 #ssrplus
 git clone https://github.com/fw876/helloworld.git
-
-#liuran001软件包
-git clone https://github.com/liuran001/openwrt-packages.git
-#删除后面重复插件
-pushd openwrt-packages
-rm -rf luci-app-koolproxyR
-rm -rf luci-app-ssr-plus
-#rm -rf luci-app-jd-dailybonus
-#rm -rf luci-app-adguardhome
-#rm -rf luci-app-oaf
-#rm -rf luci-lib-docker
-#rm -rf luci-app-dockerman
-rm -rf luci-app-passwall-plus
-rm -rf luci-app-vssr-plus
-#rm -rf open-app-filter
-#rm -rf oaf
-#popd
-
 # SmartDNS插件
 #git clone https://github.com/pymumu/openwrt-smartdns
 #git clone -b lede https://github.com/pymumu/luci-app-smartdns
@@ -63,12 +35,29 @@ git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-d
 #git clone https://github.com/lisaac/luci-app-dockerman
 #oaf
 #git clone https://github.com/destan19/OpenAppFilter.git
-
-
 # Edge主题
 git clone -b 18.06 https://github.com/garypang13/luci-theme-edge
-git clone https://github.com/jerrykuku/luci-app-argon-config
+#argon主题设置
+#git clone https://github.com/jerrykuku/luci-app-argon-config
 popd
+
+#liuran001软件包
+git clone https://github.com/liuran001/openwrt-packages.git
+#删除后面重复插件
+pushd openwrt-packages
+rm -rf luci-app-koolproxyR
+rm -rf luci-app-ssr-plus
+#rm -rf luci-app-jd-dailybonus
+#rm -rf luci-app-adguardhome
+#rm -rf luci-app-oaf
+#rm -rf luci-lib-docker
+#rm -rf luci-app-dockerman
+rm -rf luci-app-passwall-plus
+rm -rf luci-app-vssr-plus
+#rm -rf open-app-filter
+#rm -rf oaf
+popd
+
 # argon主题
 pushd package/lean
 rm -rf luci-theme-argon
