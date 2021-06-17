@@ -44,7 +44,7 @@ git clone https://github.com/liuran001/openwrt-packages.git
 popd
 
 #删除后面重复插件
-pushd openwrt-packages
+pushd package/openwrt-packages
 rm -rf luci-app-koolproxyR
 rm -rf luci-app-ssr-plus
 #rm -rf luci-app-jd-dailybonus
