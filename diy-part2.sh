@@ -64,7 +64,7 @@ rm -rf luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
 popd
 pushd package/tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller
-sed -i 's/"admin", "tencentcloud"/"admin", "network", "tencentcloud"/g' tencentddns.lua
+sed -i 's/"admin", "tencentcloud"/"admin", "services", "tencentcloud"/g' tencentddns.lua
 popd
 
 # Modify default IP
