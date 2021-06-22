@@ -3,7 +3,7 @@
 pushd package
 #passwall
 git clone https://github.com/xiaorouji/openwrt-passwall
-#lienol
+#lienol(管控)
 git clone https://github.com/Lienol/openwrt-package
 # KoolProxyR去广告插件
 #git clone https://github.com/jefferymvp/luci-app-koolproxyR
