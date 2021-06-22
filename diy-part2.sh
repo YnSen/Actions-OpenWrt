@@ -81,3 +81,4 @@ sed -i 's/bootstrap/argon/g' feeds/luci/collections/luci/Makefile
 #sed -i 's/root::0:0:99999:7:::/root:$1$ScQIGKsX$q0qEf\/tAQ2wpTR6zIUIjo.:0:0:99999:7:::/g' package/base-files/files/etc/shadow
 #删除默认密码
 sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
+make defconfig
