@@ -1,6 +1,10 @@
 #!/bin/bash
 
 pushd package
+#passwall
+git clone https://github.com/xiaorouji/openwrt-passwall
+#lienol
+git clone https://github.com/Lienol/openwrt-package
 # KoolProxyR去广告插件
 #git clone https://github.com/jefferymvp/luci-app-koolproxyR
 # 微信推送插件
