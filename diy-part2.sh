@@ -34,9 +34,9 @@ git clone https://github.com/rufengsuixing/luci-app-onliner.git
 #腾讯ddns
 git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-ddns
 #Docker lib api
-#git clone https://github.com/lisaac/luci-lib-docker
+git clone https://github.com/lisaac/luci-lib-docker
 #Docker
-#git clone https://github.com/lisaac/luci-app-dockerman
+git clone https://github.com/lisaac/luci-app-dockerman
 #oaf
 #git clone https://github.com/destan19/OpenAppFilter.git
 # Edge主题
@@ -54,8 +54,8 @@ rm -rf luci-app-ssr-plus
 #rm -rf luci-app-jd-dailybonus
 #rm -rf luci-app-adguardhome
 #rm -rf luci-app-oaf
-#rm -rf luci-lib-docker
-#rm -rf luci-app-dockerman
+rm -rf luci-lib-docker
+rm -rf luci-app-dockerman
 rm -rf luci-app-passwall-plus
 rm -rf luci-app-vssr-plus
 #rm -rf open-app-filter
