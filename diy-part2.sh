@@ -61,6 +61,7 @@ popd
 #rm -rf open-app-filter
 #rm -rf oaf
 #popd
+#删除管控中多余的可道云
 
 # argon主题
 pushd package/lean
