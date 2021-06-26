@@ -34,9 +34,9 @@ git clone https://github.com/rufengsuixing/luci-app-onliner.git
 #腾讯ddns
 git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-ddns
 #Docker lib api
-#git clone https://github.com/lisaac/luci-lib-docker
+git clone https://github.com/lisaac/luci-lib-docker
 #Docker
-#git clone https://github.com/lisaac/luci-app-dockerman
+git clone https://github.com/lisaac/luci-app-dockerman
 #oaf
 #git clone https://github.com/destan19/OpenAppFilter.git
 # Edge主题
@@ -44,28 +44,32 @@ git clone -b 18.06 https://github.com/garypang13/luci-theme-edge
 #argon主题设置
 #git clone https://github.com/jerrykuku/luci-app-argon-config
 #liuran001软件包
-git clone https://github.com/liuran001/openwrt-packages.git
+#git clone https://github.com/liuran001/openwrt-packages.git
 popd
 
 #删除后面重复插件
-pushd package/openwrt-packages
-rm -rf luci-app-koolproxyR
-rm -rf luci-app-ssr-plus
+#pushd package/openwrt-packages
+#rm -rf luci-app-koolproxyR
+#rm -rf luci-app-ssr-plus
 #rm -rf luci-app-jd-dailybonus
 #rm -rf luci-app-adguardhome
 #rm -rf luci-app-oaf
 #rm -rf luci-lib-docker
 #rm -rf luci-app-dockerman
-rm -rf luci-app-passwall-plus
-rm -rf luci-app-vssr-plus
+#rm -rf luci-app-passwall-plus
+#rm -rf luci-app-vssr-plus
 #rm -rf open-app-filter
 #rm -rf oaf
-popd
+#popd
 
 # argon主题
 pushd package/lean
 rm -rf luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
+git clone https://github.com/jerrykuku/luci-app-argon-config.git
+#vssr
+git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb 依赖
+git clone https://github.com/jerrykuku/luci-app-vssr.git 
 popd
 pushd package/tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller
 sed -i 's/"admin", "tencentcloud"/"admin", "services", "tencentcloud"/g' tencentddns.lua
