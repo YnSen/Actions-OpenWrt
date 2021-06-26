@@ -62,6 +62,9 @@ popd
 #rm -rf oaf
 #popd
 #删除管控中多余的可道云
+pushd package/openwrt-package
+rm -rf luci-app-kodexplorer
+popd
 
 # argon主题
 pushd package/lean
