@@ -16,9 +16,9 @@ git clone https://github.com/zzsj0928/luci-app-pushbot
 # adguardhome插件
 #git clone https://github.com/rufengsuixing/luci-app-adguardhome
 # Clash插件
-#git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
+#git clone https://github.com/frainzy1477/luci-app-clash
 #openclash插件
-#git clone https://github.com/vernesong/OpenClash.git
+git clone https://github.com/vernesong/OpenClash.git
 #ssrplus
 git clone https://github.com/fw876/helloworld.git
 # SmartDNS插件
