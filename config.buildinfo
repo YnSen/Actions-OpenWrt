@@ -1,0 +1,258 @@
+CONFIG_TARGET_x86=y
+CONFIG_TARGET_x86_64=y
+CONFIG_TARGET_x86_64_DEVICE_generic=y
+CONFIG_BUSYBOX_CUSTOM=y
+CONFIG_BUSYBOX_CONFIG_LSPCI=y
+CONFIG_BUSYBOX_CONFIG_LSUSB=y
+CONFIG_DOCKER_CGROUP_OPTIONS=y
+CONFIG_DOCKER_NET_ENCRYPT=y
+CONFIG_DOCKER_NET_MACVLAN=y
+CONFIG_DOCKER_NET_OVERLAY=y
+CONFIG_DOCKER_NET_TFTP=y
+CONFIG_DOCKER_OPTIONAL_FEATURES=y
+CONFIG_DOCKER_STO_BTRFS=y
+CONFIG_DOCKER_STO_EXT4=y
+CONFIG_KERNEL_BTRFS_FS_POSIX_ACL=y
+CONFIG_KERNEL_CFQ_GROUP_IOSCHED=y
+CONFIG_KERNEL_CGROUP_DEVICE=y
+CONFIG_KERNEL_CGROUP_FREEZER=y
+CONFIG_KERNEL_CGROUP_HUGETLB=y
+CONFIG_KERNEL_CGROUP_NET_PRIO=y
+CONFIG_KERNEL_CGROUP_PERF=y
+CONFIG_KERNEL_EXT4_FS_POSIX_ACL=y
+CONFIG_KERNEL_EXT4_FS_SECURITY=y
+CONFIG_KERNEL_FS_POSIX_ACL=y
+CONFIG_KERNEL_HUGETLBFS=y
+CONFIG_KERNEL_HUGETLB_PAGE=y
+CONFIG_KERNEL_MEMCG_SWAP_ENABLED=y
+CONFIG_KERNEL_NET_CLS_CGROUP=y
+CONFIG_KERNEL_PERF_EVENTS=y
+CONFIG_KERNEL_TRANSPARENT_HUGEPAGE=y
+CONFIG_KERNEL_TRANSPARENT_HUGEPAGE_ALWAYS=y
+CONFIG_PACKAGE_TURBOACC_INCLUDE_DNSFORWARDER=y
+CONFIG_PACKAGE_TURBOACC_INCLUDE_DNSPROXY=y
+CONFIG_PACKAGE_TURBOACC_INCLUDE_SHORTCUT_FE=y
+# CONFIG_PACKAGE_UnblockNeteaseMusicGo is not set
+# CONFIG_PACKAGE_adbyby is not set
+CONFIG_PACKAGE_blkid=y
+CONFIG_PACKAGE_btrfs-progs=y
+CONFIG_PACKAGE_cfdisk=y
+CONFIG_PACKAGE_cgroupfs-mount=y
+CONFIG_PACKAGE_containerd=y
+# CONFIG_PACKAGE_curl is not set
+# CONFIG_PACKAGE_dns2socks is not set
+CONFIG_PACKAGE_dnsforwarder=y
+CONFIG_PACKAGE_dnsproxy=y
+CONFIG_PACKAGE_docker=y
+CONFIG_PACKAGE_docker-compose=y
+CONFIG_PACKAGE_docker-compose-src=y
+CONFIG_PACKAGE_dockerd=y
+# CONFIG_PACKAGE_etherwake is not set
+CONFIG_PACKAGE_fdisk=y
+CONFIG_PACKAGE_git=y
+CONFIG_PACKAGE_git-http=y
+# CONFIG_PACKAGE_ip-full is not set
+CONFIG_PACKAGE_ip-tiny=y
+CONFIG_PACKAGE_ip6tables=y
+CONFIG_PACKAGE_ip6tables-extra=y
+CONFIG_PACKAGE_ip6tables-mod-nat=y
+CONFIG_PACKAGE_iperf3=y
+# CONFIG_PACKAGE_ipset is not set
+CONFIG_PACKAGE_iptables-mod-extra=y
+# CONFIG_PACKAGE_iptables-mod-tproxy is not set
+CONFIG_PACKAGE_kmod-br-netfilter=y
+CONFIG_PACKAGE_kmod-dax=y
+CONFIG_PACKAGE_kmod-dm=y
+CONFIG_PACKAGE_kmod-dummy=y
+CONFIG_PACKAGE_kmod-fast-classifier=y
+CONFIG_PACKAGE_kmod-fs-autofs4=y
+CONFIG_PACKAGE_kmod-fs-btrfs=y
+CONFIG_PACKAGE_kmod-fs-squashfs=y
+CONFIG_PACKAGE_kmod-fuse=y
+CONFIG_PACKAGE_kmod-ikconfig=y
+CONFIG_PACKAGE_kmod-ip6tables-extra=y
+CONFIG_PACKAGE_kmod-ipt-extra=y
+CONFIG_PACKAGE_kmod-ipt-nat6=y
+# CONFIG_PACKAGE_kmod-ipt-offload is not set
+# CONFIG_PACKAGE_kmod-ipt-tproxy is not set
+CONFIG_PACKAGE_kmod-iptunnel=y
+CONFIG_PACKAGE_kmod-keys-encrypted=y
+CONFIG_PACKAGE_kmod-keys-trusted=y
+CONFIG_PACKAGE_kmod-lib-lzo=y
+CONFIG_PACKAGE_kmod-lib-raid6=y
+CONFIG_PACKAGE_kmod-lib-xor=y
+CONFIG_PACKAGE_kmod-lib-zstd=y
+CONFIG_PACKAGE_kmod-md-mod=y
+CONFIG_PACKAGE_kmod-md-raid0=y
+CONFIG_PACKAGE_kmod-md-raid1=y
+CONFIG_PACKAGE_kmod-md-raid10=y
+CONFIG_PACKAGE_kmod-md-raid456=y
+# CONFIG_PACKAGE_kmod-nf-flow is not set
+CONFIG_PACKAGE_kmod-nf-ipvs=y
+CONFIG_PACKAGE_kmod-nf-nat6=y
+CONFIG_PACKAGE_kmod-random-core=y
+CONFIG_PACKAGE_kmod-shortcut-fe=y
+CONFIG_PACKAGE_kmod-tpm=y
+# CONFIG_PACKAGE_kmod-tun is not set
+CONFIG_PACKAGE_kmod-udptunnel4=y
+CONFIG_PACKAGE_kmod-udptunnel6=y
+CONFIG_PACKAGE_kmod-usb-ehci=y
+CONFIG_PACKAGE_kmod-usb-ohci=y
+CONFIG_PACKAGE_kmod-usb-xhci-hcd=y
+CONFIG_PACKAGE_kmod-usb2=y
+CONFIG_PACKAGE_kmod-usb3=y
+CONFIG_PACKAGE_kmod-veth=y
+CONFIG_PACKAGE_kmod-vxlan=y
+CONFIG_PACKAGE_libattr=y
+# CONFIG_PACKAGE_libbpf is not set
+CONFIG_PACKAGE_libbz2=y
+CONFIG_PACKAGE_libcap=y
+# CONFIG_PACKAGE_libcares is not set
+CONFIG_PACKAGE_libdb47=y
+CONFIG_PACKAGE_libdevmapper=y
+# CONFIG_PACKAGE_libelf is not set
+# CONFIG_PACKAGE_libev is not set
+CONFIG_PACKAGE_libevdev=y
+CONFIG_PACKAGE_libfdisk=y
+CONFIG_PACKAGE_libffi=y
+CONFIG_PACKAGE_libgdbm=y
+# CONFIG_PACKAGE_libipset is not set
+CONFIG_PACKAGE_liblzma=y
+CONFIG_PACKAGE_liblzo=y
+# CONFIG_PACKAGE_libmbedtls is not set
+# CONFIG_PACKAGE_libminiupnpc is not set
+# CONFIG_PACKAGE_libmnl is not set
+CONFIG_PACKAGE_libmount=y
+# CONFIG_PACKAGE_libnatpmp is not set
+CONFIG_PACKAGE_libnetsnmp=y
+CONFIG_PACKAGE_libnetwork=y
+CONFIG_PACKAGE_libpci=y
+CONFIG_PACKAGE_libpython3=y
+CONFIG_PACKAGE_libseccomp=y
+CONFIG_PACKAGE_libsqlite3=y
+CONFIG_PACKAGE_libudev-zero=y
+# CONFIG_PACKAGE_libudns is not set
+CONFIG_PACKAGE_libusb-1.0=y
+CONFIG_PACKAGE_libuv=y
+CONFIG_PACKAGE_libwebsockets-full=y
+CONFIG_PACKAGE_libyaml=y
+CONFIG_PACKAGE_lsblk=y
+CONFIG_PACKAGE_lscpu=y
+# CONFIG_PACKAGE_luci-app-accesscontrol is not set
+# CONFIG_PACKAGE_luci-app-adbyby-plus is not set
+# CONFIG_PACKAGE_luci-app-autoreboot is not set
+CONFIG_PACKAGE_luci-app-diskman=y
+CONFIG_PACKAGE_luci-app-diskman_INCLUDE_kmod_md_linear=y
+CONFIG_PACKAGE_luci-app-diskman_INCLUDE_kmod_md_raid456=y
+CONFIG_PACKAGE_luci-app-diskman_INCLUDE_mdadm=y
+CONFIG_PACKAGE_luci-app-docker=y
+# CONFIG_PACKAGE_luci-app-ssr-plus is not set
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NaiveProxy=y
+CONFIG_PACKAGE_luci-app-ttyd=y
+# CONFIG_PACKAGE_luci-app-unblockmusic is not set
+# CONFIG_PACKAGE_luci-app-uugamebooster is not set
+# CONFIG_PACKAGE_luci-app-vlmcsd is not set
+# CONFIG_PACKAGE_luci-app-vsftpd is not set
+# CONFIG_PACKAGE_luci-app-vssr_INCLUDE_ShadowsocksR_Libev_Server is not set
+# CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Trojan is not set
+# CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Xray is not set
+# CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Xray_plugin is not set
+# CONFIG_PACKAGE_luci-app-wol is not set
+# CONFIG_PACKAGE_luci-app-xlnetacc is not set
+# CONFIG_PACKAGE_luci-app-zerotier is not set
+CONFIG_PACKAGE_luci-i18n-docker-zh-cn=y
+CONFIG_PACKAGE_luci-i18n-ttyd-zh-cn=y
+CONFIG_PACKAGE_mdadm=y
+# CONFIG_PACKAGE_microsocks is not set
+CONFIG_PACKAGE_mount-utils=y
+CONFIG_PACKAGE_parted=y
+CONFIG_PACKAGE_python-pip-conf=y
+CONFIG_PACKAGE_python3=y
+CONFIG_PACKAGE_python3-asyncio=y
+CONFIG_PACKAGE_python3-attrs=y
+CONFIG_PACKAGE_python3-base=y
+CONFIG_PACKAGE_python3-bcrypt=y
+CONFIG_PACKAGE_python3-cached-property=y
+CONFIG_PACKAGE_python3-certifi=y
+CONFIG_PACKAGE_python3-cffi=y
+CONFIG_PACKAGE_python3-cgi=y
+CONFIG_PACKAGE_python3-cgitb=y
+CONFIG_PACKAGE_python3-chardet=y
+CONFIG_PACKAGE_python3-codecs=y
+CONFIG_PACKAGE_python3-cryptography=y
+CONFIG_PACKAGE_python3-ctypes=y
+CONFIG_PACKAGE_python3-dbm=y
+CONFIG_PACKAGE_python3-decimal=y
+CONFIG_PACKAGE_python3-distro=y
+CONFIG_PACKAGE_python3-distutils=y
+CONFIG_PACKAGE_python3-docker=y
+CONFIG_PACKAGE_python3-docker-src=y
+CONFIG_PACKAGE_python3-dockerpty=y
+CONFIG_PACKAGE_python3-dockerpty-src=y
+CONFIG_PACKAGE_python3-docopt=y
+CONFIG_PACKAGE_python3-dotenv=y
+CONFIG_PACKAGE_python3-email=y
+CONFIG_PACKAGE_python3-gdbm=y
+CONFIG_PACKAGE_python3-idna=y
+CONFIG_PACKAGE_python3-jsonschema=y
+CONFIG_PACKAGE_python3-light=y
+CONFIG_PACKAGE_python3-logging=y
+CONFIG_PACKAGE_python3-lzma=y
+CONFIG_PACKAGE_python3-multiprocessing=y
+CONFIG_PACKAGE_python3-ncurses=y
+CONFIG_PACKAGE_python3-openssl=y
+CONFIG_PACKAGE_python3-paramiko=y
+CONFIG_PACKAGE_python3-pip=y
+CONFIG_PACKAGE_python3-pip-src=y
+CONFIG_PACKAGE_python3-pkg-resources=y
+CONFIG_PACKAGE_python3-ply=y
+CONFIG_PACKAGE_python3-pycparser=y
+CONFIG_PACKAGE_python3-pydoc=y
+CONFIG_PACKAGE_python3-pynacl=y
+CONFIG_PACKAGE_python3-pyrsistent=y
+CONFIG_PACKAGE_python3-readline=y
+CONFIG_PACKAGE_python3-requests=y
+CONFIG_PACKAGE_python3-setuptools=y
+CONFIG_PACKAGE_python3-six=y
+CONFIG_PACKAGE_python3-sqlite3=y
+CONFIG_PACKAGE_python3-texttable=y
+CONFIG_PACKAGE_python3-unittest=y
+CONFIG_PACKAGE_python3-urllib=y
+CONFIG_PACKAGE_python3-urllib3=y
+CONFIG_PACKAGE_python3-websocket-client=y
+CONFIG_PACKAGE_python3-xml=y
+CONFIG_PACKAGE_python3-yaml=y
+# CONFIG_PACKAGE_resolveip is not set
+CONFIG_PACKAGE_runc=y
+# CONFIG_PACKAGE_shadowsocks-libev-config is not set
+# CONFIG_PACKAGE_shadowsocks-libev-ss-local is not set
+# CONFIG_PACKAGE_shadowsocks-libev-ss-redir is not set
+# CONFIG_PACKAGE_shadowsocks-libev-ss-server is not set
+# CONFIG_PACKAGE_shadowsocksr-libev-ssr-check is not set
+# CONFIG_PACKAGE_shadowsocksr-libev-ssr-local is not set
+# CONFIG_PACKAGE_shadowsocksr-libev-ssr-redir is not set
+# CONFIG_PACKAGE_shadowsocksr-libev-ssr-server is not set
+# CONFIG_PACKAGE_simple-obfs is not set
+CONFIG_PACKAGE_smartmontools=y
+CONFIG_PACKAGE_snmpd=y
+# CONFIG_PACKAGE_tcping is not set
+CONFIG_PACKAGE_tini=y
+CONFIG_PACKAGE_ttyd=y
+CONFIG_PACKAGE_usbids=y
+CONFIG_PACKAGE_usbutils=y
+# CONFIG_PACKAGE_uugamebooster is not set
+# CONFIG_PACKAGE_vlmcsd is not set
+# CONFIG_PACKAGE_vsftpd-alt is not set
+# CONFIG_PACKAGE_wol is not set
+# CONFIG_PACKAGE_xray-core is not set
+# CONFIG_PACKAGE_zerotier is not set
+CONFIG_PARTED_READLINE=y
+CONFIG_SQLITE3_DYNAMIC_EXTENSIONS=y
+CONFIG_SQLITE3_FTS3=y
+CONFIG_SQLITE3_FTS4=y
+CONFIG_SQLITE3_FTS5=y
+CONFIG_SQLITE3_JSON1=y
+CONFIG_SQLITE3_RTREE=y
+CONFIG_TARGET_ROOTFS_PARTSIZE=500
+# CONFIG_UnblockNeteaseMusic_Go is not set
