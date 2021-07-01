@@ -1,0 +1,25 @@
+
+Network  --->
+		Firewall  --->
+			ip6tables--> *ip6tables-extra 
+				     *ip6tables-mod-nat
+
+		Version Control Systems  ---> *git
+				     	      *git-http
+			
+	iperf3
+	snmpd
+
+
+
+Utilities  --->
+		Disc  --->
+			cfdisk
+			lsblk
+	coremark (selectall)
+	dockerd  (selectall)	
+	lm-sensors	
+	lm-sensors-detect
+	pciutils
+	usbutils
+
