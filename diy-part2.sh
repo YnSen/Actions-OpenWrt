@@ -38,7 +38,7 @@ git clone https://github.com/lisaac/luci-lib-docker
 #Docker
 git clone https://github.com/lisaac/luci-app-dockerman
 #oaf
-#git clone https://github.com/destan19/OpenAppFilter.git
+git clone https://github.com/destan19/OpenAppFilter.git
 # Edge主题
 git clone -b 18.06 https://github.com/garypang13/luci-theme-edge
 #argon主题设置
