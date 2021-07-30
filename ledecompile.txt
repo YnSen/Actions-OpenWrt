@@ -18,13 +18,13 @@ Network  --->
 
 Utilities  --->
 		Disc  --->
-			cfdisk
-			lsblk
-	coremark (selectall)
-	dockerd  (selectall)	
-	lm-sensors	
-	lm-sensors-detect
-	lscpu
-	pciutils
-	usbutils
+			*cfdisk
+			*lsblk
+	*coremark (selectall)
+	*dockerd  (selectall)	
+	*lm-sensors	
+	*lm-sensors-detect
+	*lscpu
+	*pciutils
+	*usbutils
 
