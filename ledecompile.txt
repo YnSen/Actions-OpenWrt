@@ -27,6 +27,8 @@ Utilities  --->
 	*lm-sensors	
 	*lm-sensors-detect
 	*lscpu
+	*lsof
+	*lxc
 	*pciutils
 	*usbutils
 
