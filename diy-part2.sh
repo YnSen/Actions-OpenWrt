@@ -32,7 +32,7 @@ git clone https://github.com/rufengsuixing/luci-app-onliner.git
 #腾讯ddns
 git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-ddns
 #Docker lib api
-git clone https://github.com/lisaac/luci-lib-docker
+#git clone https://github.com/lisaac/luci-lib-docker
 #Docker
 git clone https://github.com/lisaac/luci-app-dockerman
 #oaf
