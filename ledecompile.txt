@@ -23,7 +23,8 @@ Utilities  --->
 			*cfdisk
 			*lsblk
 	*coremark (selectall)
-	*dockerd  (selectall)	
+	*dockerd  (selectall)
+	*file
 	*lm-sensors	
 	*lm-sensors-detect
 	*lscpu
