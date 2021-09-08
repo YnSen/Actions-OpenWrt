@@ -1,3 +1,5 @@
+ipv6helper choose
+DEPENDS:=+luci-proto-ipv6 +wget +ip6tables +libip6tc +kmod-ipt-nat6 +odhcpd-ipv6only +odhcp6c +6in4
 
 Kernel modules  --->
 		Network Devices  --->
