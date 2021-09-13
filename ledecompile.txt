@@ -46,3 +46,5 @@ LuCI --->
 		Translations  --->  
 			<*>  English (en)
 			<*>  Chinese (zh-cn)
+			
+#命令行安装opkg install luci-i18n-base-zh-cn
