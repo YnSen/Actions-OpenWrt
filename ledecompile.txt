@@ -35,3 +35,14 @@ Utilities  --->
 	*pciutils
 	*usbutils
 
+#21.02中文支持
+LuCI --->
+	Translations--->
+			<*> luci-i18n-chinese   
+			<*> luci-i18n-english 
+
+LuCI --->
+	Modules  ---> 
+		Translations  --->  
+			<*>  English (en)
+			<*>  Chinese (zh-cn)
