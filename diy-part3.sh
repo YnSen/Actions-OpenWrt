@@ -35,6 +35,8 @@ git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-d
 git clone https://github.com/lisaac/luci-lib-docker
 #Docker
 git clone https://github.com/lisaac/luci-app-dockerman
+#diskman
+git clone https://github.com/lisaac/luci-app-diskman.git
 #oaf
 git clone https://github.com/destan19/OpenAppFilter.git
 # Edge主题
