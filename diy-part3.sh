@@ -38,9 +38,7 @@ git clone https://github.com/lisaac/luci-app-dockerman
 #oaf
 git clone https://github.com/destan19/OpenAppFilter.git
 # Edge主题
-git clone -b 18.06 https://github.com/garypang13/luci-theme-edge
-#argon主题设置
-#git clone https://github.com/jerrykuku/luci-app-argon-config
+git clone https://github.com/garypang13/luci-theme-edge
 #liuran001软件包
 #git clone https://github.com/liuran001/openwrt-packages.git
 # argon主题
@@ -54,14 +52,6 @@ git clone https://github.com/rufengsuixing/luci-app-zerotier.git
 #OpenAppFilter
 git clone https://github.com/destan19/OpenAppFilter.git
 popd
-
-
-# argon主题
-git clone https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
-git clone https://github.com/jerrykuku/luci-app-argon-config.git
-#vssr
-git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb 依赖
-git clone https://github.com/jerrykuku/luci-app-vssr.git 
 
 pushd package/tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller
 sed -i 's/"admin", "tencentcloud"/"admin", "services", "tencentcloud"/g' tencentddns.lua
