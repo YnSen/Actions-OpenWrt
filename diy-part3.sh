@@ -1,29 +1,71 @@
-  
-#!/bin/bash
-#
-# Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
-#
-# This is free software, licensed under the MIT License.
-# See /LICENSE for more information.
-#
-# https://github.com/P3TERX/Actions-OpenWrt
-# File name: diy-part1.sh
-# Description: OpenWrt DIY script part 1 (Before Update feeds)
-#
-
-# Uncomment a feed source
-#sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
-
-# Add a feed source
-#Lienol packages
-sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
-#PassWall依赖
-#sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
-#openwrt常用软件包不定期更新kenzo
-#sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
-#liuruan001 pasckages
-#sed -i '$a src-git liuran001_packages https://github.com/liuran001/openwrt-packages' feeds.conf.default
-#Passwall
-sed -i '$a src-git openwrt_passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
+pushd package
+#passwall
+git clone https://github.com/xiaorouji/openwrt-passwall.git
+#lienol(管控)
+git clone https://github.com/Lienol/openwrt-package.git
+# KoolProxyR去广告插件
+#git clone https://github.com/jefferymvp/luci-app-koolproxyR
+# 微信推送插件
+git clone https://github.com/tty228/luci-app-serverchan
+# Add Pushbot-原钉钉推送插件
+git clone https://github.com/zzsj0928/luci-app-pushbot
+# 京东签到插件
+git clone https://github.com/jerrykuku/luci-app-jd-dailybonus 
+# adguardhome插件
+#git clone https://github.com/rufengsuixing/luci-app-adguardhome
+# Clash插件
+#git clone https://github.com/frainzy1477/luci-app-clash
+#openclash插件
+git clone https://github.com/vernesong/OpenClash.git
 #ssrplus
-#sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
+git clone https://github.com/fw876/helloworld.git
+# SmartDNS插件
+#git clone https://github.com/pymumu/openwrt-smartdns
+#git clone -b lede https://github.com/pymumu/luci-app-smartdns
+#强制关机插件
+git clone https://github.com/esirplayground/luci-app-poweroff
+#自动关机插件
+git clone https://github.com/sirpdboy/luci-app-autopoweroff
+# Add Onliner
+# git clone https://github.com/rufengsuixing/luci-app-onliner.git feeds/luci/applications/luci-app-onliner
+git clone https://github.com/rufengsuixing/luci-app-onliner.git
+#腾讯ddns
+git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-ddns
+#Docker lib api
+git clone https://github.com/lisaac/luci-lib-docker
+#Docker
+git clone https://github.com/lisaac/luci-app-dockerman
+#oaf
+git clone https://github.com/destan19/OpenAppFilter.git
+# Edge主题
+git clone -b 18.06 https://github.com/garypang13/luci-theme-edge
+#argon主题设置
+#git clone https://github.com/jerrykuku/luci-app-argon-config
+#liuran001软件包
+#git clone https://github.com/liuran001/openwrt-packages.git
+# argon主题
+git clone https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
+git clone https://github.com/jerrykuku/luci-app-argon-config.git
+#vssr
+git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb 依赖
+git clone https://github.com/jerrykuku/luci-app-vssr.git
+#zerotier
+git clone https://github.com/rufengsuixing/luci-app-zerotier.git
+#OpenAppFilter
+git clone https://github.com/destan19/OpenAppFilter.git
+popd
+
+
+# argon主题
+git clone https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
+git clone https://github.com/jerrykuku/luci-app-argon-config.git
+#vssr
+git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb 依赖
+git clone https://github.com/jerrykuku/luci-app-vssr.git 
+
+pushd package/tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller
+sed -i 's/"admin", "tencentcloud"/"admin", "services", "tencentcloud"/g' tencentddns.lua
+popd
+
+# Modify default IP
+sed -i 's/192.168.1.1/192.168.3.1/g' package/base-files/files/bin/config_generate
