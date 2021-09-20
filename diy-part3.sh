@@ -39,10 +39,12 @@ git clone https://github.com/lisaac/luci-app-dockerman
 git clone https://github.com/lisaac/luci-app-diskman.git
 #liuran001软件包
 git clone https://github.com/liuran001/openwrt-packages.git
-pushd openwrt-packages
-cp -r luci-app-adbyby-plus ~/work/Actions-OpenWrt/Actions-OpenWrt/package
-popd
-rm -rf openwrt-packages
+#pushd openwrt-packages
+#cp -r luci-app-adbyby-plus ~/work/Actions-OpenWrt/Actions-OpenWrt/package
+#popd
+#rm -rf openwrt-packages
+#rclone 
+git clone https://github.com/ElonH/Rclone-OpenWrt.git
 # argon主题
 #git clone https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
 #git clone https://github.com/jerrykuku/luci-app-argon-config.git
@@ -53,11 +55,17 @@ git clone https://github.com/jerrykuku/luci-app-vssr.git
 #git clone https://github.com/rufengsuixing/luci-app-zerotier.git
 #OpenAppFilter
 git clone https://github.com/destan19/OpenAppFilter.git
-rm -rf feeds/luciim/luci-app-passwall
-rm -rf feeds/luciim/luci-app-vssr
-rm -rf feeds/luciim/luci-app-ssr-plus
-rm -rf feeds/luciim/luci-app-diskman
-rm -rf feeds/luciim/luci-app-appfilter
+#unblockneteasemusic
+git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git
+
+rm -rf openwrt-packages/luci-app-passwall
+rm -rf openwrt-packages/luci-app-vssr
+rm -rf openwrt-packages/luci-app-ssr-plus
+rm -rf openwrt-packages/luci-app-diskman
+rm -rf openwrt-packages/luci-app-oaf
+rm -rf openwrt-packages/open-app-filter
+#rm -rf feeds/luciim/luci-app-rclone
+rm -rf feeds/luciim
 popd
 
 pushd package/tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller
