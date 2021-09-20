@@ -34,11 +34,15 @@ git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-d
 #Docker lib api
 git clone https://github.com/lisaac/luci-lib-docker
 #Docker
-#git clone https://github.com/lisaac/luci-app-dockerman
+git clone https://github.com/lisaac/luci-app-dockerman
 #diskman
 git clone https://github.com/lisaac/luci-app-diskman.git
 #liuran001软件包
-#git clone https://github.com/liuran001/openwrt-packages.git
+git clone https://github.com/liuran001/openwrt-packages.git
+pushd openwrt-packages
+cp -r luci-app-adbyby-plus ~/work/Actions-OpenWrt/Actions-OpenWrt/package
+popd
+rm -rf openwrt-packages
 # argon主题
 #git clone https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
 #git clone https://github.com/jerrykuku/luci-app-argon-config.git
