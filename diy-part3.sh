@@ -1,16 +1,16 @@
 pushd package
 #passwall
-#git clone https://github.com/xiaorouji/openwrt-passwall.git
+git clone https://github.com/xiaorouji/openwrt-passwall.git
 #lienol(管控)
-#git clone https://github.com/Lienol/openwrt-package.git
+git clone https://github.com/Lienol/openwrt-package.git
 # KoolProxyR去广告插件
 #git clone https://github.com/jefferymvp/luci-app-koolproxyR
 # 微信推送插件
-#git clone https://github.com/tty228/luci-app-serverchan
+git clone https://github.com/tty228/luci-app-serverchan
 # Add Pushbot-原钉钉推送插件
 git clone https://github.com/zzsj0928/luci-app-pushbot
 # 京东签到插件
-#git clone https://github.com/jerrykuku/luci-app-jd-dailybonus 
+git clone https://github.com/jerrykuku/luci-app-jd-dailybonus 
 # adguardhome插件
 #git clone https://github.com/rufengsuixing/luci-app-adguardhome
 # Clash插件
@@ -34,21 +34,21 @@ git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-d
 #Docker lib api
 git clone https://github.com/lisaac/luci-lib-docker
 #Docker
-#git clone https://github.com/lisaac/luci-app-dockerman
+git clone https://github.com/lisaac/luci-app-dockerman
 #diskman
-#git clone https://github.com/lisaac/luci-app-diskman.git
+git clone https://github.com/lisaac/luci-app-diskman.git
 #liuran001软件包
 #git clone https://github.com/liuran001/openwrt-packages.git
 # argon主题
 #git clone https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
 #git clone https://github.com/jerrykuku/luci-app-argon-config.git
 #vssr
-#git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb 依赖
-#git clone https://github.com/jerrykuku/luci-app-vssr.git
+git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb 依赖
+git clone https://github.com/jerrykuku/luci-app-vssr.git
 #zerotier
-#git clone https://github.com/rufengsuixing/luci-app-zerotier.git
+git clone https://github.com/rufengsuixing/luci-app-zerotier.git
 #OpenAppFilter
-#git clone https://github.com/destan19/OpenAppFilter.git
+git clone https://github.com/destan19/OpenAppFilter.git
 popd
 
 pushd package/tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller
