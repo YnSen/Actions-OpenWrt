@@ -36,7 +36,7 @@ git clone https://github.com/lisaac/luci-lib-docker
 #Docker
 #git clone https://github.com/lisaac/luci-app-dockerman
 #diskman
-#git clone https://github.com/lisaac/luci-app-diskman.git
+git clone https://github.com/lisaac/luci-app-diskman.git
 #liuran001软件包
 #git clone https://github.com/liuran001/openwrt-packages.git
 # argon主题
@@ -48,10 +48,12 @@ git clone https://github.com/jerrykuku/luci-app-vssr.git
 #zerotier
 #git clone https://github.com/rufengsuixing/luci-app-zerotier.git
 #OpenAppFilter
-#git clone https://github.com/destan19/OpenAppFilter.git
+git clone https://github.com/destan19/OpenAppFilter.git
 rm -rf feeds/luciim/luci-app-passwall
 rm -rf feeds/luciim/luci-app-vssr
 rm -rf feeds/luciim/luci-app-ssr-plus
+rm -rf feeds/luciim/luci-app-diskman
+rm -rf feeds/luciim/luci-app-appfilter
 popd
 
 pushd package/tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller
