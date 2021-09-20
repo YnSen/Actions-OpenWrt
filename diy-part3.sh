@@ -40,9 +40,9 @@ git clone https://github.com/lisaac/luci-app-diskman.git
 #liuran001软件包
 git clone https://github.com/liuran001/openwrt-packages.git
 pushd openwrt-packages/
-cp -r luci-app-adbyby-plus ~/work/Actions-OpenWrt/Actions-OpenWrt/package/
-cp -r luci-app-cifs-mount ~/work/Actions-OpenWrt/Actions-OpenWrt/package/
-cp -r luci-app-usb-printer ~/work/Actions-OpenWrt/Actions-OpenWrt/package/
+cp -r luci-app-adbyby-plus /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package
+cp -r luci-app-cifs-mount /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package
+cp -r luci-app-usb-printer /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package
 popd
 rm -rf openwrt-packages
 #rclone 
