@@ -1,6 +1,6 @@
 pushd package
 #passwall
-#git clone https://github.com/xiaorouji/openwrt-passwall.git
+git clone https://github.com/xiaorouji/openwrt-passwall.git
 #lienol(管控)
 #git clone https://github.com/Lienol/openwrt-package.git
 # KoolProxyR去广告插件
@@ -18,7 +18,7 @@ git clone https://github.com/zzsj0928/luci-app-pushbot
 #openclash插件
 #git clone https://github.com/vernesong/OpenClash.git
 #ssrplus
-#git clone https://github.com/fw876/helloworld.git
+git clone https://github.com/fw876/helloworld.git
 # SmartDNS插件
 #git clone https://github.com/pymumu/openwrt-smartdns
 #git clone -b lede https://github.com/pymumu/luci-app-smartdns
@@ -43,12 +43,15 @@ git clone https://github.com/lisaac/luci-lib-docker
 #git clone https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
 #git clone https://github.com/jerrykuku/luci-app-argon-config.git
 #vssr
-#git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb 依赖
-#git clone https://github.com/jerrykuku/luci-app-vssr.git
+git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb 依赖
+git clone https://github.com/jerrykuku/luci-app-vssr.git
 #zerotier
 #git clone https://github.com/rufengsuixing/luci-app-zerotier.git
 #OpenAppFilter
 #git clone https://github.com/destan19/OpenAppFilter.git
+rm -rf feeds/luciim/luci-app-passwall
+rm -rf feeds/luciim/luci-app-vssr
+rm -rf feeds/luciim/luci-app-ssr-plus
 popd
 
 pushd package/tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller
