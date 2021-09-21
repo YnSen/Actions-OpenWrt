@@ -2,7 +2,7 @@ pushd package
 #passwall
 git clone https://github.com/xiaorouji/openwrt-passwall.git
 #lienol(管控)
-#git clone https://github.com/Lienol/openwrt-package.git
+git clone https://github.com/Lienol/openwrt-package.git
 # KoolProxyR去广告插件
 #git clone https://github.com/jefferymvp/luci-app-koolproxyR
 # 微信推送插件
@@ -49,8 +49,8 @@ rm -rf openwrt-packages
 #rclone 
 git clone https://github.com/ElonH/Rclone-OpenWrt.git
 # argon主题
-#git clone https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
-#git clone https://github.com/jerrykuku/luci-app-argon-config.git
+git clone https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
+git clone https://github.com/jerrykuku/luci-app-argon-config.git
 #vssr
 git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb 依赖
 git clone https://github.com/jerrykuku/luci-app-vssr.git
