@@ -53,13 +53,13 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git
 #unblockneteasemusic
 #git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git
 
-rm -rf feeds/luciim/luci-app-passwall
-rm -rf feeds/luciim/luci-app-vssr
-rm -rf feeds/luciim/luci-app-ssr-plus
+#rm -rf feeds/luciim/luci-app-passwall
+#rm -rf feeds/luciim/luci-app-vssr
+#rm -rf feeds/luciim/luci-app-ssr-plus
 #rm -rf feeds/luciim/luci-app-diskman
 #rm -rf feeds/luciim/luci-app-oaf
-rm -rf feeds/luciim/open-app-appfilter
-rm -rf feeds/luciim/luci-app-rclone
+#rm -rf feeds/luciim/open-app-appfilter
+#rm -rf feeds/luciim/luci-app-rclone
 popd
 
 pushd package/tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller
