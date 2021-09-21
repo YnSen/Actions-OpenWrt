@@ -61,12 +61,12 @@ git clone https://github.com/destan19/OpenAppFilter.git
 #unblockneteasemusic
 git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git
 
-rm -rf /feeds/luciim/luci-app-passwall
-rm -rf /feeds/luciim/luci-app-vssr
-rm -rf /feeds/luciim/luci-app-ssr-plus
-rm -rf /feeds/luciim/luci-app-diskman
-#rm -rf /feeds/luciim/luci-app-oaf
-rm -rf /feeds/luciim/open-app-appfilter
+rm -rf feeds/luciim/luci-app-passwall
+rm -rf feeds/luciim/luci-app-vssr
+rm -rf feeds/luciim/luci-app-ssr-plus
+#rm -rf feeds/luciim/luci-app-diskman
+#rm -rf feeds/luciim/luci-app-oaf
+rm -rf feeds/luciim/open-app-appfilter
 rm -rf feeds/luciim/luci-app-rclone
 popd
 
