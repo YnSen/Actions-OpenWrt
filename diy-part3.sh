@@ -1,6 +1,6 @@
 pushd package
 #passwall
-git clone https://github.com/xiaorouji/openwrt-passwall.git
+#git clone https://github.com/xiaorouji/openwrt-passwall.git
 #lienol(管控)
 #git clone https://github.com/Lienol/openwrt-package.git
 # KoolProxyR去广告插件
@@ -52,8 +52,8 @@ git clone https://github.com/ElonH/Rclone-OpenWrt.git
 git clone https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config.git
 #vssr
-git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb 依赖
-git clone https://github.com/jerrykuku/luci-app-vssr.git
+#git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb 依赖
+#git clone https://github.com/jerrykuku/luci-app-vssr.git
 #zerotier
 #git clone https://github.com/rufengsuixing/luci-app-zerotier.git
 #OpenAppFilter
