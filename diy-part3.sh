@@ -59,7 +59,7 @@ git clone https://github.com/jerrykuku/luci-app-vssr.git
 #OpenAppFilter
 git clone https://github.com/destan19/OpenAppFilter.git
 #unblockneteasemusic
-git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git
+#git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git
 
 rm -rf feeds/luciim/luci-app-passwall
 rm -rf feeds/luciim/luci-app-vssr
