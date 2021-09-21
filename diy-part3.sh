@@ -37,15 +37,7 @@ git clone https://github.com/lisaac/luci-lib-docker
 git clone https://github.com/lisaac/luci-app-dockerman
 #diskman
 git clone https://github.com/lisaac/luci-app-diskman.git
-#liuran001软件包
-#git clone https://github.com/liuran001/openwrt-packages.git
-#pushd openwrt-packages/
-#cp -r adbyby /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package
-#cp -r luci-app-adbyby-plus /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package
-#cp -r luci-app-cifs-mount /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package
-#cp -r luci-app-usb-printer /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package
-#popd
-#rm -rf openwrt-packages
+
 #rclone 
 git clone https://github.com/ElonH/Rclone-OpenWrt.git
 # argon主题
@@ -61,9 +53,9 @@ git clone https://github.com/destan19/OpenAppFilter.git
 #unblockneteasemusic
 #git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git
 
-#rm -rf feeds/luciim/luci-app-passwall
-#rm -rf feeds/luciim/luci-app-vssr
-#rm -rf feeds/luciim/luci-app-ssr-plus
+rm -rf feeds/luciim/luci-app-passwall
+rm -rf feeds/luciim/luci-app-vssr
+rm -rf feeds/luciim/luci-app-ssr-plus
 #rm -rf feeds/luciim/luci-app-diskman
 #rm -rf feeds/luciim/luci-app-oaf
 rm -rf feeds/luciim/open-app-appfilter
