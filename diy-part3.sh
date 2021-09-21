@@ -16,9 +16,9 @@ git clone https://github.com/zzsj0928/luci-app-pushbot
 # Clash插件
 #git clone https://github.com/frainzy1477/luci-app-clash
 #openclash插件
-git clone https://github.com/vernesong/OpenClash.git
+#git clone https://github.com/vernesong/OpenClash.git
 #ssrplus
-git clone https://github.com/fw876/helloworld.git
+#git clone https://github.com/fw876/helloworld.git
 # SmartDNS插件
 #git clone https://github.com/pymumu/openwrt-smartdns
 #git clone -b lede https://github.com/pymumu/luci-app-smartdns
@@ -32,14 +32,14 @@ git clone https://github.com/sirpdboy/luci-app-autopoweroff
 #腾讯ddns
 git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-ddns
 #Docker lib api
-git clone https://github.com/lisaac/luci-lib-docker
+#git clone https://github.com/lisaac/luci-lib-docker
 #Docker
-git clone https://github.com/lisaac/luci-app-dockerman
+#git clone https://github.com/lisaac/luci-app-dockerman
 #diskman
-git clone https://github.com/lisaac/luci-app-diskman.git
+#git clone https://github.com/lisaac/luci-app-diskman.git
 
 #rclone 
-git clone https://github.com/ElonH/Rclone-OpenWrt.git
+#git clone https://github.com/ElonH/Rclone-OpenWrt.git
 # argon主题
 git clone https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config.git
@@ -49,7 +49,7 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git
 #zerotier
 #git clone https://github.com/rufengsuixing/luci-app-zerotier.git
 #OpenAppFilter
-git clone https://github.com/destan19/OpenAppFilter.git
+#git clone https://github.com/destan19/OpenAppFilter.git
 #unblockneteasemusic
 #git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git
 
