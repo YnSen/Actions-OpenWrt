@@ -2,7 +2,7 @@ pushd package
 #passwall
 git clone https://github.com/xiaorouji/openwrt-passwall.git
 #lienol(管控)
-git clone https://github.com/Lienol/openwrt-package.git
+#git clone https://github.com/Lienol/openwrt-package.git
 # KoolProxyR去广告插件
 #git clone https://github.com/jefferymvp/luci-app-koolproxyR
 # 微信推送插件
@@ -38,12 +38,12 @@ git clone https://github.com/lisaac/luci-app-dockerman
 #diskman
 git clone https://github.com/lisaac/luci-app-diskman.git
 #liuran001软件包
-git clone https://github.com/liuran001/openwrt-packages.git
-pushd openwrt-packages/
-cp -r adbyby /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package
-cp -r luci-app-adbyby-plus /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package
-cp -r luci-app-cifs-mount /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package
-cp -r luci-app-usb-printer /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package
+#git clone https://github.com/liuran001/openwrt-packages.git
+#pushd openwrt-packages/
+#cp -r adbyby /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package
+#cp -r luci-app-adbyby-plus /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package
+#cp -r luci-app-cifs-mount /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package
+#cp -r luci-app-usb-printer /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package
 popd
 rm -rf openwrt-packages
 #rclone 
@@ -61,14 +61,13 @@ git clone https://github.com/destan19/OpenAppFilter.git
 #unblockneteasemusic
 git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git
 
-#rm -rf openwrt-packages/luci-app-passwall
-#rm -rf openwrt-packages/luci-app-vssr
-#rm -rf openwrt-packages/luci-app-ssr-plus
-#rm -rf openwrt-packages/luci-app-diskman
-#rm -rf openwrt-packages/luci-app-oaf
-#rm -rf openwrt-packages/open-app-filter
-#rm -rf feeds/luciim/luci-app-rclone
-#rm -rf feeds/luciim
+rm -rf /feeds/luciim/luci-app-passwall
+rm -rf /feeds/luciim/luci-app-vssr
+rm -rf /feeds/luciim/luci-app-ssr-plus
+rm -rf /feeds/luciim/luci-app-diskman
+#rm -rf /feeds/luciim/luci-app-oaf
+rm -rf /feeds/luciim/open-app-appfilter
+rm -rf feeds/luciim/luci-app-rclone
 popd
 
 pushd package/tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller
