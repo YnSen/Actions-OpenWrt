@@ -32,14 +32,24 @@ git clone https://github.com/sirpdboy/luci-app-autopoweroff
 #腾讯ddns
 git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-ddns
 #Docker lib api
-#git clone https://github.com/lisaac/luci-lib-docker
+git clone https://github.com/lisaac/luci-lib-docker
 #Docker
-#git clone https://github.com/lisaac/luci-app-dockerman
+git clone https://github.com/lisaac/luci-app-dockerman
 #diskman
 #git clone https://github.com/lisaac/luci-app-diskman.git
 
+#kenzok8 
+git clone https://github.com/kenzok8/openwrt-packages.git
+git clone https://github.com/kenzok8/small.git
+
+pushd  openwrt-packages
+rm -rf luci-theme-argo*
+rm -rf luci-app-argon-config
+rm -rf luci-theme-edge
+popd
+
 #rclone 
-#git clone https://github.com/ElonH/Rclone-OpenWrt.git
+git clone https://github.com/ElonH/Rclone-OpenWrt.git
 # argon主题
 git clone https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config.git
@@ -47,7 +57,7 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git
 #git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb 依赖
 #git clone https://github.com/jerrykuku/luci-app-vssr.git
 #zerotier
-#git clone https://github.com/rufengsuixing/luci-app-zerotier.git
+git clone https://github.com/rufengsuixing/luci-app-zerotier.git
 #OpenAppFilter
 #git clone https://github.com/destan19/OpenAppFilter.git
 #unblockneteasemusic
