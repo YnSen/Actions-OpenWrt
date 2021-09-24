@@ -12,13 +12,13 @@ git clone https://github.com/zzsj0928/luci-app-pushbot
 # 京东签到插件
 #git clone https://github.com/jerrykuku/luci-app-jd-dailybonus 
 # adguardhome插件
-#git clone https://github.com/rufengsuixing/luci-app-adguardhome
+git clone https://github.com/rufengsuixing/luci-app-adguardhome
 # Clash插件
 #git clone https://github.com/frainzy1477/luci-app-clash
 #openclash插件
 #git clone https://github.com/vernesong/OpenClash.git
 #ssrplus
-#git clone https://github.com/fw876/helloworld.git
+git clone https://github.com/fw876/helloworld.git
 # SmartDNS插件
 #git clone https://github.com/pymumu/openwrt-smartdns
 #git clone -b lede https://github.com/pymumu/luci-app-smartdns
@@ -39,14 +39,14 @@ git clone https://github.com/lisaac/luci-app-dockerman
 #git clone https://github.com/lisaac/luci-app-diskman.git
 
 #kenzok8 
-git clone https://github.com/kenzok8/openwrt-packages.git
+#git clone https://github.com/kenzok8/openwrt-packages.git
 git clone https://github.com/kenzok8/small.git
 
-pushd  openwrt-packages
-rm -rf luci-theme-argo*
-rm -rf luci-app-argon-config
-rm -rf luci-theme-edge
-popd
+#pushd  openwrt-packages
+#rm -rf luci-theme-argo*
+#rm -rf luci-app-argon-config
+#rm -rf luci-theme-edge
+#popd
 
 #rclone 
 git clone https://github.com/ElonH/Rclone-OpenWrt.git
@@ -59,7 +59,7 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git
 #zerotier
 git clone https://github.com/rufengsuixing/luci-app-zerotier.git
 #OpenAppFilter
-#git clone https://github.com/destan19/OpenAppFilter.git
+git clone https://github.com/destan19/OpenAppFilter.git
 #unblockneteasemusic
 #git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git
 
