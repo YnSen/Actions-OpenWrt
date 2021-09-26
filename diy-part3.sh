@@ -8,17 +8,17 @@ git clone https://github.com/Lienol/openwrt-package.git
 # 微信推送插件
 #git clone https://github.com/tty228/luci-app-serverchan
 # Add Pushbot-原钉钉推送插件
-git clone https://github.com/zzsj0928/luci-app-pushbot
+#git clone https://github.com/zzsj0928/luci-app-pushbot
 # 京东签到插件
 #git clone https://github.com/jerrykuku/luci-app-jd-dailybonus 
 # adguardhome插件
-git clone https://github.com/rufengsuixing/luci-app-adguardhome
+#git clone https://github.com/rufengsuixing/luci-app-adguardhome
 # Clash插件
 #git clone https://github.com/frainzy1477/luci-app-clash
 #openclash插件
-git clone https://github.com/vernesong/OpenClash.git
+#git clone https://github.com/vernesong/OpenClash.git
 #ssrplus
-git clone https://github.com/fw876/helloworld.git
+#git clone https://github.com/fw876/helloworld.git
 # SmartDNS插件
 #git clone https://github.com/pymumu/openwrt-smartdns
 #git clone -b lede https://github.com/pymumu/luci-app-smartdns
@@ -39,37 +39,30 @@ git clone https://github.com/lisaac/luci-app-dockerman
 #git clone https://github.com/lisaac/luci-app-diskman.git
 
 #kenzok8 
-#git clone https://github.com/kenzok8/openwrt-packages.git
-git clone https://github.com/kenzok8/small.git
+git clone -b 19.07 https://github.com/kenzok8/small-package.git
+#git clone https://github.com/kenzok8/small.git
 
-#pushd  openwrt-packages
-#rm -rf luci-theme-argo*
-#rm -rf luci-app-argon-config
+#pushd  small-package
+#rm -rf xray-core
 #rm -rf luci-theme-edge
 #popd
 
 #rclone 
 git clone https://github.com/ElonH/Rclone-OpenWrt.git
 # argon主题
-git clone https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
-git clone https://github.com/jerrykuku/luci-app-argon-config.git
+#git clone https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
+#git clone https://github.com/jerrykuku/luci-app-argon-config.git
 #vssr
 #git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb 依赖
 #git clone https://github.com/jerrykuku/luci-app-vssr.git
 #zerotier
 git clone https://github.com/rufengsuixing/luci-app-zerotier.git
 #OpenAppFilter
-git clone https://github.com/destan19/OpenAppFilter.git
+#git clone https://github.com/destan19/OpenAppFilter.git
 #unblockneteasemusic
 #git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git
 
-#rm -rf feeds/luciim/luci-app-passwall
-#rm -rf feeds/luciim/luci-app-vssr
-#rm -rf feeds/luciim/luci-app-ssr-plus
-#rm -rf feeds/luciim/luci-app-diskman
-#rm -rf feeds/luciim/luci-app-oaf
-#rm -rf feeds/luciim/open-app-appfilter
-#rm -rf feeds/luciim/luci-app-rclone
+
 popd
 
 pushd package/tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller
