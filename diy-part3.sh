@@ -3,6 +3,11 @@ pushd package
 git clone https://github.com/esirplayground/luci-app-poweroff
 #自动关机插件
 git clone https://github.com/sirpdboy/luci-app-autopoweroff
+#ssr-plus
+git clone https://github.com/fw876/helloworld.git
+pushd feeds/luci
+rm -rf luci-app-ssr-plus
+popd
 #腾讯ddns
 git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-ddns
 pushd tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller
