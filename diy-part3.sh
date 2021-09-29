@@ -4,7 +4,7 @@ git clone https://github.com/esirplayground/luci-app-poweroff
 #自动关机插件
 git clone https://github.com/sirpdboy/luci-app-autopoweroff
 #Docker lib api
-#git clone https://github.com/lisaac/luci-lib-docker
+git clone https://github.com/lisaac/luci-lib-docker
 #kenzok8
 git clone https://github.com/kenzok78/small-package.git
 #腾讯ddns
