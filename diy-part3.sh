@@ -12,6 +12,18 @@ git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-d
 pushd tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller
 sed -i 's/"admin", "tencentcloud"/"admin", "services", "tencentcloud"/g' tencentddns.lua
 popd
+
+pushd feeds/packages
+rm -rf xray-core
+popd
+
+pushd small-package
+rm -rf amule
+rm -rf luci-app-amule
+rm -rf luci-app-baidupcs-web
+rm -rf luci-app-dnscrypt-proxy2
+popd
+
 popd
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.3.1/g' package/base-files/files/bin/config_generate
