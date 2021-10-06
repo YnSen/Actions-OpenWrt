@@ -12,7 +12,7 @@ git clone https://github.com/zzsj0928/luci-app-pushbot
 # 京东签到插件
 #git clone https://github.com/jerrykuku/luci-app-jd-dailybonus 
 # adguardhome插件
-#git clone https://github.com/rufengsuixing/luci-app-adguardhome
+git clone https://github.com/rufengsuixing/luci-app-adguardhome
 # Clash插件
 #git clone https://github.com/frainzy1477/luci-app-clash
 #openclash插件
