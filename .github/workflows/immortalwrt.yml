@@ -90,12 +90,12 @@ jobs:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         
-    - name: Download package
-      id: package
-      run: |
-        cd openwrt
-        make defconfig
-        make download -j$(($(nproc)+1)) &
+#    - name: Download package
+#      id: package
+#      run: |
+#        cd openwrt
+#        make defconfig
+#        make download -j$(($(nproc)+1)) &
         
     - name: Cache
       uses: klever1988/cachewrtbuild@main
