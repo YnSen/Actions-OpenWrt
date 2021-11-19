@@ -97,11 +97,6 @@ jobs:
 #        make defconfig
 #        make download -j$(($(nproc)+1)) &
         
-    - name: Cache
-      uses: klever1988/cachewrtbuild@main
-      with:
-        ccache: 'true'
-        prefix: ${{ github.workspace }}/openwrt
 
     - name: Compile the firmware
       id: compile
