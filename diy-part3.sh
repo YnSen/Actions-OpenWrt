@@ -4,7 +4,7 @@
 #!/bin/bash
 
 # 默认设置
-svn co https://github.com/sbwml/default-settings/trunk package/new/default-settings
+#svn co https://github.com/sbwml/default-settings/trunk package/new/default-settings
 
 # AdGuard - Luci
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
@@ -141,12 +141,12 @@ sed -i 's,frp 服务器,FRP 服务器,g' feeds/luci/applications/luci-app-frps/p
 sed -i 's,frp 客户端,FRP 客户端,g' feeds/luci/applications/luci-app-frpc/po/zh_Hans/frpc.po
 
 # mjpg-streamer init
-sed -i "s,option port '8080',option port '1024',g" feeds/packages/multimedia/mjpg-streamer/files/mjpg-streamer.config
-sed -i "s,option fps '5',option fps '25',g" feeds/packages/multimedia/mjpg-streamer/files/mjpg-streamer.config
-sed -i "s,option www '/www/webcam',option www '/opt/webcam',g" feeds/packages/multimedia/mjpg-streamer/files/mjpg-streamer.config
+#sed -i "s,option port '8080',option port '1024',g" feeds/packages/multimedia/mjpg-streamer/files/mjpg-streamer.config
+#sed -i "s,option fps '5',option fps '25',g" feeds/packages/multimedia/mjpg-streamer/files/mjpg-streamer.config
+#sed -i "s,option www '/www/webcam',option www '/opt/webcam',g" feeds/packages/multimedia/mjpg-streamer/files/mjpg-streamer.config
 # luci-app-mjpg-streamer
-rm -rf feeds/luci/applications/luci-app-mjpg-streamer
-git clone https://github.com/sbwml/luci-app-mjpg-streamer feeds/luci/applications/luci-app-mjpg-streamer
+#rm -rf feeds/luci/applications/luci-app-mjpg-streamer
+#git clone https://github.com/sbwml/luci-app-mjpg-streamer feeds/luci/applications/luci-app-mjpg-streamer
 
 
 make defconfig
