@@ -19,8 +19,11 @@ sed -i '/init/d' net/adguardhome/Makefile
 popd
 
 # 文件浏览器
-#git clone https://git.cooluc.com/sbwml/luci-app-filebrowser package/new/luci-app-filebrowser
-#git clone https://git.cooluc.com/sbwml/filebrowser package/new/filebrowser
+git clone https://git.cooluc.com/sbwml/luci-app-filebrowser package/new/luci-app-filebrowser
+git clone https://git.cooluc.com/sbwml/filebrowser package/new/filebrowser
+
+#openclash插件
+git clone https://github.com/vernesong/OpenClash.git package/OpenClash
 
 # argon主题
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
