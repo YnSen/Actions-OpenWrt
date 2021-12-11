@@ -6,9 +6,30 @@ git checkout v21.02.1
 
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
-svn co https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
-svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
+# Drop uhttpd
+pushd feeds/luci
+curl -s https://api.cooluc.com/openwrt/patch/0002-feeds-luci-Drop-uhttpd-depends.patch > 0002-feeds-luci-Drop-uhttpd-depends.patch
+git apply 0002-feeds-luci-Drop-uhttpd-depends.patch && rm 0002-feeds-luci-Drop-uhttpd-depends.patch
+popd
 
+# Update nginx-1.20.2
+pushd feeds/packages
+curl -s https://api.cooluc.com/openwrt/patch/0004-nginx-update-to-version-1.20.2.patch > 0004-nginx-update-to-version-1.20.2.patch
+git apply 0004-nginx-update-to-version-1.20.2.patch && rm 0004-nginx-update-to-version-1.20.2.patch
+popd
+
+# UPX
+if ! command -v upx >/dev/null 2>&1; then
+    if [ ! "$(uname)" == "Darwin" ];then
+        sed -i '/patchelf pkgconf/i\tools-y += ucl upx' ./tools/Makefile
+        sed -i '\/autoconf\/compile :=/i\$(curdir)/upx/compile := $(curdir)/ucl/compile' ./tools/Makefile
+        svn co https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
+        svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
+    fi
+else
+    mkdir -p staging_dir/host/bin/
+    ln -sf `which upx` staging_dir/host/bin/upx
+fi
 
 # Rockchip - immortalwrt uboot & target upstream
 rm -rf ./target/linux/rockchip
