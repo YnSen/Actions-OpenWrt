@@ -1,7 +1,7 @@
 # get source
 git clone https://github.com/openwrt/openwrt -b openwrt-21.02
-cp ~/work/Actions-OpenWrt/Actions-OpenWrt/off.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/ && mv off.config .config
-cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/off.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/ 
+cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt && mv off.config .config
 
 git checkout v21.02.1
 
