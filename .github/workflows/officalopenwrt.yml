@@ -71,34 +71,14 @@ jobs:
       run: |
         sudo chown -R runner:runner ~/
         pwd
-        
-    - name: Clone source code
-      working-directory: /workdir
-      run: |
-        git clone $REPO_URL -b $REPO_BRANCH openwrt
-        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
-    - name: Load custom feeds
+    - name: Load custom sh
       run: |
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
+        cd ~/work/Actions-OpenWrt/Actions-OpenWrt
         chmod +x $DIY_P1_SH
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P1_SH 
-    
-    - name: Update feeds
-      run: cd openwrt && ./scripts/feeds update -a
+        ./DIY_P1_SH
 
-    - name: Install feeds
-      run: cd openwrt && ./scripts/feeds install -a
-    
-    - name: Load custom configuration
-      run: |
-        [ -e files ] && mv files openwrt/files
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x $DIY_P2_SH
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P2_SH
-    ##    pushd ~/work/Actions-OpenWrt/Actions-OpenWrt && cp tencentddns.lua ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package/tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller && popd
+##    pushd ~/work/Actions-OpenWrt/Actions-OpenWrt && cp tencentddns.lua ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package/tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller && popd
         
 #    - name: Download package
 #      id: package
