@@ -151,5 +151,13 @@ sed -i 's,frp 客户端,FRP 客户端,g' feeds/luci/applications/luci-app-frpc/p
 #rm -rf feeds/luci/applications/luci-app-mjpg-streamer
 #git clone https://github.com/sbwml/luci-app-mjpg-streamer feeds/luci/applications/luci-app-mjpg-streamer
 
+curl -O https://api.cooluc.com/openwrt/scripts/02-remove_upx.sh
+curl -O https://api.cooluc.com/openwrt/scripts/03-convert_translation.sh
+curl -O https://api.cooluc.com/openwrt/scripts/04-create_acl_for_luci.sh
+curl -O https://api.cooluc.com/openwrt/scripts/99_clean_build_cache.sh
+chmod 0755 *sh
+./02-remove_upx.sh
+./04-create_acl_for_luci.sh -a
+./03-convert_translation.sh
 
 make defconfig
