@@ -182,5 +182,5 @@ chmod 0755 *sh
 ./04-create_acl_for_luci.sh -a
 ./03-convert_translation.sh
 
-mv off.config .config
+curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/off.config > .config
 make defconfig
