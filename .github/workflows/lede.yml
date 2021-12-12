@@ -24,7 +24,6 @@ env:
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: lede.config
-  DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
@@ -60,13 +59,6 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-
-#    - name: Load custom feeds
-#      run: |
-#        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
-#        chmod +x $DIY_P1_SH
-#        cd openwrt
-#        $GITHUB_WORKSPACE/$DIY_P1_SH 
     
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
