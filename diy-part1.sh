@@ -18,6 +18,8 @@ curl -s https://api.cooluc.com/openwrt/patch/0004-nginx-update-to-version-1.20.2
 git apply 0004-nginx-update-to-version-1.20.2.patch && rm 0004-nginx-update-to-version-1.20.2.patch
 popd
 
+curl -s https://raw.githubusercontent.com/YnSen/OpenWrt_x86-r2s-r4s/master/devices/common/diy/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/19_cpu.js feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/19_cpu.js
+
 # UPX
 if ! command -v upx >/dev/null 2>&1; then
     if [ ! "$(uname)" == "Darwin" ];then
