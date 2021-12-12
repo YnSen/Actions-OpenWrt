@@ -198,5 +198,5 @@ chmod 0755 *sh
 ./04-create_acl_for_luci.sh -a
 ./03-convert_translation.sh
 
-#curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/uhttpdr3p.config > .config
-#make defconfig
+curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/uhttpr3p.config > .config
+make defconfig
