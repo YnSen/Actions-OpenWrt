@@ -70,9 +70,9 @@ git clone https://git.cooluc.com/sbwml/filebrowser package/new/filebrowser
 git clone https://github.com/vernesong/OpenClash.git package/OpenClash
 
 #强制关机插件
-git clone https://github.com/esirplayground/luci-app-poweroff
+git clone https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
 #自动关机插件
-git clone https://github.com/sirpdboy/luci-app-autopoweroff
+git clone https://github.com/sirpdboy/luci-app-autopoweroff package/luci-app-autopoweroff
 
 # argon主题
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
