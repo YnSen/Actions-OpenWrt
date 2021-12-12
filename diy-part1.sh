@@ -18,7 +18,7 @@ curl -s https://api.cooluc.com/openwrt/patch/0004-nginx-update-to-version-1.20.2
 git apply 0004-nginx-update-to-version-1.20.2.patch && rm 0004-nginx-update-to-version-1.20.2.patch
 popd
 
-curl -s https://raw.githubusercontent.com/YnSen/OpenWrt_x86-r2s-r4s/master/devices/common/diy/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/19_cpu.js feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/19_cpu.js
+cp 19_cpu.js ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/
 
 # UPX
 if ! command -v upx >/dev/null 2>&1; then
@@ -69,18 +69,23 @@ git clone https://git.cooluc.com/sbwml/filebrowser package/new/filebrowser
 #openclash插件
 git clone https://github.com/vernesong/OpenClash.git package/OpenClash
 
+#强制关机插件
+git clone https://github.com/esirplayground/luci-app-poweroff
+#自动关机插件
+git clone https://github.com/sirpdboy/luci-app-autopoweroff
+
 # argon主题
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-theme-argon-config
 
 # 易有云
-svn co https://github.com/linkease/nas-packages/trunk/network/services/linkease package/network/services/linkease
-svn co https://github.com/linkease/nas-packages-luci/trunk/luci/luci-app-linkease package/new/luci-app-linkease
-pushd package/new/luci-app-linkease
-sed -i 's/services/nas/g' luasrc/controller/linkease.lua
-sed -i 's/services/nas/g' luasrc/view/linkease_status.htm
-rm -rf luasrc/view/admin_status
-popd
+#svn co https://github.com/linkease/nas-packages/trunk/network/services/linkease package/network/services/linkease
+#svn co https://github.com/linkease/nas-packages-luci/trunk/luci/luci-app-linkease package/new/luci-app-linkease
+#pushd package/new/luci-app-linkease
+#sed -i 's/services/nas/g' luasrc/controller/linkease.lua
+#sed -i 's/services/nas/g' luasrc/view/linkease_status.htm
+#rm -rf luasrc/view/admin_status
+#popd
 
 # alist
 git clone https://git.cooluc.com/sbwml/alist-openwrt package/alist-openwrt
