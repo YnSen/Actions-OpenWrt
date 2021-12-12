@@ -209,5 +209,5 @@ chmod 0755 *sh
 ./04-create_acl_for_luci.sh -a
 ./03-convert_translation.sh
 
-curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/nginx.config > .config
+curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/uhttpd.config > .config
 make defconfig
