@@ -1,3 +1,4 @@
+##lede
 pushd package
 #passwall
 git clone https://github.com/xiaorouji/openwrt-passwall.git
