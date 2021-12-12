@@ -1,10 +1,43 @@
-#svn export --force https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
-#svn export --force https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
+# get source
+git clone https://github.com/openwrt/openwrt -b openwrt-21.02
+cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 
-#!/bin/bash
+git checkout v21.02.1
 
-# 默认设置
-#svn co https://github.com/sbwml/default-settings/trunk package/new/default-settings
+./scripts/feeds update -a && ./scripts/feeds install -a
+
+
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/19_cpu.js ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/
+
+# UPX
+if ! command -v upx >/dev/null 2>&1; then
+    if [ ! "$(uname)" == "Darwin" ];then
+        sed -i '/patchelf pkgconf/i\tools-y += ucl upx' ./tools/Makefile
+        sed -i '\/autoconf\/compile :=/i\$(curdir)/upx/compile := $(curdir)/ucl/compile' ./tools/Makefile
+        svn co https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
+        svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
+    fi
+else
+    mkdir -p staging_dir/host/bin/
+    ln -sf `which upx` staging_dir/host/bin/upx
+fi
+
+# Rockchip - immortalwrt uboot & target upstream
+rm -rf ./target/linux/rockchip
+rm -rf ./package/boot/uboot-rockchip
+svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/target/linux/rockchip target/linux/rockchip
+svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/boot/uboot-rockchip package/boot/uboot-rockchip
+svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/boot/arm-trusted-firmware-rockchip-vendor package/boot/arm-trusted-firmware-rockchip-vendor
+rm -f package/kernel/linux/modules/video.mk
+curl -sL https://github.com/immortalwrt/immortalwrt/raw/openwrt-21.02/package/kernel/linux/modules/video.mk > package/kernel/linux/modules/video.mk
+
+#ramips - immortalwrt uboot & target upstream
+rm -rf ./target/linux/ramips
+rm -rf ./package/boot/uboot-ramips
+svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/target/linux/ramips target/linux/ramips
+svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/boot/uboot-ramips package/boot/uboot-ramips
+
+curl -fL -o sdk.tar.xz https://downloads.openwrt.org/releases/21.02.1/targets/x86/64/openwrt-sdk-21.02.1-x86-64_gcc-8.4.0_musl.Linux-x86_64.tar.xz || wget -cO sdk.tar.xz https://downloads.openwrt.org/releases/21.02.1/targets/x86/64/openwrt-sdk-21.02.1-x86-64_gcc-8.4.0_musl.Linux-x86_64.tar.xz
 
 # AdGuard - Luci
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
@@ -25,18 +58,23 @@ git clone https://git.cooluc.com/sbwml/filebrowser package/new/filebrowser
 #openclash插件
 git clone https://github.com/vernesong/OpenClash.git package/OpenClash
 
+#强制关机插件
+git clone https://github.com/esirplayground/luci-app-poweroff
+#自动关机插件
+git clone https://github.com/sirpdboy/luci-app-autopoweroff
+
 # argon主题
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-theme-argon-config
 
 # 易有云
-svn co https://github.com/linkease/nas-packages/trunk/network/services/linkease package/network/services/linkease
-svn co https://github.com/linkease/nas-packages-luci/trunk/luci/luci-app-linkease package/new/luci-app-linkease
-pushd package/new/luci-app-linkease
-sed -i 's/services/nas/g' luasrc/controller/linkease.lua
-sed -i 's/services/nas/g' luasrc/view/linkease_status.htm
-rm -rf luasrc/view/admin_status
-popd
+#svn co https://github.com/linkease/nas-packages/trunk/network/services/linkease package/network/services/linkease
+#svn co https://github.com/linkease/nas-packages-luci/trunk/luci/luci-app-linkease package/new/luci-app-linkease
+#pushd package/new/luci-app-linkease
+#sed -i 's/services/nas/g' luasrc/controller/linkease.lua
+#sed -i 's/services/nas/g' luasrc/view/linkease_status.htm
+#rm -rf luasrc/view/admin_status
+#popd
 
 # alist
 git clone https://git.cooluc.com/sbwml/alist-openwrt package/alist-openwrt
@@ -151,13 +189,14 @@ sed -i 's,frp 客户端,FRP 客户端,g' feeds/luci/applications/luci-app-frpc/p
 #rm -rf feeds/luci/applications/luci-app-mjpg-streamer
 #git clone https://github.com/sbwml/luci-app-mjpg-streamer feeds/luci/applications/luci-app-mjpg-streamer
 
-curl -O https://api.cooluc.com/openwrt/scripts/02-remove_upx.sh
-curl -O https://api.cooluc.com/openwrt/scripts/03-convert_translation.sh
-curl -O https://api.cooluc.com/openwrt/scripts/04-create_acl_for_luci.sh
-curl -O https://api.cooluc.com/openwrt/scripts/99_clean_build_cache.sh
+curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/02-remove_upx.sh
+curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/03-convert_translation.sh
+curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/04-create_acl_for_luci.sh
+curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/99_clean_build_cache.sh
 chmod 0755 *sh
 ./02-remove_upx.sh
 ./04-create_acl_for_luci.sh -a
 ./03-convert_translation.sh
 
+curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/uhttpd.config > .config
 make defconfig
