@@ -73,8 +73,8 @@ jobs:
     - name: Load custom sh
       run: |
         cd ~/work/Actions-OpenWrt/Actions-OpenWrt
-        chmod +x diy-part1.sh
-        ./diy-part1.sh
+        chmod +x diy-part5.sh
+        ./diy-part5.sh
 
 ##    pushd ~/work/Actions-OpenWrt/Actions-OpenWrt && cp tencentddns.lua ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package/tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller && popd
         
