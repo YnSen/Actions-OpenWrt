@@ -8,13 +8,13 @@ git checkout v21.02.1
 
 # Drop uhttpd
 pushd feeds/luci
-curl -s https://api.cooluc.com/openwrt/patch/0002-feeds-luci-Drop-uhttpd-depends.patch > 0002-feeds-luci-Drop-uhttpd-depends.patch
+curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/patch/0002-feeds-luci-Drop-uhttpd-depends.patch > 0002-feeds-luci-Drop-uhttpd-depends.patch
 git apply 0002-feeds-luci-Drop-uhttpd-depends.patch && rm 0002-feeds-luci-Drop-uhttpd-depends.patch
 popd
 
 # Update nginx-1.20.2
 pushd feeds/packages
-curl -s https://api.cooluc.com/openwrt/patch/0004-nginx-update-to-version-1.20.2.patch > 0004-nginx-update-to-version-1.20.2.patch
+curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/patch/0004-nginx-update-to-version-1.20.2.patch > 0004-nginx-update-to-version-1.20.2.patch
 git apply 0004-nginx-update-to-version-1.20.2.patch && rm 0004-nginx-update-to-version-1.20.2.patch
 popd
 
@@ -200,14 +200,14 @@ sed -i 's,frp 客户端,FRP 客户端,g' feeds/luci/applications/luci-app-frpc/p
 #rm -rf feeds/luci/applications/luci-app-mjpg-streamer
 #git clone https://github.com/sbwml/luci-app-mjpg-streamer feeds/luci/applications/luci-app-mjpg-streamer
 
-curl -O https://api.cooluc.com/openwrt/scripts/02-remove_upx.sh
-curl -O https://api.cooluc.com/openwrt/scripts/03-convert_translation.sh
-curl -O https://api.cooluc.com/openwrt/scripts/04-create_acl_for_luci.sh
-curl -O https://api.cooluc.com/openwrt/scripts/99_clean_build_cache.sh
+curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/02-remove_upx.sh
+curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/03-convert_translation.sh
+curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/04-create_acl_for_luci.sh
+curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/99_clean_build_cache.sh
 chmod 0755 *sh
 ./02-remove_upx.sh
 ./04-create_acl_for_luci.sh -a
 ./03-convert_translation.sh
 
-curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/off.config > .config
+curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/nginx.config > .config
 make defconfig
