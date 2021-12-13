@@ -38,6 +38,9 @@ svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package
 
 curl -fL -o sdk.tar.xz https://downloads.openwrt.org/releases/21.02.1/targets/ramips/mt7621/openwrt-sdk-21.02.1-ramips-mt7621_gcc-8.4.0_musl.Linux-x86_64.tar.xz || wget -cO sdk.tar.xz https://downloads.openwrt.org/releases/21.02.1/targets/ramips/mt7621/openwrt-sdk-21.02.1-ramips-mt7621_gcc-8.4.0_musl.Linux-x86_64.tar.xz
 
+# Max connection limite
+sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
+
 # AdGuard - Luci
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
 
