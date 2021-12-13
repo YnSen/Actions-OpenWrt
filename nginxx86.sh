@@ -185,6 +185,25 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go package/pas
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-plus package/passwall-deps/trojan-plus
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/passwall-deps/chinadns-ng
 
+#UnblockMusic163
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusic package/lean/UnblockNeteaseMusic
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusic-Go package/lean/UnblockNeteaseMusic-Go
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-unblockmusic package/lean/luci-app-unblockmusic
+
+#OpenVpnServer
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-openvpn-server package/lean/luci-app-openvpn-server
+
+#rclone
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/rclone package/lean/rclone
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-rclone package/lean/luci-app-rclone
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/rclone-ng package/lean/rclone-ng
+
+#cifsmount
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-cifs-mount package/lean/luci-app-cifs-mount
+
+#nfs
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-nfs package/lean/luci-app-nfs
+
 # 自动挂载
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/automount package/lean/automount
 
