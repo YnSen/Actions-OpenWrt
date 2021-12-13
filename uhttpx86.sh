@@ -188,6 +188,9 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-nfs pack
 #Zerotier
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-zerotier package/lean/luci-app-zerotier
 
+#luci socat
+svn co https://github.com/immortalwrt/luci/branch/openwrt-21.02/applications/luci-app-socat package/luci-app-socat
+
 # 自动挂载
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/automount package/lean/automount
 
