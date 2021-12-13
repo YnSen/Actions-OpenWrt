@@ -191,6 +191,9 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-cifs-mou
 #nfs
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-nfs package/lean/luci-app-nfs
 
+#Zerotier
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-zerotier package/lean/luci-app-zerotier
+
 # 自动挂载
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/automount package/lean/automount
 
