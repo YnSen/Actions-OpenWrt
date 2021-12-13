@@ -36,8 +36,8 @@ curl -fL -o sdk.tar.xz https://downloads.openwrt.org/releases/21.02.1/targets/x8
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
 
 # AdGuardHome Beta - Fix build with go17.x
-pushd feeds/packages
-adguardhome_version=`curl -s "https://api.github.com/repos/AdguardTeam/AdGuardHome/releases" | grep "tag_name" | head -n 1 | awk -F ":" '{print $2}' | sed 's/\"//g;s/,//g;s/ //g' | awk -F "v" '{print $2}'`
+#pushd feeds/packages
+#adguardhome_version=`curl -s "https://api.github.com/repos/AdguardTeam/AdGuardHome/releases" | grep "tag_name" | head -n 1 | awk -F ":" '{print $2}' | sed 's/\"//g;s/,//g;s/ //g' | awk -F "v" '{print $2}'`
 #sed -ri "s/(PKG_VERSION:=)[^\"]*/\1$adguardhome_version/" net/adguardhome/Makefile
 #sed -i 's/release/beta/g' net/adguardhome/Makefile
 #sed -i 's/.*PKG_MIRROR_HASH.*/#&/' net/adguardhome/Makefile
