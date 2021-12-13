@@ -217,4 +217,4 @@ chmod 0755 *sh
 ./03-convert_translation.sh
 
 curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/uhttpd.config > .config
-make defconfig
+#make defconfig
