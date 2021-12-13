@@ -42,13 +42,13 @@ curl -fL -o sdk.tar.xz https://downloads.openwrt.org/releases/21.02.1/targets/ra
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
 
 # AdGuardHome Beta - Fix build with go17.x
-pushd feeds/packages
-adguardhome_version=`curl -s "https://api.github.com/repos/AdguardTeam/AdGuardHome/releases" | grep "tag_name" | head -n 1 | awk -F ":" '{print $2}' | sed 's/\"//g;s/,//g;s/ //g' | awk -F "v" '{print $2}'`
-sed -ri "s/(PKG_VERSION:=)[^\"]*/\1$adguardhome_version/" net/adguardhome/Makefile
-sed -i 's/release/beta/g' net/adguardhome/Makefile
-sed -i 's/.*PKG_MIRROR_HASH.*/#&/' net/adguardhome/Makefile
-sed -i '/init/d' net/adguardhome/Makefile
-popd
+#pushd feeds/packages
+#adguardhome_version=`curl -s "https://api.github.com/repos/AdguardTeam/AdGuardHome/releases" | grep "tag_name" | head -n 1 | awk -F ":" '{print $2}' | sed 's/\"//g;s/,//g;s/ //g' | awk -F "v" '{print $2}'`
+#sed -ri "s/(PKG_VERSION:=)[^\"]*/\1$adguardhome_version/" net/adguardhome/Makefile
+#sed -i 's/release/beta/g' net/adguardhome/Makefile
+#sed -i 's/.*PKG_MIRROR_HASH.*/#&/' net/adguardhome/Makefile
+#sed -i '/init/d' net/adguardhome/Makefile
+#popd
 
 # 文件浏览器
 git clone https://git.cooluc.com/sbwml/luci-app-filebrowser package/new/luci-app-filebrowser
@@ -171,6 +171,25 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/hysteria package/pass
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go package/passwall-deps/trojan-go
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-plus package/passwall-deps/trojan-plus
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/passwall-deps/chinadns-ng
+
+#UnblockMusic163
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusic package/lean/UnblockNeteaseMusic
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusic-Go package/lean/UnblockNeteaseMusic-Go
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-unblockmusic package/lean/luci-app-unblockmusic
+
+#OpenVpnServer
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-openvpn-server package/lean/luci-app-openvpn-server
+
+#rclone
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/rclone package/lean/rclone
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-rclone package/lean/luci-app-rclone
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/rclone-ng package/lean/rclone-ng
+
+#cifsmount
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-cifs-mount package/lean/luci-app-cifs-mount
+
+#nfs
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-nfs package/lean/luci-app-nfs
 
 # 自动挂载
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/automount package/lean/automount
