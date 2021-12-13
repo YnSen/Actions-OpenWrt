@@ -216,5 +216,6 @@ chmod 0755 *sh
 ./04-create_acl_for_luci.sh -a
 ./03-convert_translation.sh
 
+cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/uhttpd.config > .config
-#make defconfig
+make defconfig
