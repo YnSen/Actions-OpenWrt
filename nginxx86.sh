@@ -54,6 +54,9 @@ curl -fL -o sdk.tar.xz https://downloads.openwrt.org/releases/21.02.1/targets/x8
 # Max connection limite
 sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 
+# 默认设置
+svn co https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings package/default-settings
+
 # AdGuard - Luci
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
 
