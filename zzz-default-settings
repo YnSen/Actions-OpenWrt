@@ -139,17 +139,16 @@ uci set upnpd.config.external_iface='wan'
 uci commit upnpd
 
 #dnsmasq
-uci set dhcp.lan.ra='hybrid'
-uci set dhcp.lan.ndp='hybrid'
-uci set dhcp.lan.dhcpv6='hybrid'
-uci set dhcp.lan.ra_management='1'
-uci del dhcp.@dnsmasq[0].rebind_protection='1'
+uci set dhcp.lan.ra='disabled'
+uci set dhcp.lan.ndp='disabled'
+uci set dhcp.lan.dhcpv6='disabled'
+uci set dhcp.lan.ra_management='0'
 uci commit dhcp
 sed -i '/log-facility/d' /etc/dnsmasq.conf
 echo "log-facility=/dev/null" >> /etc/dnsmasq.conf
 
 #packet_steering
-uci set network.globals.packet_steering='1'
+uci set network.globals.packet_steering='0'
 uci commit network
 /etc/init.d/network restart
 
