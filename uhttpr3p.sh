@@ -175,6 +175,9 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go package/pas
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-plus package/passwall-deps/trojan-plus
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/passwall-deps/chinadns-ng
 
+#aliyundrive-webdav
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/aliyundrive-webdav package/aliyundrive-webdav
+
 #UnblockMusic163
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusic package/lean/UnblockNeteaseMusic
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusic-Go package/lean/UnblockNeteaseMusic-Go
@@ -196,6 +199,9 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-nfs pack
 
 #luci socat
 git clone https://github.com/nickilchen/luci-app-socat.git package/luci-app-socat
+
+#TurboAcc
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-turboacc package/luci-app-turboacc
 
 #Zerotier
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-zerotier package/lean/luci-app-zerotier
