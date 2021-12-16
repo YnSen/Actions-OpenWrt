@@ -7,7 +7,10 @@ git checkout v21.02.1
 
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
-cp ~/work/Actions-OpenWrt/Actions-OpenWrt/19_cpu.js ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/
+# 默认设置
+svn co https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings package/default-settings
+
+#cp ~/work/Actions-OpenWrt/Actions-OpenWrt/19_cpu.js ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/
 
 # UPX
 if ! command -v upx >/dev/null 2>&1; then
