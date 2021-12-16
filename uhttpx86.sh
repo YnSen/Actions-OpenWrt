@@ -33,6 +33,9 @@ git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app
 git clone https://git.cooluc.com/sbwml/luci-app-filebrowser package/new/luci-app-filebrowser
 git clone https://git.cooluc.com/sbwml/filebrowser package/new/filebrowser
 
+#管控
+git clone https://github.com/Lienol/openwrt-package.git package/openwrt-package
+
 #openclash插件
 git clone https://github.com/vernesong/OpenClash.git package/OpenClash
 
