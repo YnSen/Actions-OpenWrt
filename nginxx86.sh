@@ -7,19 +7,19 @@ git checkout v21.02.1
 
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
-curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/patch/652-netfilter-flow_offload-add-check-ifindex.patch > target/linux/generic/hack-5.4/652-netfilter-flow_offload-add-check-ifindex.patch
+#curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/patch/652-netfilter-flow_offload-add-check-ifindex.patch > target/linux/generic/hack-5.4/652-netfilter-flow_offload-add-check-ifindex.patch
 
 # Drop uhttpd
-pushd feeds/luci
-curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/patch/0002-feeds-luci-Drop-uhttpd-depends.patch > 0002-feeds-luci-Drop-uhttpd-depends.patch
-git apply 0002-feeds-luci-Drop-uhttpd-depends.patch && rm 0002-feeds-luci-Drop-uhttpd-depends.patch
-popd
+#pushd feeds/luci
+#curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/patch/0002-feeds-luci-Drop-uhttpd-depends.patch > 0002-feeds-luci-Drop-uhttpd-depends.patch
+#git apply 0002-feeds-luci-Drop-uhttpd-depends.patch && rm 0002-feeds-luci-Drop-uhttpd-depends.patch
+#popd
 
 # Update nginx-1.20.2
-pushd feeds/packages
-curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/patch/0004-nginx-update-to-version-1.20.2.patch > 0004-nginx-update-to-version-1.20.2.patch
-git apply 0004-nginx-update-to-version-1.20.2.patch && rm 0004-nginx-update-to-version-1.20.2.patch
-popd
+#pushd feeds/packages
+#curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/patch/0004-nginx-update-to-version-1.20.2.patch > 0004-nginx-update-to-version-1.20.2.patch
+#git apply 0004-nginx-update-to-version-1.20.2.patch && rm 0004-nginx-update-to-version-1.20.2.patch
+#popd
 
 #cp ~/work/Actions-OpenWrt/Actions-OpenWrt/19_cpu.js ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/
 
@@ -28,8 +28,8 @@ popd
 #    if [ ! "$(uname)" == "Darwin" ];then
 #        sed -i '/patchelf pkgconf/i\tools-y += ucl upx' ./tools/Makefile
 #        sed -i '\/autoconf\/compile :=/i\$(curdir)/upx/compile := $(curdir)/ucl/compile' ./tools/Makefile
-#        svn co https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
-#        svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
+svn co https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
+svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
 #    fi
 #else
 #    mkdir -p staging_dir/host/bin/
@@ -45,13 +45,7 @@ popd
 #rm -f package/kernel/linux/modules/video.mk
 #curl -sL https://github.com/immortalwrt/immortalwrt/raw/openwrt-21.02/package/kernel/linux/modules/video.mk > package/kernel/linux/modules/video.mk
 
-#ramips - immortalwrt uboot & target upstream
-#rm -rf ./target/linux/ramips
-#rm -rf ./package/boot/uboot-ramips
-#svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/target/linux/ramips target/linux/ramips
-#svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/boot/uboot-ramips package/boot/uboot-ramips
-
-curl -fL -o sdk.tar.xz https://downloads.openwrt.org/releases/21.02.1/targets/x86/64/openwrt-sdk-21.02.1-x86-64_gcc-8.4.0_musl.Linux-x86_64.tar.xz || wget -cO sdk.tar.xz https://downloads.openwrt.org/releases/21.02.1/targets/x86/64/openwrt-sdk-21.02.1-x86-64_gcc-8.4.0_musl.Linux-x86_64.tar.xz
+#curl -fL -o sdk.tar.xz https://downloads.openwrt.org/releases/21.02.1/targets/x86/64/openwrt-sdk-21.02.1-x86-64_gcc-8.4.0_musl.Linux-x86_64.tar.xz || wget -cO sdk.tar.xz https://downloads.openwrt.org/releases/21.02.1/targets/x86/64/openwrt-sdk-21.02.1-x86-64_gcc-8.4.0_musl.Linux-x86_64.tar.xz
 
 # Max connection limite
 sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
