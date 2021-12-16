@@ -191,7 +191,11 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-nfs pack
 git clone https://github.com/nickilchen/luci-app-socat.git package/luci-app-socat
 
 #TurboAcc
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-turboacc package/luci-app-turboacc
+
+svn co https://github.com/immortalwrt/lean-lede/trunk/package/lean/dnsforwarder package/lean/dnsforwarder
+svn co https://github.com/immortalwrt/lean-lede/tree/lede/package/lean/dnsproxy package/lean/dnsproxy
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/shortcut-fe package/lean/shortcut-fe
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-turboacc package/lean/luci-app-turboacc
 
 #Zerotier
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-zerotier package/lean/luci-app-zerotier
