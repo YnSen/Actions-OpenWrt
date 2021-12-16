@@ -37,12 +37,47 @@ svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
 #fi
 
 # Rockchip - immortalwrt uboot & target upstream
-#rm -rf ./target/linux/rockchip
+#rm -rf ./target/linux/rockchip##offical nginx x86
+
+# get source
+
+git clone https://github.com/openwrt/openwrt -b openwrt-21.02
+
+cd ~/work/Actions-/Actions-OpenWrt/openwrt
+
+git checkout v21.02.1
+
+./scripts/feeds update -a && ./scripts/feeds install -a
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/patch/652-netfilter-flow_offload-add-check-ifindex.patch ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/target/linux/generic/hack-5.4/652-netfilter-flow_offload-add-check-ifindex.patch
+
+pushd target/linux/generic/hack-5.4
+
+chmod +x 652-netfilter-flow_offload-add-check-ifindex.patch
+
+git appply 652-netfilter-flow_offload-add-check-ifindex.patch
+
+popd
+
+# Drop uhttpd
+
+#pushd feeds/luci
+
+#curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/patch/0002-feeds-luci-Drop-uhttpd-depends.patch > 0002-feeds-luci-Drop-uhttpd-depends.patch
+
+#git apply 0002-feeds-luci-Drop-uhttpd-depends.patch && rm 0002-feeds-luci-Drop-uhttpd-depends.patch
+
+#popd
+
+# Update nginx-1.20.2
+
+#pushd feeds/package
+
+#curl -s https://raw.githubuserconten
 #rm -rf ./package/boot/uboot-rockchip
 #svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/target/linux/rockchip target/linux/rockchip
 #svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/boot/uboot-rockchip package/boot/uboot-rockchip
 #svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/boot/arm-trusted-firmware-rockchip-vendor package/boot/arm-trusted-firmware-rockchip-vendor
-#rm -f package/kernel/linux/modules/video.mk##offical nginx x86
+#rm -f package/kernel/linux/modules/video.mk##offical nginx x8
 
 # get source
 
@@ -51,7 +86,6 @@ git clone https://github.com/openwrt/openwrt -b openwrt-21.02
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 
 git checkout v21.02.1
-
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/patch/652-netfilter-flow_offload-add-check-ifindex.patch ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/target/linux/generic/hack-5.4/652-netfilter-flow_offload-add-check-ifindex.patch
@@ -60,7 +94,7 @@ pushd target/linux/generic/hack-5.4
 
 chmod +x 652-netfilter-flow_offload-add-check-ifindex.patch
 
-git appply 652-netfilter-flow_offload-add-check-ifindex.patch
+git appply 652-netfilter-flow_offload-add-check-ifindex.patc
 
 popd
 
@@ -85,7 +119,6 @@ popd
 
 # Max connection limite
 sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
-
 # 默认设置
 svn co https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings package/default-settings
 
@@ -94,7 +127,7 @@ git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app
 
 # AdGuardHome Beta - Fix build with go17.x
 #pushd feeds/packages
-#adguardhome_version=`curl -s "https://api.github.com/repos/AdguardTeam/AdGuardHome/releases" | grep "tag_name" | head -n 1 | awk -F ":" '{print $2}' | sed 's/\"//g;s/,//g;s/ //g' | awk -F "v" '{print $2}'`
+#adguardhome_version=`curl -s "https://api.github.com/repos/AdguardTeam/AdGuardHome/releases" | grep "tag_name" | head -n 1 | awk -F ":" '{print $2}' | sed 's/\"//g;s/,//g;s/ //g' | awk -F "v" '{print $2}'
 #sed -ri "s/(PKG_VERSION:=)[^\"]*/\1$adguardhome_version/" net/adguardhome/Makefile
 #sed -i 's/release/beta/g' net/adguardhome/Makefile
 #sed -i 's/.*PKG_MIRROR_HASH.*/#&/' net/adguardhome/Makefile
@@ -103,7 +136,7 @@ git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app
 
 # 文件浏览器
 git clone https://git.cooluc.com/sbwml/luci-app-filebrowser package/new/luci-app-filebrowser
-git clone https://git.cooluc.com/sbwml/filebrowser package/new/filebrowser
+git clone https://git.cooluc.com/sbwml/filebrowser package/new/filebrowse
 
 #管控
 git clone https://github.com/Lienol/openwrt-package.git package/openwrt-package
