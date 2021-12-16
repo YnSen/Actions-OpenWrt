@@ -147,6 +147,10 @@ uci commit dhcp
 sed -i '/log-facility/d' /etc/dnsmasq.conf
 echo "log-facility=/dev/null" >> /etc/dnsmasq.conf
 
+#openvpn 多用户
+uci add_list option duplicate_cn '1'
+uci commit openvpn
+
 #packet_steering
 uci set network.globals.packet_steering='0'
 uci commit network
