@@ -9,28 +9,7 @@ git checkout v21.02.1
 
 #cp ~/work/Actions-OpenWrt/Actions-OpenWrt/19_cpu.js ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/
 
-# UPX
-if ! command -v upx >/dev/null 2>&1; then
-    if [ ! "$(uname)" == "Darwin" ];then
-        sed -i '/patchelf pkgconf/i\tools-y += ucl upx' ./tools/Makefile
-        sed -i '\/autoconf\/compile :=/i\$(curdir)/upx/compile := $(curdir)/ucl/compile' ./tools/Makefile
-        svn co https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
-        svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
-    fi
-else
-    mkdir -p staging_dir/host/bin/
-    ln -sf `which upx` staging_dir/host/bin/upx
-fi
-
-
-#ramips - immortalwrt uboot & target upstream
-#rm -rf ./target/linux/ramips
-#rm -rf ./package/boot/uboot-ramips
-#svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/target/linux/ramips target/linux/ramips
-#svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/boot/uboot-ramips package/boot/uboot-ramips
-#curl -fL -o sdk.tar.xz https://downloads.openwrt.org/releases/21.02.1/targets/ramips/mt7621/openwrt-sdk-21.02.1-ramips-mt7621_gcc-8.4.0_musl.Linux-x86_64.tar.xz || wget -cO sdk.tar.xz https://downloads.openwrt.org/releases/21.02.1/targets/ramips/mt7621/openwrt-sdk-21.02.1-ramips-mt7621_gcc-8.4.0_musl.Linux-x86_64.tar.xz
-
-curl -fL -o sdk.tar.xz https://downloads.openwrt.org/releases/21.02.1/targets/x86/64/openwrt-sdk-21.02.1-x86-64_gcc-8.4.0_musl.Linux-x86_64.tar.xz || wget -cO sdk.tar.xz https://downloads.openwrt.org/releases/21.02.1/targets/x86/64/openwrt-sdk-21.02.1-x86-64_gcc-8.4.0_musl.Linux-x86_64.tar.xz
+#curl -fL -o sdk.tar.xz https://downloads.openwrt.org/releases/21.02.1/targets/x86/64/openwrt-sdk-21.02.1-x86-64_gcc-8.4.0_musl.Linux-x86_64.tar.xz || wget -cO sdk.tar.xz https://downloads.openwrt.org/releases/21.02.1/targets/x86/64/openwrt-sdk-21.02.1-x86-64_gcc-8.4.0_musl.Linux-x86_64.tar.xz
 
 # 默认设置
 svn co https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings package/default-settings
