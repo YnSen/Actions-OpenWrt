@@ -7,20 +7,6 @@ git checkout v21.02.1
 
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
-
-# UPX
-if ! command -v upx >/dev/null 2>&1; then
-    if [ ! "$(uname)" == "Darwin" ];then
-        sed -i '/patchelf pkgconf/i\tools-y += ucl upx' ./tools/Makefile
-        sed -i '\/autoconf\/compile :=/i\$(curdir)/upx/compile := $(curdir)/ucl/compile' ./tools/Makefile
-        svn co https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
-        svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
-    fi
-else
-    mkdir -p staging_dir/host/bin/
-    ln -sf `which upx` staging_dir/host/bin/upx
-fi
-
 # Rockchip - immortalwrt uboot & target upstream
 #rm -rf ./target/linux/rockchip
 #rm -rf ./package/boot/uboot-rockchip
