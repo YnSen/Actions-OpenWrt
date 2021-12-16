@@ -147,12 +147,13 @@ uci commit dhcp
 #openvpn
 sed -i 's,192.168.1.0 255.255.255.0,192.168.6.0 255.255.255.0,g' /etc/config/openvpn
 sed -i 's,192.168.1.1,192.168.3.1,g' /etc/config/openvpn
-uci add_list openvpn.myvpn.duplicate_cn='1'
+uci add openvpn.myvpn.duplicate_cn='1'
 uci set openvpn.myvpn.proto='tcp6'
 uci set openvpn.myvpn.server='192.168.6.0 255.255.255.0'
 uci commit openvpn
 
 #packet_steering
+uci del network.globals.ula_prefix
 uci set network.globals.packet_steering='0'
 uci commit network
 /etc/init.d/network restart
@@ -163,7 +164,7 @@ uci set shadowsocksr.@global[0].chnroute_url='https://cdn.jsdelivr.net/gh/QiuSim
 uci commit shadowsocksr
 
 #link
-ln -sf /sbin/ip /usr/bin/ip
+#ln -sf /sbin/ip /usr/bin/ip
 
 #Flag packages
 #opkg flag hold luci-app-firewall
