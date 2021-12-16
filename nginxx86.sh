@@ -189,6 +189,7 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/p
 
 #aliyundrive-webdav
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/aliyundrive-webdav package/aliyundrive-webdav
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-aliyundrive-webdav package/luci-app-aliyundrive-webdav
 
 #UnblockMusic163
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusic package/lean/UnblockNeteaseMusic
