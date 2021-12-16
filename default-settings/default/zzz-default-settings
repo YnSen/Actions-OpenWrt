@@ -135,7 +135,6 @@ uci set upnpd.config.igdv1='1'
 uci set upnpd.config.enabled='1'
 uci del upnpd.config.enable_upnp
 uci del upnpd.config.enable_natpmp
-uci set upnpd.config.external_iface='wan'
 uci commit upnpd
 
 #dnsmasq
@@ -144,11 +143,13 @@ uci set dhcp.lan.ndp='disabled'
 uci set dhcp.lan.dhcpv6='disabled'
 uci set dhcp.lan.ra_management='0'
 uci commit dhcp
-sed -i '/log-facility/d' /etc/dnsmasq.conf
-echo "log-facility=/dev/null" >> /etc/dnsmasq.conf
 
-#openvpn 多用户
-uci add_list option duplicate_cn '1'
+#openvpn
+sed -i 's,192.168.1.0 255.255.255.0,192.168.6.0 255.255.255.0,g' /etc/config/openvpn
+sed -i 's,192.168.1.1,192.168.3.1,g' /etc/config/openvpn
+uci add_list openvpn.myvpn.duplicate_cn='1'
+uci set openvpn.myvpn.proto='tcp6'
+uci set openvpn.myvpn.server='192.168.6.0 255.255.255.0'
 uci commit openvpn
 
 #packet_steering
@@ -165,9 +166,9 @@ uci commit shadowsocksr
 ln -sf /sbin/ip /usr/bin/ip
 
 #Flag packages
-opkg flag hold luci-app-firewall
-opkg flag hold firewall
-opkg flag hold dnsmasq-full
+#opkg flag hold luci-app-firewall
+#opkg flag hold firewall
+#opkg flag hold dnsmasq-full
 
 #luci cache
 rm -rf /tmp/luci-modulecache
