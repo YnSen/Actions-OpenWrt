@@ -7,6 +7,8 @@ git checkout v21.02.1
 
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
+curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/patch/652-netfilter-flow_offload-add-check-ifindex.patch > target/linux/generic/hack-5.4/652-netfilter-flow_offload-add-check-ifindex.patch
+
 # Drop uhttpd
 pushd feeds/luci
 curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/patch/0002-feeds-luci-Drop-uhttpd-depends.patch > 0002-feeds-luci-Drop-uhttpd-depends.patch
@@ -14,10 +16,10 @@ git apply 0002-feeds-luci-Drop-uhttpd-depends.patch && rm 0002-feeds-luci-Drop-u
 popd
 
 # Update nginx-1.20.2
-#pushd feeds/packages
-#curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/patch/0004-nginx-update-to-version-1.20.2.patch > 0004-nginx-update-to-version-1.20.2.patch
-#git apply 0004-nginx-update-to-version-1.20.2.patch && rm 0004-nginx-update-to-version-1.20.2.patch
-#popd
+pushd feeds/packages
+curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/patch/0004-nginx-update-to-version-1.20.2.patch > 0004-nginx-update-to-version-1.20.2.patch
+git apply 0004-nginx-update-to-version-1.20.2.patch && rm 0004-nginx-update-to-version-1.20.2.patch
+popd
 
 #cp ~/work/Actions-OpenWrt/Actions-OpenWrt/19_cpu.js ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/
 
