@@ -164,7 +164,7 @@ uci set shadowsocksr.@global[0].chnroute_url='https://cdn.jsdelivr.net/gh/QiuSim
 uci commit shadowsocksr
 
 #link
-#ln -sf /sbin/ip /usr/bin/ip
+ln -sf /sbin/ip /usr/bin/ip
 
 #Flag packages
 #opkg flag hold luci-app-firewall
