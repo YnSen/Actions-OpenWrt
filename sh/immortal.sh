@@ -1,3 +1,8 @@
+#get source
+git clone -b https://github.com/immortalwrt/immortalwrt.git
+cd ~/work/Actions-OpenWrt/Actions-OpenWrt/immortalwrt
+./scripts/feeds update -a && ./scripts/feeds install -a
+
 pushd package
 #强制关机插件
 git clone https://github.com/esirplayground/luci-app-poweroff
@@ -12,4 +17,5 @@ popd
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.3.1/g' package/base-files/files/bin/config_generate
 sed -i 's/bootstrap/argon/g' feeds/luci/collections/luci/Makefile
+curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/conf/imm.config > .config
 make defconfig
