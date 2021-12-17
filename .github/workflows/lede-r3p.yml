@@ -66,7 +66,7 @@ jobs:
     - name: Load custom configuration
       run: |
         cd ~/work/Actions-OpenWrt/Actions-OpenWrt/sh
-        cp leder3p.sh ~/work/Actions-OpenWrt/Actions-OpenWrt
+        cp leder3p.sh ~/work/Actions-OpenWrt/Actions-OpenWrt/
         cd ..
         chmod +x leder3p.sh
         ./leder3p.sh
