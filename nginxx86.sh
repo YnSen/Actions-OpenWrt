@@ -194,10 +194,13 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/p
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/aliyundrive-webdav package/aliyundrive-webdav
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-aliyundrive-webdav package/luci-app-aliyundrive-webdav
 
-#UnblockMusic163
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusic package/lean/UnblockNeteaseMusic
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusic-Go package/lean/UnblockNeteaseMusic-Go
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-unblockmusic package/lean/luci-app-unblockmusic
+# 网易云音乐解锁 immortal
+git clone --depth 1 https://github.com/immortalwrt/luci-app-unblockneteasemusic.git package/new/UnblockNeteaseMusic
+
+#UnblockMusic163 lean
+#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusic package/lean/UnblockNeteaseMusic
+#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusic-Go package/lean/UnblockNeteaseMusic-Go
+#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-unblockmusic package/lean/luci-app-unblockmusic
 
 #OpenVpnServer
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-openvpn-server package/lean/luci-app-openvpn-server
