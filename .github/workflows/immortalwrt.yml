@@ -69,7 +69,7 @@ jobs:
         cp immortalx86.sh ~/work/Actions-OpenWrt/Actions-OpenWrt
         cd ..
         chmod +x immortalx86.sh
-        ./immortal.sh
+        ./immortalx86.sh
     ##    pushd ~/work/Actions-OpenWrt/Actions-OpenWrt && cp tencentddns.lua ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package/tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller && popd
     
     - name: SSH connection to Actions
