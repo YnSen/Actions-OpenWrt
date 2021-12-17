@@ -192,8 +192,8 @@ git clone https://github.com/nickilchen/luci-app-socat.git package/luci-app-soca
 
 #TurboAcc
 
-svn co https://github.com/immortalwrt/lean-lede/trunk/package/lean/dnsforwarder package/lean/dnsforwarder
-svn co https://github.com/immortalwrt/lean-lede/tree/lede/package/lean/dnsproxy package/lean/dnsproxy
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/dnsforwarder package/lean/dnsforwarder
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/dnsproxy package/lean/dnsproxy
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/shortcut-fe package/lean/shortcut-fe
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-turboacc package/lean/luci-app-turboacc
 
@@ -220,5 +220,5 @@ curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/02-remov
 chmod 0755 *sh
 ./02-remove_upx.sh
 
-curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/uhttpr3p.config > .config
+curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/conf/uhttpr3p.config > .config
 make defconfig
