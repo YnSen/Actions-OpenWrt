@@ -1,6 +1,6 @@
 #get source
-git clone -b https://github.com/immortalwrt/immortalwrt.git
-cd ~/work/Actions-OpenWrt/Actions-OpenWrt/immortalwrt
+git clone -b https://github.com/immortalwrt/immortalwrt.git openwrt
+cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
 pushd package
