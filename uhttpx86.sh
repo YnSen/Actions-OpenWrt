@@ -158,6 +158,9 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/p
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/aliyundrive-webdav package/aliyundrive-webdav
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-aliyundrive-webdav package/luci-app-aliyundrive-webdav
 
+# 网易云音乐解锁
+git clone --depth 1 https://github.com/immortalwrt/luci-app-unblockneteasemusic.git package/new/UnblockNeteaseMusic
+
 #UnblockMusic163
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusic package/lean/UnblockNeteaseMusic
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusic-Go package/lean/UnblockNeteaseMusic-Go
@@ -204,5 +207,5 @@ sed -i 's,frp 客户端,FRP 客户端,g' feeds/luci/applications/luci-app-frpc/p
 #./02-remove_upx.sh
 
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
-curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/uhttpd.config > .config
+curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/conf/uhttpd.config > .config
 make defconfig
