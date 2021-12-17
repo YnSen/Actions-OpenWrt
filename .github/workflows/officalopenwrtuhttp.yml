@@ -67,7 +67,9 @@ jobs:
         
     - name: Load custom sh
       run: |
-        cd ~/work/Actions-OpenWrt/Actions-OpenWrt
+        cd ~/work/Actions-OpenWrt/Actions-OpenWrt/sh
+        cp uhttpx86.sh ~/work/Actions-OpenWrt/Actions-OpenWrt
+        cd ..
         chmod +x uhttpx86.sh
         ./uhttpx86.sh
 
