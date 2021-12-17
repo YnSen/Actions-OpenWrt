@@ -1,4 +1,9 @@
 ##lede
+##get source
+git clone https://github.com/coolsnowwolf/lede.git openwrt
+cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
+./scripts/feeds update -a && ./scripts/feeds install -a
+
 pushd package
 #passwall
 git clone https://github.com/xiaorouji/openwrt-passwall.git
@@ -88,3 +93,6 @@ sed -i 's/bootstrap/argon/g' feeds/luci/collections/luci/Makefile
 #sed -i 's/root::0:0:99999:7:::/root:$1$ScQIGKsX$q0qEf\/tAQ2wpTR6zIUIjo.:0:0:99999:7:::/g' package/base-files/files/etc/shadow
 #删除默认密码
 sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
+
+curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/conf/leder3p.config > .config
+make defconfig
