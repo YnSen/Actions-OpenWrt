@@ -242,5 +242,5 @@ curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/02-remov
 chmod 0755 *sh
 ./02-remove_upx.sh
 
-curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/nginx.config > .config
+curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/conf/nginx.config > .config
 make defconfig
