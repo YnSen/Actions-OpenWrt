@@ -27,6 +27,11 @@ svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package
 # Max connection limite
 sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/patch/652-netfilter-flow_offload-add-check-ifindex.patch target/linux/generic/hack-5.4/
+
+# 默认设置
+svn co https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings package/default-settings
+
 # AdGuard - Luci
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
 
