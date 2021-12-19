@@ -217,7 +217,7 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-cifs-mou
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-nfs package/lean/luci-app-nfs
 
 #luci socat
-git clone https://github.com/nickilchen/luci-app-socat.git package/luci-app-socat
+git clone https://github.com/immortalwrt/luci/trunk/applications/luci-app-socat package/luci-app-socat
 
 #Zerotier
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-zerotier package/lean/luci-app-zerotier
