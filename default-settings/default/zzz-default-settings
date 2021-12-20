@@ -122,8 +122,8 @@ sed -i "s/deny all/#deny all/g" /etc/nginx/restrict_locally
 #nginx end
 
 #docker mirror
-uci add_list dockerd.globals.registry_mirrors='https://hub-mirror.c.163.com'
-uci commit dockerd
+#uci add_list dockerd.globals.registry_mirrors='https://hub-mirror.c.163.com'
+#uci commit dockerd
 
 #firewall
 #uci set firewall.@defaults[0].fullcone='1'
