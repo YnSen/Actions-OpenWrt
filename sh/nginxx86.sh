@@ -242,7 +242,7 @@ curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/
 curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/04-create_acl_for_luci.sh
 chmod 0755 *sh
 ./02-remove_upx.sh
-./04-create_acl_for_luci.sh
+./04-create_acl_for_luci.sh -a
 
 curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/conf/nginx.config > .config
 make defconfig
