@@ -14,7 +14,7 @@ git checkout v21.02.1
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/patch/652-netfilter-flow_offload-add-check-ifindex.patch target/linux/generic/hack-5.4/
 
 # 默认设置
-svn co https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings package/default-settings
+#svn co https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings package/default-settings
 
 # Max connection limite
 sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
