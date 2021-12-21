@@ -51,7 +51,7 @@ svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
 sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 
 # 默认设置
-svn co https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings package/default-settings
+#svn co https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings package/default-settings
 
 # AdGuard - Luci
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
