@@ -52,6 +52,9 @@ sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 
 # 默认设置
 svn co https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings package/default-settings
+pushd package/default-settings
+cp -r files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+popd
 
 # AdGuard - Luci
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
