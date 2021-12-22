@@ -173,6 +173,11 @@ uci set network.globals.packet_steering='0'
 uci commit network
 /etc/init.d/network restart
 
+# ssrp
+uci set shadowsocksr.@global[0].gfwlist_url='https://raw.cooluc.com/Loyalsoldier/v2ray-rules-dat/release/gfw.txt'
+uci set shadowsocksr.@global[0].chnroute_url='https://raw.cooluc.com/QiuSimons/Chnroute/master/dist/chnroute/chnroute.txt'
+uci commit shadowsocksr
+
 #link
 ln -sf /sbin/ip /usr/bin/ip
 
