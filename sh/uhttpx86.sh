@@ -205,8 +205,10 @@ sed -i 's,frp 客户端,FRP 客户端,g' feeds/luci/applications/luci-app-frpc/p
 #git clone https://github.com/sbwml/luci-app-mjpg-streamer feeds/luci/applications/luci-app-mjpg-streamer
 
 curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/02-remove_upx.sh
+curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/04-create_acl_for_luci.sh
 chmod 0755 *sh
 ./02-remove_upx.sh
+./04-create_acl_for_luci.sh -a
 
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/conf/uhttpd.config > .config
