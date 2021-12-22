@@ -30,30 +30,40 @@ uci set nginx.global.uci_enable='true'
 uci commit nginx
 
 rm /etc/nginx/uci.conf
-cat >/etc/nginx/nginx.conf <<"EOF"
+cat >/etc/nginx/uci.conf <<"EOF"
 # This file is re-created when Nginx starts.
 # Consider using UCI or creating files in /etc/nginx/conf.d/ for configuration.
 # Parsing UCI configuration is skipped if uci set nginx.global.uci_enable=false
 # For details see: https://openwrt.org/docs/guide-user/services/webserver/nginx
+
 worker_processes auto;
+
 user root;
+
 error_log /dev/null;
+
 events {
   worker_connections 1024;
 }
+
 http {
     access_log off;
     server_names_hash_bucket_size 64;
-    log_format openwrt
-        '$request_method $scheme://$host$request_uri => $status'
-        '(${body_bytes_sent}B in ${request_time}s) <- $http_referer';
+    #log_format openwrt
+    #    '$request_method $scheme://$host$request_uri => $status'
+    #    '(${body_bytes_sent}B in ${request_time}s) <- $http_referer';
+
     include mime.types;
     default_type application/octet-stream;
     sendfile on;
+
     client_max_body_size 1024M;
     large_client_header_buffers 2 1k;
     keepalive_timeout 600s;
+
     gzip on;
+    gzip_vary on;
+    gzip_proxied any;
     gzip_comp_level 6;
     gzip_min_length 1k;
     gzip_types text/plain text/css text/xml text/javascript text/x-component application/json application/javascript application/x-javascript application/xml application/xhtml+xml application/rss+xml application/atom+xml application/x-font-ttf application/vnd.ms-fontobject image/svg+xml image/x-icon font/opentype;
@@ -64,7 +74,9 @@ http {
     brotli_buffers 16 10k;
     brotli_window 512k;
     brotli_min_length 20;
+
     root /www;
+
     server {
       listen 80 default_server;
       listen [::]:80 default_server;
@@ -73,6 +85,7 @@ http {
       include conf.d/*.locations;
       access_log off; # logd openwrt;
     }
+
     include conf.d/*.conf;
 }
 EOF
@@ -97,6 +110,7 @@ location ~ /cgi-bin/cgi-(backup|download|upload|exec) {
 		uwsgi_read_timeout 600;
 		uwsgi_pass unix:////var/run/luci-cgi_io.socket;
 }
+
 location /luci-static {
 		error_log stderr crit;
 }
@@ -107,8 +121,7 @@ sed -i "s/deny all/#deny all/g" /etc/nginx/restrict_locally
 
 /etc/init.d/nginx restart
 /etc/init.d/nginx enabled
-#nginx end
-
+# nginx end
 
 #docker mirror
 #uci add_list dockerd.globals.registry_mirrors='https://hub-mirror.c.163.com'
@@ -146,11 +159,6 @@ uci del network.globals.ula_prefix
 uci set network.globals.packet_steering='0'
 uci commit network
 /etc/init.d/network restart
-
-#SSRP
-uci set shadowsocksr.@global[0].gfwlist_url='https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/gfw.txt'
-uci set shadowsocksr.@global[0].chnroute_url='https://cdn.jsdelivr.net/gh/QiuSimons/Chnroute@master/dist/chnroute/chnroute.txt'
-uci commit shadowsocksr
 
 #link
 ln -sf /sbin/ip /usr/bin/ip
