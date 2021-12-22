@@ -80,11 +80,24 @@ http {
     server {
       listen 80 default_server;
       listen [::]:80 default_server;
-      server_name _lan;
+      server_name op;
       include restrict_locally;
       include conf.d/*.locations;
       access_log off; # logd openwrt;
     }
+    
+    server { #see uci show 'nginx._ssl'
+      listen 443 ssl;
+      listen [::]:443 ssl;
+      server_name _ssl;
+      include conf.d/*.locations;
+      ssl_certificate /etc/nginx/conf.d/_lan.crt;
+      ssl_certificate_key /etc/nginx/conf.d/_lan.key;
+      ssl_session_cache shared:SSL:32k;
+      ssl_session_timeout 64m;
+      access_log off; # logd openwrt;
+     }
+
 
     include conf.d/*.conf;
 }
