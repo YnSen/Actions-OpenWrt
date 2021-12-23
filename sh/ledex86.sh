@@ -94,5 +94,7 @@ sed -i 's/bootstrap/argon/g' feeds/luci/collections/luci/Makefile
 #删除默认密码
 sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
 
-curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/conf/ledex86.config > .config
+cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/ledex86.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+mv ledex86.config .config
 make defconfig
