@@ -15,6 +15,9 @@ cp ~/work/Actions-OpenWrt/Actions-OpenWrt/patch/652-netfilter-flow_offload-add-c
 
 # 默认设置
 svn co https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings package/default-settings
+pushd package/default-settings
+cp -r files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+popd
 
 # Max connection limite
 sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
