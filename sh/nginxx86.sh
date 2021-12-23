@@ -156,24 +156,10 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/vlmcsd package/le
 # 动态DNS
 svn co https://github.com/kiddin9/openwrt-packages/trunk/ddns-scripts-aliyun package/lean/ddns-scripts_dnspod
 svn co https://github.com/kiddin9/openwrt-packages/trunk/ddns-scripts-dnspod package/lean/ddns-scripts_aliyun
-svn co https://github.com/QiuSimons/OpenWrt_luci-app/trunk/luci-app-tencentddns package/lean/luci-app-tencentddns
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-aliddns feeds/luci/applications/luci-app-aliddns
-ln -sf ../../../feeds/luci/applications/luci-app-aliddns ./package/feeds/luci/luci-app-aliddns
-
-# Docker 容器（会导致 OpenWrt 出现 UDP 转发问题，慎用）
-sed -i 's/+docker/+docker \\\n\t+dockerd/g' ./feeds/luci/applications/luci-app-dockerman/Makefile
-sed -i '/sysctl.d/d' feeds/packages/utils/dockerd/Makefile
 
 # SSR Plus
 git clone --depth=1 https://github.com/fw876/helloworld package/helloworld
-pushd package/helloworld
-sed -i 's,ispip.clang.cn/all_cn,cdn.jsdelivr.net/gh/QiuSimons/Chnroute@master/dist/chnroute/chnroute,' luci-app-ssr-plus/root/etc/init.d/shadowsocksr
-sed -i '/Clang.CN.CIDR/a\o:value("https://cdn.jsdelivr.net/gh/QiuSimons/Chnroute@master/dist/chnroute/chnroute.txt", translate("QiuSimons/Chnroute"))' luci-app-ssr-plus/luasrc/model/cbi/shadowsocksr/advanced.lua
-popd
-if [ "$isCN" = "CN" ];then
-    sed -i "s/commondatastorage.googleapis.com/proxy.cooluc.com/g" package/helloworld/naiveproxy/Makefile
-    sed -i "s/chrome-infra-packages.appspot.com/proxy2.cooluc.com/g" package/helloworld/naiveproxy/Makefile
-fi
+
 
 # SSR Plus - deps
 rm -rf feeds/packages/net/xray-core
@@ -244,11 +230,11 @@ sed -i 's,frp 客户端,FRP 客户端,g' feeds/luci/applications/luci-app-frpc/p
 
 curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/02-remove_upx.sh
 curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/03-convert_translation.sh
-#curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/04-create_acl_for_luci.sh
+curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/04-create_acl_for_luci.sh
 chmod 0755 *sh
 ./02-remove_upx.sh
 ./03-convert_translation.sh
-#./04-create_acl_for_luci.sh -a
+./04-create_acl_for_luci.sh -a
 
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/nginx.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
