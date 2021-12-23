@@ -31,6 +31,9 @@ cp ~/work/Actions-OpenWrt/Actions-OpenWrt/patch/652-netfilter-flow_offload-add-c
 
 # 默认设置
 svn co https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings package/default-settings
+pushd package/default-settings
+cp -r files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+popd
 
 # AdGuard - Luci
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
