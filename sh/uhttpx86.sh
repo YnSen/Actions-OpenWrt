@@ -205,5 +205,6 @@ chmod 0755 *sh
 ./04-create_acl_for_luci.sh -a
 
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
-curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/conf/uhttpd.config > .config
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/uhttpd.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+mv uhttpd.config .config
 make defconfig
