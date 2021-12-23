@@ -220,5 +220,7 @@ curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/
 chmod 0755 *sh
 ./02-remove_upx.sh
 
-curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/conf/uhttpr3p.config > .config
+cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/uhttpr3p.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+mv uhttpr3p.config .config
 make defconfig
