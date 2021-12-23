@@ -93,9 +93,6 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-th
 # alist
 git clone https://git.cooluc.com/sbwml/alist-openwrt package/alist-openwrt
 
-# Docker 容器（会导致 OpenWrt 出现 UDP 转发问题，慎用）
-sed -i 's/+docker/+docker \\\n\t+dockerd/g' ./feeds/luci/applications/luci-app-dockerman/Makefile
-sed -i '/sysctl.d/d' feeds/packages/utils/dockerd/Makefile
 
 # qBittorrent
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-qbittorrent package/lean/luci-app-qbittorrent
