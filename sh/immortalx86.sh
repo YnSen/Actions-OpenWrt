@@ -17,5 +17,7 @@ popd
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.3.1/g' package/base-files/files/bin/config_generate
 sed -i 's/bootstrap/argon/g' feeds/luci/collections/luci/Makefile
-curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/conf/immx86.config > .config
+cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/immx86.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+mv immx86.config .config
 make defconfig
