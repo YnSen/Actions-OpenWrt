@@ -29,8 +29,8 @@ sed -i 's/Os/O3 -funsafe-math-optimizations -funroll-loops -ffunction-sections -
 # UPX
 #if ! command -v upx >/dev/null 2>&1; then
 #    if [ ! "$(uname)" == "Darwin" ];then
-#        sed -i '/patchelf pkgconf/i\tools-y += ucl upx' ./tools/Makefile
-#        sed -i '\/autoconf\/compile :=/i\$(curdir)/upx/compile := $(curdir)/ucl/compile' ./tools/Makefile
+sed -i '/patchelf pkgconf/i\tools-y += ucl upx' ./tools/Makefile
+sed -i '\/autoconf\/compile :=/i\$(curdir)/upx/compile := $(curdir)/ucl/compile' ./tools/Makefile
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
 #    fi
@@ -92,6 +92,10 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-th
 
 # alist
 git clone https://git.cooluc.com/sbwml/alist-openwrt package/alist-openwrt
+
+# Docker 容器（会导致 OpenWrt 出现 UDP 转发问题，慎用）
+sed -i 's/+docker/+docker \\\n\t+dockerd/g' ./feeds/luci/applications/luci-app-dockerman/Makefile
+sed -i '/sysctl.d/d' feeds/packages/utils/dockerd/Makefile
 
 # qBittorrent
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-qbittorrent package/lean/luci-app-qbittorrent
