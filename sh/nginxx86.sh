@@ -238,6 +238,7 @@ chmod 0755 *sh
 ./02-remove_upx.sh
 ./04-create_acl_for_luci.sh -a
 
+cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/nginx.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 mv nginx.config .config
 make defconfig
