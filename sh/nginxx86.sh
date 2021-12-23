@@ -24,20 +24,14 @@ cp ~/work/Actions-OpenWrt/Actions-OpenWrt/patch/652-netfilter-flow_offload-add-c
 #cp ~/work/Actions-OpenWrt/Actions-OpenWrt/19_cpu.js ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/
 
 # O3
-sed -i 's/Os/O3 -funsafe-math-optimizations -funroll-loops -ffunction-sections -fdata-sections -Wl,--gc-sections/g' include/target.mk
+#sed -i 's/Os/O3 -funsafe-math-optimizations -funroll-loops -ffunction-sections -fdata-sections -Wl,--gc-sections/g' include/target.mk
 
 # UPX
-#if ! command -v upx >/dev/null 2>&1; then
-#    if [ ! "$(uname)" == "Darwin" ];then
 sed -i '/patchelf pkgconf/i\tools-y += ucl upx' ./tools/Makefile
 sed -i '\/autoconf\/compile :=/i\$(curdir)/upx/compile := $(curdir)/ucl/compile' ./tools/Makefile
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
-#    fi
-#else
-#    mkdir -p staging_dir/host/bin/
-#    ln -sf `which upx` staging_dir/host/bin/upx
-#fi
+
 
 # Rockchip - immortalwrt uboot & target upstream
 #rm -rf ./target/linux/rockchip
@@ -58,6 +52,10 @@ svn co https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings package/d
 pushd package/default-settings
 cp -r files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 popd
+
+# Docker 容器（会导致 OpenWrt 出现 UDP 转发问题，慎用）
+sed -i 's/+docker/+docker \\\n\t+dockerd/g' ./feeds/luci/applications/luci-app-dockerman/Makefile
+sed -i '/sysctl.d/d' feeds/packages/utils/dockerd/Makefile
 
 # AdGuard - Luci
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
