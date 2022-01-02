@@ -183,7 +183,7 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-zerotier
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-socat package/new/luci-app-socat
 
 # 自动挂载
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/automount package/lean/automount
+#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/automount package/lean/automount
 
 # 翻译
 sed -i 's,发送,Transmission,g' feeds/luci/applications/luci-app-transmission/po/zh_Hans/transmission.po
