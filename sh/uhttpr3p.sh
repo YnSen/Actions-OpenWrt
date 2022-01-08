@@ -30,10 +30,15 @@ sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/patch/652-netfilter-flow_offload-add-check-ifindex.patch target/linux/generic/hack-5.4/
 
 # 默认设置
-svn co https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings package/default-settings
-pushd package/default-settings
-cp -r files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
-popd
+#svn co https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings package/default-settings
+#pushd package/default-settings
+#cp -r files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+#popd
+
+
+cp -r ~/work/Actions-OpenWrt/Actions-OpenWrt/default-settings/files/etc ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/wireless ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/files/etc/config/
+
 
 # AdGuard - Luci
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
