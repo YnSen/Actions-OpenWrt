@@ -36,7 +36,7 @@ cp ~/work/Actions-OpenWrt/Actions-OpenWrt/patch/652-netfilter-flow_offload-add-c
 #popd
 
 
-cp -r ~/work/Actions-OpenWrt/Actions-OpenWrt/default-settings/files/etc ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+cp -r ~/work/Actions-OpenWrt/Actions-OpenWrt/default-settings/files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/wireless ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/files/etc/config/
 
 
