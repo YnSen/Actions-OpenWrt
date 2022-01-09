@@ -3,6 +3,7 @@
 git clone https://github.com/coolsnowwolf/lede.git openwrt
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 ./scripts/feeds update -a && ./scripts/feeds install -a
+cp -r ~/work/Actions-OpenWrt/Actions-OpenWrt/default-settings/files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 
 pushd package
 #passwall
