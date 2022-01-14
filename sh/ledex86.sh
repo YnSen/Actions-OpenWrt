@@ -23,7 +23,7 @@ git clone https://github.com/rufengsuixing/luci-app-adguardhome
 # Clash插件
 #git clone https://github.com/frainzy1477/luci-app-clash
 #openclash插件
-git clone https://github.com/vernesong/OpenClash.git
+svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
 #ssrplus
 git clone https://github.com/fw876/helloworld.git
 # SmartDNS插件
