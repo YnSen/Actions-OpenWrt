@@ -64,7 +64,7 @@ git clone https://git.cooluc.com/sbwml/filebrowser package/new/filebrowser
 git clone https://github.com/Lienol/openwrt-package.git package/openwrt-package
 
 #openclash插件
-git clone https://github.com/vernesong/OpenClash.git package/OpenClash
+svn co https://github.com/vernesong//trunk/luci-app-openclash package/luci-app-openclash
 
 #强制关机插件
 git clone https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
