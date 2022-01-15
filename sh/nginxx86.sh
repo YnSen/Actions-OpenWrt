@@ -233,5 +233,6 @@ chmod 0755 *sh
 
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/nginx.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+mv ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/config-5.4 ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/target/linux/x86/
 mv nginx.config .config
 make defconfig
