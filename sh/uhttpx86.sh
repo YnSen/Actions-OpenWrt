@@ -214,5 +214,5 @@ chmod 0755 *sh
 
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/uhttpx86.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
-mv uhttpd.config .config
+mv uhttpx86.config .config
 make defconfig
