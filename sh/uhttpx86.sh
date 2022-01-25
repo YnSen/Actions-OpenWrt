@@ -25,6 +25,12 @@ sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 # AdGuard - Luci
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
 
+#docker
+rm -rf ./feeds/luci/applications/luci-app-dockerman
+svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman feeds/luci/applications/luci-app-dockerman
+rm -rf ./feeds/luci/collections/luci-lib-docker
+svn co https://github.com/lisaac/luci-lib-docker/trunk/collections/luci-lib-docker feeds/luci/collections/luci-lib-docker
+
 # 文件浏览器
 git clone https://git.cooluc.com/sbwml/luci-app-filebrowser package/new/luci-app-filebrowser
 git clone https://git.cooluc.com/sbwml/filebrowser package/new/filebrowser
@@ -207,6 +213,6 @@ chmod 0755 *sh
 #./04-create_acl_for_luci.sh -a
 
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
-cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/uhttpd.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/uhttpx86.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 mv uhttpd.config .config
 make defconfig
