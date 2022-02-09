@@ -16,15 +16,15 @@ dns:
   port: 553
   statistics_interval: 30
   querylog_enabled: true
-  querylog_file_enabled: true
+  querylog_file_enabled: true22
   querylog_interval: 720h
   querylog_size_memory: 1000
   anonymize_client_ip: false
   protection_enabled: true
   blocking_mode: default
-  blocking_ipv4: ""
+  blocking_ipv4: ""2
   blocking_ipv6: ""
-  blocked_response_ttl: 10
+  blocked_response_ttl: 102
   parental_block_host: family-block.dns.adguard.com
   safebrowsing_block_host: standard-block.dns.adguard.com
   ratelimit: 0
