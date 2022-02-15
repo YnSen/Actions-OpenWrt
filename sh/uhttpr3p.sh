@@ -76,16 +76,17 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-th
 git clone https://git.cooluc.com/sbwml/alist-openwrt package/alist-openwrt
 
 # qBittorrent
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-qbittorrent package/lean/luci-app-qbittorrent
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qBittorrent-static package/lean/qBittorrent-static
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qBittorrent package/lean/qBittorrent
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/rblibtorrent package/lean/rblibtorrent
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qtbase package/lean/qtbase
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qttools package/lean/qttools
-pushd package/lean/luci-app-qbittorrent
-sed -i 's/nas/services/g' luasrc/controller/qbittorrent.lua
-sed -i 's/nas/services/g' luasrc/view/qbittorrent/qbittorrent_status.htm
-popd
+#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-qbittorrent package/lean/luci-app-qbittorrent
+#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qBittorrent-static package/lean/qBittorrent-static
+#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qBittorrent package/lean/qBittorrent
+#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/rblibtorrent package/lean/rblibtorrent
+#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qtbase package/lean/qtbase
+#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qttools package/lean/qttools
+#pushd package/lean/luci-app-qbittorrent
+#sed -i 's/nas/services/g' luasrc/controller/qbittorrent.lua
+#sed -i 's/nas/services/g' luasrc/view/qbittorrent/qbittorrent_status.htm
+#popd
+git clone https://git.cooluc.com/sbwml/openwrt-qBittorrent.git
 
 # 应用过滤
 git clone https://github.com/sbwml/OpenAppFilter --depth=1 package/new/OpenAppFilter
