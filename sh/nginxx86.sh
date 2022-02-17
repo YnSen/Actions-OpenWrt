@@ -206,10 +206,16 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-nfs pack
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-socat package/new/luci-app-socat
 
 #Zerotier
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-zerotier package/lean/luci-app-zerotier
+#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-zerotier package/lean/luci-app-zerotier
 
 # 自动挂载
-#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/automount package/lean/automount
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/automount package/lean/automount
+
+#docker
+rm -rf ./feeds/luci/applications/luci-app-dockerman
+svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman feeds/luci/applications/luci-app-dockerman
+rm -rf ./feeds/luci/collections/luci-lib-docker
+svn co https://github.com/lisaac/luci-lib-docker/trunk/collections/luci-lib-docker feeds/luci/collections/luci-lib-docker
 
 # 翻译
 sed -i 's,发送,Transmission,g' feeds/luci/applications/luci-app-transmission/po/zh_Hans/transmission.po
