@@ -113,10 +113,6 @@ git clone -b master --single-branch https://github.com/brvphoenix/luci-app-wrtbw
 # iputils
 svn co https://github.com/openwrt/openwrt/branches/openwrt-19.07/package/network/utils/iputils package/network/utils/iputils
 
-# 磁盘分区
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-diskman package/lean/luci-app-diskman
-svn co https://github.com/coolsnowwolf/packages/trunk/utils/parted package/lean/parted
-
 # 迅雷快鸟
 git clone --depth 1 https://github.com/garypang13/luci-app-xlnetacc.git package/lean/luci-app-xlnetacc
 
