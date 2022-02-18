@@ -3,7 +3,7 @@
 git clone https://github.com/openwrt/openwrt -b openwrt-21.02
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 
-git checkout v21.02.1
+git checkout v21.02.2
 
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
@@ -22,13 +22,15 @@ popd
 # Max connection limite
 sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 
-# AdGuard - Luci
+# AdGuardHome
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
+rm -rf feeds/packages/net/adguardhome
+svn co https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/net/adguardhome
 
 #docker
-rm -rf ./feeds/luci/applications/luci-app-dockerman
+rm -rf feeds/luci/applications/luci-app-dockerman
 svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman feeds/luci/applications/luci-app-dockerman
-rm -rf ./feeds/luci/collections/luci-lib-docker
+rm -rf feeds/luci/collections/luci-lib-docker
 svn co https://github.com/lisaac/luci-lib-docker/trunk/collections/luci-lib-docker feeds/luci/collections/luci-lib-docker
 
 # 文件浏览器
@@ -58,6 +60,12 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-th
 #sed -i 's/services/nas/g' luasrc/view/linkease_status.htm
 #rm -rf luasrc/view/admin_status
 #popd
+
+#kodexplorer
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-kodexplorer feeds/luci/applications/luci-app-kodexplorer
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-kodexplorer ./
+popd
 
 # alist
 git clone https://git.cooluc.com/sbwml/alist-openwrt package/alist-openwrt
@@ -101,27 +109,27 @@ git clone -b master --single-branch https://github.com/brvphoenix/luci-app-wrtbw
 svn co https://github.com/openwrt/openwrt/branches/openwrt-19.07/package/network/utils/iputils package/network/utils/iputils
 
 # 磁盘分区
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-diskman package/lean/luci-app-diskman
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-diskman package/lean/luci-app-diskman
 svn co https://github.com/coolsnowwolf/packages/trunk/utils/parted package/lean/parted
 
 # 迅雷快鸟
 git clone --depth 1 https://github.com/garypang13/luci-app-xlnetacc.git package/lean/luci-app-xlnetacc
 
 # 清理内存
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-ramfree package/lean/luci-app-ramfree
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-ramfree package/lean/luci-app-ramfree
 
 # 打印机
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-usb-printer package/lean/luci-app-usb-printer
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-usb-printer package/lean/luci-app-usb-printer
 
 # 定时重启
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-autoreboot package/lean/luci-app-autoreboot
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-autoreboot package/lean/luci-app-autoreboot
 
 # 流量监管
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-netdata package/lean/luci-app-netdata
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-netdata package/lean/luci-app-netdata
 
 # KMS
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-vlmcsd package/lean/luci-app-vlmcsd
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/vlmcsd package/lean/vlmcsd
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-vlmcsd package/lean/luci-app-vlmcsd
+svn co https://github.com/coolsnowwolf/packages/trunk/net/vlmcsd package/lean/vlmcsd
 
 # DDNS
 svn co https://github.com/sbwml/openwrt-package/trunk/ddns-scripts-dnspod package/lean/ddns-scripts_dnspod
@@ -129,14 +137,6 @@ svn co https://github.com/sbwml/openwrt-package/trunk/ddns-scripts-aliyun packag
 
 # SSR Plus
 git clone --depth=1 https://github.com/fw876/helloworld package/helloworld
-pushd package/helloworld
-sed -i 's,ispip.clang.cn/all_cn,cdn.jsdelivr.net/gh/QiuSimons/Chnroute@master/dist/chnroute/chnroute,' luci-app-ssr-plus/root/etc/init.d/shadowsocksr
-sed -i '/Clang.CN.CIDR/a\o:value("https://cdn.jsdelivr.net/gh/QiuSimons/Chnroute@master/dist/chnroute/chnroute.txt", translate("QiuSimons/Chnroute"))' luci-app-ssr-plus/luasrc/model/cbi/shadowsocksr/advanced.lua
-popd
-if [ "$isCN" = "CN" ];then
-    sed -i "s/commondatastorage.googleapis.com/proxy.cooluc.com/g" package/helloworld/naiveproxy/Makefile
-    sed -i "s/chrome-infra-packages.appspot.com/proxy2.cooluc.com/g" package/helloworld/naiveproxy/Makefile
-fi
 
 # SSR Plus - deps
 rm -rf feeds/packages/net/xray-core
@@ -158,39 +158,39 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-plus package/p
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/passwall-deps/chinadns-ng
 
 #aliyundrive-webdav
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/aliyundrive-webdav package/aliyundrive-webdav
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-aliyundrive-webdav package/luci-app-aliyundrive-webdav
+svn co https://github.com/coolsnowwolf/packages/trunk/net/aliyundrive-webdav package/aliyundrive-webdav
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-aliyundrive-webdav package/lean/aliyundrive-webdav
 
 # 网易云音乐解锁
 git clone --depth 1 https://github.com/immortalwrt/luci-app-unblockneteasemusic.git package/new/UnblockNeteaseMusic
 
 #UnblockMusic163
-#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusic package/lean/UnblockNeteaseMusic
-#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/UnblockNeteaseMusic-Go package/lean/UnblockNeteaseMusic-Go
-#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-unblockmusic package/lean/luci-app-unblockmusic
+#svn co https://github.com/coolsnowwolf/packages/trunk/multimedia/UnblockNeteaseMusic package/lean/UnblockNeteaseMusic
+#svn co https://github.com/coolsnowwolf/packages/trunk/multimedia/UnblockNeteaseMusic-Go package/lean/UnblockNeteaseMusic-Go
+#svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-unblockmusic package/lean/luci-app-unblockmusic
 
 #OpenVpnServer
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-openvpn-server package/lean/luci-app-openvpn-server
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-openvpn-server package/lean/luci-app-openvpn-server
 
 #rclone
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/rclone package/lean/rclone
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-rclone package/lean/luci-app-rclone
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/rclone-ng package/lean/rclone-ng
+svn co https://github.com/coolsnowwolf/packages/trunk/net/rclone package/lean/rclone
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-rclone package/lean/luci-app-rclone
+svn co https://github.com/coolsnowwolf/packages/trunk/net/rclone-ng package/lean/rclone-ng
 
 #cifsmount
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-cifs-mount package/lean/luci-app-cifs-mount
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-cifs-mount package/lean/luci-app-cifs-mount
 
 #nfs
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-nfs package/lean/luci-app-nfs
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-nfs package/lean/luci-app-nfs
 
 #Zerotier
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-zerotier package/lean/luci-app-zerotier
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-zerotier package/lean/luci-app-zerotier
 
 #luci socat
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-socat package/new/luci-app-socat
 
 # 自动挂载
-#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/automount package/lean/automount
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/automount package/lean/automount
 
 # 翻译
 sed -i 's,发送,Transmission,g' feeds/luci/applications/luci-app-transmission/po/zh_Hans/transmission.po
@@ -211,7 +211,7 @@ curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/
 chmod 0755 *sh
 ./02-remove_upx.sh
 ./03-convert_translation.sh
-#./04-create_acl_for_luci.sh -a
+./04-create_acl_for_luci.sh -a
 
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/uhttpx86.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
