@@ -40,9 +40,10 @@ cp -r ~/work/Actions-OpenWrt/Actions-OpenWrt/default-settings/files ~/work/Actio
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/wireless ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/files/etc/config/
 
 
-# AdGuard - Luci
+# AdGuardHome
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
-
+rm -rf feeds/packages/net/adguardhome
+svn co https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/net/adguardhome
 
 # 文件浏览器
 git clone https://git.cooluc.com/sbwml/luci-app-filebrowser package/new/luci-app-filebrowser
@@ -101,10 +102,6 @@ git clone https://github.com/sbwml/OpenAppFilter --depth=1 package/new/OpenAppFi
 #sed -i 's,1608,1800,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/cpufreq
 #sed -i 's,2016,2208,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/cpufreq
 
-# AutoCore
-svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/emortal/autocore package/lean/autocore
-rm -rf ./feeds/packages/utils/coremark
-svn co https://github.com/immortalwrt/packages/trunk/utils/coremark feeds/packages/utils/coremark
 
 # wrt bw monitor
 git clone -b master --single-branch https://github.com/brvphoenix/wrtbwmon --depth=1 package/new/wrtbwmon
