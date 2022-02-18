@@ -73,6 +73,12 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-th
 #rm -rf luasrc/view/admin_status
 #popd
 
+#kodexplorer
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-kodexplorer feeds/luci/applications/luci-app-kodexplorer
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-kodexplorer ./
+popd
+
 # alist
 git clone https://git.cooluc.com/sbwml/alist-openwrt package/alist-openwrt
 
