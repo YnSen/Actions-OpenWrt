@@ -3,7 +3,7 @@
 git clone https://github.com/openwrt/openwrt -b openwrt-21.02
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 
-git checkout v21.02.1
+git checkout v21.02.2
 
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
@@ -53,8 +53,10 @@ pushd package/default-settings
 cp -r files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 popd
 
-# AdGuard - Luci
+# AdGuardHome
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
+rm -rf feeds/packages/net/adguardhome
+svn co https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/net/adguardhome
 
 # 文件浏览器
 git clone https://git.cooluc.com/sbwml/luci-app-filebrowser package/new/luci-app-filebrowser
@@ -85,7 +87,10 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-th
 #popd
 
 #kodexplorer
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-kodexplorer package/lean/luci-app-kodexplorer
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-kodexplorer feeds/luci/applications/luci-app-kodexplorer
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-kodexplorer ./
+popd
 
 # alist
 git clone https://git.cooluc.com/sbwml/alist-openwrt package/alist-openwrt
@@ -175,6 +180,7 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/hysteria package/pass
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go package/passwall-deps/trojan-go
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-plus package/passwall-deps/trojan-plus
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/passwall-deps/chinadns-ng
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/srelay package/lean/srelay
 
 #aliyundrive-webdav
 svn co https://github.com/coolsnowwolf/packages/trunk/net/aliyundrive-webdav package/aliyundrive-webdav
