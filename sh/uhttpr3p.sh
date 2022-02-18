@@ -113,6 +113,10 @@ git clone -b master --single-branch https://github.com/brvphoenix/luci-app-wrtbw
 # iputils
 svn co https://github.com/openwrt/openwrt/branches/openwrt-19.07/package/network/utils/iputils package/network/utils/iputils
 
+# 磁盘分区
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-diskman package/lean/luci-app-diskman
+svn co https://github.com/coolsnowwolf/packages/trunk/utils/parted package/lean/parted
+
 # 迅雷快鸟
 git clone --depth 1 https://github.com/garypang13/luci-app-xlnetacc.git package/lean/luci-app-xlnetacc
 
@@ -138,11 +142,12 @@ svn co https://github.com/sbwml/openwrt-package/trunk/ddns-scripts-aliyun packag
 
 # SSR Plus - deps
 rm -rf feeds/packages/net/xray-core
-svn co https://github.com/immortalwrt/packages/trunk/net/dns2socks package/helloworld-deps/dns2socks
-svn co https://github.com/immortalwrt/packages/trunk/net/microsocks package/helloworld-deps/microsocks
-svn co https://github.com/immortalwrt/packages/trunk/net/ipt2socks package/helloworld-deps/ipt2socks
-svn co https://github.com/immortalwrt/packages/trunk/net/pdnsd-alt package/helloworld-deps/pdnsd
-svn co https://github.com/immortalwrt/packages/trunk/net/redsocks2 package/helloworld-deps/redsocks2
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/dns2socks package/lean/dns2socks
+svn co https://github.com/coolsnowwolf/packages/trunk/net/redsocks2 package/lean/redsocks2
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/microsocks package/lean/microsocks
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ipt2socks package/lean/ipt2socks
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/pdnsd-alt package/lean/pdnsd
+
 
 # PASSWALL
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall package/passwall/luci-app-passwall
@@ -151,9 +156,12 @@ sed -i 's,一般般,通用,g' package/passwall/luci-app-passwall/po/zh-cn/passwa
 # PASSWALL - deps
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/brook package/passwall-deps/brook
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/hysteria package/passwall-deps/hysteria
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan package/lean/trojan
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go package/passwall-deps/trojan-go
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-plus package/passwall-deps/trojan-plus
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/passwall-deps/chinadns-ng
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/srelay package/lean/srelay
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/tcping package/lean/tcping
 
 #aliyundrive-webdav
 svn co https://github.com/coolsnowwolf/packages/trunk/net/aliyundrive-webdav package/aliyundrive-webdav
@@ -218,4 +226,4 @@ chmod 0755 *sh
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/uhttpr3p.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 mv uhttpr3p.config .config
-#make defconfig
+make defconfig
