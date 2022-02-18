@@ -59,8 +59,7 @@ rm -rf feeds/packages/net/adguardhome
 svn co https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/net/adguardhome
 
 # 文件浏览器
-git clone https://git.cooluc.com/sbwml/luci-app-filebrowser package/new/luci-app-filebrowser
-git clone https://git.cooluc.com/sbwml/filebrowser package/new/filebrowser
+git clone https://github.com/xiaozhuai/luci-app-filebrowser package/luci-app-filebrowser
 
 #管控
 git clone https://github.com/Lienol/openwrt-package.git package/openwrt-package
@@ -93,7 +92,7 @@ ln -sv ../../../feeds/luci/applications/luci-app-kodexplorer ./
 popd
 
 # alist
-git clone https://git.cooluc.com/sbwml/alist-openwrt package/alist-openwrt
+git clone https://github.com/sbwml/openwrt-alist package/alist-openwrt
 
 
 # qBittorrent
@@ -135,24 +134,47 @@ git clone -b master --single-branch https://github.com/brvphoenix/luci-app-wrtbw
 svn co https://github.com/openwrt/openwrt/branches/openwrt-19.07/package/network/utils/iputils package/network/utils/iputils
 
 # 磁盘分区
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-diskman package/lean/luci-app-diskman
-svn co https://github.com/coolsnowwolf/packages/trunk/utils/parted package/lean/parted
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-diskman feeds/luci/applications/luci-app-diskman
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-diskman ./
+popd
+
+svn co https://github.com/coolsnowwolf/packages/trunk/utils/parted feeds/packages/utils/parted
+pushd package/feeds/packages
+ln -sv ../../../feeds/luci/packages/parted ./
+popd
 
 # 迅雷快鸟
 git clone --depth 1 https://github.com/garypang13/luci-app-xlnetacc.git package/lean/luci-app-xlnetacc
 
 # 清理内存
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-ramfree package/lean/luci-app-ramfree
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-ramfree feeds/luci/applications/luci-app-ramfree
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-ramfree ./
+popd
 
 # 打印机
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-usb-printer package/lean/luci-app-usb-printer
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-usb-printer feeds/luci/applications/luci-app-usb-printer
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-usb-printer ./
+popd
 
 # 流量监管
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-netdata package/lean/luci-app-netdata
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-netdata feeds/luci/applications/luci-app-netdata
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-netdata ./
+popd
 
 # KMS
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-vlmcsd package/lean/luci-app-vlmcsd
-svn co https://github.com/coolsnowwolf/packages/trunk/net/vlmcsd package/lean/vlmcsd
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-vlmcsd feeds/luci/applications/luci-app-vlmcsd
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-vlmcsd ./
+popd
+
+svn co https://github.com/coolsnowwolf/packages/trunk/net/vlmcsd feeds/packages/net/vlmcsd
+pushd package/feeds/packages
+ln -sv ../../../feeds/packages/net/vlmcsd ./
+popd
 
 # 动态DNS
 svn co https://github.com/kiddin9/openwrt-packages/trunk/ddns-scripts-aliyun package/lean/ddns-scripts_dnspod
@@ -183,8 +205,15 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/p
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/srelay package/lean/srelay
 
 #aliyundrive-webdav
-svn co https://github.com/coolsnowwolf/packages/trunk/net/aliyundrive-webdav package/aliyundrive-webdav
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-aliyundrive-webdav package/lean/aliyundrive-webdav
+svn co https://github.com/coolsnowwolf/packages/trunk/net/aliyundrive-webdav feeds/packages/net/aliyundrive-webdav
+pushd package/feeds/packages
+ln -sv ../../../feeds/packages/net/aliyundrive-webdav ./
+popd
+
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-aliyundrive-webdav feeds/luci/applications/aliyundrive-webdav
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-aliyundrive-webdav ./
+popd
 
 
 # 网易云音乐解锁 immortal
@@ -196,24 +225,47 @@ git clone --depth 1 https://github.com/immortalwrt/luci-app-unblockneteasemusic.
 #svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-unblockmusic package/lean/luci-app-unblockmusic
 
 #OpenVpnServer
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-openvpn-server package/lean/luci-app-openvpn-server
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-openvpn-server feeds/luci/applications/luci-app-openvpn-server
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-openvpn-server ./
+popd
 
 #rclone
-svn co https://github.com/coolsnowwolf/packages/trunk/net/rclone package/lean/rclone
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-rclone package/lean/luci-app-rclone
-svn co https://github.com/coolsnowwolf/packages/trunk/net/rclone-ng package/lean/rclone-ng
+svn co https://github.com/coolsnowwolf/packages/trunk/net/rclone feeds/packages/net/rclone
+pushd package/feeds/packages
+ln -sv ../../../feeds/packages/net/rclone ./
+popd
+
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-rclone feeds/luci/applications/luci-app-rclone
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-rclone ./
+popd
+
+svn co https://github.com/coolsnowwolf/packages/trunk/net/rclone-ng feeds/packages/net/rclone-ng
+pushd package/feeds/packages
+ln -sv ../../../feeds/packages/net/rclone-ng ./
+popd
 
 #cifsmount
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-cifs-mount package/lean/luci-app-cifs-mount
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-cifs-mount feeds/luci/applications/luci-app-cifs-mount
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-cifs-mount ./
+popd
 
 #nfs
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-nfs package/lean/luci-app-nfs
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-nfs feeds/luci/applications/luci-app-nfs
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-nfs ./
+popd
 
 #luci socat
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-socat package/new/luci-app-socat
 
 #Zerotier
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-zerotier package/lean/luci-app-zerotier
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-zerotier feeds/luci/applications/luci-app-zerotier
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-zerotier ./
+popd
 
 # 自动挂载
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/automount package/lean/automount
