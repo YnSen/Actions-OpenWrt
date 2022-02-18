@@ -304,10 +304,10 @@ pushd package/feeds/luci
 ln -sv ../../../feeds/luci/applications/luci-app-zerotier ./
 popd
 
-# 自动挂载
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/automount package/lean/automount
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/ntfs3-mount package/lean/ntfs3-mount
-svn co https://github.com/coolsnowwolf/lede/tree/master/package/lean/ntfs3-oot package/lean/ntfs3-oot
+# 自动挂载 不适合官方
+#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/automount package/lean/automount
+#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/ntfs3-mount package/lean/ntfs3-mount
+#svn co https://github.com/coolsnowwolf/lede/tree/master/package/lean/ntfs3-oot package/lean/ntfs3-oot
 
 #docker
 rm -rf ./feeds/luci/applications/luci-app-dockerman
