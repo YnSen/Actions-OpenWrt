@@ -34,8 +34,7 @@ rm -rf feeds/luci/collections/luci-lib-docker
 svn co https://github.com/lisaac/luci-lib-docker/trunk/collections/luci-lib-docker feeds/luci/collections/luci-lib-docker
 
 # 文件浏览器
-git clone https://git.cooluc.com/sbwml/luci-app-filebrowser package/new/luci-app-filebrowser
-git clone https://git.cooluc.com/sbwml/filebrowser package/new/filebrowser
+git clone https://github.com/xiaozhuai/luci-app-filebrowser package/luci-app-filebrowser
 
 #管控
 git clone https://github.com/Lienol/openwrt-package.git package/openwrt-package
@@ -70,7 +69,6 @@ popd
 # alist
 git clone https://github.com/sbwml/openwrt-alist package/alist-openwrt
 
-# qBittorrent
 # qBittorrent
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-qbittorrent feeds/luci/applications/luci-app-qbittorrent
 pushd package/feeds/luci
