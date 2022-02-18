@@ -96,12 +96,38 @@ git clone https://github.com/sbwml/openwrt-alist package/alist-openwrt
 
 
 # qBittorrent
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-qbittorrent package/lean/luci-app-qbittorrent
-svn co https://github.com/coolsnowwolf/packages/trunk/net/qBittorrent-static package/lean/qBittorrent-static
-svn co https://github.com/coolsnowwolf/packages/trunk/net/qBittorrent package/lean/qBittorrent
-svn co https://github.com/coolsnowwolf/packages/trunk/libs/qtbase package/lean/qtbase
-svn co https://github.com/coolsnowwolf/packages/trunk/libs/qttools package/lean/qttools
-svn co https://github.com/coolsnowwolf/packages/trunk/libs/rblibtorrent package/lean/rblibtorrent
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-qbittorrent feeds/luci/applications/luci-app-qbittorrent
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-qbittorrent ./
+popd
+
+svn co https://github.com/coolsnowwolf/packages/trunk/net/qBittorrent-static feeds/packages/net/qBittorrent-static
+pushd package/feeds/packages
+ln -sv ../../../feeds/packages/net/qBittorrent-static ./
+popd
+
+svn co https://github.com/coolsnowwolf/packages/trunk/net/qBittorrent feeds/packages/net/qBittorrent
+pushd package/feeds/packages
+ln -sv ../../../feeds/packages/net/qBittorrent ./
+popd
+
+
+svn co https://github.com/coolsnowwolf/packages/trunk/libs/qtbase feeds/packages/libs/qtbase
+pushd package/feeds/packages
+ln -sv ../../../feeds/packages/libs/qtbase ./
+popd
+
+
+svn co https://github.com/coolsnowwolf/packages/trunk/libs/qttools feeds/packages/libs/qttools
+pushd package/feeds/packages
+ln -sv ../../../feeds/packages/libs/qttools ./
+popd
+
+svn co https://github.com/coolsnowwolf/packages/trunk/libs/rblibtorrent feeds/packages/libs/rblibtorrent
+pushd package/feeds/packages
+ln -sv ../../../feeds/packages/libs/rblibtorrent ./
+popd
+
 #pushd package/lean/luci-app-qbittorrent
 #sed -i 's/nas/services/g' luasrc/controller/qbittorrent.lua
 #sed -i 's/nas/services/g' luasrc/view/qbittorrent/qbittorrent_status.htm
@@ -210,7 +236,7 @@ pushd package/feeds/packages
 ln -sv ../../../feeds/packages/net/aliyundrive-webdav ./
 popd
 
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-aliyundrive-webdav feeds/luci/applications/aliyundrive-webdav
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-aliyundrive-webdav feeds/luci/applications/luci-app-aliyundrive-webdav
 pushd package/feeds/luci
 ln -sv ../../../feeds/luci/applications/luci-app-aliyundrive-webdav ./
 popd
@@ -220,9 +246,20 @@ popd
 git clone --depth 1 https://github.com/immortalwrt/luci-app-unblockneteasemusic.git package/new/UnblockNeteaseMusic
 
 #UnblockMusic163 lean
-#svn co https://github.com/coolsnowwolf/packages/trunk/multimedia/UnblockNeteaseMusic package/lean/UnblockNeteaseMusic
-#svn co https://github.com/coolsnowwolf/packages/trunk/multimedia/UnblockNeteaseMusic-Go package/lean/UnblockNeteaseMusic-Go
-#svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-unblockmusic package/lean/luci-app-unblockmusic
+#svn co https://github.com/coolsnowwolf/packages/trunk/multimedia/UnblockNeteaseMusic feeds/packages/multimedia/UnblockNeteaseMusic
+#pushd package/feeds/packages
+#ln -sv ../../../feeds/packages/multimedia/UnblockNeteaseMusic ./
+#popd
+
+#svn co https://github.com/coolsnowwolf/packages/trunk/multimedia/UnblockNeteaseMusic-Go feeds/packages/multimedia/UnblockNeteaseMusic-Go
+#pushd package/feeds/packages
+#ln -sv ../../../feeds/packages/multimedia/UnblockNeteaseMusic-Go ./
+#popd
+
+#svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-unblockmusic feeds/luci/applications/luci-app-unblockmusic
+#pushd package/feeds/luci
+#ln -sv ../../../feeds/luci/applications/luci-app-unblockmusic ./
+#popd
 
 #OpenVpnServer
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-openvpn-server feeds/luci/applications/luci-app-openvpn-server
@@ -269,6 +306,8 @@ popd
 
 # 自动挂载
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/automount package/lean/automount
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/ntfs3-mount package/lean/ntfs3-mount
+svn co https://github.com/coolsnowwolf/lede/tree/master/package/lean/ntfs3-oot package/lean/ntfs3-oot
 
 #docker
 rm -rf ./feeds/luci/applications/luci-app-dockerman
