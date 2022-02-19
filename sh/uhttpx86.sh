@@ -26,6 +26,8 @@ sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
 rm -rf feeds/packages/net/adguardhome
 svn co https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/net/adguardhome
+sed -i '/\t)/a\\t$(STAGING_DIR_HOST)/bin/upx --lzma --best $(GO_PKG_BUILD_BIN_DIR)/AdGuardHome' ./feeds/packages/net/adguardhome/Makefile
+sed -i '/init/d' feeds/packages/net/adguardhome/Makefile
 
 #docker
 rm -rf feeds/luci/applications/luci-app-dockerman
