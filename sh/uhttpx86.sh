@@ -197,8 +197,15 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-plus package/p
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/passwall-deps/chinadns-ng
 
 #aliyundrive-webdav
-svn co https://github.com/coolsnowwolf/packages/trunk/net/aliyundrive-webdav package/aliyundrive-webdav
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-aliyundrive-webdav package/lean/aliyundrive-webdav
+svn co https://github.com/coolsnowwolf/packages/trunk/net/aliyundrive-webdav feeds/packages/net/aliyundrive-webdav
+pushd package/feeds/packages
+ln -sv ../../../feeds/packages/net/aliyundrive-webdav ./
+popd
+
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-aliyundrive-webdav feeds/luci/applications/luci-app-aliyundrive-webdav
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-aliyundrive-webdav ./
+popd
 
 # 网易云音乐解锁
 git clone --depth 1 https://github.com/immortalwrt/luci-app-unblockneteasemusic.git package/new/UnblockNeteaseMusic
