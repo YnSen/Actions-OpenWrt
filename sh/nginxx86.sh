@@ -213,6 +213,10 @@ git clone https://github.com/fw876/helloworld.git package/lean/
 
 # SSR Plus - deps
 rm -rf feeds/packages/net/xray-core
+cp -r package/lean/xray-core feeds/packages/net/
+pushd package/feeds/packages
+ln -sv ../../../feeds/packages/net/xray-core
+popd
 svn co https://github.com/coolsnowwolf/packages/trunk/net/redsocks2 package/lean/
 
 # PASSWALL
