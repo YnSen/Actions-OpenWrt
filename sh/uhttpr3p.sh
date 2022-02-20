@@ -161,7 +161,7 @@ svn co https://github.com/sbwml/openwrt-package/trunk/ddns-scripts-dnspod packag
 svn co https://github.com/sbwml/openwrt-package/trunk/ddns-scripts-aliyun package/lean/ddns-scripts_aliyun
 
 # ShadowsocksR Plus+
-svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/lean/luci-app-ssr-plus
+git clone https://github.com/fw876/helloworld.git package/lean/
 
 # SSR Plus - deps
 rm -rf feeds/packages/net/xray-core
