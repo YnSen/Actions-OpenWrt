@@ -209,14 +209,15 @@ svn co https://github.com/kiddin9/openwrt-packages/trunk/ddns-scripts-aliyun pac
 svn co https://github.com/kiddin9/openwrt-packages/trunk/ddns-scripts-dnspod package/lean/ddns-scripts_aliyun
 
 # ShadowsocksR Plus+
-git clone https://github.com/fw876/helloworld.git package/lean/
-
-# SSR Plus - deps
+git clone https://github.com/fw876/helloworld.git package/lean/helloworld
 rm -rf feeds/packages/net/xray-core
-cp -r package/lean/xray-core feeds/packages/net/
+rm -rf package/feeds/packages/xray-core
+cp -r package/lean/helloworld/xray-core feeds/packages/net/
 pushd package/feeds/packages
 ln -sv ../../../feeds/packages/net/xray-core
 popd
+
+# SSR Plus - deps
 svn co https://github.com/coolsnowwolf/packages/trunk/net/redsocks2 package/lean/
 
 # PASSWALL
