@@ -25,6 +25,12 @@ uci commit system
 #feed
 sed -i 's,downloads.openwrt.org,mirror.sjtu.edu.cn/openwrt,g' /etc/opkg/distfeeds.conf
 
+#AdguardHome
+uci set AdGuardHome.AdGuardHome.workdir='/usr/bin/AdGuardHomeWork'
+uci set AdGuardHome.AdGuardHome.waitonboot='0'
+uci set AdGuardHome.AdGuardHome.verbose='1'
+uci commit AdGuardHome
+
 #nginx
 uci set nginx.global.uci_enable='true'
 uci commit nginx
