@@ -208,29 +208,16 @@ popd
 svn co https://github.com/kiddin9/openwrt-packages/trunk/ddns-scripts-aliyun package/lean/ddns-scripts_dnspod
 svn co https://github.com/kiddin9/openwrt-packages/trunk/ddns-scripts-dnspod package/lean/ddns-scripts_aliyun
 
-# SSR Plus
-git clone --depth=1 https://github.com/fw876/helloworld package/helloworld
-
+# ShadowsocksR Plus+
+git clone https://github.com/fw876/helloworld.git package/lean/
 
 # SSR Plus - deps
 rm -rf feeds/packages/net/xray-core
-svn co https://github.com/immortalwrt/packages/trunk/net/dns2socks package/helloworld-deps/dns2socks
-svn co https://github.com/immortalwrt/packages/trunk/net/microsocks package/helloworld-deps/microsocks
-svn co https://github.com/immortalwrt/packages/trunk/net/ipt2socks package/helloworld-deps/ipt2socks
-svn co https://github.com/immortalwrt/packages/trunk/net/pdnsd-alt package/helloworld-deps/pdnsd
-svn co https://github.com/immortalwrt/packages/trunk/net/redsocks2 package/helloworld-deps/redsocks2
+svn co https://github.com/coolsnowwolf/packages/trunk/net/redsocks2 package/lean/
 
 # PASSWALL
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall package/passwall/luci-app-passwall
+git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/
 sed -i 's,一般般,通用,g' package/passwall/luci-app-passwall/po/zh-cn/passwall.po
-
-# PASSWALL - deps
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/brook package/passwall-deps/brook
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/hysteria package/passwall-deps/hysteria
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go package/passwall-deps/trojan-go
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-plus package/passwall-deps/trojan-plus
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/passwall-deps/chinadns-ng
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/srelay package/lean/srelay
 
 #aliyundrive-webdav
 svn co https://github.com/coolsnowwolf/packages/trunk/net/aliyundrive-webdav feeds/packages/net/aliyundrive-webdav
