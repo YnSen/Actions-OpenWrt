@@ -177,9 +177,10 @@ svn co https://github.com/sbwml/openwrt-package/trunk/ddns-scripts-dnspod packag
 svn co https://github.com/sbwml/openwrt-package/trunk/ddns-scripts-aliyun package/lean/ddns-scripts_aliyun
 
 # ShadowsocksR Plus+
-git clone https://github.com/fw876/helloworld.git package/lean/
+git clone https://github.com/fw876/helloworld.git package/lean/helloworld
 rm -rf feeds/packages/net/xray-core
-cp -r package/lean/xray-core feeds/packages/net/
+rm -rf package/feeds/packages/xray-core
+cp -r package/lean/helloworld/xray-core feeds/packages/net/
 pushd package/feeds/packages
 ln -sv ../../../feeds/packages/net/xray-core
 popd
