@@ -50,6 +50,8 @@ sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 # 默认设置
 svn co https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings package/default-settings
 pushd package/default-settings
+rm -rf default/zzz-default-settings
+mv default/zzz-default-settingsnginx default/zzz-default-settings
 cp -r files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 popd
 
