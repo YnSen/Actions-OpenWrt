@@ -1,0 +1,89 @@
+#!/bin/sh
+
+#theme
+uci set luci.main.mediaurlbase='/luci-static/argon'
+uci commit luci
+
+#timezone
+uci set system.@system[0].timezone=CST-8
+uci set system.@system[0].zonename=Asia/Shanghai
+uci commit system
+
+#ntp server
+uci del system.ntp.enabled
+uci del system.ntp.enable_server
+uci set system.@system[0].log_proto='udp'
+uci set system.@system[0].conloglevel='8'
+uci set system.@system[0].cronloglevel='5'
+uci del system.ntp.server
+uci add_list system.ntp.server='ntp1.aliyun.com'
+uci add_list system.ntp.server='ntp2.aliyun.com'
+uci add_list system.ntp.server='ntp3.aliyun.com'
+uci add_list system.ntp.server='ntp4.aliyun.com'
+uci commit system
+
+#feed
+sed -i 's,downloads.openwrt.org,mirror.sjtu.edu.cn/openwrt,g' /etc/opkg/distfeeds.conf
+
+#AdguardHome
+uci set AdGuardHome.AdGuardHome.binpath='/usr/bin/AdGuardHome'
+uci set AdGuardHome.AdGuardHome.workdir='/usr/bin/AdGuardHomeWork'
+uci set AdGuardHome.AdGuardHome.waitonboot='0'
+uci set AdGuardHome.AdGuardHome.verbose='1'
+uci commit AdGuardHome
+
+#docker mirror
+#uci add_list dockerd.globals.registry_mirrors='https://hub-mirror.c.163.com'
+#uci commit dockerd
+
+#firewall
+#uci set firewall.@defaults[0].fullcone='1'
+#uci set firewall.@defaults[0].flow_offloading='1'
+#uci commit firewall
+
+#upnp
+uci set upnpd.config.igdv1='1'
+uci set upnpd.config.enabled='1'
+uci del upnpd.config.enable_upnp
+uci del upnpd.config.enable_natpmp
+uci commit upnpd
+
+#dnsmasq
+uci set dhcp.lan.ra='disabled'
+uci set dhcp.lan.ndp='disabled'
+uci set dhcp.lan.dhcpv6='disabled'
+uci set dhcp.lan.ra_management='0'
+uci commit dhcp
+
+#openvpn
+sed -i 's,192.168.1.0 255.255.255.0,192.168.6.0 255.255.255.0,g' /etc/config/openvpn
+sed -i 's,192.168.1.1,192.168.3.1,g' /etc/config/openvpn
+uci set openvpn.myvpn.duplicate_cn='1'
+uci set openvpn.myvpn.proto='tcp6'
+uci set openvpn.myvpn.server='192.168.6.0 255.255.255.0'
+uci commit openvpn
+
+#packet_steering
+uci del network.globals.ula_prefix
+uci set network.globals.packet_steering='0'
+uci commit network
+/etc/init.d/network restart
+
+# ssrp
+uci set shadowsocksr.@global[0].gfwlist_url='https://raw.cooluc.com/Loyalsoldier/v2ray-rules-dat/release/gfw.txt'
+uci set shadowsocksr.@global[0].chnroute_url='https://raw.cooluc.com/QiuSimons/Chnroute/master/dist/chnroute/chnroute.txt'
+uci commit shadowsocksr
+
+#link
+ln -sf /sbin/ip /usr/bin/ip
+
+#Flag packages
+#opkg flag hold luci-app-firewall
+#opkg flag hold firewall
+#opkg flag hold dnsmasq-full
+
+#luci cache
+rm -rf /tmp/luci-modulecache
+rm -f /tmp/luci-indexcache
+
+exit 0
