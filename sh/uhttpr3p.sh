@@ -50,6 +50,9 @@ sed -i '/init/d' feeds/packages/net/adguardhome/Makefile
 # 文件浏览器
 git clone https://github.com/xiaozhuai/luci-app-filebrowser package/luci-app-filebrowser
 
+#管控
+git clone https://github.com/Lienol/openwrt-package.git package/openwrt-package
+
 #openclash插件
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 
