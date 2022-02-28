@@ -211,7 +211,18 @@ svn co https://github.com/kiddin9/openwrt-packages/trunk/ddns-scripts-aliyun pac
 svn co https://github.com/kiddin9/openwrt-packages/trunk/ddns-scripts-dnspod package/lean/ddns-scripts_aliyun
 
 # ShadowsocksR Plus+
-git clone https://github.com/fw876/helloworld.git package/lean/helloworld
+svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/lean/helloworld/luci-app-ssr-plus
+svn co https://github.com/fw876/helloworld/trunk/simple-obfs package/lean/helloworld/simple-obfs
+svn co https://github.com/fw876/helloworld/trunk/naiveproxy package/lean/helloworld/naiveproxy
+svn co https://github.com/fw876/helloworld/trunk/v2ray-core package/lean/helloworld/v2ray-core
+svn co https://github.com/fw876/helloworld/trunk/v2ray-geodata package/lean/helloworld/v2ray-geodata
+svn co https://github.com/fw876/helloworld/trunk/xray-core package/lean/helloworld/xray-core
+svn co https://github.com/fw876/helloworld/trunk/v2ray-plugin package/lean/helloworld/v2ray-plugin
+svn co https://github.com/fw876/helloworld/trunk/xray-plugin package/lean/helloworld/xray-plugin
+svn co https://github.com/fw876/helloworld/trunk/shadowsocks-rust package/lean/helloworld/shadowsocks-rust
+svn co https://github.com/fw876/helloworld/trunk/shadowsocksr-libev package/lean/helloworld/shadowsocksr-libev
+svn co https://github.com/fw876/helloworld/trunk/tcping package/lean/helloworld/tcping
+svn co https://github.com/fw876/helloworld/trunk/trojan package/lean/helloworld/trojan
 rm -rf feeds/packages/net/xray-core
 rm -rf package/feeds/packages/xray-core
 cp -r package/lean/helloworld/xray-core feeds/packages/net/
@@ -223,8 +234,33 @@ popd
 svn co https://github.com/coolsnowwolf/packages/trunk/net/redsocks2 package/lean/
 
 # PASSWALL
-git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall package/passwall/luci-app-passwall
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/shadowsocksr-libev package/passwall/shadowsocksr-libev
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/pdnsd-alt package/passwall/pdnsd
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/microsocks package/passwall/microsocks
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/dns2socks package/passwall/dns2socks
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ipt2socks package/passwall/ipt2socks
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan package/passwall/trojan
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/tcping package/passwall/tcping
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go package/passwall/trojan-go
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/passwall/chinadns-ng
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/brook package/passwall/brook
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/kcptun package/passwall/kcptun
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/microsocks package/passwall/microsocks
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/naiveproxy package/passwall/naiveproxy
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/pdnsd-alt package/passwall/pdnsd-alt
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/simple-obfs package/passwall/simple-obfs
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks package/passwall/ssocks
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/tcping package/passwall/tcping
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-plus package/passwall/trojan-plus
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/v2ray-core package/passwall/v2ray-core
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/v2ray-geodata package/passwall/v2ray-geodata
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/v2ray-plugin package/passwall/v2ray-plugin
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray-core package/passwall/xray-core
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray-plugin package/passwall/xray-plugin
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/shadowsocks-rust package/passwall/shadowsocks-rust
 sed -i 's,一般般,通用,g' package/passwall/luci-app-passwall/po/zh-cn/passwall.po
+
 
 #aliyundrive-webdav
 svn co https://github.com/coolsnowwolf/packages/trunk/net/aliyundrive-webdav feeds/packages/net/aliyundrive-webdav
