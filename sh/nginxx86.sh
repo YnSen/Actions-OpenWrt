@@ -236,7 +236,6 @@ svn co https://github.com/coolsnowwolf/packages/trunk/net/redsocks2 package/lean
 # PASSWALL
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall package/passwall/luci-app-passwall
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/shadowsocksr-libev package/passwall/shadowsocksr-libev
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/pdnsd-alt package/passwall/pdnsd
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/microsocks package/passwall/microsocks
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/dns2socks package/passwall/dns2socks
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ipt2socks package/passwall/ipt2socks
@@ -259,6 +258,7 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/v2ray-plugin package/
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray-core package/passwall/xray-core
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray-plugin package/passwall/xray-plugin
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/shadowsocks-rust package/passwall/shadowsocks-rust
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/hysteria package/passwall/hysteria
 sed -i 's,一般般,通用,g' package/passwall/luci-app-passwall/po/zh-cn/passwall.po
 
 
