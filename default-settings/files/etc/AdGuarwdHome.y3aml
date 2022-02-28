@@ -4,7 +4,7 @@ beta_bind_port: 0
 users:
 - name: sen
   password: $2a$10$DYs//HVGeugk/isx1z5Nr.o6mRy6zqXVqsvbH0XZbrrwIm5TbxqQK
-auth_attempts: 5
+auth_attempts: 52
 block_auth_min: 15
 http_proxy: ""
 language: ""
