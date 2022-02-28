@@ -48,9 +48,7 @@ sed -i '/\t)/a\\t$(STAGING_DIR_HOST)/bin/upx --lzma --best $(GO_PKG_BUILD_BIN_DI
 sed -i '/init/d' feeds/packages/net/adguardhome/Makefile
 
 # 文件浏览器
-git clone https://git.cooluc.com/sbwml/luci-app-filebrowser package/new/luci-app-filebrowser
-git clone https://git.cooluc.com/sbwml/filebrowser package/new/filebrowser
-
+git clone https://github.com/xiaozhuai/luci-app-filebrowser package/luci-app-filebrowser
 #管控
 git clone https://github.com/Lienol/openwrt-package.git package/openwrt-package
 
