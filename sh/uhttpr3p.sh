@@ -226,8 +226,7 @@ pushd package/feeds/packages
 ln -sv ../../../feeds/packages/multimedia/UnblockNeteaseMusic-Go ./
 popd
 
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-unblockmusic package/lean/luci-app-unblockmusic
-cp -r package/lean/luci-app-unblockmusic feeds/luci/applications/luci-app-unblockmusic
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-unblockmusic feeds/luci/applications/luci-app-unblockmusic
 pushd package/feeds/luci
 ln -sv ../../../feeds/luci/applications/luci-app-unblockmusic ./
 popd
