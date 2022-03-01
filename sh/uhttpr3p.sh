@@ -180,7 +180,7 @@ ln -sv ../../../feeds/packages/net/xray-core
 popd
 
 # SSR Plus - deps
-svn co https://github.com/coolsnowwolf/packages/trunk/net/redsocks2 package/lean/
+svn co https://github.com/coolsnowwolf/packages/trunk/net/redsocks2 package/lean/helloworld/redsocks2
 
 # PASSWALL
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall package/passwall/luci-app-passwall
@@ -226,7 +226,8 @@ pushd package/feeds/packages
 ln -sv ../../../feeds/packages/multimedia/UnblockNeteaseMusic-Go ./
 popd
 
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-unblockmusic feeds/luci/applications/luci-app-unblockmusic
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-unblockmusic package/lean/luci-app-unblockmusic
+cp -r package/lean/luci-app-unblockmusic feeds/luci/applications/luci-app-unblockmusic
 pushd package/feeds/luci
 ln -sv ../../../feeds/luci/applications/luci-app-unblockmusic ./
 popd
