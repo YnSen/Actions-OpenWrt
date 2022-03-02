@@ -23,7 +23,7 @@ popd
 sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 
 # AdGuardHome
-git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
+git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
 rm -rf feeds/packages/net/adguardhome
 svn co https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/net/adguardhome
 sed -i '/\t)/a\\t$(STAGING_DIR_HOST)/bin/upx --lzma --best $(GO_PKG_BUILD_BIN_DIR)/AdGuardHome' ./feeds/packages/net/adguardhome/Makefile
@@ -35,8 +35,6 @@ svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-
 rm -rf feeds/luci/collections/luci-lib-docker
 svn co https://github.com/lisaac/luci-lib-docker/trunk/collections/luci-lib-docker feeds/luci/collections/luci-lib-docker
 
-# 文件浏览器
-git clone https://github.com/xiaozhuai/luci-app-filebrowser package/luci-app-filebrowser
 
 #管控
 git clone https://github.com/Lienol/openwrt-package.git package/openwrt-package
