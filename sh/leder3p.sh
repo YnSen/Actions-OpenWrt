@@ -18,7 +18,13 @@ git clone https://github.com/zzsj0928/luci-app-pushbot
 # 京东签到插件
 #git clone https://github.com/jerrykuku/luci-app-jd-dailybonus 
 # adguardhome插件
-git clone https://github.com/rufengsuixing/luci-app-adguardhome
+# AdGuardHome
+git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
+rm -rf feeds/packages/net/adguardhome
+svn co https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/net/adguardhome
+sed -i '/\t)/a\\t$(STAGING_DIR_HOST)/bin/upx --lzma --best $(GO_PKG_BUILD_BIN_DIR)/AdGuardHome' ./feeds/packages/net/adguardhome/Makefile
+sed -i '/init/d' feeds/packages/net/adguardhome/Makefile
+
 # Clash插件
 #git clone https://github.com/frainzy1477/luci-app-clash
 #openclash插件
@@ -71,9 +77,10 @@ rm -rf luci-app-kodexplorer
 popd
 
 # argon主题
-pushd package/lean
+pushd feeds/luci/theme
 rm -rf luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
+popd
 git clone https://github.com/jerrykuku/luci-app-argon-config.git
 #vssr
 git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb 依赖
@@ -95,6 +102,8 @@ sed -i 's/bootstrap/argon/g' feeds/luci/collections/luci/Makefile
 sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
 
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
+cp -r ~/work/Actions-OpenWrt/Actions-OpenWrt/default-settings/files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/wireless ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/leder3p.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 mv leder3p.config .config
 make defconfig
