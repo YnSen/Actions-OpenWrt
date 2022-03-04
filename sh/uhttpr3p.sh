@@ -216,19 +216,10 @@ svn co https://github.com/coolsnowwolf/packages/trunk/net/aliyundrive-webdav pac
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-aliyundrive-webdav package/lean/aliyundrive-webdav
 
 #UnblockMusic163
-svn co https://github.com/coolsnowwolf/packages/trunk/multimedia/UnblockNeteaseMusic feeds/packages/multimedia/UnblockNeteaseMusic
-pushd package/feeds/packages
-ln -sv ../../../feeds/packages/multimedia/UnblockNeteaseMusic ./
-popd
-
-svn co https://github.com/coolsnowwolf/packages/trunk/multimedia/UnblockNeteaseMusic-Go feeds/packages/multimedia/UnblockNeteaseMusic-Go
-pushd package/feeds/packages
-ln -sv ../../../feeds/packages/multimedia/UnblockNeteaseMusic-Go ./
-popd
-
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-unblockmusic feeds/luci/applications/luci-app-unblockmusic
+git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
+cp -r package/luci-app-unblockneteasemusic feeds/luci/applications/
 pushd package/feeds/luci
-ln -sv ../../../feeds/luci/applications/luci-app-unblockmusic ./
+ln -sv ../../../feeds/luci/applications/luci-app-unblockneteasemusic ./
 popd
 
 #OpenVpnServer
