@@ -18,12 +18,8 @@ git clone https://github.com/zzsj0928/luci-app-pushbot
 # 京东签到插件
 #git clone https://github.com/jerrykuku/luci-app-jd-dailybonus 
 # adguardhome插件
-# AdGuardHome
-git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
-rm -rf feeds/packages/net/adguardhome
-svn co https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/net/adguardhome
-sed -i '/\t)/a\\t$(STAGING_DIR_HOST)/bin/upx --lzma --best $(GO_PKG_BUILD_BIN_DIR)/AdGuardHome' ./feeds/packages/net/adguardhome/Makefile
-sed -i '/init/d' feeds/packages/net/adguardhome/Makefile
+
+
 
 # Clash插件
 #git clone https://github.com/frainzy1477/luci-app-clash
@@ -55,6 +51,26 @@ git clone -b 18.06 https://github.com/garypang13/luci-theme-edge
 #git clone https://github.com/jerrykuku/luci-app-argon-config
 #liuran001软件包
 #git clone https://github.com/liuran001/openwrt-packages.git
+popd
+
+# AdGuardHome
+git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
+rm -rf feeds/packages/net/adguardhome
+svn co https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/net/adguardhome
+sed -i '/\t)/a\\t$(STAGING_DIR_HOST)/bin/upx --lzma --best $(GO_PKG_BUILD_BIN_DIR)/AdGuardHome' ./feeds/packages/net/adguardhome/Makefile
+sed -i '/init/d' feeds/packages/net/adguardhome/Makefile
+
+#unblockneteasemusic
+git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
+cp -r package/luci-app-unblockneteasemusic feeds/luci/applications/
+rm -rf feeds/luci/applications/package/luci-app-unblockmusic
+rm -rf package/feeds/luci/luci-app-unblockmusic
+rm -rf feeds/packages/multimedia/UnblockNeteaseMusic-Go
+rm -rf feeds/packages/multimedia/UnblockNeteaseMusic
+rm -rf package/feeds/packages/UnblockNeteaseMusic-Go
+rm -rf package/feeds/packages/UnblockNeteaseMusic
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-unblockneteasemusic ./
 popd
 
 #删除后面重复插件
