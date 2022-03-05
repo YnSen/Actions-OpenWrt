@@ -52,6 +52,19 @@ git clone -b 18.06 https://github.com/garypang13/luci-theme-edge
 #git clone https://github.com/liuran001/openwrt-packages.git
 popd
 
+#unblockneteasemusic
+git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
+cp -r package/luci-app-unblockneteasemusic feeds/luci/applications/
+rm -rf feeds/luci/applications/package/luci-app-unblockmusic
+rm -rf package/feeds/luci/luci-app-unblockmusic
+rm -rf feeds/packages/multimedia/UnblockNeteaseMusic-Go
+rm -rf feeds/packages/multimedia/UnblockNeteaseMusic
+rm -rf package/feeds/packages/UnblockNeteaseMusic-Go
+rm -rf package/feeds/packages/UnblockNeteaseMusic
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-unblockneteasemusic ./
+popd
+
 #删除后面重复插件
 #pushd package/openwrt-packages
 #rm -rf luci-app-koolproxyR
