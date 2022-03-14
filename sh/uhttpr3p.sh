@@ -84,17 +84,17 @@ popd
 git clone https://github.com/sbwml/openwrt-alist package/alist-openwrt
 
 # qBittorrent
-#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-qbittorrent package/lean/luci-app-qbittorrent
-#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qBittorrent-static package/lean/qBittorrent-static
-#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qBittorrent package/lean/qBittorrent
-#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/rblibtorrent package/lean/rblibtorrent
-#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qtbase package/lean/qtbase
-#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qttools package/lean/qttools
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-qbittorrent package/lean/luci-app-qbittorrent
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qBittorrent-static package/lean/qBittorrent-static
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qBittorrent package/lean/qBittorrent
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/rblibtorrent package/lean/rblibtorrent
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qtbase package/lean/qtbase
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qttools package/lean/qttools
 #pushd package/lean/luci-app-qbittorrent
 #sed -i 's/nas/services/g' luasrc/controller/qbittorrent.lua
 #sed -i 's/nas/services/g' luasrc/view/qbittorrent/qbittorrent_status.htm
 #popd
-git clone https://git.cooluc.com/sbwml/openwrt-qBittorrent.git
+#git clone https://git.cooluc.com/sbwml/openwrt-qBittorrent.git
 
 # 应用过滤
 git clone https://github.com/sbwml/OpenAppFilter --depth=1 package/new/OpenAppFilter
@@ -212,8 +212,8 @@ sed -i 's,一般般,通用,g' package/passwall/luci-app-passwall/po/zh-cn/passwa
 
 
 #aliyundrive-webdav
-svn co https://github.com/coolsnowwolf/packages/trunk/net/aliyundrive-webdav package/aliyundrive-webdav
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-aliyundrive-webdav package/lean/aliyundrive-webdav
+svn co https://github.com/coolsnowwolf/packages/trunk/net/aliyundrive-webdav package/lean/aliyundrive-webdav
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-aliyundrive-webdav package/lean/luci-app-aliyundrive-webdav
 
 #UnblockMusic163
 git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
