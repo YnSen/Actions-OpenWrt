@@ -1,5 +1,5 @@
 #get source
-git clone -b https://github.com/immortalwrt/immortalwrt.git openwrt
+git clone https://github.com/immortalwrt/immortalwrt.git openwrt
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
@@ -15,7 +15,7 @@ sed -i 's/"admin", "tencentcloud"/"admin", "services", "tencentcloud"/g' tencent
 popd
 popd
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.3.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 sed -i 's/bootstrap/argon/g' feeds/luci/collections/luci/Makefile
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/immx86.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
