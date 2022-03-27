@@ -1,0 +1,42 @@
+#AdguardHome
+uci set AdGuardHome.AdGuardHome.binpath='/usr/bin/AdGuardHome'
+uci set AdGuardHome.AdGuardHome.workdir='/usr/bin/AdGuardHomeWork'
+uci set AdGuardHome.AdGuardHome.waitonboot='0'
+uci commit AdGuardHome
+
+#openvpn
+sed -i 's,192.168.1.0 255.255.255.0,192.168.7.0 255.255.255.0,g' /etc/config/openvpn
+sed -i 's,192.168.1.1,192.168.2.1,g' /etc/config/openvpn
+uci set openvpn.myvpn.duplicate_cn='1'
+uci set openvpn.myvpn.proto='tcp6'
+uci set openvpn.myvpn.server='192.168.7.0 255.255.255.0'
+uci commit openvpn
+
+#filebrowseron
+uci set filebrowser.config.enabled='1'
+uci commit filebrowser
+
+#dhcp
+uci set dhcp.lan.start='10'
+uci set dhcp.lan.ra_management='1'
+uci set dhcp.lan.ra='server'
+uci set dhcp.lan.dhcpv6='server'
+uci set dhcp.lan.dns_service='0'
+uci set dhcp.lan.ndp='disabled'
+uci commit dhcp
+
+#wireless
+uci set wireless.default_radio0.ssid='MiWiFi'
+uci set wireless.default_radio0.encryption='psk-mixed'
+uci set wireless.default_radio0.key='f18996172082'
+uci set wireless.default_radio1.ssid='MiWiFi_5G'
+uci set wireless.default_radio1.encryption='psk-mixed'
+uci set wireless.default_radio1.key='f18996172082'
+uci commit wireless
+/sbin/wifi up
+
+#packet_steering
+uci del network.globals.ula_prefix
+uci set network.globals.packet_steering='0'
+uci commit network
+/etc/init.d/network restart
