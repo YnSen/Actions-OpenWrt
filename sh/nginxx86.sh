@@ -1,16 +1,20 @@
 ##offical nginx x86
 # get source
 git clone https://github.com/openwrt/openwrt -b openwrt-21.02
-cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
+cd /home/lighthouse/Actions-OpenWrt/openwrt
 
 git checkout v21.02.2
 
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
-cp ~/work/Actions-OpenWrt/Actions-OpenWrt/patch/652-netfilter-flow_offload-add-check-ifindex.patch target/linux/generic/hack-5.4/
+cp /home/lighthouse/Actions-OpenWrt/patch/652-netfilter-flow_offload-add-check-ifindex.patch target/linux/generic/hack-5.4/
 
-#为网易云添加ucode支持
-svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/system/iucode-tool package/system/iucode-tool
+
+#替换package/kernel/linux/modules/netsupport.mk添加kmod-inet-diag支持
+rm -rf package/kernel/linux/modules/netsupport.mk
+pushd package/kernel/linux/modules/
+svn export https://github.com/openwrt/openwrt/trunk/package/kernel/linux/modules/netsupport.mk
+popd
 
 # Drop uhttpd
 #pushd feeds/luci
@@ -24,7 +28,7 @@ svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/pac
 #git apply 0004-nginx-update-to-version-1.20.2.patch && rm 0004-nginx-update-to-version-1.20.2.patch
 #popd
 
-#cp ~/work/Actions-OpenWrt/Actions-OpenWrt/19_cpu.js ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/
+#cp /home/lighthouse/Actions-OpenWrt/19_cpu.js /home/lighthouse/Actions-OpenWrt/openwrt/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/
 
 # O3
 #sed -i 's/Os/O3 -funsafe-math-optimizations -funroll-loops -ffunction-sections -fdata-sections -Wl,--gc-sections/g' include/target.mk
@@ -55,7 +59,7 @@ svn co https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings package/d
 pushd package/default-settings
 rm -rf default/zzz-default-settings
 mv default/zzz-default-settingsnginx default/zzz-default-settings
-cp -r files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+cp -r files /home/lighthouse/Actions-OpenWrt/openwrt/
 popd
 
 # AdGuardHome
@@ -266,22 +270,22 @@ sed -i 's,一般般,通用,g' package/passwall/luci-app-passwall/po/zh-cn/passwa
 
 
 #aliyundrive-webdav
-#svn co https://github.com/coolsnowwolf/packages/trunk/net/aliyundrive-webdav feeds/packages/net/#aliyundrive-webdav
-#pushd package/feeds/packages
-#ln -sv ../../../feeds/packages/net/aliyundrive-webdav ./
-#popd
+svn co https://github.com/coolsnowwolf/packages/trunk/multimedia/aliyundrive-webdav feeds/packages/multimedia/aliyundrive-webdav
+pushd package/feeds/packages
+ln -sv ../../../feeds/packages/multimedia/aliyundrive-webdav ./
+popd
 
-#svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-aliyundrive-webdav feeds/luci/applications/luci-app-aliyundrive-webdav
-#pushd package/feeds/luci
-#ln -sv ../../../feeds/luci/applications/luci-app-aliyundrive-webdav ./
-#popd
-svn export https://github.com/coolsnowwolf/packages/trunk/net/aliyundrive-webdav package/aliyunwebdav/
-svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-aliyundrive-webdav package/aliyunwebdav/
-
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-aliyundrive-webdav feeds/luci/applications/luci-app-aliyundrive-webdav
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-aliyundrive-webdav ./
+popd
 
 
 # 网易云音乐解锁 immortal
 git clone --depth 1 https://github.com/immortalwrt/luci-app-unblockneteasemusic.git package/new/UnblockNeteaseMusic
+
+#为网易云添加ucode支持
+svn export https://github.com/openwrt/openwrt/trunk/package/utils/ucode package/utils/ucode
 
 #UnblockMusic163 lean
 #svn co https://github.com/coolsnowwolf/packages/trunk/multimedia/UnblockNeteaseMusic feeds/packages/multimedia/UnblockNeteaseMusic
@@ -374,13 +378,8 @@ chmod 0755 *sh
 ./03-convert_translation.sh
 ./04-create_acl_for_luci.sh -a
 
-cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
-
-#替换package/kernel/linux/modules/netsupport.mk添加kmod-inet-diag支持
-rm -rf package/kernel/linux/modules/netsupport.mk
-svn export https://raw.githubusercontent.com/immortalwrt/immortalwrt/openwrt-21.02/package/kernel/linux/modules/netsupport.mk package/kernel/linux/modules/
-
-cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/nginx.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
-mv ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/config-5.4 ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/target/linux/x86/
+cd /home/lighthouse/Actions-OpenWrt/openwrt
+cp /home/lighthouse/Actions-OpenWrt/conf/nginx.config /home/lighthouse/Actions-OpenWrt/openwrt/
+mv /home/lighthouse/Actions-OpenWrt/conf/config-5.4 /home/lighthouse/Actions-OpenWrt/openwrt/target/linux/x86/
 mv nginx.config .config
 make defconfig
