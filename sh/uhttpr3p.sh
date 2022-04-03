@@ -46,6 +46,11 @@ popd
 cp -r ~/work/Actions-OpenWrt/Actions-OpenWrt/default-settings/files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/wireless ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/files/etc/config/
 
+#network--dpdk
+svn export https://github.com/QiuSimons/OpenWrt-Add/trunk/dpdk package/new/dpdk
+
+#推送
+git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 
 # AdGuardHome
 git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
@@ -122,7 +127,7 @@ git clone -b master --single-branch https://github.com/brvphoenix/wrtbwmon --dep
 git clone -b master --single-branch https://github.com/brvphoenix/luci-app-wrtbwmon --depth=1 package/new/luci-app-wrtbwmon
 
 # iputils
-svn co https://github.com/openwrt/openwrt/branches/openwrt-19.07/package/network/utils/iputils package/network/utils/iputils
+#svn co https://github.com/openwrt/openwrt/branches/openwrt-19.07/package/network/utils/iputils package/network/utils/iputils
 
 
 # 迅雷快鸟
