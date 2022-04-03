@@ -13,6 +13,12 @@ git checkout v21.02.2
 
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/patch/652-netfilter-flow_offload-add-check-ifindex.patch target/linux/generic/hack-5.4/
 
+#替换package/kernel/linux/modules/netsupport.mk添加kmod-inet-diag支持
+rm -rf package/kernel/linux/modules/netsupport.mk
+pushd package/kernel/linux/modules/
+svn export https://github.com/openwrt/openwrt/trunk/package/kernel/linux/modules/netsupport.mk
+popd
+
 # 默认设置
 svn co https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings package/default-settings
 pushd package/default-settings
@@ -226,9 +232,9 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/hysteria package/pass
 sed -i 's,一般般,通用,g' package/passwall/luci-app-passwall/po/zh-cn/passwall.po
 
 #aliyundrive-webdav
-svn co https://github.com/coolsnowwolf/packages/trunk/net/aliyundrive-webdav feeds/packages/net/aliyundrive-webdav
+svn co https://github.com/coolsnowwolf/packages/trunk/multimedia/aliyundrive-webdav feeds/packages/multimedia/aliyundrive-webdav
 pushd package/feeds/packages
-ln -sv ../../../feeds/packages/net/aliyundrive-webdav ./
+ln -sv ../../../feeds/packages/multimedia/aliyundrive-webdav ./
 popd
 
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-aliyundrive-webdav feeds/luci/applications/luci-app-aliyundrive-webdav
@@ -238,6 +244,9 @@ popd
 
 # 网易云音乐解锁
 git clone --depth 1 https://github.com/immortalwrt/luci-app-unblockneteasemusic.git package/new/UnblockNeteaseMusic
+
+#为网易云添加ucode支持
+svn export https://github.com/openwrt/openwrt/trunk/package/utils/ucode package/utils/ucode
 
 #UnblockMusic163 lean
 #svn co https://github.com/coolsnowwolf/packages/trunk/multimedia/UnblockNeteaseMusic feeds/packages/multimedia/UnblockNeteaseMusic
