@@ -11,6 +11,16 @@ git checkout v21.02.2
 
 #curl -fL -o sdk.tar.xz https://downloads.openwrt.org/releases/21.02.1/targets/x86/64/openwrt-sdk-21.02.1-x86-64_gcc-8.4.0_musl.Linux-x86_64.tar.xz || wget -cO sdk.tar.xz https://downloads.openwrt.org/releases/21.02.1/targets/x86/64/openwrt-sdk-21.02.1-x86-64_gcc-8.4.0_musl.Linux-x86_64.tar.xz
 
+### 必要的 Patches ###
+
+# offload bug fix
+
+wget -qO - https://github.com/openwrt/openwrt/pull/4849.patch | patch -p1
+
+# TCP performance optimizations backport from linux/net-next
+
+cp -f ../PATCH/backport/695-tcp-optimizations.patch ./target/linux/generic/backport-5.4/695-tcp-optimizations.patch
+
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/patch/652-netfilter-flow_offload-add-check-ifindex.patch target/linux/generic/hack-5.4/
 
 #替换package/kernel/linux/modules/netsupport.mk添加kmod-inet-diag支持
