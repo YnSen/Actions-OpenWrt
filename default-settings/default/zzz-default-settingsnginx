@@ -23,7 +23,7 @@ uci add_list system.ntp.server='ntp4.aliyun.com'
 uci commit system
 
 #feed
-sed -i 's,downloads.openwrt.org,mirror.sjtu.edu.cn/openwrt,g' /etc/opkg/distfeeds.conf
+#sed -i 's,downloads.openwrt.org,mirror.sjtu.edu.cn/openwrt,g' /etc/opkg/distfeeds.conf
 
 #AdguardHome
 uci set AdGuardHome.AdGuardHome.workdir='/usr/bin/AdGuardHomeWork'
@@ -180,9 +180,9 @@ uci commit network
 /etc/init.d/network restart
 
 # ssrp
-uci set shadowsocksr.@global[0].gfwlist_url='https://raw.cooluc.com/Loyalsoldier/v2ray-rules-dat/release/gfw.txt'
-uci set shadowsocksr.@global[0].chnroute_url='https://raw.cooluc.com/QiuSimons/Chnroute/master/dist/chnroute/chnroute.txt'
-uci commit shadowsocksr
+#uci set shadowsocksr.@global[0].gfwlist_url='https://raw.cooluc.com/Loyalsoldier/v2ray-rules-dat/release/gfw.txt'
+#uci set shadowsocksr.@global[0].chnroute_url='https://raw.cooluc.com/QiuSimons/Chnroute/master/dist/chnroute/chnroute.txt'
+#uci commit shadowsocksr
 
 #link
 ln -sf /sbin/ip /usr/bin/ip
