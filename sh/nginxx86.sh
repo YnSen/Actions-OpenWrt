@@ -68,9 +68,6 @@ mv default/zzz-default-settingsnginx default/zzz-default-settings
 cp -r files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 popd
 
-#network--dpdk
-svn export https://github.com/QiuSimons/OpenWrt-Add/trunk/dpdk package/new/dpdk
-
 #推送
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 
