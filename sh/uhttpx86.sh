@@ -37,9 +37,6 @@ popd
 # Max connection limite
 sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 
-#network--dpdk
-svn export https://github.com/QiuSimons/OpenWrt-Add/trunk/dpdk package/new/dpdk
-
 #推送
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 
