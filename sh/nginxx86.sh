@@ -17,11 +17,10 @@ cp -f ~/work/Actions-OpenWrt/Actions-OpenWrt/patch/695-tcp-optimizations.patch .
 
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/patch/652-netfilter-flow_offload-add-check-ifindex.patch target/linux/generic/hack-5.4/
 
-#替换package/kernel/linux/modules/netsupport.mk添加kmod-inet-diag支持
-rm -rf package/kernel/linux/modules/netsupport.mk
-pushd package/kernel/linux/modules/
-svn export https://github.com/openwrt/openwrt/trunk/package/kernel/linux/modules/netsupport.mk
-popd
+#添加kmod-inet-diag支持
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/inet-diag ./
+sed -i '/\$(call KernelPackage,netlink-diag))/r inet-diag' package/kernel/linux/modules/netsupport.mk
+rm -rf inet-diag
 
 # Drop uhttpd
 #pushd feeds/luci
