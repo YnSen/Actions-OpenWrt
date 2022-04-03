@@ -41,15 +41,6 @@ sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 #network--dpdk
 svn export https://github.com/QiuSimons/OpenWrt-Add/trunk/dpdk package/new/dpdk
 
-# 更换软件源
-rm -rf ./scripts/download.pl
-rm -rf ./include/download.mk
-wget -P scripts/ https://github.com/immortalwrt/immortalwrt/raw/openwrt-21.02/scripts/download.pl
-wget -P include/ https://github.com/immortalwrt/immortalwrt/raw/openwrt-21.02/include/download.mk
-sed -i '/unshift/d' scripts/download.pl
-sed -i '/mirror02/d' scripts/download.pl
-echo "net.netfilter.nf_conntrack_helper = 1" >>./package/kernel/linux/files/sysctl-nf-conntrack.conf
-
 # AdGuardHome
 git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
 rm -rf feeds/packages/net/adguardhome
