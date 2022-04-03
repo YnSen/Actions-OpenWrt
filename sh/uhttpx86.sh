@@ -19,7 +19,7 @@ wget -qO - https://github.com/openwrt/openwrt/pull/4849.patch | patch -p1
 
 # TCP performance optimizations backport from linux/net-next
 
-cp -f ../PATCH/backport/695-tcp-optimizations.patch ./target/linux/generic/backport-5.4/695-tcp-optimizations.patch
+cp -f ~/work/Actions-OpenWrt/Actions-OpenWrt/patch/695-tcp-optimizations.patch target/linux/generic/backport-5.4/695-tcp-optimizations.patch
 
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/patch/652-netfilter-flow_offload-add-check-ifindex.patch target/linux/generic/hack-5.4/
 
