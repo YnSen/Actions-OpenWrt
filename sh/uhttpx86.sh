@@ -220,7 +220,7 @@ popd
 svn co https://github.com/coolsnowwolf/packages/trunk/net/redsocks2 package/lean/
 
 # PASSWALL
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall package/passwall/luci-app-passwall
+git clone https://github.com/xiaorouji/openwrt-passwall -b luci package/passwall/luci-app-passwall
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/shadowsocksr-libev package/passwall/shadowsocksr-libev
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/microsocks package/passwall/microsocks
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/dns2socks package/passwall/dns2socks
