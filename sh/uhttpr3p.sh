@@ -44,9 +44,6 @@ rm -rf inet-diag
 cp -r ~/work/Actions-OpenWrt/Actions-OpenWrt/default-settings/files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/wireless ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/files/etc/config/
 
-#network--dpdk
-svn export https://github.com/QiuSimons/OpenWrt-Add/trunk/dpdk package/new/dpdk
-
 #推送
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 
