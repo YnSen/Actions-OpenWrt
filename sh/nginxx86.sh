@@ -1,13 +1,13 @@
 ##offical nginx x86
 # get source
 git clone https://github.com/openwrt/openwrt -b openwrt-21.02
-cd /home/lighthouse/Actions-OpenWrt/openwrt
+cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 
 git checkout v21.02.2
 
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
-cp /home/lighthouse/Actions-OpenWrt/patch/652-netfilter-flow_offload-add-check-ifindex.patch target/linux/generic/hack-5.4/
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/patch/652-netfilter-flow_offload-add-check-ifindex.patch target/linux/generic/hack-5.4/
 
 
 #替换package/kernel/linux/modules/netsupport.mk添加kmod-inet-diag支持
@@ -28,7 +28,7 @@ popd
 #git apply 0004-nginx-update-to-version-1.20.2.patch && rm 0004-nginx-update-to-version-1.20.2.patch
 #popd
 
-#cp /home/lighthouse/Actions-OpenWrt/19_cpu.js /home/lighthouse/Actions-OpenWrt/openwrt/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/
+#cp ~/work/Actions-OpenWrt/Actions-OpenWrt/19_cpu.js ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/
 
 # O3
 #sed -i 's/Os/O3 -funsafe-math-optimizations -funroll-loops -ffunction-sections -fdata-sections -Wl,--gc-sections/g' include/target.mk
@@ -59,7 +59,7 @@ svn co https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings package/d
 pushd package/default-settings
 rm -rf default/zzz-default-settings
 mv default/zzz-default-settingsnginx default/zzz-default-settings
-cp -r files /home/lighthouse/Actions-OpenWrt/openwrt/
+cp -r files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 popd
 
 # AdGuardHome
@@ -378,8 +378,8 @@ chmod 0755 *sh
 ./03-convert_translation.sh
 ./04-create_acl_for_luci.sh -a
 
-cd /home/lighthouse/Actions-OpenWrt/openwrt
-cp /home/lighthouse/Actions-OpenWrt/conf/nginx.config /home/lighthouse/Actions-OpenWrt/openwrt/
-mv /home/lighthouse/Actions-OpenWrt/conf/config-5.4 /home/lighthouse/Actions-OpenWrt/openwrt/target/linux/x86/
+cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/nginx.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+mv ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/config-5.4 ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/target/linux/x86/
 mv nginx.config .config
 make defconfig
