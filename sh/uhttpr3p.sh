@@ -29,6 +29,13 @@ sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/patch/652-netfilter-flow_offload-add-check-ifindex.patch target/linux/generic/hack-5.4/
 
+#替换package/kernel/linux/modules/netsupport.mk添加kmod-inet-diag支持
+rm -rf package/kernel/linux/modules/netsupport.mk
+pushd package/kernel/linux/modules/
+svn export https://github.com/openwrt/openwrt/trunk/package/kernel/linux/modules/netsupport.mk
+popd
+
+
 # 默认设置
 #svn co https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings package/default-settings
 #pushd package/default-settings
