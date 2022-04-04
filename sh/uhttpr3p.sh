@@ -195,7 +195,6 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/tcping package/passwa
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go package/passwall/trojan-go
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/passwall/chinadns-ng
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/brook package/passwall/brook
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/kcptun package/passwall/kcptun
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/microsocks package/passwall/microsocks
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/naiveproxy package/passwall/naiveproxy
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/pdnsd-alt package/passwall/pdnsd-alt
