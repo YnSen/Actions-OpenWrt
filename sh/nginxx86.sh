@@ -9,11 +9,6 @@ git checkout v21.02.2
 
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/patch/652-netfilter-flow_offload-add-check-ifindex.patch target/linux/generic/hack-5.4/
 
-#添加kmod-inet-diag支持
-cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/inet-diag ./
-sed -i '/\$(call KernelPackage,netlink-diag))/r inet-diag' package/kernel/linux/modules/netsupport.mk
-rm -rf inet-diag
-
 # Drop uhttpd
 #pushd feeds/luci
 #curl -s https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/patch/0002-feeds-luci-Drop-uhttpd-depends.patch > 0002-feeds-luci-Drop-uhttpd-depends.patch
@@ -374,6 +369,28 @@ sed -i 's,frp 客户端,FRP 客户端,g' feeds/luci/applications/luci-app-frpc/p
 #rm -rf feeds/luci/applications/luci-app-mjpg-streamer
 #git clone https://github.com/sbwml/luci-app-mjpg-streamer feeds/luci/applications/luci-app-mjpg-streamer
 
+# 更换 Nodejs 版本
+rm -rf ./feeds/packages/lang/node
+svn export https://github.com/nxhack/openwrt-node-packages/trunk/node feeds/packages/lang/node
+sed -i '\/bin\/node/a\\t$(STAGING_DIR_HOST)/bin/upx --lzma --best $(1)/usr/bin/node' feeds/packages/lang/node/Makefile
+rm -rf ./feeds/packages/lang/node-arduino-firmata
+svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-arduino-firmata feeds/packages/lang/node-arduino-firmata
+rm -rf ./feeds/packages/lang/node-cylon
+svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-cylon feeds/packages/lang/node-cylon
+rm -rf ./feeds/packages/lang/node-hid
+svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-hid feeds/packages/lang/node-hid
+rm -rf ./feeds/packages/lang/node-homebridge
+svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-homebridge feeds/packages/lang/node-homebridge
+rm -rf ./feeds/packages/lang/node-serialport
+svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-serialport feeds/packages/lang/node-serialport
+rm -rf ./feeds/packages/lang/node-serialport-bindings
+svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-serialport-bindings feeds/packages/lang/node-serialport-bindings
+rm -rf ./feeds/packages/lang/node-yarn
+svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-yarn feeds/packages/lang/node-yarn
+ln -sf ../../../feeds/packages/lang/node-yarn ./package/feeds/packages/node-yarn
+svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-serialport-bindings-cpp feeds/packages/lang/node-serialport-bindings-cpp
+ln -sf ../../../feeds/packages/lang/node-serialport-bindings-cpp ./package/feeds/packages/node-serialport-bindings-cpp
+
 curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/02-remove_upx.sh
 curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/03-convert_translation.sh
 curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/04-create_acl_for_luci.sh
@@ -386,4 +403,10 @@ cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/nginx.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 mv ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/config-5.4 ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/target/linux/x86/
 mv nginx.config .config
+
+#添加kmod-inet-diag支持
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/inet-diag ./
+sed -i '/\$(call KernelPackage,netlink-diag))/r inet-diag' package/kernel/linux/modules/netsupport.mk
+rm -rf inet-diag
+
 make defconfig
