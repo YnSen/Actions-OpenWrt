@@ -7,14 +7,6 @@ git checkout v21.02.2
 
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
-### 必要的 Patches ###
-
-# offload bug fix
-wget -qO - https://github.com/openwrt/openwrt/pull/4849.patch | patch -p1
-
-# TCP performance optimizations backport from linux/net-next
-cp -f ~/work/Actions-OpenWrt/Actions-OpenWrt/patch/695-tcp-optimizations.patch ./target/linux/generic/backport-5.4/695-tcp-optimizations.patch
-
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/patch/652-netfilter-flow_offload-add-check-ifindex.patch target/linux/generic/hack-5.4/
 
 #添加kmod-inet-diag支持
