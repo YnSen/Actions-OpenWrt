@@ -99,7 +99,7 @@ ln -sv ../../../feeds/luci/applications/luci-app-kodexplorer ./
 popd
 
 # alist
-git clone https://github.com/sbwml/openwrt-alist package/alist-openwrt
+git clone https://github.com/sbwml/openwrt-alist --depth=1
 
 # qBittorrent
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-qbittorrent package/lean/luci-app-qbittorrent
@@ -233,8 +233,7 @@ svn co https://github.com/coolsnowwolf/packages/trunk/net/aliyundrive-webdav pac
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-aliyundrive-webdav package/lean/luci-app-aliyundrive-webdav
 
 #UnblockMusic163
-git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
-cp -r package/luci-app-unblockneteasemusic feeds/luci/applications/
+git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git feeds/luci/applications/luci-app-unblockneteasemusic
 pushd package/feeds/luci
 ln -sv ../../../feeds/luci/applications/luci-app-unblockneteasemusic ./
 popd
