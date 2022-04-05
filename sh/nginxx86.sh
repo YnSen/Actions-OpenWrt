@@ -1,6 +1,6 @@
 ##offical nginx x86
 # get source
-git clone https://github.com/openwrt/openwrt -b openwrt-21.02
+git clone -b openwrt-21.02 https://github.com/openwrt/openwrt 
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 
 git checkout v21.02.2
