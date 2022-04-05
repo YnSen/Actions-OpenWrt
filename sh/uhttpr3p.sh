@@ -166,9 +166,10 @@ ln -sv ../../../feeds/packages/net/vlmcsd ./
 popd
 
 # 定时重启
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-autoreboot package/lean/luci-app-autoreboot
-
-
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-autoreboot feeds/luci/applications/luci-app-autoreboot
+pushd package/feeds/luci/
+ln -svln -sv ../../../feeds/luci/applications/luci-app-autoreboot ./
+popd
 
 # DDNS
 svn co https://github.com/sbwml/openwrt-package/trunk/ddns-scripts-dnspod package/lean/ddns-scripts_dnspod
@@ -226,14 +227,24 @@ sed -i 's,一般般,通用,g' package/passwall/luci-app-passwall/po/zh-cn/passwa
 
 
 #aliyundrive-webdav
-svn co https://github.com/coolsnowwolf/packages/trunk/net/aliyundrive-webdav package/lean/aliyundrive-webdav
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-aliyundrive-webdav package/lean/luci-app-aliyundrive-webdav
+svn co https://github.com/coolsnowwolf/packages/trunk/multimedia/aliyundrive-webdav feeds/packages/multimedia/aliyundrive-webdav
+pushd package/feeds/packages
+ln -sv ../../../feeds/packages/multimedia/aliyundrive-webdav ./
+popd
+
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-aliyundrive-webdav feeds/luci/applications/luci-app-aliyundrive-webdav
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-aliyundrive-webdav ./
+popd
 
 #UnblockMusic163
 git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git feeds/luci/applications/luci-app-unblockneteasemusic
 pushd package/feeds/luci
 ln -sv ../../../feeds/luci/applications/luci-app-unblockneteasemusic ./
 popd
+
+#为网易云添加ucode支持
+svn export https://github.com/openwrt/openwrt/trunk/package/utils/ucode package/utils/ucode
 
 #OpenVpnServer
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-openvpn-server feeds/luci/applications/luci-app-openvpn-server
