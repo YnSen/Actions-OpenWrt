@@ -328,10 +328,10 @@ popd
 #ln -sv ../../../feeds/packages/net/rclone ./
 #popd
 
-#svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-rclone feeds/luci/applications/luci-app-rclone
-#pushd package/feeds/luci
-#ln -sv ../../../feeds/luci/applications/luci-app-rclone ./
-#popd
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-rclone feeds/luci/applications/luci-app-rclone
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-rclone ./
+popd
 
 #svn co https://github.com/coolsnowwolf/packages/trunk/net/rclone-ng feeds/packages/net/rclone-ng
 #pushd package/feeds/packages
