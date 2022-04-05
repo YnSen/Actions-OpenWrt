@@ -49,11 +49,23 @@ svn co https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/
 sed -i '/\t)/a\\t$(STAGING_DIR_HOST)/bin/upx --lzma --best $(GO_PKG_BUILD_BIN_DIR)/AdGuardHome' ./feeds/packages/net/adguardhome/Makefile
 sed -i '/init/d' feeds/packages/net/adguardhome/Makefile
 
-# 文件浏览器
-git clone https://github.com/xiaozhuai/luci-app-filebrowser package/luci-app-filebrowser
 
 #管控
 git clone https://github.com/Lienol/openwrt-package.git package/openwrt-package
+rm -rf package/openwrt-package/luci-app-filebrowser
+
+#filebrowser
+svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-filebrowser feeds/luci/applications/luci-app-filebrowser
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-filebrowser ./
+popd
+
+
+#filebrowser db
+svn export https://github.com/immortalwrt/packages/trunk/utils/filebrowser feeds/packages/utils/filebrowser
+pushd package/feeds/packages/
+ln -sv ../../../feeds/packages/utils/filebrowser ./
+popd
 
 #openclash插件
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
