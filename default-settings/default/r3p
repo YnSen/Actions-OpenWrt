@@ -1,3 +1,8 @@
+#argon color
+uci set argon.@global[0].primary='#1694FF'
+uci set argon.@global[0].dark_primary='#1B93F2'
+uci commit argon
+
 #AdguardHome
 uci set AdGuardHome.AdGuardHome.binpath='/usr/bin/AdGuardHome'
 uci set AdGuardHome.AdGuardHome.workdir='/usr/bin/AdGuardHomeWork'
