@@ -73,6 +73,20 @@ svn export https://github.com/QiuSimons/OpenWrt-Add/trunk/dpdk package/new/dpdk
 
 #管控
 git clone https://github.com/Lienol/openwrt-package.git package/openwrt-package
+rm -rf package/openwrt-package/luci-app-filebrowser
+
+#filebrowser
+svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-filebrowser feeds/luci/applications/luci-app-filebrowser
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-filebrowser ./
+popd
+
+
+#filebrowser db
+svn export https://github.com/immortalwrt/packages/trunk/utils/filebrowser feeds/packages/utils/filebrowser
+pushd package/feeds/packages/
+ln -sv ../../../feeds/packages/utils/filebrowser ./
+popd
 
 #openclash插件
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
@@ -158,7 +172,7 @@ git clone https://github.com/sbwml/OpenAppFilter --depth=1 package/new/OpenAppFi
 #sed -i 's,2016,2208,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/cpufreq
 
 # AutoCore
-svn export https://github.com/coolsnowwolf/lede/trunk/package/lean/autocore package/lean/autocore
+svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/emortal/autocore package/new/autocore
 rm -rf ./feeds/packages/utils/coremark
 svn co https://github.com/immortalwrt/packages/trunk/utils/coremark feeds/packages/utils/coremark
 
