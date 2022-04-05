@@ -17,10 +17,10 @@ git checkout v21.02.2
 #curl -sL https://github.com/immortalwrt/immortalwrt/raw/openwrt-21.02/package/kernel/linux/modules/video.mk > package/kernel/linux/modules/video.mk
 
 #ramips - immortalwrt uboot & target upstream
-rm -rf ./target/linux/ramips
-rm -rf ./package/boot/uboot-ramips
-svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/target/linux/ramips target/linux/ramips
-svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/boot/uboot-ramips package/boot/uboot-ramips
+#rm -rf ./target/linux/ramips
+#rm -rf ./package/boot/uboot-ramips
+#svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/target/linux/ramips target/linux/ramips
+#svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/boot/uboot-ramips package/boot/uboot-ramips
 
 #curl -fL -o sdk.tar.xz https://downloads.openwrt.org/releases/21.02.1/targets/ramips/mt7621/openwrt-sdk-21.02.1-ramips-mt7621_gcc-8.4.0_musl.Linux-x86_64.tar.xz || wget -cO sdk.tar.xz https://downloads.openwrt.org/releases/21.02.1/targets/ramips/mt7621/openwrt-sdk-21.02.1-ramips-mt7621_gcc-8.4.0_musl.Linux-x86_64.tar.xz
 
@@ -38,10 +38,6 @@ rm -rf zzz-default-settings
 rm -rf zzz-default-settingsnginx
 mv r3p zzz-default-settings
 popd
-
-
-cp -r ~/work/Actions-OpenWrt/Actions-OpenWrt/default-settings/files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
-cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/wireless ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/files/etc/config/
 
 #推送
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
