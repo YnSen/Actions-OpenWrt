@@ -371,8 +371,6 @@ cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/uhttpx86.config ~/work/Actions-Op
 mv ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/config-5.4 ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/target/linux/x86/
 mv uhttpx86.config .config
 
-./scripts/feeds install -a
-
 #添加kmod-inet-diag支持
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/inet-diag ./
 sed -i '/\$(call KernelPackage,netlink-diag))/r inet-diag' package/kernel/linux/modules/netsupport.mk
