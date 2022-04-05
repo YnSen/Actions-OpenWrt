@@ -99,17 +99,37 @@ ln -sv ../../../feeds/luci/applications/luci-app-kodexplorer ./
 popd
 
 # qBittorrent
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-qbittorrent package/lean/luci-app-qbittorrent
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qBittorrent-static package/lean/qBittorrent-static
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qBittorrent package/lean/qBittorrent
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/rblibtorrent package/lean/rblibtorrent
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qtbase package/lean/qtbase
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qttools package/lean/qttools
-#pushd package/lean/luci-app-qbittorrent
-#sed -i 's/nas/services/g' luasrc/controller/qbittorrent.lua
-#sed -i 's/nas/services/g' luasrc/view/qbittorrent/qbittorrent_status.htm
-#popd
-#git clone https://git.cooluc.com/sbwml/openwrt-qBittorrent.git
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-qbittorrent feeds/luci/applications/luci-app-qbittorrent
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-qbittorrent ./
+popd
+
+svn co https://github.com/coolsnowwolf/packages/trunk/net/qBittorrent-static feeds/packages/net/qBittorrent-static
+pushd package/feeds/packages
+ln -sv ../../../feeds/packages/net/qBittorrent-static ./
+popd
+
+svn co https://github.com/coolsnowwolf/packages/trunk/net/qBittorrent feeds/packages/net/qBittorrent
+pushd package/feeds/packages
+ln -sv ../../../feeds/packages/net/qBittorrent ./
+popd
+
+
+svn co https://github.com/coolsnowwolf/packages/trunk/libs/qtbase feeds/packages/libs/qtbase
+pushd package/feeds/packages
+ln -sv ../../../feeds/packages/libs/qtbase ./
+popd
+
+
+svn co https://github.com/coolsnowwolf/packages/trunk/libs/qttools feeds/packages/libs/qttools
+pushd package/feeds/packages
+ln -sv ../../../feeds/packages/libs/qttools ./
+popd
+
+svn co https://github.com/coolsnowwolf/packages/trunk/libs/rblibtorrent feeds/packages/libs/rblibtorrent
+pushd package/feeds/packages
+ln -sv ../../../feeds/packages/libs/rblibtorrent ./
+popd
 
 # 应用过滤
 git clone https://github.com/sbwml/OpenAppFilter --depth=1 package/new/OpenAppFilter
