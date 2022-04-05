@@ -189,6 +189,7 @@ pushd package/feeds/luci
 ln -sv ../../../feeds/luci/applications/luci-app-diskman ./
 popd
 
+rm -rf feeds/packages/utils/parted
 svn co https://github.com/coolsnowwolf/packages/trunk/utils/parted feeds/packages/utils/parted
 pushd package/feeds/packages
 ln -sv ../../../feeds/luci/packages/parted ./
