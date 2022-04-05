@@ -30,10 +30,14 @@ sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/patch/652-netfilter-flow_offload-add-check-ifindex.patch target/linux/generic/hack-5.4/
 
 # 默认设置
-#svn co https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings package/default-settings
-#pushd package/default-settings
-#cp -r files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
-#popd
+svn co https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings package/default-settings
+pushd package/default-settings
+cp -r files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+cd default/
+rm -rf zzz-default-settings
+rm -rf zzz-default-settingsnginx
+mv r3p zzz-default-settings
+popd
 
 
 cp -r ~/work/Actions-OpenWrt/Actions-OpenWrt/default-settings/files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
