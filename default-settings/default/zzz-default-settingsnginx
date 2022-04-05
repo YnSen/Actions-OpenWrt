@@ -184,6 +184,10 @@ uci commit network
 #uci set shadowsocksr.@global[0].chnroute_url='https://raw.cooluc.com/QiuSimons/Chnroute/master/dist/chnroute/chnroute.txt'
 #uci commit shadowsocksr
 
+#filebrowseron
+uci set filebrowser.config.enabled='1'
+uci commit filebrowser
+
 #link
 ln -sf /sbin/ip /usr/bin/ip
 
