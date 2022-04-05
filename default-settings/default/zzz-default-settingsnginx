@@ -4,6 +4,11 @@
 uci set luci.main.mediaurlbase='/luci-static/argon'
 uci commit luci
 
+#argon color
+uci set argon.@global[0].primary='#1694FF'
+uci set argon.@global[0].dark_primary='#1B93F2'
+uci commit argon
+
 #timezone
 uci set system.@system[0].timezone=CST-8
 uci set system.@system[0].zonename=Asia/Shanghai
