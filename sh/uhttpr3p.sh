@@ -273,20 +273,20 @@ ln -sv ../../../feeds/luci/applications/luci-app-openvpn-server ./
 popd
 
 #rclone
-svn co https://github.com/coolsnowwolf/packages/trunk/net/rclone feeds/packages/net/rclone
-pushd package/feeds/packages
-ln -sv ../../../feeds/packages/net/rclone ./
-popd
+#svn co https://github.com/coolsnowwolf/packages/trunk/net/rclone feeds/packages/net/rclone
+#pushd package/feeds/packages
+#ln -sv ../../../feeds/packages/net/rclone ./
+#popd
 
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-rclone feeds/luci/applications/luci-app-rclone
 pushd package/feeds/luci
 ln -sv ../../../feeds/luci/applications/luci-app-rclone ./
 popd
 
-svn co https://github.com/coolsnowwolf/packages/trunk/net/rclone-ng feeds/packages/net/rclone-ng
-pushd package/feeds/packages
-ln -sv ../../../feeds/packages/net/rclone-ng ./
-popd
+#svn co https://github.com/coolsnowwolf/packages/trunk/net/rclone-ng feeds/packages/net/rclone-ng
+#pushd package/feeds/packages
+#ln -sv ../../../feeds/packages/net/rclone-ng ./
+#popd
 
 #cifsmount
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-cifs-mount feeds/luci/applications/luci-app-cifs-mount
