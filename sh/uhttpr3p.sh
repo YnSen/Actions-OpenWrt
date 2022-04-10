@@ -384,11 +384,19 @@ rm -rf ./feeds/packages/lang/node-serialport
 svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-serialport feeds/packages/lang/node-serialport
 rm -rf ./feeds/packages/lang/node-serialport-bindings
 svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-serialport-bindings feeds/packages/lang/node-serialport-bindings
-rm -rf ./feeds/packages/lang/node-yarn
+rm -rf feeds/packages/lang/node-yarn
+rm -rf package/feeds/packages/node-yarn
 svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-yarn feeds/packages/lang/node-yarn
-ln -sf ../../../feeds/packages/lang/node-yarn ./package/feeds/packages/node-yarn
+pushd package/feeds/packages/
+ln -sv ../../../feeds/packages/lang/node-yarn ./
+popd
+
+rm -rf feeds/packages/lang/node-serialport-bindings-cpp
+rm -rf package/feeds/packages/node-serialport-bindings-cpp
 svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-serialport-bindings-cpp feeds/packages/lang/node-serialport-bindings-cpp
-ln -sf ../../../feeds/packages/lang/node-serialport-bindings-cpp ./package/feeds/packages/node-serialport-bindings-cpp
+pushd package/feeds/packages/
+ln -sv ../../../feeds/packages/lang/node-serialport-bindings-cpp ./
+popd
 
 curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/02-remove_upx.sh
 curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/03-convert_translation.sh
