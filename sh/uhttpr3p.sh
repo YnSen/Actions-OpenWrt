@@ -39,6 +39,10 @@ rm -rf zzz-default-settingsnginx
 mv r3p zzz-default-settings
 popd
 
+# 更换 golang 版本
+rm -rf ./feeds/packages/lang/golang
+svn export https://github.com/openwrt/packages/trunk/lang/golang feeds/packages/lang/golang
+
 #推送
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 
