@@ -22,6 +22,10 @@ popd
 # Max connection limite
 sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 
+# 更换 golang 版本
+rm -rf ./feeds/packages/lang/golang
+svn export https://github.com/openwrt/packages/trunk/lang/golang feeds/packages/lang/golang
+
 #推送
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 
