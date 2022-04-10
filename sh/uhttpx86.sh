@@ -189,6 +189,15 @@ pushd package/feeds/packages
 ln -sv ../../../feeds/packages/net/vlmcsd ./
 popd
 
+# FRP 内网穿透
+rm -rf ./feeds/luci/applications/luci-app-frps
+rm -rf ./feeds/luci/applications/luci-app-frpc
+rm -rf ./feeds/packages/net/frp
+rm -f ./package/feeds/packages/frp
+svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-frps package/lean/luci-app-frps
+svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-frpc package/lean/luci-app-frpc
+svn export https://github.com/coolsnowwolf/packages/trunk/net/frp package/lean/frp
+
 # DDNS
 svn co https://github.com/sbwml/openwrt-package/trunk/ddns-scripts-dnspod package/lean/ddns-scripts_dnspod
 svn co https://github.com/sbwml/openwrt-package/trunk/ddns-scripts-aliyun package/lean/ddns-scripts_aliyun
