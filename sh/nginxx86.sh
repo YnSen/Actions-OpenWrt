@@ -228,18 +228,28 @@ pushd package/feeds/packages
 ln -sv ../../../feeds/packages/net/vlmcsd ./
 popd
 
-# 动态DNS
-svn co https://github.com/kiddin9/openwrt-packages/trunk/ddns-scripts-aliyun package/lean/ddns-scripts_dnspod
-svn co https://github.com/kiddin9/openwrt-packages/trunk/ddns-scripts-dnspod package/lean/ddns-scripts_aliyun
-
 # FRP 内网穿透
 rm -rf ./feeds/luci/applications/luci-app-frps
 rm -rf ./feeds/luci/applications/luci-app-frpc
 rm -rf ./feeds/packages/net/frp
-rm -f ./package/feeds/packages/frp
-svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-frps package/lean/luci-app-frps
-svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-frpc package/lean/luci-app-frpc
-svn export https://github.com/coolsnowwolf/packages/trunk/net/frp package/lean/frp
+rm -rf ./package/feeds/packages/frp
+rm -rf ./package/feeds/luci/luci-app-frps
+rm -rf ./package/feeds/luci/luci-app-frpc
+svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-frps feeds/luci/applications/luci-app-frps
+svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-frpc feeds/luci/applications/luci-app-frpc
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-frps ./
+ln -sv ../../../feeds/luci/applications/luci-app-frpc ./
+popd
+
+svn export https://github.com/coolsnowwolf/packages/trunk/net/frp feeds/packages/net/frp
+pushd package/feeds/packages/
+ln -sv ../../../feeds/packages/net/frp ./
+popd
+
+# 动态DNS
+svn co https://github.com/kiddin9/openwrt-packages/trunk/ddns-scripts-aliyun package/lean/ddns-scripts_dnspod
+svn co https://github.com/kiddin9/openwrt-packages/trunk/ddns-scripts-dnspod package/lean/ddns-scripts_aliyun
 
 # ShadowsocksR Plus+
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/lean/helloworld/luci-app-ssr-plus
