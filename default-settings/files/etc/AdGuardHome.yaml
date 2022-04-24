@@ -34,8 +34,6 @@ dns:
   - tls://dns.alidns.com
   - tls://dot.pub
   - 61.128.128.68
-  - 223.5.5.5
-  - 8.8.4.4
   upstream_dns_file: ""
   bootstrap_dns:
   - 223.5.5.5
