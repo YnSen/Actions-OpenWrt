@@ -132,7 +132,7 @@ user_rules:
 - '||youtube.com^$dnstype=AAAA'
 - '||instagram.com^$dnstype=AAAA'
 - '||facebook.com^$dnstype=AAAA'
-- '||xue51.com^$dnstype=AAAA'
+- '||facebook.net^$dnstype=AAAA'
 - '||thegay.com^$dnstype=AAAA'
 - '||disneyplus.com^$dnstype=AAAA'
 - '||disney.api.edge.bamgrid.com^$dnstype=AAAA'
@@ -147,6 +147,8 @@ user_rules:
 - '@@||pan.quark.cn^$important'
 - '@@||drive.quark.cn^$important'
 - '||matrix.org^$dnstype=AAAA'
+- '||cdninstagram.com^$dnstype=AAAA'
+- '||fna.fbcdn.net^$dnstype=AAAA'
 - ""
 dhcp:
   enabled: false
