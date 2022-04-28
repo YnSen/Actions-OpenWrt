@@ -75,12 +75,12 @@ jobs:
 
 ##    pushd ~/work/Actions-OpenWrt/Actions-OpenWrt && cp tencentddns.lua ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package/tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller && popd
         
-#    - name: Download package
-#      id: package
-#      run: |
-#        cd openwrt
-#        make defconfig
-#        make download -j$(($(nproc)+1)) &
+    - name: Download package
+      id: package
+      run: |
+        cd openwrt
+        make defconfig
+        make download -j$(($(nproc)+1)) &
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
