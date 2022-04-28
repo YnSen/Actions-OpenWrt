@@ -80,7 +80,7 @@ jobs:
       run: |
         cd openwrt
         make defconfig
-        make download -j$(($(nproc)+1)) &
+        make download -j$(($(nproc)+1)) V=s
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
