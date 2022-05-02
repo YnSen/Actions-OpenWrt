@@ -80,7 +80,16 @@ jobs:
 #      run: |
 #        cd openwrt
 #        make defconfig
-#        make download -j$(($(nproc)+1)) &
+#        make download -j$(($(nproc)+1)) V=s
+
+    - name: Download package
+      id: package
+      run: |
+        cd openwrt
+        make defconfig
+        make download -j8
+        find dl -size -1024c -exec ls -l {} \;
+        find dl -size -1024c -exec rm -f {} \;
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
