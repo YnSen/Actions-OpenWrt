@@ -1,3 +1,19 @@
+ kmod-crypto-qat-common
+ 
+ 
+ Symbol: QAT_C3XXX [=y]                                                                                                  │  
+  │ Type  : bool                                                                                                            │  
+  │ Defined at package/qat/libs/openssl-qat/Config.in:15                                                                    │  
+  │   Prompt: c3xxx - Denverton                                                                                             │  
+  │   Depends on: <choice>                                                                                                  │  
+  │   Location:                                                                                                             │  
+  │     -> Libraries                                                                                                        │  
+  │       -> SSL                                                                                                            │  
+  │         -> Configuration                                                                                                │  
+  │ (1)       -> Platform (<choice> [=y]) 
+
+
+
 ipv6helper choose
 DEPENDS:=+luci-proto-ipv6 +wget +ip6tables +libip6tc +kmod-ipt-nat6 +odhcpd-ipv6only +odhcp6c +6in4
 
