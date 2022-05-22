@@ -265,6 +265,7 @@ svn export https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/shadowsocksr-libev package/passwall/shadowsocksr-libev
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/microsocks package/passwall/microsocks
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/dns2socks package/passwall/dns2socks
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/dns2tcp package/passwall/dns2tcp
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ipt2socks package/passwall/ipt2socks
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan package/passwall/trojan
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/tcping package/passwall/tcping
