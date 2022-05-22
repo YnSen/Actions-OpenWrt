@@ -92,6 +92,26 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-th
 #rm -rf luasrc/view/admin_status
 #popd
 
+#softethervpn
+rm -rf feeds/packages/net/softethervpn
+rm -rf feeds/packages/net/softethervpn5
+rm -rf feeds/luci/applications/luci-app-softethervpn
+svn export https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/softethervpn feeds/packages/net/
+svn export https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/softethervpn5 feeds/packages/net/
+svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-softethervpn feeds/luci/applications/
+
+pushd package/feeds/luci/
+ln -sv ../../../feeds/luci/applications/luci-app-softethervpn ./
+popd
+
+pushd package/feeds/packages/
+ln -sv ../../../feeds/packages/net/softethervpn ./
+popd
+
+pushd package/feeds/packages/
+ln -sv ../../../feeds/packages/net/softethervpn5 ./
+popd
+
 #kodexplorer
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-kodexplorer feeds/luci/applications/luci-app-kodexplorer
 pushd package/feeds/luci
