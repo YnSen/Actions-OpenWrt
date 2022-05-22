@@ -85,6 +85,9 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-th
 rm -rf feeds/packages/net/softethervpn
 rm -rf feeds/packages/net/softethervpn5
 rm -rf feeds/luci/applications/luci-app-softethervpn
+rm -rf package/feeds/packages/softethervpn
+rm -rf package/feeds/packages/softethervpn5
+rm -rf package/feeds/luci/luci-app-softethervpn
 svn export https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/softethervpn feeds/packages/net/
 svn export https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/softethervpn5 feeds/packages/net/
 svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-softethervpn feeds/luci/applications/
