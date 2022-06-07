@@ -156,6 +156,7 @@ user_rules:
 - '@@||kuaishou.com^$important'
 - '@@||inkuai.com^$important'
 - '@@||yximgs.com^$important'
+- '@@||taobao.com^$important'
 dhcp:
   enabled: false
   interface_name: ""
