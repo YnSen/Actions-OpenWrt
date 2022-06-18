@@ -151,6 +151,7 @@ user_rules:
 - '||fna.fbcdn.net^$dnstype=AAAA'
 - '||playvids.com^$dnstype=AAAA'
 - '||stboy.net^$dnstype=AAAA'
+- '||imageshack.com^$dnstype=AAAA'
 - '||bjzxy010.com^$important'
 - '@@||activity.e.kuaishou.com^$important'
 - '@@||kuaishou.com^$important'
