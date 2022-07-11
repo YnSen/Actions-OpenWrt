@@ -9,6 +9,7 @@ pushd package
 #git clone https://github.com/xiaorouji/openwrt-passwall.git
 #lienol(管控)
 git clone https://github.com/Lienol/openwrt-package.git
+rm -rf ./openwrt-package/luci-app-filebrowser
 # KoolProxyR去广告插件
 #git clone https://github.com/jefferymvp/luci-app-koolproxyR
 # 微信推送插件
@@ -39,10 +40,6 @@ git clone https://github.com/fw876/helloworld.git
 git clone https://github.com/ue365/luci-app-onliner-1
 #腾讯ddns
 git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-ddns
-#Docker lib api
-#git clone https://github.com/lisaac/luci-lib-docker
-#Docker
-git clone https://github.com/lisaac/luci-app-dockerman
 #oaf
 git clone https://github.com/destan19/OpenAppFilter.git
 # Edge主题
