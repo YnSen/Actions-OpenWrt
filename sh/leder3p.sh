@@ -44,7 +44,7 @@ git clone https://github.com/destan19/OpenAppFilter.git
 # Edge主题
 git clone -b 18.06 https://github.com/garypang13/luci-theme-edge
 #argon主题设置
-#git clone https://github.com/jerrykuku/luci-app-argon-config
+git clone https://github.com/jerrykuku/luci-app-argon-config
 #liuran001软件包
 #git clone https://github.com/liuran001/openwrt-packages.git
 popd
@@ -87,11 +87,10 @@ rm -rf luci-app-kodexplorer
 popd
 
 # argon主题
-pushd feeds/luci/theme
+pushd feeds/luci/themes
 rm -rf luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
 popd
-git clone https://github.com/jerrykuku/luci-app-argon-config.git
 #vssr
 git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb 依赖
 git clone https://github.com/jerrykuku/luci-app-vssr.git 
