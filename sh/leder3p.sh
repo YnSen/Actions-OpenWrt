@@ -125,9 +125,9 @@ sed -i 's/bootstrap/argon/g' feeds/luci/collections/luci/Makefile
 #删除默认密码
 sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
 
-#cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
+cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 #cp -r ~/work/Actions-OpenWrt/Actions-OpenWrt/default-settings/files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 #cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/wireless ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
-#cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/leder3p.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
-#mv leder3p.config .config
-#make defconfig
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/leder3p.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+mv leder3p.config .config
+make defconfig
