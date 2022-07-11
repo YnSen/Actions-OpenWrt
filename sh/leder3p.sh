@@ -87,6 +87,19 @@ pushd package/openwrt-package
 rm -rf luci-app-kodexplorer
 popd
 
+#filebrowser
+svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-filebrowser feeds/luci/applications/luci-app-filebrowser
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-filebrowser ./
+popd
+
+
+#filebrowser db
+svn export https://github.com/immortalwrt/packages/trunk/utils/filebrowser feeds/packages/utils/filebrowser
+pushd package/feeds/packages/
+ln -sv ../../../feeds/packages/utils/filebrowser ./
+popd
+
 # argon主题
 pushd feeds/luci/theme
 rm -rf luci-theme-argon
