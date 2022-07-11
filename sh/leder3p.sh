@@ -6,7 +6,7 @@ cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 
 pushd package
 #passwall
-git clone https://github.com/xiaorouji/openwrt-passwall.git
+#git clone https://github.com/xiaorouji/openwrt-passwall.git
 #lienol(管控)
 git clone https://github.com/Lienol/openwrt-package.git
 # KoolProxyR去广告插件
@@ -20,7 +20,6 @@ git clone https://github.com/zzsj0928/luci-app-pushbot
 # adguardhome插件
 
 
-
 # Clash插件
 #git clone https://github.com/frainzy1477/luci-app-clash
 #openclash插件
@@ -31,12 +30,13 @@ git clone https://github.com/fw876/helloworld.git
 #git clone https://github.com/pymumu/openwrt-smartdns
 #git clone -b lede https://github.com/pymumu/luci-app-smartdns
 #强制关机插件
-git clone https://github.com/esirplayground/luci-app-poweroff
+#git clone https://github.com/esirplayground/luci-app-poweroff
 #自动关机插件
-git clone https://github.com/sirpdboy/luci-app-autopoweroff
+#git clone https://github.com/sirpdboy/luci-app-autopoweroff
 # Add Onliner
-# git clone https://github.com/rufengsuixing/luci-app-onliner.git feeds/luci/applications/luci-app-onliner
-git clone https://github.com/rufengsuixing/luci-app-onliner.git
+#git clone https://github.com/rufengsuixing/luci-app-onliner.git feeds/luci/applications/luci-app-onliner
+#git clone https://github.com/rufengsuixing/luci-app-onliner.git
+git clone https://github.com/ue365/luci-app-onliner-1
 #腾讯ddns
 git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-ddns
 #Docker lib api
@@ -57,21 +57,19 @@ popd
 git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
 rm -rf feeds/packages/net/adguardhome
 svn co https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/net/adguardhome
-sed -i '/\t)/a\\t$(STAGING_DIR_HOST)/bin/upx --lzma --best $(GO_PKG_BUILD_BIN_DIR)/AdGuardHome' ./feeds/packages/net/adguardhome/Makefile
-sed -i '/init/d' feeds/packages/net/adguardhome/Makefile
 
 #unblockneteasemusic
-git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
-cp -r package/luci-app-unblockneteasemusic feeds/luci/applications/
-rm -rf feeds/luci/applications/package/luci-app-unblockmusic
-rm -rf package/feeds/luci/luci-app-unblockmusic
-rm -rf feeds/packages/multimedia/UnblockNeteaseMusic-Go
-rm -rf feeds/packages/multimedia/UnblockNeteaseMusic
-rm -rf package/feeds/packages/UnblockNeteaseMusic-Go
-rm -rf package/feeds/packages/UnblockNeteaseMusic
-pushd package/feeds/luci
-ln -sv ../../../feeds/luci/applications/luci-app-unblockneteasemusic ./
-popd
+#git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
+#cp -r package/luci-app-unblockneteasemusic feeds/luci/applications/
+#rm -rf feeds/luci/applications/package/luci-app-unblockmusic
+#rm -rf package/feeds/luci/luci-app-unblockmusic
+#rm -rf feeds/packages/multimedia/UnblockNeteaseMusic-Go
+#rm -rf feeds/packages/multimedia/UnblockNeteaseMusic
+#rm -rf package/feeds/packages/UnblockNeteaseMusic-Go
+#rm -rf package/feeds/packages/UnblockNeteaseMusic
+#pushd package/feeds/luci
+#ln -sv ../../../feeds/luci/applications/luci-app-unblockneteasemusic ./
+#popd
 
 #删除后面重复插件
 #pushd package/openwrt-packages
@@ -117,9 +115,9 @@ sed -i 's/bootstrap/argon/g' feeds/luci/collections/luci/Makefile
 #删除默认密码
 sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
 
-cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
-cp -r ~/work/Actions-OpenWrt/Actions-OpenWrt/default-settings/files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
-cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/wireless ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
-cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/leder3p.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
-mv leder3p.config .config
-make defconfig
+#cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
+#cp -r ~/work/Actions-OpenWrt/Actions-OpenWrt/default-settings/files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+#cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/wireless ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+#cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/leder3p.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+#mv leder3p.config .config
+#make defconfig
