@@ -9,7 +9,6 @@ pushd package
 #git clone https://github.com/xiaorouji/openwrt-passwall.git
 #lienol(管控)
 git clone https://github.com/Lienol/openwrt-package.git
-rm -rf ./openwrt-package/luci-app-filebrowser
 # KoolProxyR去广告插件
 #git clone https://github.com/jefferymvp/luci-app-koolproxyR
 # 微信推送插件
@@ -85,19 +84,6 @@ svn co https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/
 #删除管控中多余的可道云
 pushd package/openwrt-package
 rm -rf luci-app-kodexplorer
-popd
-
-#filebrowser
-svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-filebrowser feeds/luci/applications/luci-app-filebrowser
-pushd package/feeds/luci
-ln -sv ../../../feeds/luci/applications/luci-app-filebrowser ./
-popd
-
-
-#filebrowser db
-svn export https://github.com/immortalwrt/packages/trunk/utils/filebrowser feeds/packages/utils/filebrowser
-pushd package/feeds/packages/
-ln -sv ../../../feeds/packages/utils/filebrowser ./
 popd
 
 # argon主题
