@@ -281,6 +281,10 @@ pushd package/feeds/luci
 ln -sv ../../../feeds/luci/applications/luci-app-turboacc ./
 popd
 
+svn export https://github.com/coolsnowwolf/packages/trunk/net/pdnsd-alt feeds/packages/net/pdnsd-alt
+pushd package/feeds/packages
+ln -sv ../../../feeds/packages/net/pdnsd-alt ./
+popd
 
 #Zerotier
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-zerotier feeds/luci/applications/luci-app-zerotier
