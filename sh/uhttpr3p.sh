@@ -99,6 +99,22 @@ pushd package/feeds/packages/
 ln -sv ../../../feeds/packages/net/softethervpn5 ./
 popd
 
+#frp
+svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-frpc feeds/luci/applications/luci-app-frpc
+pushd package/feeds/luci/
+ln -sv ../../../feeds/luci/applications/luci-app-frpc ./
+popd
+
+svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-frps feeds/luci/applications/luci-app-frps
+pushd package/feeds/luci/
+ln -sv ../../../feeds/luci/applications/luci-app-frps ./
+popd
+
+svn export https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/frp feeds/packages/net/frp
+pushd package/feeds/packages
+ln -sv ../../../feeds/packages/net/frp ./
+popd
+
 #kodexplorer
 #svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-kodexplorer feeds/luci/applications/luci-app-kodexplorer
 #pushd package/feeds/luci
@@ -162,20 +178,6 @@ pushd package/feeds/luci/
 ln -svln -sv ../../../feeds/luci/applications/luci-app-autoreboot ./
 popd
 
-# FRP 内网穿透
-rm -rf ./feeds/luci/applications/luci-app-frps
-rm -rf ./feeds/luci/applications/luci-app-frpc
-rm -rf ./feeds/packages/net/frp
-rm -rf ./package/feeds/packages/frp
-rm -rf ./package/feeds/luci/luci-app-frps
-rm -rf ./package/feeds/luci/luci-app-frpc
-svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-frps feeds/luci/applications/luci-app-frps
-svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-frpc feeds/luci/applications/luci-app-frpc
-pushd package/feeds/luci
-ln -sv ../../../feeds/luci/applications/luci-app-frps ./
-ln -sv ../../../feeds/luci/applications/luci-app-frpc ./
-popd
-
 svn export https://github.com/coolsnowwolf/packages/trunk/net/frp feeds/packages/net/frp
 pushd package/feeds/packages/
 ln -sv ../../../feeds/packages/net/frp ./
@@ -198,6 +200,12 @@ svn co https://github.com/fw876/helloworld/trunk/shadowsocks-rust package/lean/h
 svn co https://github.com/fw876/helloworld/trunk/shadowsocksr-libev package/lean/helloworld/shadowsocksr-libev
 svn co https://github.com/fw876/helloworld/trunk/tcping package/lean/helloworld/tcping
 svn co https://github.com/fw876/helloworld/trunk/trojan package/lean/helloworld/trojan
+svn export https://github.com/fw876/helloworld/trunk/dns2tcp package/lean/helloworld/dns2tcp
+svn export https://github.com/fw876/helloworld/trunk/hysteria package/lean/helloworld/hysteria
+svn export https://github.com/fw876/helloworld/trunk/sagernet-core package/lean/helloworld/sagernet-core
+svn export https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/dns2socks package/lean/helloworld/dns2socks
+svn export https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/microsocks package/lean/helloworld/microsocks
+
 rm -rf feeds/packages/net/xray-core
 rm -rf package/feeds/packages/xray-core
 cp -r package/lean/helloworld/xray-core feeds/packages/net/
