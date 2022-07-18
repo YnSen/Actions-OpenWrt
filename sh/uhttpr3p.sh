@@ -318,13 +318,13 @@ svn export https://github.com/coolsnowwolf/packages/trunk/net/frp package/lean/f
 #git clone https://github.com/sbwml/luci-app-mjpg-streamer feeds/luci/applications/luci-app-mjpg-streamer
 
 
-#cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
-#cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/uhttpr3p.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
-#mv uhttpr3p.config .config
+cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/uhttpr3p.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+mv uhttpr3p.config .config
 
 #添加kmod-inet-diag支持
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/inet-diag ./
 sed -i '/\$(call KernelPackage,netlink-diag))/r inet-diag' package/kernel/linux/modules/netsupport.mk
 rm -rf inet-diag
 
-#make defconfig
+make defconfig
