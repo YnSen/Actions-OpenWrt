@@ -256,21 +256,18 @@ ln -sv ../../../feeds/packages/net/vlmcsd ./
 popd
 
 # FRP 内网穿透
-rm -rf ./feeds/luci/applications/luci-app-frps
-rm -rf ./feeds/luci/applications/luci-app-frpc
-rm -rf ./feeds/packages/net/frp
-rm -rf ./package/feeds/packages/frp
-rm -rf ./package/feeds/luci/luci-app-frps
-rm -rf ./package/feeds/luci/luci-app-frpc
-svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-frps feeds/luci/applications/luci-app-frps
-svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-frpc feeds/luci/applications/luci-app-frpc
-pushd package/feeds/luci
-ln -sv ../../../feeds/luci/applications/luci-app-frps ./
+svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-frpc feeds/luci/applications/luci-app-frpc
+pushd package/feeds/luci/
 ln -sv ../../../feeds/luci/applications/luci-app-frpc ./
 popd
 
-svn export https://github.com/coolsnowwolf/packages/trunk/net/frp feeds/packages/net/frp
-pushd package/feeds/packages/
+svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-frps feeds/luci/applications/luci-app-frps
+pushd package/feeds/luci/
+ln -sv ../../../feeds/luci/applications/luci-app-frps ./
+popd
+
+svn export https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/frp feeds/packages/net/frp
+pushd package/feeds/packages
 ln -sv ../../../feeds/packages/net/frp ./
 popd
 
