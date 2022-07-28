@@ -72,6 +72,14 @@ jobs:
         cd ..
         chmod +x nginxx86.sh
         ./nginxx86.sh
+        cd ~/work/Actions-OpenWrt/Actions-OpenWrt/sh
+        cp x86.sh ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+        cd ..
+        cd openwrt
+        chmod +x x86.sh
+        ./x86.sh
+
+
 
 ##    pushd ~/work/Actions-OpenWrt/Actions-OpenWrt && cp tencentddns.lua ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package/tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller && popd
         
