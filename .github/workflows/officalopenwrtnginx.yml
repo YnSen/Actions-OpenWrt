@@ -67,14 +67,10 @@ jobs:
         
     - name: Load custom sh
       run: |
-        cd ~/work/Actions-OpenWrt/Actions-OpenWrt/sh
-        cp nginxx86.sh ~/work/Actions-OpenWrt/Actions-OpenWrt/
-        cd ..
+        cp ~/work/Actions-OpenWrt/Actions-OpenWrt/sh/nginxx86.sh ./
         chmod +x nginxx86.sh
         ./nginxx86.sh
-        cd ~/work/Actions-OpenWrt/Actions-OpenWrt/sh
-        cp x86.sh ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
-        cd ..
+        cp ~/work/Actions-OpenWrt/Actions-OpenWrt/sh/x86.sh ./
         cd openwrt
         chmod +x x86.sh
         ./x86.sh

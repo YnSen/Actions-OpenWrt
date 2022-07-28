@@ -482,4 +482,21 @@ cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/inet-diag ./
 sed -i '/\$(call KernelPackage,netlink-diag))/r inet-diag' package/kernel/linux/modules/netsupport.mk
 rm -rf inet-diag
 
-#make defconfig
+### Fullcone-NAT 部分 ###
+# Patch Kernel 以解决 FullCone 冲突
+pushd target/linux/generic/hack-5.4
+wget https://github.com/coolsnowwolf/lede/raw/master/target/linux/generic/hack-5.4/952-net-conntrack-events-support-multiple-registrant.patch
+popd
+# Patch FireWall 以增添 FullCone 功能
+mkdir package/network/config/firewall/patches
+wget -P package/network/config/firewall/patches/ https://github.com/immortalwrt/immortalwrt/raw/master/package/network/config/firewall/patches/fullconenat.patch
+wget -qO- https://github.com/msylgj/R2S-R4S-OpenWrt/raw/21.02/PATCHES/001-fix-firewall-flock.patch | patch -p1
+# Patch LuCI 以增添 FullCone 开关
+patch -p1 <../PATCH/firewall/luci-app-firewall_add_fullcone.patch
+# FullCone 相关组件
+svn export https://github.com/coolsnowwolf/lede/trunk/package/lean/openwrt-fullconenat package/lean/openwrt-fullconenat
+pushd package/lean/openwrt-fullconenat
+patch -p2 <../../../../PATCH/firewall/fullcone6.patch
+popd
+
+make defconfig
