@@ -100,6 +100,12 @@ ln -sv ../../../feeds/packages/net/softethervpn5 ./
 popd
 
 #frp
+rm -rf ./feeds/luci/applications/luci-app-frpc
+rm -rf ./feeds/luci/applications/luci-app-frps
+rm -rf ./feeds/packages/net/frp
+rm -rf ./package/feeds/packages/frp
+rm -rf ./package/feeds/luci/luci-app-frpc
+rm -rf ./package/feeds/luci/luci-app-frps
 svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-frpc feeds/luci/applications/luci-app-frpc
 pushd package/feeds/luci/
 ln -sv ../../../feeds/luci/applications/luci-app-frpc ./
@@ -205,7 +211,7 @@ svn export https://github.com/fw876/helloworld/trunk/hysteria package/lean/hello
 svn export https://github.com/fw876/helloworld/trunk/sagernet-core package/lean/helloworld/sagernet-core
 svn export https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/dns2socks package/lean/helloworld/dns2socks
 svn export https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/microsocks package/lean/helloworld/microsocks
-
+svn export https://github.com/fw876/helloworld/trunk/sagernet-core package/lean/helloworld/sagernet-core
 rm -rf feeds/packages/net/xray-core
 rm -rf package/feeds/packages/xray-core
 cp -r package/lean/helloworld/xray-core feeds/packages/net/

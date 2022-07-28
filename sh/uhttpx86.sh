@@ -217,6 +217,12 @@ ln -sv ../../../feeds/packages/net/vlmcsd ./
 popd
 
 # FRP 内网穿透
+rm -rf ./feeds/luci/applications/luci-app-frpc
+rm -rf ./feeds/luci/applications/luci-app-frps
+rm -rf ./feeds/packages/net/frp
+rm -rf ./package/feeds/packages/frp
+rm -rf ./package/feeds/luci/luci-app-frpc
+rm -rf ./package/feeds/luci/luci-app-frps
 svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-frpc feeds/luci/applications/luci-app-frpc
 pushd package/feeds/luci/
 ln -sv ../../../feeds/luci/applications/luci-app-frpc ./
@@ -249,6 +255,7 @@ svn co https://github.com/fw876/helloworld/trunk/shadowsocks-rust package/lean/h
 svn co https://github.com/fw876/helloworld/trunk/shadowsocksr-libev package/lean/helloworld/shadowsocksr-libev
 svn co https://github.com/fw876/helloworld/trunk/tcping package/lean/helloworld/tcping
 svn co https://github.com/fw876/helloworld/trunk/trojan package/lean/helloworld/trojan
+svn export https://github.com/fw876/helloworld/trunk/sagernet-core package/lean/helloworld/sagernet-core
 rm -rf feeds/packages/net/xray-core
 rm -rf package/feeds/packages/xray-core
 cp -r package/lean/helloworld/xray-core feeds/packages/net/
