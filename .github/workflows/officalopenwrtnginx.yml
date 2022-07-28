@@ -19,18 +19,6 @@ on:
         required: true
         default: 'false'
 
-env:
-  REPO_URL: https://github.com/openwrt/openwrt.git
-  REPO_BRANCH: openwrt-21.02
-  FEEDS_CONF: feeds.conf.default
-  DIY_P1_SH: nginxx86.sh
-  UPLOAD_BIN_DIR: false
-  UPLOAD_FIRMWARE: true
-  UPLOAD_COWTRANSFER: false
-  UPLOAD_WETRANSFER: true
-  UPLOAD_RELEASE: false
-  TZ: Asia/Shanghai
-
 jobs:
   build:
     runs-on: ubuntu-20.04
