@@ -55,7 +55,7 @@ jobs:
         cp ~/work/Actions-OpenWrt/Actions-OpenWrt/sh/nginxx86.sh ./
         chmod +x nginxx86.sh
         ./nginxx86.sh
-        cp ~/work/Actions-OpenWrt/Actions-OpenWrt/sh/x86.sh ./
+        cp ~/work/Actions-OpenWrt/Actions-OpenWrt/sh/x86.sh ./openwrt/
         cd openwrt
         chmod +x x86.sh
         ./x86.sh
