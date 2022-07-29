@@ -487,7 +487,7 @@ wget -qO- https://github.com/msylgj/R2S-R4S-OpenWrt/raw/21.02/PATCHES/001-fix-fi
 # Patch LuCI 以增添 FullCone 开关
 patch -p1 <../patch/firewall/luci-app-firewall_add_fullcone.patch
 # FullCone 相关组件
-svn export https://github.com/coolsnowwolf/lede/trunk/package/lean/openwrt-fullconenat package/lean/openwrt-fullconenat
+svn export https://github.com/Lienol/openwrt/trunk/package/network/fullconenat package/lean/openwrt-fullconenat
 pushd package/lean/openwrt-fullconenat
 patch -p2 <../../../../patch/firewall/fullcone6.patch
 popd
