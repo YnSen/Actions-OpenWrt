@@ -404,18 +404,11 @@ rm -rf ./feeds/packages/lang/node-serialport
 svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-serialport feeds/packages/lang/node-serialport
 rm -rf ./feeds/packages/lang/node-serialport-bindings
 svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-serialport-bindings feeds/packages/lang/node-serialport-bindings
-rm -rf feeds/packages/lang/node-yarn
-rm -rf package/feeds/packages/node-yarn
+rm -rf ./feeds/packages/lang/node-yarn
 svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-yarn feeds/packages/lang/node-yarn
-pushd package/feeds/packages/
-ln -sv ../../../feeds/packages/lang/node-yarn ./
-popd
-rm -rf feeds/packages/lang/node-serialport-bindings-cpp
-rm -rf package/feeds/packages/node-serialport-bindings-cpp
+ln -sf ../../../feeds/packages/lang/node-yarn ./package/feeds/packages/node-yarn
 svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-serialport-bindings-cpp feeds/packages/lang/node-serialport-bindings-cpp
-pushd package/feeds/packages/
-ln -sv ../../../feeds/packages/lang/node-serialport-bindings-cpp ./
-popd
+ln -sf ../../../feeds/packages/lang/node-serialport-bindings-cpp ./package/feeds/packages/node-serialport-bindings-cpp
 
 curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/02-remove_upx.sh
 curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/03-convert_translation.sh
@@ -445,11 +438,11 @@ mkdir package/network/config/firewall/patches
 wget -P package/network/config/firewall/patches/ https://github.com/immortalwrt/immortalwrt/raw/master/package/network/config/firewall/patches/fullconenat.patch
 wget -qO- https://github.com/msylgj/R2S-R4S-OpenWrt/raw/21.02/PATCHES/001-fix-firewall-flock.patch | patch -p1
 # Patch LuCI 以增添 FullCone 开关
-patch -p1 <../PATCH/firewall/luci-app-firewall_add_fullcone.patch
+patch -p1 <../patch/firewall/luci-app-firewall_add_fullcone.patch
 # FullCone 相关组件
-svn export https://github.com/coolsnowwolf/lede/trunk/package/lean/openwrt-fullconenat package/lean/openwrt-fullconenat
-pushd package/lean/openwrt-fullconenat
-patch -p2 <../../../../PATCH/firewall/fullcone6.patch
-popd
+svn export https://github.com/Lienol/openwrt/trunk/package/network/fullconenat package/lean/openwrt-fullconenat
+#pushd package/lean/openwrt-fullconenat
+#patch -p2 <../../../../patch/firewall/fullcone6.patch
+#popd
 
 make defconfig
