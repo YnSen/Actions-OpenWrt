@@ -26,6 +26,10 @@ sed -i 's/16384/65535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
 rm -rf ./feeds/packages/lang/golang
 svn export https://github.com/openwrt/packages/trunk/lang/golang feeds/packages/lang/golang
 
+更换python
+rm -rf ./feeds/packages/lang/python
+svn export https://github.com/openwrt/packages/branches/openwrt-21.02/lang/python ./feeds/packages/lang/python
+
 #推送
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 
@@ -388,27 +392,23 @@ popd
 #rm -rf feeds/luci/applications/luci-app-mjpg-streamer
 #git clone https://github.com/sbwml/luci-app-mjpg-streamer feeds/luci/applications/luci-app-mjpg-streamer
 
-# 更换 Nodejs 版本
-rm -rf ./feeds/packages/lang/node
-svn export https://github.com/nxhack/openwrt-node-packages/trunk/node feeds/packages/lang/node
-sed -i '\/bin\/node/a\\t$(STAGING_DIR_HOST)/bin/upx --lzma --best $(1)/usr/bin/node' feeds/packages/lang/node/Makefile
-rm -rf ./feeds/packages/lang/node-arduino-firmata
-svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-arduino-firmata feeds/packages/lang/node-arduino-firmata
-rm -rf ./feeds/packages/lang/node-cylon
-svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-cylon feeds/packages/lang/node-cylon
-rm -rf ./feeds/packages/lang/node-hid
-svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-hid feeds/packages/lang/node-hid
-rm -rf ./feeds/packages/lang/node-homebridge
-svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-homebridge feeds/packages/lang/node-homebridge
-rm -rf ./feeds/packages/lang/node-serialport
-svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-serialport feeds/packages/lang/node-serialport
-rm -rf ./feeds/packages/lang/node-serialport-bindings
-svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-serialport-bindings feeds/packages/lang/node-serialport-bindings
-rm -rf ./feeds/packages/lang/node-yarn
-svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-yarn feeds/packages/lang/node-yarn
-ln -sf ../../../feeds/packages/lang/node-yarn ./package/feeds/packages/node-yarn
-svn export https://github.com/nxhack/openwrt-node-packages/trunk/node-serialport-bindings-cpp feeds/packages/lang/node-serialport-bindings-cpp
-ln -sf ../../../feeds/packages/lang/node-serialport-bindings-cpp ./package/feeds/packages/node-serialport-bindings-cpp
+
+### Fullcone-NAT 部分 ###
+# Patch Kernel 以解决 FullCone 冲突
+pushd target/linux/generic/hack-5.4
+wget https://github.com/coolsnowwolf/lede/raw/master/target/linux/generic/hack-5.4/952-net-conntrack-events-support-multiple-registrant.patch
+popd
+# Patch FireWall 以增添 FullCone 功能
+mkdir package/network/config/firewall/patches
+wget -P package/network/config/firewall/patches/ https://github.com/immortalwrt/immortalwrt/raw/master/package/network/config/firewall/patches/fullconenat.patch
+wget -qO- https://github.com/msylgj/R2S-R4S-OpenWrt/raw/21.02/PATCHES/001-fix-firewall-flock.patch | patch -p1
+# Patch LuCI 以增添 FullCone 开关
+patch -p1 <../patch/firewall/luci-app-firewall_add_fullcone.patch
+# FullCone 相关组件
+svn export https://github.com/Lienol/openwrt/trunk/package/network/fullconenat package/lean/openwrt-fullconenat
+#pushd package/lean/openwrt-fullconenat
+#patch -p2 <../../../../patch/firewall/fullcone6.patch
+#popd
 
 curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/02-remove_upx.sh
 curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/03-convert_translation.sh
@@ -427,22 +427,5 @@ mv uhttpx86.config .config
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/inet-diag ./
 sed -i '/\$(call KernelPackage,netlink-diag))/r inet-diag' package/kernel/linux/modules/netsupport.mk
 rm -rf inet-diag
-
-### Fullcone-NAT 部分 ###
-# Patch Kernel 以解决 FullCone 冲突
-pushd target/linux/generic/hack-5.4
-wget https://github.com/coolsnowwolf/lede/raw/master/target/linux/generic/hack-5.4/952-net-conntrack-events-support-multiple-registrant.patch
-popd
-# Patch FireWall 以增添 FullCone 功能
-mkdir package/network/config/firewall/patches
-wget -P package/network/config/firewall/patches/ https://github.com/immortalwrt/immortalwrt/raw/master/package/network/config/firewall/patches/fullconenat.patch
-wget -qO- https://github.com/msylgj/R2S-R4S-OpenWrt/raw/21.02/PATCHES/001-fix-firewall-flock.patch | patch -p1
-# Patch LuCI 以增添 FullCone 开关
-patch -p1 <../patch/firewall/luci-app-firewall_add_fullcone.patch
-# FullCone 相关组件
-svn export https://github.com/Lienol/openwrt/trunk/package/network/fullconenat package/lean/openwrt-fullconenat
-#pushd package/lean/openwrt-fullconenat
-#patch -p2 <../../../../patch/firewall/fullcone6.patch
-#popd
 
 make defconfig
