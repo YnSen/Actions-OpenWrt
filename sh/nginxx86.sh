@@ -435,6 +435,23 @@ svn co https://github.com/lisaac/luci-lib-docker/trunk/collections/luci-lib-dock
 #rm -rf feeds/luci/applications/luci-app-mjpg-streamer
 #git clone https://github.com/sbwml/luci-app-mjpg-streamer feeds/luci/applications/luci-app-mjpg-streamer
 
+### Fullcone-NAT 部分 ###
+# Patch Kernel 以解决 FullCone 冲突
+pushd target/linux/generic/hack-5.4
+wget https://github.com/coolsnowwolf/lede/raw/master/target/linux/generic/hack-5.4/952-net-conntrack-events-support-multiple-registrant.patch
+popd
+# Patch FireWall 以增添 FullCone 功能
+mkdir package/network/config/firewall/patches
+wget -P package/network/config/firewall/patches/ https://github.com/immortalwrt/immortalwrt/raw/master/package/network/config/firewall/patches/fullconenat.patch
+wget -qO- https://github.com/msylgj/R2S-R4S-OpenWrt/raw/21.02/PATCHES/001-fix-firewall-flock.patch | patch -p1
+# Patch LuCI 以增添 FullCone 开关
+patch -p1 <../patch/firewall/luci-app-firewall_add_fullcone.patch
+# FullCone 相关组件
+svn export https://github.com/Lienol/openwrt/trunk/package/network/fullconenat package/lean/openwrt-fullconenat
+#pushd package/lean/openwrt-fullconenat
+#patch -p2 <../../../../patch/firewall/fullcone6.patch
+#popd
+
 curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/02-remove_upx.sh
 curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/03-convert_translation.sh
 curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/04-create_acl_for_luci.sh
@@ -453,21 +470,6 @@ cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/inet-diag ./
 sed -i '/\$(call KernelPackage,netlink-diag))/r inet-diag' package/kernel/linux/modules/netsupport.mk
 rm -rf inet-diag
 
-### Fullcone-NAT 部分 ###
-# Patch Kernel 以解决 FullCone 冲突
-pushd target/linux/generic/hack-5.4
-wget https://github.com/coolsnowwolf/lede/raw/master/target/linux/generic/hack-5.4/952-net-conntrack-events-support-multiple-registrant.patch
-popd
-# Patch FireWall 以增添 FullCone 功能
-mkdir package/network/config/firewall/patches
-wget -P package/network/config/firewall/patches/ https://github.com/immortalwrt/immortalwrt/raw/master/package/network/config/firewall/patches/fullconenat.patch
-wget -qO- https://github.com/msylgj/R2S-R4S-OpenWrt/raw/21.02/PATCHES/001-fix-firewall-flock.patch | patch -p1
-# Patch LuCI 以增添 FullCone 开关
-patch -p1 <../patch/firewall/luci-app-firewall_add_fullcone.patch
-# FullCone 相关组件
-svn export https://github.com/Lienol/openwrt/trunk/package/network/fullconenat package/lean/openwrt-fullconenat
-#pushd package/lean/openwrt-fullconenat
-#patch -p2 <../../../../patch/firewall/fullcone6.patch
-#popd
+
 
 #make defconfig
