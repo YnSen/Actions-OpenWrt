@@ -192,6 +192,8 @@ uci commit network
 #filebrowseron
 uci set filebrowser.config.enabled='1'
 uci commit filebrowser
+/etc/init.d/filebrowser restart
+/etc/init.d/filebrowser enabled
 
 #link
 ln -sf /sbin/ip /usr/bin/ip
