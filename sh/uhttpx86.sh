@@ -227,17 +227,14 @@ rm -rf ./feeds/packages/net/frp
 rm -rf ./package/feeds/packages/frp
 rm -rf ./package/feeds/luci/luci-app-frpc
 rm -rf ./package/feeds/luci/luci-app-frps
-svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-frpc feeds/luci/applications/luci-app-frpc
+svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-frpc feeds/luci/applications/luci-app-frpc
+svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-frps feeds/luci/applications/luci-app-frps
 pushd package/feeds/luci/
 ln -sv ../../../feeds/luci/applications/luci-app-frpc ./
-popd
-
-svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-frps feeds/luci/applications/luci-app-frps
-pushd package/feeds/luci/
 ln -sv ../../../feeds/luci/applications/luci-app-frps ./
 popd
 
-svn export https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/frp feeds/packages/net/frp
+svn export https://github.com/coolsnowwolf/packages/trunk/net/frp feeds/packages/net/frp
 pushd package/feeds/packages
 ln -sv ../../../feeds/packages/net/frp ./
 popd
@@ -410,15 +407,15 @@ svn export https://github.com/Lienol/openwrt/trunk/package/network/fullconenat p
 #patch -p2 <../../../../patch/firewall/fullcone6.patch
 #popd
 
-curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/02-remove_upx.sh
-curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/03-convert_translation.sh
-#curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/04-create_acl_for_luci.sh
+cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/sh/scripts/02-remove_upx.sh ./
+cp ~/work/Actions-OpenWrt/Actions-OpenWrtsh/scripts/03-convert_translation.sh ./
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/sh/scripts/04-create_acl_for_luci.sh ./
 chmod 0755 *sh
 ./02-remove_upx.sh
 ./03-convert_translation.sh
 ./04-create_acl_for_luci.sh -a
 
-cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/uhttpx86.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 mv ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/config-5.4 ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/target/linux/x86/
 mv uhttpx86.config .config
