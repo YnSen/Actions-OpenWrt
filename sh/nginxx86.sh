@@ -456,15 +456,16 @@ svn export https://github.com/Lienol/openwrt/trunk/package/network/fullconenat p
 #patch -p2 <../../../../patch/firewall/fullcone6.patch
 #popd
 
-curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/02-remove_upx.sh
-curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/03-convert_translation.sh
-curl -O https://raw.githubusercontent.com/YnSen/Actions-OpenWrt/main/sh/scripts/04-create_acl_for_luci.sh
+cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/sh/scripts/02-remove_upx.sh ./
+cp ~/work/Actions-OpenWrt/Actions-OpenWrtsh/scripts/03-convert_translation.sh ./
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/sh/scripts/04-create_acl_for_luci.sh ./
 chmod 0755 *sh
 ./02-remove_upx.sh
 ./03-convert_translation.sh
 ./04-create_acl_for_luci.sh -a
 
-cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
+
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/nginx.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/config-5.4 ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/target/linux/x86/
 mv nginx.config .config
