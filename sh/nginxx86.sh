@@ -267,12 +267,9 @@ rm -rf ./package/feeds/packages/frp
 rm -rf ./package/feeds/luci/luci-app-frpc
 rm -rf ./package/feeds/luci/luci-app-frps
 svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-frpc feeds/luci/applications/luci-app-frpc
-pushd package/feeds/luci/
-ln -sv ../../../feeds/luci/applications/luci-app-frpc ./
-popd
-
 svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-frps feeds/luci/applications/luci-app-frps
 pushd package/feeds/luci/
+ln -sv ../../../feeds/luci/applications/luci-app-frpc ./
 ln -sv ../../../feeds/luci/applications/luci-app-frps ./
 popd
 
@@ -475,6 +472,4 @@ cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/inet-diag ./
 sed -i '/\$(call KernelPackage,netlink-diag))/r inet-diag' package/kernel/linux/modules/netsupport.mk
 rm -rf inet-diag
 
-
-
-#make defconfig
+make defconfig
