@@ -57,7 +57,7 @@ popd
 
 # 更换 golang 版本
 rm -rf ./feeds/packages/lang/golang
-svn export https://github.com/openwrt/packages/branches/openwrt-21.02/lang/golang feeds/packages/lang/golang
+svn export https://github.com/openwrt/packages/trunk/lang/golang feeds/packages/lang/golang
 
 #更换python
 rm -rf ./feeds/packages/lang/python
