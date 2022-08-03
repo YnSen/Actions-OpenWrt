@@ -115,7 +115,9 @@ ln -sv ../../../feeds/luci/applications/luci-app-kodexplorer ./
 popd
 
 # alist
-git clone https://github.com/sbwml/openwrt-alist package/alist-openwrt
+pushd package
+git clone https://github.com/sbwml/openwrt-alist --depth=1
+popd
 
 # qBittorrent
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-qbittorrent feeds/luci/applications/luci-app-qbittorrent
