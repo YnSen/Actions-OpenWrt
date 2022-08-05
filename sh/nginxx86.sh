@@ -458,6 +458,7 @@ cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/sh/scripts/02-remove_upx.sh ./
 cp ~/work/Actions-OpenWrt/Actions-OpenWrtsh/scripts/03-convert_translation.sh ./
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/sh/scripts/04-create_acl_for_luci.sh ./
+cp ~/Actions-OpenWrt/sh/x86.sh ./
 chmod 0755 *sh
 ./02-remove_upx.sh
 ./03-convert_translation.sh
@@ -472,5 +473,7 @@ mv nginx.config .config
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/inet-diag ./
 sed -i '/\$(call KernelPackage,netlink-diag))/r inet-diag' package/kernel/linux/modules/netsupport.mk
 rm -rf inet-diag
+
+./x86.sh
 
 make defconfig
