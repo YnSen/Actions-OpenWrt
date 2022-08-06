@@ -83,12 +83,10 @@ rm -rf ./feeds/packages/lang/node-serialport
 svn export https://github.com/openwrt/packages/branches/openwrt-21.02/lang/node-serialport feeds/packages/lang/node-serialport
 
 rm -rf ./feeds/packages/lang/node-serialport-bindings
-svn export https://github.com/openwrt/packages/branches/openwrt-21.02/lang/node-serialport-bindings feeds/
-packages/lang/node-serialport-bindings
+svn export https://github.com/openwrt/packages/branches/openwrt-21.02/lang/node-serialport-bindings feeds/packages/lang/node-serialport-bindings
 
 rm -rf ./feeds/packages/lang/node-yarn
-svn export https://github.com/openwrt/packages/branches/openwrt-21.02/lang/node-yarn feeds/packages/lang/
-node-yarn
+svn export https://github.com/openwrt/packages/branches/openwrt-21.02/lang/node-yarn feeds/packages/lang/node-yarn
 ln -sv ./feeds/packages/lang/node-yarn ./package/feeds/packages/node-yarn
 
 #推送
