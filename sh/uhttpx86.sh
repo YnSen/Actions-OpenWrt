@@ -30,6 +30,34 @@ svn export https://github.com/openwrt/packages/trunk/lang/golang feeds/packages/
 rm -rf ./feeds/packages/lang/python
 svn export https://github.com/openwrt/packages/branches/openwrt-21.02/lang/python ./feeds/packages/lang/python
 
+#node
+rm -rf ./feeds/packages/lang/node
+svn export https://github.com/openwrt/packages/branches/openwrt-21.02/lang/node feeds/packages/lang/node
+
+rm -rf ./feeds/packages/lang/node-arduino-firmata
+svn export https://github.com/openwrt/packages/branches/openwrt-21.02/lang/node-arduino-firmata feeds/packages/lang/node-arduino-firmata
+
+rm -rf ./feeds/packages/lang/node-cylon
+svn export https://github.com/openwrt/packages/branches/openwrt-21.02/lang/node-cylon feeds/packages/lang/node-cylon
+
+rm -rf ./feeds/packages/lang/node-hid
+svn export https://github.com/openwrt/packages/branches/openwrt-21.02/lang/node-hid feeds/packages/lang/node-hid
+
+rm -rf ./feeds/packages/lang/node-homebridge
+svn export https://github.com/openwrt/packages/branches/openwrt-21.02/lang/node-homebridge feeds/packages/lang/node-homebridge
+
+rm -rf ./feeds/packages/lang/node-serialport
+svn export https://github.com/openwrt/packages/branches/openwrt-21.02/lang/node-serialport feeds/packages/lang/node-serialport
+
+rm -rf ./feeds/packages/lang/node-serialport-bindings
+svn export https://github.com/openwrt/packages/branches/openwrt-21.02/lang/node-serialport-bindings feeds/
+packages/lang/node-serialport-bindings
+
+rm -rf ./feeds/packages/lang/node-yarn
+svn export https://github.com/openwrt/packages/branches/openwrt-21.02/lang/node-yarn feeds/packages/lang/
+node-yarn
+ln -sv ./feeds/packages/lang/node-yarn ./package/feeds/packages/node-yarn
+
 #推送
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 
