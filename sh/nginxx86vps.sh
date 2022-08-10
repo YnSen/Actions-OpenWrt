@@ -178,9 +178,8 @@ ln -sv ../../../feeds/packages/net/dnsforwarder ./
 ln -sv ../../../feeds/packages/net/dnsproxy ./
 popd
 
-svn export https://github.com/coolsnowwolf/lede/trunk/package/lean/shortcut-fe/fast-classifier package/lean/fast-classifier
-svn export https://github.com/coolsnowwolf/lede/trunk/package/lean/shortcut-fe/shortcut-fe package/lean/shortcut-fe
-svn export https://github.com/coolsnowwolf/lede/trunk/package/lean/shortcut-fe/simulated-driver package/lean/simulated-driver
+svn export https://github.com/coolsnowwolf/lede/trunk/package/lean/shortcut-fe package/lean/shortcut-fe
+
 #kodexplorer
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-kodexplorer feeds/luci/applications/luci-app-kodexplorer
 pushd package/feeds/luci
