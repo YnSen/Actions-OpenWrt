@@ -1,0 +1,85 @@
+#!/bin/sh
+
+uci set luci.main.lang=auto
+uci commit luci
+
+uci set fstab.@global[0].anon_mount=1
+uci commit fstab
+
+#theme
+uci set luci.main.mediaurlbase='/luci-static/argon'
+uci commit luci
+
+#argon color
+uci set argon.@global[0].primary='#1694FF'
+uci set argon.@global[0].dark_primary='#1B93F2'
+uci commit argon
+
+#AdguardHome
+uci set AdGuardHome.AdGuardHome.binpath='/usr/bin/AdGuardHome'
+uci set AdGuardHome.AdGuardHome.workdir='/usr/bin/AdGuardHomeWork'
+uci set AdGuardHome.AdGuardHome.waitonboot='0'
+uci commit AdGuardHome
+
+# nginx
+uci set nginx.global.uci_enable='true'
+uci del nginx._lan
+uci del nginx._redirect2ssl
+uci add nginx server
+uci rename nginx.@server[0]='_lan'
+uci set nginx._lan.server_name='_lan'
+uci add_list nginx._lan.listen='80 default_server'
+uci add_list nginx._lan.listen='[::]:80 default_server'
+#uci add_list nginx._lan.include='restrict_locally'
+uci add_list nginx._lan.include='conf.d/*.locations'
+uci set nginx._lan.access_log='off; # logd openwrt'
+uci commit nginx
+/etc/init.d/nginx restart
+/etc/init.d/nginx enabled
+
+#openvpn
+sed -i 's,192.168.1.0 255.255.255.0,192.168.6.0 255.255.255.0,g' /etc/config/openvpn
+sed -i 's,192.168.1.1,192.168.3.1,g' /etc/config/openvpn
+uci set openvpn.myvpn.duplicate_cn='1'
+uci set openvpn.myvpn.proto='tcp6'
+uci set openvpn.myvpn.server='192.168.6.0 255.255.255.0'
+uci commit openvpn
+
+#packet_steering
+uci del network.globals.ula_prefix
+uci set network.globals.packet_steering='0'
+uci commit network
+/etc/init.d/network restart
+
+#dnsmasq
+uci set dhcp.lan.ra='disabled'
+uci set dhcp.lan.ndp='disabled'
+uci set dhcp.lan.dhcpv6='disabled'
+uci set dhcp.lan.ra_management='0'
+uci commit dhcp
+
+#filebrowseron
+uci set filebrowser.config.enabled='1'
+uci commit filebrowser
+/etc/init.d/filebrowser restart
+/etc/init.d/filebrowser enabled
+
+ln -sf /sbin/ip /usr/bin/ip
+
+sed -i "s/# //g" /etc/opkg/distfeeds.conf
+
+[ -f '/bin/bash' ] && sed -i 's|root:x:0:0:root:/root:/bin/ash|root:x:0:0:root:/root:/bin/bash|g' /etc/passwd
+
+sed -i '/option disabled/d' /etc/config/wireless
+sed -i '/set wireless.radio${devidx}.disabled/d' /lib/wifi/mac80211.sh
+wifi up
+
+sed -i '/log-facility/d' /etc/dnsmasq.conf
+echo "log-facility=/dev/null" >> /etc/dnsmasq.conf
+
+rm -rf /tmp/luci-modulecache/
+rm -f /tmp/luci-indexcache
+
+#mv /etc/openwrt_banner /etc/banner
+
+exit 0
