@@ -163,24 +163,6 @@ ln -sv ../../../feeds/packages/net/softethervpn ./
 ln -sv ../../../feeds/packages/net/softethervpn5 ./
 popd
 
-#turboacc
-svn export https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-turboacc feeds/luci/applications/luci-app-turboacc
-pushd package/feeds/luci/
-ln -sv ../../../feeds/luci/applications/luci-app-turboacc ./
-popd
-
-svn export https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/pdnsd-alt feeds/packages/net/pdnsd-alt
-svn export https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/dnsforwarder feeds/packages/net/dnsforwarder
-svn export https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/dnsproxy feeds/packages/net/dnsproxy
-pushd package/feeds/packages/
-ln -sv ../../../feeds/packages/net/pdnsd-alt ./
-ln -sv ../../../feeds/packages/net/dnsforwarder ./
-ln -sv ../../../feeds/packages/net/dnsproxy ./
-popd
-
-svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/kernel/shortcut-fe package/kernel/shortcut-fe
-svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/kernel/fast-classifier package/kernel/fast-classifier
-
 #kodexplorer
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-kodexplorer feeds/luci/applications/luci-app-kodexplorer
 pushd package/feeds/luci
