@@ -51,9 +51,6 @@ uci set nginx._lan.access_log='off; # logd openwrt'
 uci commit nginx
 /etc/init.d/nginx restart
 /etc/init.d/nginx enabled
-
-/etc/init.d/nginx restart
-/etc/init.d/nginx enabled
 # nginx end
 
 #docker mirror
