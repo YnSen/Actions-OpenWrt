@@ -39,7 +39,7 @@ git clone https://github.com/rufengsuixing/luci-app-onliner.git
 #Docker
 #git clone https://github.com/lisaac/luci-app-dockerman
 # 应用过滤
-git clone https://github.com/sbwml/OpenAppFilter --depth=1 package/new/OpenAppFilter
+git clone https://github.com/sbwml/OpenAppFilter
 # Edge主题
 git clone -b 18.06 https://github.com/garypang13/luci-theme-edge
 #argon主题设置
