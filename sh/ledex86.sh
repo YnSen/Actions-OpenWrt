@@ -7,18 +7,6 @@ cp -r ~/work/Actions-OpenWrt/Actions-OpenWrt/default-settings/files ~/work/Actio
 
 pushd package
 
-#filebrowser
-svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-filebrowser feeds/luci/applications/luci-app-filebrowser
-pushd package/feeds/luci
-ln -sv ../../../feeds/luci/applications/luci-app-filebrowser ./
-popd
-
-#filebrowser db
-svn export https://github.com/immortalwrt/packages/trunk/utils/filebrowser feeds/packages/utils/filebrowser
-pushd package/feeds/packages/
-ln -sv ../../../feeds/packages/utils/filebrowser ./
-popd
-
 #lienol(管控)
 git clone https://github.com/Lienol/openwrt-package.git
 # KoolProxyR去广告插件
@@ -65,9 +53,6 @@ git clone -b 18.06 https://github.com/garypang13/luci-theme-edge
 #git clone https://github.com/liuran001/openwrt-packages.git
 popd
 
-#为网易云添加ucode支持
-svn export https://github.com/openwrt/openwrt/trunk/package/utils/ucode package/utils/ucode
-
 #unblockneteasemusic
 git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
 cp -r package/luci-app-unblockneteasemusic feeds/luci/applications/
@@ -99,6 +84,21 @@ popd
 pushd package/openwrt-package
 rm -rf luci-app-kodexplorer
 rm -rf luci-app-filebrowser
+popd
+
+#为网易云添加ucode支持
+svn export https://github.com/openwrt/openwrt/trunk/package/utils/ucode package/utils/ucode
+
+#filebrowser
+svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-filebrowser feeds/luci/applications/luci-app-filebrowser
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-filebrowser ./
+popd
+
+#filebrowser db
+svn export https://github.com/immortalwrt/packages/trunk/utils/filebrowser feeds/packages/utils/filebrowser
+pushd package/feeds/packages/
+ln -sv ../../../feeds/packages/utils/filebrowser ./
 popd
 
 # argon主题
