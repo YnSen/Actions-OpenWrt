@@ -63,6 +63,9 @@ ln -sv ../../../feeds/packages/net/softethervpn ./
 ln -sv ../../../feeds/packages/net/softethervpn5 ./
 popd
 
+#openclash插件
+svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
+
 pushd package
 #强制关机插件
 git clone https://github.com/esirplayground/luci-app-poweroff
@@ -74,15 +77,28 @@ pushd tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller
 sed -i 's/"admin", "tencentcloud"/"admin", "services", "tencentcloud"/g' tencentddns.lua
 popd
 popd
+
+# 翻译
+#sed -i 's,发送,Transmission,g' feeds/luci/applications/luci-app-transmission/po/zh_Hans/transmission.po
+sed -i 's,frp 服务器,FRP 服务器,g' feeds/luci/applications/luci-app-frps/po/zh_Hans/frps.po
+sed -i 's,frp 客户端,FRP 客户端,g' feeds/luci/applications/luci-app-frpc/po/zh_Hans/frpc.po
+
 # Modify default IP
-echo 'CONFIG_CRYPTO_AES_NI_INTEL=y' >>./target/linux/x86/64/config-5.4
-sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/emortal/default-settings/files/99-default-settings
 sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
-rm -rf package/emortal/default-settings/files/99-default-settings
+
+#添加intel AES支持
+echo 'CONFIG_CRYPTO_AES_NI_INTEL=y' >>./target/linux/x86/64/config-5.4
+
+#删除默认密码
+sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/emortal/default-settings/files/99-default-settings
+
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
+rm -rf package/emortal/default-settings/files/99-default-settings
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/nginx.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/config-5.4 ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/target/linux/x86/
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/99-default-settings ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package/emortal/default-settings/files/
-
+cp ~/work/Actions-OpenWrt/Actions-OpenWrtsh/scripts/03-convert_translation.sh ./
+chmod 0755 *sh
+./03-convert_translation.sh
 mv nginx.config .config
 make defconfig
