@@ -47,7 +47,16 @@ popd
 
 #unblockneteasemusic
 # 网易云音乐解锁 immortal
-git clone --depth 1 https://github.com/immortalwrt/luci-app-unblockneteasemusic.git package/new/UnblockNeteaseMusic
+rm -rf feeds/luci/applications/package/luci-app-unblockmusic
+rm -rf package/feeds/luci/luci-app-unblockmusic
+rm -rf feeds/packages/multimedia/UnblockNeteaseMusic-Go
+rm -rf feeds/packages/multimedia/UnblockNeteaseMusic
+rm -rf package/feeds/packages/UnblockNeteaseMusic-Go
+rm -rf package/feeds/packages/UnblockNeteaseMusic
+git clone --depth 1 https://github.com/immortalwrt/luci-app-unblockneteasemusic.git feeds/luci/applications/luci-app-unblockneteasemusic
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-unblockneteasemusic ./
+popd
 
 #删除liuran001软件包重复插件
 #pushd package/openwrt-packages
