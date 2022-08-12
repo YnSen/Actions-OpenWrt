@@ -64,6 +64,8 @@ ln -sv ../../../feeds/packages/net/softethervpn5 ./
 popd
 
 #openclash插件
+rm -rf ./feeds/luci/applications/luci-app-openclash
+rm -rf ./package/feeds/luci/luci-app-openclash
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 
 pushd package
