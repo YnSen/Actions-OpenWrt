@@ -37,14 +37,12 @@ git clone https://github.com/sirpdboy/luci-app-autopoweroff
 # Add Onliner
 # git clone https://github.com/rufengsuixing/luci-app-onliner.git feeds/luci/applications/luci-app-onliner
 git clone https://github.com/rufengsuixing/luci-app-onliner.git
-#腾讯ddns
-git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-ddns
 #Docker lib api
 #git clone https://github.com/lisaac/luci-lib-docker
 #Docker
 #git clone https://github.com/lisaac/luci-app-dockerman
-#oaf
-git clone https://github.com/destan19/OpenAppFilter.git
+# 应用过滤
+git clone https://github.com/sbwml/OpenAppFilter --depth=1 package/new/OpenAppFilter
 # Edge主题
 git clone -b 18.06 https://github.com/garypang13/luci-theme-edge
 #argon主题设置
