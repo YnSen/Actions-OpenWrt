@@ -6,8 +6,19 @@ cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 cp -r ~/work/Actions-OpenWrt/Actions-OpenWrt/default-settings/files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 
 pushd package
-#passwall
-git clone https://github.com/xiaorouji/openwrt-passwall.git
+
+#filebrowser
+svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-filebrowser feeds/luci/applications/luci-app-filebrowser
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-filebrowser ./
+popd
+
+#filebrowser db
+svn export https://github.com/immortalwrt/packages/trunk/utils/filebrowser feeds/packages/utils/filebrowser
+pushd package/feeds/packages/
+ln -sv ../../../feeds/packages/utils/filebrowser ./
+popd
+
 #lienol(管控)
 git clone https://github.com/Lienol/openwrt-package.git
 # KoolProxyR去广告插件
@@ -18,8 +29,10 @@ git clone https://github.com/tty228/luci-app-serverchan
 git clone https://github.com/zzsj0928/luci-app-pushbot
 # 京东签到插件
 #git clone https://github.com/jerrykuku/luci-app-jd-dailybonus 
-# adguardhome插件
-git clone https://github.com/kongfl888/luci-app-adguardhome.git
+# AdGuardHome
+git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
+rm -rf feeds/packages/net/adguardhome
+svn co https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/net/adguardhome
 # Clash插件
 #git clone https://github.com/frainzy1477/luci-app-clash
 #openclash插件
@@ -52,6 +65,9 @@ git clone -b 18.06 https://github.com/garypang13/luci-theme-edge
 #git clone https://github.com/liuran001/openwrt-packages.git
 popd
 
+#为网易云添加ucode支持
+svn export https://github.com/openwrt/openwrt/trunk/package/utils/ucode package/utils/ucode
+
 #unblockneteasemusic
 git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
 cp -r package/luci-app-unblockneteasemusic feeds/luci/applications/
@@ -65,7 +81,7 @@ pushd package/feeds/luci
 ln -sv ../../../feeds/luci/applications/luci-app-unblockneteasemusic ./
 popd
 
-#删除后面重复插件
+#删除liuran001软件包重复插件
 #pushd package/openwrt-packages
 #rm -rf luci-app-koolproxyR
 #rm -rf luci-app-ssr-plus
@@ -79,9 +95,10 @@ popd
 #rm -rf open-app-filter
 #rm -rf oaf
 #popd
-#删除管控中多余的可道云
+#删除管控中多余的可道云,filebrowser
 pushd package/openwrt-package
 rm -rf luci-app-kodexplorer
+rm -rf luci-app-filebrowser
 popd
 
 # argon主题
@@ -110,5 +127,5 @@ sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-defaul
 
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/ledex86.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
-mv ledex86.config .config
-make defconfig
+#mv ledex86.config .config
+#make defconfig
