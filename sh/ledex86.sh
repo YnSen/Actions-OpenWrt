@@ -17,10 +17,7 @@ git clone https://github.com/tty228/luci-app-serverchan
 git clone https://github.com/zzsj0928/luci-app-pushbot
 # 京东签到插件
 #git clone https://github.com/jerrykuku/luci-app-jd-dailybonus 
-# AdGuardHome
-git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
-rm -rf feeds/packages/net/adguardhome
-svn co https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/net/adguardhome
+
 # Clash插件
 #git clone https://github.com/frainzy1477/luci-app-clash
 #openclash插件
@@ -83,6 +80,11 @@ pushd package/openwrt-package
 rm -rf luci-app-kodexplorer
 rm -rf luci-app-filebrowser
 popd
+
+# AdGuardHome
+git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
+rm -rf feeds/packages/net/adguardhome
+svn co https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/net/adguardhome
 
 #为网易云添加ucode支持
 svn export https://github.com/openwrt/openwrt/trunk/package/utils/ucode package/utils/ucode
