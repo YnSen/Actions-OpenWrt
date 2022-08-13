@@ -1,0 +1,140 @@
+#!/bin/sh
+
+uci set luci.main.lang=zh_cn
+uci commit luci
+
+uci set system.@system[0].timezone=CST-8
+uci set system.@system[0].zonename=Asia/Shanghai
+uci commit system
+
+uci set fstab.@global[0].anon_mount=1
+uci commit fstab
+
+rm -f /usr/lib/lua/luci/view/admin_status/index/mwan.htm
+rm -f /usr/lib/lua/luci/view/admin_status/index/upnp.htm
+rm -f /usr/lib/lua/luci/view/admin_status/index/ddns.htm
+rm -f /usr/lib/lua/luci/view/admin_status/index/minidlna.htm
+
+sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/aria2.lua
+sed -i 's/services/nas/g' /usr/lib/lua/luci/view/aria2/overview_status.htm
+sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/hd_idle.lua
+sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/samba.lua
+sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/samba4.lua
+sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/minidlna.lua
+sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/transmission.lua
+sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/mjpg-streamer.lua
+sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/p910nd.lua
+sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/usb_printer.lua
+sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/xunlei.lua
+sed -i 's/services/nas/g'  /usr/lib/lua/luci/view/minidlna_status.htm
+
+#theme
+uci set luci.main.mediaurlbase='/luci-static/argon'
+uci commit luci
+
+#argon color
+uci set argon.@global[0].primary='#1694FF'
+uci set argon.@global[0].dark_primary='#1B93F2'
+uci commit argon
+
+#AdguardHome
+uci set AdGuardHome.AdGuardHome.binpath='/usr/bin/AdGuardHome'
+uci set AdGuardHome.AdGuardHome.workdir='/usr/bin/AdGuardHomeWork'
+uci set AdGuardHome.AdGuardHome.waitonboot='0'
+uci commit AdGuardHome
+
+# nginx
+uci set nginx.global.uci_enable='true'
+uci del nginx._lan
+uci del nginx._redirect2ssl
+uci add nginx server
+uci rename nginx.@server[0]='_lan'
+uci set nginx._lan.server_name='_lan'
+uci add_list nginx._lan.listen='80 default_server'
+uci add_list nginx._lan.listen='[::]:80 default_server'
+#uci add_list nginx._lan.include='restrict_locally'
+uci add_list nginx._lan.include='conf.d/*.locations'
+uci set nginx._lan.access_log='off; # logd openwrt'
+uci commit nginx
+/etc/init.d/nginx restart
+/etc/init.d/nginx enabled
+# nginx end
+
+#docker mirror
+#uci add_list dockerd.globals.registry_mirrors='https://hub-mirror.c.163.com'
+#uci commit dockerd
+
+#firewall
+#uci set firewall.@defaults[0].fullcone='1'
+#uci set firewall.@defaults[0].flow_offloading='1'
+#uci commit firewall
+
+#upnp
+uci set upnpd.config.igdv1='1'
+uci set upnpd.config.enabled='1'
+uci del upnpd.config.enable_upnp
+uci del upnpd.config.enable_natpmp
+uci commit upnpd
+
+#dnsmasq
+uci set dhcp.lan.ra='disabled'
+uci set dhcp.lan.ndp='disabled'
+uci set dhcp.lan.dhcpv6='disabled'
+uci set dhcp.lan.ra_management='0'
+uci commit dhcp
+
+#openvpn
+sed -i 's,192.168.1.0 255.255.255.0,192.168.6.0 255.255.255.0,g' /etc/config/openvpn
+sed -i 's,192.168.1.1,192.168.3.1,g' /etc/config/openvpn
+uci set openvpn.myvpn.duplicate_cn='1'
+uci set openvpn.myvpn.proto='tcp6'
+uci set openvpn.myvpn.server='192.168.6.0 255.255.255.0'
+uci commit openvpn
+
+#packet_steering
+uci del network.globals.ula_prefix
+uci del network.globals.packet_steering
+uci commit network
+/etc/init.d/network restart
+
+# ssrp
+#uci set shadowsocksr.@global[0].gfwlist_url='https://raw.cooluc.com/Loyalsoldier/v2ray-rules-dat/release/gfw.txt'
+#uci set shadowsocksr.@global[0].chnroute_url='https://raw.cooluc.com/QiuSimons/Chnroute/master/dist/chnroute/chnroute.txt'
+#uci commit shadowsocksr
+
+#filebrowseron
+uci set filebrowser.config.enabled='1'
+uci commit filebrowser
+/etc/init.d/filebrowser restart
+/etc/init.d/filebrowser enabled
+
+ln -sf /sbin/ip /usr/bin/ip
+
+sed -i 's#downloads.openwrt.org#mirrors.cloud.tencent.com/lede#g' /etc/opkg/distfeeds.conf
+
+sed -i "s/# //g" /etc/opkg/distfeeds.conf
+sed -i '/openwrt_luci/ { s/snapshots/releases\/18.06.9/g; }'  /etc/opkg/distfeeds.conf
+
+sed -i '/REDIRECT --to-ports 53/d' /etc/firewall.user
+echo 'iptables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 53' >> /etc/firewall.user
+echo 'iptables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 53' >> /etc/firewall.user
+echo '[ -n "$(command -v ip6tables)" ] && ip6tables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 53' >> /etc/firewall.user
+echo '[ -n "$(command -v ip6tables)" ] && ip6tables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 53' >> /etc/firewall.user
+
+sed -i '/option disabled/d' /etc/config/wireless
+sed -i '/set wireless.radio${devidx}.disabled/d' /lib/wifi/mac80211.sh
+
+sed -i '/DISTRIB_REVISION/d' /etc/openwrt_release
+echo "DISTRIB_REVISION='R22.8.2'" >> /etc/openwrt_release
+sed -i '/DISTRIB_DESCRIPTION/d' /etc/openwrt_release
+echo "DISTRIB_DESCRIPTION='OpenWrt '" >> /etc/openwrt_release
+
+sed -i '/log-facility/d' /etc/dnsmasq.conf
+echo "log-facility=/dev/null" >> /etc/dnsmasq.conf
+
+echo 'hsts=0' > /root/.wgetrc
+
+rm -rf /tmp/luci-modulecache/
+rm -f /tmp/luci-indexcache
+
+exit 0
