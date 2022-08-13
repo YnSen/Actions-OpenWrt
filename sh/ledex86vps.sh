@@ -1,7 +1,10 @@
+git clone https://github.com/coolsnowwolf/lede.git
+
+cd lede
+
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
 pushd package
-
 #lienol(管控)
 git clone https://github.com/Lienol/openwrt-package.git
 # KoolProxyR去广告插件
@@ -12,16 +15,12 @@ git clone https://github.com/tty228/luci-app-serverchan
 git clone https://github.com/zzsj0928/luci-app-pushbot
 # 京东签到插件
 #git clone https://github.com/jerrykuku/luci-app-jd-dailybonus 
-# AdGuardHome
-git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
-rm -rf feeds/packages/net/adguardhome
-svn co https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/net/adguardhome
+
 # Clash插件
 #git clone https://github.com/frainzy1477/luci-app-clash
 #openclash插件
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
-#ssrplus
-git clone https://github.com/fw876/helloworld.git
+
 # SmartDNS插件
 #git clone https://github.com/pymumu/openwrt-smartdns
 #git clone -b lede https://github.com/pymumu/luci-app-smartdns
@@ -32,14 +31,12 @@ git clone https://github.com/sirpdboy/luci-app-autopoweroff
 # Add Onliner
 # git clone https://github.com/rufengsuixing/luci-app-onliner.git feeds/luci/applications/luci-app-onliner
 git clone https://github.com/rufengsuixing/luci-app-onliner.git
-#腾讯ddns
-git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-ddns
 #Docker lib api
 #git clone https://github.com/lisaac/luci-lib-docker
 #Docker
 #git clone https://github.com/lisaac/luci-app-dockerman
-#oaf
-git clone https://github.com/destan19/OpenAppFilter.git
+# 应用过滤
+git clone https://github.com/sbwml/OpenAppFilter
 # Edge主题
 git clone -b 18.06 https://github.com/garypang13/luci-theme-edge
 #argon主题设置
@@ -49,17 +46,18 @@ git clone -b 18.06 https://github.com/garypang13/luci-theme-edge
 popd
 
 #unblockneteasemusic
-git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
-cp -r package/luci-app-unblockneteasemusic feeds/luci/applications/
+# 网易云音乐解锁 immortal
 rm -rf feeds/luci/applications/package/luci-app-unblockmusic
 rm -rf package/feeds/luci/luci-app-unblockmusic
 rm -rf feeds/packages/multimedia/UnblockNeteaseMusic-Go
 rm -rf feeds/packages/multimedia/UnblockNeteaseMusic
 rm -rf package/feeds/packages/UnblockNeteaseMusic-Go
 rm -rf package/feeds/packages/UnblockNeteaseMusic
+git clone --depth 1 https://github.com/immortalwrt/luci-app-unblockneteasemusic.git feeds/luci/applications/luci-app-unblockneteasemusic
 pushd package/feeds/luci
 ln -sv ../../../feeds/luci/applications/luci-app-unblockneteasemusic ./
 popd
+
 
 #删除liuran001软件包重复插件
 #pushd package/openwrt-packages
@@ -81,8 +79,10 @@ rm -rf luci-app-kodexplorer
 rm -rf luci-app-filebrowser
 popd
 
-#为网易云添加ucode支持
-svn export https://github.com/openwrt/openwrt/trunk/package/utils/ucode package/utils/ucode
+# AdGuardHome
+git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
+rm -rf feeds/packages/net/adguardhome
+svn co https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/net/adguardhome
 
 #filebrowser
 svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-filebrowser feeds/luci/applications/luci-app-filebrowser
@@ -96,6 +96,33 @@ pushd package/feeds/packages/
 ln -sv ../../../feeds/packages/utils/filebrowser ./
 popd
 
+# ShadowsocksR Plus+
+svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/lean/helloworld/luci-app-ssr-plus
+svn co https://github.com/fw876/helloworld/trunk/simple-obfs package/lean/helloworld/simple-obfs
+svn co https://github.com/fw876/helloworld/trunk/naiveproxy package/lean/helloworld/naiveproxy
+svn co https://github.com/fw876/helloworld/trunk/v2ray-core package/lean/helloworld/v2ray-core
+svn co https://github.com/fw876/helloworld/trunk/v2ray-geodata package/lean/helloworld/v2ray-geodata
+svn co https://github.com/fw876/helloworld/trunk/xray-core package/lean/helloworld/xray-core
+svn co https://github.com/fw876/helloworld/trunk/v2ray-plugin package/lean/helloworld/v2ray-plugin
+svn co https://github.com/fw876/helloworld/trunk/xray-plugin package/lean/helloworld/xray-plugin
+svn co https://github.com/fw876/helloworld/trunk/shadowsocks-rust package/lean/helloworld/shadowsocks-rust
+svn co https://github.com/fw876/helloworld/trunk/shadowsocksr-libev package/lean/helloworld/shadowsocksr-libev
+svn co https://github.com/fw876/helloworld/trunk/tcping package/lean/helloworld/tcping
+svn co https://github.com/fw876/helloworld/trunk/trojan package/lean/helloworld/trojan
+svn co https://github.com/fw876/helloworld/trunk/dns2tcp package/lean/helloworld/dns2tcp
+svn co https://github.com/fw876/helloworld/trunk/hysteria package/lean/helloworld/hysteria
+svn export https://github.com/fw876/helloworld/trunk/sagernet-core package/lean/helloworld/sagernet-core
+rm -rf feeds/packages/net/xray-core
+rm -rf package/feeds/packages/xray-core
+cp -r package/lean/helloworld/xray-core feeds/packages/net/
+pushd package/feeds/packages
+ln -sv ../../../feeds/packages/net/xray-core
+popd
+
+# SSR Plus - deps
+svn co https://github.com/coolsnowwolf/packages/trunk/net/redsocks2 package/lean/redsocks2
+
+
 # argon主题
 pushd package/lean
 rm -rf luci-theme-argon
@@ -105,9 +132,7 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git
 git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb 依赖
 git clone https://github.com/jerrykuku/luci-app-vssr.git 
 popd
-pushd package/tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller
-sed -i 's/"admin", "tencentcloud"/"admin", "services", "tencentcloud"/g' tencentddns.lua
-popd
+
 
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
