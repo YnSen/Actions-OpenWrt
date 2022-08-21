@@ -6,6 +6,6 @@ config udpxy
 	option port '4022'
 	option bind '0.0.0.0'
 	option source 'pppoe-iptv'
-	option disabled '0'
+	option disabled '1'
 	option mcsub_renew '55'
 
