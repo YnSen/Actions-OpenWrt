@@ -162,6 +162,9 @@ user_rules:
 - '||cadlsyndicate.com^$important'
 - '||mp18.cn^$important'
 - '||tracot.com^$important'
+- '||alleviatepracticableaddicted.com^$important'
+- '||org-upgrade.com^$important'
+- ""
 dhcp:
   enabled: false
   interface_name: ""
