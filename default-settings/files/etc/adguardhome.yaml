@@ -159,11 +159,9 @@ user_rules:
 - '@@||jwpcdn.com^$important'
 - '||click-cdn.com^$important'
 - '||ausoafab.net^$important'
-- '||v.gayvidsclub.com^$important'
 - '||cadlsyndicate.com^$important'
 - '||mp18.cn^$important'
 - '||tracot.com^$important'
-- ""
 dhcp:
   enabled: false
   interface_name: ""
