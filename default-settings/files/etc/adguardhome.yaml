@@ -164,6 +164,7 @@ user_rules:
 - '||tracot.com^$important'
 - '||alleviatepracticableaddicted.com^$important'
 - '||org-upgrade.com^$important'
+- '||twinrdsyn.com^$important'
 - ""
 dhcp:
   enabled: false
