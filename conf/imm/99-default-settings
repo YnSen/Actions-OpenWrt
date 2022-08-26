@@ -43,6 +43,7 @@ sed -i 's,192.168.1.1,192.168.3.1,g' /etc/config/openvpn
 uci set openvpn.myvpn.duplicate_cn='1'
 uci set openvpn.myvpn.proto='tcp6'
 uci set openvpn.myvpn.server='192.168.6.0 255.255.255.0'
+uci set openvpn.myvpn.port= '11194'
 uci commit openvpn
 
 #packet_steering
