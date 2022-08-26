@@ -112,6 +112,7 @@ svn co https://github.com/fw876/helloworld/trunk/trojan package/lean/helloworld/
 svn co https://github.com/fw876/helloworld/trunk/dns2tcp package/lean/helloworld/dns2tcp
 svn co https://github.com/fw876/helloworld/trunk/hysteria package/lean/helloworld/hysteria
 svn export https://github.com/fw876/helloworld/trunk/sagernet-core package/lean/helloworld/sagernet-core
+svn export https://github.com/fw876/helloworld/trunk/lua-neturl package/lean/helloworld/lua-neturl
 rm -rf feeds/packages/net/xray-core
 rm -rf package/feeds/packages/xray-core
 cp -r package/lean/helloworld/xray-core feeds/packages/net/
@@ -122,6 +123,11 @@ popd
 # SSR Plus - deps
 svn co https://github.com/coolsnowwolf/packages/trunk/net/redsocks2 package/lean/redsocks2
 
+#speedtest cli
+svn export https://github.com/immortalwrt/packages/trunk/net/speedtest-cli feeds/packages/net/speedtest-cli
+pushd package/feeds/packages/
+ln -sv ../../../feeds/packages/net/speedtest-cli ./
+popd
 
 # argon主题
 pushd package/lean
