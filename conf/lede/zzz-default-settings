@@ -39,6 +39,7 @@ uci commit argon
 
 #AdguardHome
 uci set AdGuardHome.AdGuardHome.binpath='/usr/bin/AdGuardHome'
+uci set AdGuardHome.AdGuardHome.configpath='/etc/adguardhome.yaml'
 uci set AdGuardHome.AdGuardHome.workdir='/usr/bin/AdGuardHomeWork'
 uci set AdGuardHome.AdGuardHome.waitonboot='0'
 uci commit AdGuardHome
