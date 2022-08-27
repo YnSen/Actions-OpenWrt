@@ -29,6 +29,7 @@ uci commit system
 
 #AdguardHome
 uci set AdGuardHome.AdGuardHome.binpath='/usr/bin/AdGuardHome'
+uci set AdGuardHome.AdGuardHome.configpath='/etc/adguardhome.yaml'
 uci set AdGuardHome.AdGuardHome.workdir='/usr/bin/AdGuardHomeWork'
 uci set AdGuardHome.AdGuardHome.waitonboot='0'
 uci commit AdGuardHome
@@ -43,11 +44,11 @@ uci commit AdGuardHome
 #uci commit firewall
 
 #upnp
-uci set upnpd.config.igdv1='1'
-uci set upnpd.config.enabled='1'
-uci del upnpd.config.enable_upnp
-uci del upnpd.config.enable_natpmp
-uci commit upnpd
+#uci set upnpd.config.igdv1='1'
+#uci set upnpd.config.enabled='1'
+#uci del upnpd.config.enable_upnp
+#uci del upnpd.config.enable_natpmp
+#uci commit upnpd
 
 #dnsmasq
 uci set dhcp.lan.ra='disabled'
@@ -62,6 +63,7 @@ sed -i 's,192.168.1.1,192.168.3.1,g' /etc/config/openvpn
 uci set openvpn.myvpn.duplicate_cn='1'
 uci set openvpn.myvpn.proto='tcp6'
 uci set openvpn.myvpn.server='192.168.6.0 255.255.255.0'
+uci set openvpn.myvpn.port='11194'
 uci commit openvpn
 
 #packet_steering
