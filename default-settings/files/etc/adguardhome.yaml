@@ -106,6 +106,10 @@ filters:
   url: https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt
   name: adgk
   id: 1660374259
+- enabled: true
+  url: https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad-pc.txt
+  name: halflife-pc
+  id: 1661209940
 whitelist_filters: []
 user_rules:
 - '||bsgslb.cn^$dnstype=AAAA'
@@ -148,6 +152,7 @@ user_rules:
 - '||*boy^$dnstype=AAAA'
 - '||*porn^$dnstype=AAAA'
 - '||porn*^$dnstype=AAAA'
+- '||tapecontent.net^$dnstype=AAAA'
 - '||bjzxy010.com^$important'
 - '@@||activity.e.kuaishou.com^$important'
 - '@@||kuaishou.com^$important'
