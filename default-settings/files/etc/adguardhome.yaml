@@ -159,6 +159,7 @@ user_rules:
 - '||*cdn^$dnstype=AAAA'
 - '||cdn*^$dnstype=AAAA'
 - '||newpppp.com^$dnstype=AAAA'
+- '||githubusercontent.com^$dnstype=AAAA'
 - '||bjzxy010.com^$important'
 - '@@||activity.e.kuaishou.com^$important'
 - '@@||kuaishou.com^$important'
