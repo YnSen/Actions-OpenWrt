@@ -160,6 +160,10 @@ user_rules:
 - '||cdn*^$dnstype=AAAA'
 - '||newpppp.com^$dnstype=AAAA'
 - '||githubusercontent.com^$dnstype=AAAA'
+- '||reddit*^$dnstype=AAAA'
+- '||*reddit^$dnstype=AAAA'
+- '||redd.it^$dnstype=AAAA'
+- '||twimg.com^$dnstype=AAAA'
 - '||bjzxy010.com^$important'
 - '@@||activity.e.kuaishou.com^$important'
 - '@@||kuaishou.com^$important'
@@ -178,6 +182,9 @@ user_rules:
 - '||org-upgrade.com^$important'
 - '||twinrdsyn.com^$important'
 - '||easyads*^$important'
+- '@@||cdn.nsimg.net^$important'
+- '@@||syndication.twitter.com^$important'
+- ""
 dhcp:
   enabled: false
   interface_name: ""
