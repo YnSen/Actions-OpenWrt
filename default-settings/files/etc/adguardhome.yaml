@@ -94,7 +94,7 @@ tls:
   certificate_path: ""
   private_key_path: ""
 filters:
-- enabled: false
+- enabled: true
   url: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
   name: AdGuard DNS filter
   id: 1
@@ -123,6 +123,7 @@ user_rules:
 - '||daum.net^$dnstype=AAAA'
 - '||daumcdn.net^$dnstype=AAAA'
 - '||google.com^$dnstype=AAAA'
+- '||googlevideo.com^$dnstype=AAAA'
 - '||youtube.com^$dnstype=AAAA'
 - '||instagram.com^$dnstype=AAAA'
 - '||facebook.com^$dnstype=AAAA'
@@ -184,7 +185,6 @@ user_rules:
 - '||easyads*^$important'
 - '@@||cdn.nsimg.net^$important'
 - '@@||syndication.twitter.com^$important'
-- ""
 dhcp:
   enabled: false
   interface_name: ""
