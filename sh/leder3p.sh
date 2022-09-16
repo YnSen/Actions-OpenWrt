@@ -110,6 +110,6 @@ sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-defaul
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 #cp -r ~/work/Actions-OpenWrt/Actions-OpenWrt/default-settings/files ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 #cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/wireless ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
-cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/leder3p.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
-mv leder3p.config .config
-make defconfig
+#cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/leder3p.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+#mv leder3p.config .config
+#make defconfig
