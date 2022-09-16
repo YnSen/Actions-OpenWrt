@@ -165,6 +165,10 @@ user_rules:
 - '||*reddit^$dnstype=AAAA'
 - '||redd.it^$dnstype=AAAA'
 - '||twimg.com^$dnstype=AAAA'
+- '||onedrive*^$dnstype=AAAA'
+- '||*onedrive^$dnstype=AAAA'
+- '||sharepoint.com^$dnstype=AAAA'
+- '||gfycat.com^$dnstype=AAAA'
 - '||bjzxy010.com^$important'
 - '@@||activity.e.kuaishou.com^$important'
 - '@@||kuaishou.com^$important'
@@ -185,6 +189,7 @@ user_rules:
 - '||easyads*^$important'
 - '@@||cdn.nsimg.net^$important'
 - '@@||syndication.twitter.com^$important'
+- '@@||upload.cc^$important'
 dhcp:
   enabled: false
   interface_name: ""
