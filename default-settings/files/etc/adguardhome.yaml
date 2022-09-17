@@ -190,6 +190,10 @@ user_rules:
 - '@@||cdn.nsimg.net^$important'
 - '@@||syndication.twitter.com^$important'
 - '@@||upload.cc^$important'
+- '||t55t.top^$important'
+- '||uuhvungdag.com^$important'
+- '||www.yashenggd.com^$important'
+- ""
 dhcp:
   enabled: false
   interface_name: ""
