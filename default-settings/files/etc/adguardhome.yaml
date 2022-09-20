@@ -193,6 +193,7 @@ user_rules:
 - '||t55t.top^$important'
 - '||uuhvungdag.com^$important'
 - '||www.yashenggd.com^$important'
+- '@@||jdsharecode.xyz^$important'
 - ""
 dhcp:
   enabled: false
