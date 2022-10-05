@@ -176,7 +176,6 @@ user_rules:
 - '@@||yximgs.com^$important'
 - '@@||taobao.com^$important'
 - '@@||tmall.com^$important'
-- '@@||qq.com^$important'
 - '@@||jwpcdn.com^$important'
 - '||click-cdn.com^$important'
 - '||ausoafab.net^$important'
@@ -194,7 +193,6 @@ user_rules:
 - '||uuhvungdag.com^$important'
 - '||www.yashenggd.com^$important'
 - '@@||jdsharecode.xyz^$important'
-- ""
 dhcp:
   enabled: false
   interface_name: ""
