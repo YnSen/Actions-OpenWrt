@@ -94,7 +94,7 @@ tls:
   certificate_path: ""
   private_key_path: ""
 filters:
-- enabled: true
+- enabled: false
   url: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
   name: AdGuard DNS filter
   id: 1
@@ -112,6 +112,8 @@ filters:
   id: 1661209940
 whitelist_filters: []
 user_rules:
+- '||bilibili.com^$dnstype=AAAA'
+- '||bilivideo.com^$dnstype=AAAA'
 - '||bsgslb.cn^$dnstype=AAAA'
 - '||netflix.com^$dnstype=AAAA'
 - '||nflxvideo.net^$dnstype=AAAA'
@@ -193,6 +195,8 @@ user_rules:
 - '||uuhvungdag.com^$important'
 - '||www.yashenggd.com^$important'
 - '@@||jdsharecode.xyz^$important'
+- '@@||cdn.exp.xiaomi.com^$important'
+- ""
 dhcp:
   enabled: false
   interface_name: ""
