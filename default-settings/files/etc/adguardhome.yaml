@@ -171,6 +171,8 @@ user_rules:
 - '||*onedrive^$dnstype=AAAA'
 - '||sharepoint.com^$dnstype=AAAA'
 - '||gfycat.com^$dnstype=AAAA'
+- '||ptt.cc^$dnstype=AAAA'
+- '||speed.cloudflare.com^$dnstype=AAAA'
 - '||bjzxy010.com^$important'
 - '@@||activity.e.kuaishou.com^$important'
 - '@@||kuaishou.com^$important'
