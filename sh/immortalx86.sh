@@ -70,6 +70,8 @@ popd
 rm -rf ./feeds/luci/applications/luci-app-openclash
 rm -rf ./package/feeds/luci/luci-app-openclash
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
+rm -rf package/luci-app-openclash/Makefile
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/Makefile package/luci-app-openclash/Makefile
 
 pushd package
 #强制关机插件
