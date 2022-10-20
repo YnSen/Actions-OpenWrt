@@ -15,7 +15,10 @@ git clone https://github.com/sbwml/openwrt-alist package/alist-openwrt
 #argon theme
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf package/feeds/luci/luci-theme-argon
-git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+git clone https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
+pushd package/feeds/luci/
+ln -sv ../../../feeds/luci/themes/luci-theme-argon ./
+popd
 
 # 应用过滤
 rm -rf feeds/packages/net/open-app-filter
