@@ -101,6 +101,6 @@ cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/config-5.4 ~/work/Actions-Ope
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/99-default-settings ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package/emortal/default-settings/files/
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/sh/scripts/03-convert_translation.sh ~/Actions-OpenWrt/openwrt/
 chmod 0755 *sh
-./03-convert_translation.sh
 mv nginx.config .config
+./03-convert_translation.sh
 make defconfig
