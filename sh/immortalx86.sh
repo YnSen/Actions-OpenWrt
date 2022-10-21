@@ -95,11 +95,11 @@ sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/emortal/default-settings/files/99-defa
 
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 rm -rf package/emortal/default-settings/files/99-default-settings
-cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/immx86un.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/immx86.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/config-5.4 ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/target/linux/x86/
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/99-default-settings ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package/emortal/default-settings/files/
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/sh/scripts/03-convert_translation.sh /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 chmod 0755 *.sh
-mv immx86un.config .config
+mv immx86.config .config
 make defconfig
 ./03-convert_translation.sh
