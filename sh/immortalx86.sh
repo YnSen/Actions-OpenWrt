@@ -70,6 +70,8 @@ svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/l
 rm -rf package/luci-app-openclash/Makefile
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/Makefile package/luci-app-openclash/Makefile
 
+svn export https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings/files ./files
+
 pushd package
 #强制关机插件
 git clone https://github.com/esirplayground/luci-app-poweroff
