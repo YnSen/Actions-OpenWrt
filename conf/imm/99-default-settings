@@ -65,6 +65,17 @@ uci commit filebrowser
 /etc/init.d/filebrowser restart
 /etc/init.d/filebrowser enabled
 
+#turboacc
+uci set turboacc.config.hw_flow='0'
+uci set turboacc.config.sfe_flow='0'
+uci set turboacc.config.sfe_bridge='0'
+uci set turboacc.config.sfe_ipv6='0'
+uci set turboacc.config.fullcone_nat='1'
+uci set turboacc.config.bbr_cca='0'
+uci set turboacc.config.dns_caching='0'
+uci set turboacc.config.sw_flow='0'
+uci commit turboacc
+
 ln -sf /sbin/ip /usr/bin/ip
 
 sed -i "s/# //g" /etc/opkg/distfeeds.conf
