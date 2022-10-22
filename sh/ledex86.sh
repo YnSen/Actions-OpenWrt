@@ -45,19 +45,6 @@ git clone -b 18.06 https://github.com/garypang13/luci-theme-edge
 #git clone https://github.com/liuran001/openwrt-packages.git
 popd
 
-#unblockneteasemusic
-# 网易云音乐解锁 immortal
-rm -rf feeds/luci/applications/package/luci-app-unblockmusic
-rm -rf package/feeds/luci/luci-app-unblockmusic
-rm -rf feeds/packages/multimedia/UnblockNeteaseMusic-Go
-rm -rf feeds/packages/multimedia/UnblockNeteaseMusic
-rm -rf package/feeds/packages/UnblockNeteaseMusic-Go
-rm -rf package/feeds/packages/UnblockNeteaseMusic
-git clone --depth 1 https://github.com/immortalwrt/luci-app-unblockneteasemusic.git feeds/luci/applications/luci-app-unblockneteasemusic
-pushd package/feeds/luci
-ln -sv ../../../feeds/luci/applications/luci-app-unblockneteasemusic ./
-popd
-
 #删除liuran001软件包重复插件
 #pushd package/openwrt-packages
 #rm -rf luci-app-koolproxyR
@@ -72,6 +59,20 @@ popd
 #rm -rf open-app-filter
 #rm -rf oaf
 #popd
+
+#unblockneteasemusic
+# 网易云音乐解锁 immortal
+#rm -rf feeds/luci/applications/package/luci-app-unblockmusic
+#rm -rf package/feeds/luci/luci-app-unblockmusic
+#rm -rf feeds/packages/multimedia/UnblockNeteaseMusic-Go
+#rm -rf feeds/packages/multimedia/UnblockNeteaseMusic
+#rm -rf package/feeds/packages/UnblockNeteaseMusic-Go
+#rm -rf package/feeds/packages/UnblockNeteaseMusic
+#git clone --depth 1 https://github.com/immortalwrt/luci-app-unblockneteasemusic.git feeds/luci/applications/luci-app-unblockneteasemusic
+#pushd package/feeds/luci
+#ln -sv ../../../feeds/luci/applications/luci-app-unblockneteasemusic ./
+#popd
+
 #删除管控中多余的可道云,filebrowser
 pushd package/openwrt-package
 rm -rf luci-app-kodexplorer
@@ -111,6 +112,7 @@ svn co https://github.com/fw876/helloworld/trunk/trojan package/lean/helloworld/
 svn co https://github.com/fw876/helloworld/trunk/dns2tcp package/lean/helloworld/dns2tcp
 svn co https://github.com/fw876/helloworld/trunk/hysteria package/lean/helloworld/hysteria
 svn export https://github.com/fw876/helloworld/trunk/sagernet-core package/lean/helloworld/sagernet-core
+svn export https://github.com/fw876/helloworld/trunk/lua-neturl package/lean/helloworld/lua-neturl
 rm -rf feeds/packages/net/xray-core
 rm -rf package/feeds/packages/xray-core
 cp -r package/lean/helloworld/xray-core feeds/packages/net/
@@ -136,7 +138,7 @@ popd
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.1/g' package/base-files/files/bin/config_generate
-sed -i 's/192.168.1.1/192.168.3.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.5.1/g' package/base-files/files/bin/config_generate
 sed -i 's/bootstrap/argon/g' feeds/luci/collections/luci/Makefile
 # Modify default PassWord
 #sed -i 's/root::0:0:99999:7:::/root:$1$ScQIGKsX$q0qEf\/tAQ2wpTR6zIUIjo.:0:0:99999:7:::/g' package/base-files/files/etc/shadow
@@ -145,5 +147,5 @@ sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-defaul
 
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/ledex86.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
-#mv ledex86.config .config
-#make defconfig
+mv ledex86.config .config
+make defconfig
