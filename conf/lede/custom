@@ -1,0 +1,83 @@
+
+#theme
+uci set luci.main.mediaurlbase='/luci-static/argon'
+uci commit luci
+
+#argon color
+uci set argon.@global[0].primary='#1694FF'
+uci set argon.@global[0].dark_primary='#1B93F2'
+uci commit argon
+
+#AdguardHome
+uci set AdGuardHome.AdGuardHome.binpath='/usr/bin/AdGuardHome'
+uci set AdGuardHome.AdGuardHome.configpath='/etc/adguardhome.yaml'
+uci set AdGuardHome.AdGuardHome.workdir='/usr/bin/AdGuardHomeWork'
+uci set AdGuardHome.AdGuardHome.waitonboot='0'
+uci commit AdGuardHome
+
+# nginx
+#uci set nginx.global.uci_enable='true'
+#uci del nginx._lan
+#uci del nginx._redirect2ssl
+#uci add nginx server
+#uci rename nginx.@server[0]='_lan'
+#uci set nginx._lan.server_name='_lan'
+#uci add_list nginx._lan.listen='80 default_server'
+#uci add_list nginx._lan.listen='[::]:80 default_server'
+#uci add_list nginx._lan.include='restrict_locally'
+#uci add_list nginx._lan.include='conf.d/*.locations'
+#uci set nginx._lan.access_log='off; # logd openwrt'
+#uci commit nginx
+#/etc/init.d/nginx restart
+#/etc/init.d/nginx enabled
+# nginx end
+
+#docker mirror
+#uci add_list dockerd.globals.registry_mirrors='https://hub-mirror.c.163.com'
+#uci commit dockerd
+
+#firewall
+uci set firewall.@defaults[0].fullcone='1'
+#uci set firewall.@defaults[0].flow_offloading='1'
+uci commit firewall
+
+#upnp
+#uci set upnpd.config.igdv1='1'
+#uci set upnpd.config.enabled='1'
+#uci del upnpd.config.enable_upnp
+#uci del upnpd.config.enable_natpmp
+#uci commit upnpd
+
+#dnsmasq
+uci set dhcp.lan.ra='disabled'
+uci set dhcp.lan.ndp='disabled'
+uci set dhcp.lan.dhcpv6='disabled'
+uci set dhcp.lan.ra_management='0'
+uci commit dhcp
+
+#openvpn
+sed -i 's,192.168.1.0 255.255.255.0,192.168.6.0 255.255.255.0,g' /etc/config/openvpn
+sed -i 's,192.168.1.1,192.168.3.1,g' /etc/config/openvpn
+uci set openvpn.myvpn.duplicate_cn='1'
+uci set openvpn.myvpn.proto='tcp6'
+uci set openvpn.myvpn.server='192.168.6.0 255.255.255.0'
+uci set openvpn.myvpn.port='11194'
+uci commit openvpn
+
+#packet_steering
+uci del network.globals.ula_prefix
+uci del network.globals.packet_steering
+uci commit network
+/etc/init.d/network restart
+
+# ssrp
+#uci set shadowsocksr.@global[0].gfwlist_url='https://raw.cooluc.com/Loyalsoldier/v2ray-rules-dat/release/gfw.txt'
+#uci set shadowsocksr.@global[0].chnroute_url='https://raw.cooluc.com/QiuSimons/Chnroute/master/dist/chnroute/chnroute.txt'
+#uci commit shadowsocksr
+
+#filebrowseron
+uci set filebrowser.config.enabled='1'
+uci commit filebrowser
+/etc/init.d/filebrowser restart
+/etc/init.d/filebrowser enabled
+
