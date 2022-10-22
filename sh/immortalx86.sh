@@ -24,25 +24,6 @@ rm -rf package/feeds/luci/luci-app-appfilter
 rm -rf package/feeds/packages/open-app-filter
 git clone https://github.com/sbwml/OpenAppFilter --depth=1 package/new/OpenAppFilter
 
-# FRP 内网穿透
-rm -rf ./feeds/luci/applications/luci-app-frpc
-rm -rf ./feeds/luci/applications/luci-app-frps
-rm -rf ./feeds/packages/net/frp
-rm -rf ./package/feeds/packages/frp
-rm -rf ./package/feeds/luci/luci-app-frpc
-rm -rf ./package/feeds/luci/luci-app-frps
-svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-frpc feeds/luci/applications/luci-app-frpc
-svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-frps feeds/luci/applications/luci-app-frps
-pushd package/feeds/luci/
-ln -sv ../../../feeds/luci/applications/luci-app-frpc ./
-ln -sv ../../../feeds/luci/applications/luci-app-frps ./
-popd
-
-svn export https://github.com/coolsnowwolf/packages/trunk/net/frp feeds/packages/net/frp
-pushd package/feeds/packages
-ln -sv ../../../feeds/packages/net/frp ./
-popd
-
 #softethervpn
 rm -rf feeds/packages/net/softethervpn
 rm -rf feeds/packages/net/softethervpn5
@@ -61,6 +42,12 @@ popd
 pushd package/feeds/packages/
 ln -sv ../../../feeds/packages/net/softethervpn ./
 ln -sv ../../../feeds/packages/net/softethervpn5 ./
+popd
+
+#wrtbwmon
+svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-wrtbwmon ./feeds/luci/applications/luci-app-wrtbwmon
+pushd package/feeds/luci/
+ln -sv ../../../feeds/luci/applications/luci-app-wrtbwmon ./
 popd
 
 #openclash插件
