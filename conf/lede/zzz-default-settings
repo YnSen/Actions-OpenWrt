@@ -45,20 +45,20 @@ uci set AdGuardHome.AdGuardHome.waitonboot='0'
 uci commit AdGuardHome
 
 # nginx
-uci set nginx.global.uci_enable='true'
-uci del nginx._lan
-uci del nginx._redirect2ssl
-uci add nginx server
-uci rename nginx.@server[0]='_lan'
-uci set nginx._lan.server_name='_lan'
-uci add_list nginx._lan.listen='80 default_server'
-uci add_list nginx._lan.listen='[::]:80 default_server'
+#uci set nginx.global.uci_enable='true'
+#uci del nginx._lan
+#uci del nginx._redirect2ssl
+#uci add nginx server
+#uci rename nginx.@server[0]='_lan'
+#uci set nginx._lan.server_name='_lan'
+#uci add_list nginx._lan.listen='80 default_server'
+#uci add_list nginx._lan.listen='[::]:80 default_server'
 #uci add_list nginx._lan.include='restrict_locally'
-uci add_list nginx._lan.include='conf.d/*.locations'
-uci set nginx._lan.access_log='off; # logd openwrt'
-uci commit nginx
-/etc/init.d/nginx restart
-/etc/init.d/nginx enabled
+#uci add_list nginx._lan.include='conf.d/*.locations'
+#uci set nginx._lan.access_log='off; # logd openwrt'
+#uci commit nginx
+#/etc/init.d/nginx restart
+#/etc/init.d/nginx enabled
 # nginx end
 
 #docker mirror
