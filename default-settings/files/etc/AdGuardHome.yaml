@@ -173,6 +173,7 @@ user_rules:
 - '||gfycat.com^$dnstype=AAAA'
 - '||ptt.cc^$dnstype=AAAA'
 - '||speed.cloudflare.com^$dnstype=AAAA'
+- '||v2ex.com^$dnstype=AAAA
 - '||bjzxy010.com^$important'
 - '@@||activity.e.kuaishou.com^$important'
 - '@@||kuaishou.com^$important'
