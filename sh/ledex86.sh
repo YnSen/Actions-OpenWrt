@@ -147,5 +147,8 @@ sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-defaul
 
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/ledex86.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/custom ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+sed -i '/uci commit fstab/r custom' ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package/lean/default-settings/files/zzz-default-settings
+
 mv ledex86.config .config
 make defconfig
