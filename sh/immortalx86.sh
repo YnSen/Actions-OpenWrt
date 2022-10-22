@@ -44,7 +44,7 @@ ln -sv ../../../feeds/packages/net/softethervpn ./
 ln -sv ../../../feeds/packages/net/softethervpn5 ./
 popd
 
-#wrtbwmon
+#实时网速
 svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-wrtbwmon ./feeds/luci/applications/luci-app-wrtbwmon
 pushd package/feeds/luci/
 ln -sv ../../../feeds/luci/applications/luci-app-wrtbwmon ./
