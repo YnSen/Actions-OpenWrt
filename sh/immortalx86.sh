@@ -44,13 +44,6 @@ ln -sv ../../../feeds/packages/net/softethervpn ./
 ln -sv ../../../feeds/packages/net/softethervpn5 ./
 popd
 
-#带宽监控
-svn export https://github.com/brvphoenix/luci-app-wrtbwmon/trunk/luci-app-wrtbwmon package/luci-app-wrtbwmon
-#svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-wrtbwmon ./feeds/luci/applications/luci-app-wrtbwmon
-#pushd package/feeds/luci/
-#ln -sv ../../../feeds/luci/applications/luci-app-wrtbwmon ./
-#popd
-
 #openclash插件
 rm -rf ./feeds/luci/applications/luci-app-openclash
 rm -rf ./package/feeds/luci/luci-app-openclash
