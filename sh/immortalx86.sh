@@ -1,7 +1,7 @@
 #get source
 git clone -b openwrt-21.02 https://github.com/immortalwrt/immortalwrt.git openwrt
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
-git checkout v21.02.2
+git checkout v21.02.3
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
 # AdGuardHome
