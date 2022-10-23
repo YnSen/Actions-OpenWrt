@@ -54,12 +54,14 @@ cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/Makefile package/luci-app-ope
 svn export https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings/files ./files
 
 #带宽监控
-svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-nlbwmon feeds/luci/applications/luci-app-nlbwmon
-svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-wrtbwmon ./feeds/luci/applications/luci-app-wrtbwmon
-pushd package/feeds/luci/
-ln -sv ../../../feeds/luci/applications/luci-app-wrtbwmon ./
-ln -sv ../../../feeds/luci/applications/luci-app-nlbwmon ./
-popd
+#svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-nlbwmon feeds/luci/
+#applications/luci-app-nlbwmon
+#svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-wrtbwmon ./feeds/luci/
+#applications/luci-app-wrtbwmon
+#pushd package/feeds/luci/
+#ln -sv ../../../feeds/luci/applications/luci-app-wrtbwmon ./
+#ln -sv ../../../feeds/luci/applications/luci-app-nlbwmon ./
+#popd
 
 pushd package
 #强制关机插件
