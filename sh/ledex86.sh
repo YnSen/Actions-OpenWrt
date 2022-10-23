@@ -126,6 +126,11 @@ popd
 # SSR Plus - deps
 svn co https://github.com/coolsnowwolf/packages/trunk/net/redsocks2 package/lean/redsocks2
 
+#speedtest cli
+svn export https://github.com/immortalwrt/packages/trunk/net/speedtest-cli feeds/packages/net/speedtest-cli
+pushd package/feeds/packages/
+ln -sv ../../../feeds/packages/net/speedtest-cli ./
+popd
 
 # argon主题
 rm -rf ./feeds/luci/themes/luci-theme-argon
