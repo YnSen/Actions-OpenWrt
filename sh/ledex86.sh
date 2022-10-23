@@ -125,8 +125,9 @@ svn co https://github.com/coolsnowwolf/packages/trunk/net/redsocks2 package/lean
 
 
 # argon主题
-pushd package/lean
-rm -rf luci-theme-argon
+rm -rf ./feeds/luci/themes/luci-theme-argon
+rm -rf package/feeds/luci/luci-theme-argon
+pushd package
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config.git
 #vssr
