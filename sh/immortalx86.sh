@@ -78,6 +78,7 @@ cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 rm -rf package/emortal/default-settings/files/99-default-settings
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/immx86.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/config-5.4 ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/target/linux/x86/
+mkdir -p ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/files/etc/opkg
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/distfeeds.conf ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/files/etc/opkg/
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/99-default-settings ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package/emortal/default-settings/files/
 #cp ~/work/Actions-OpenWrt/Actions-OpenWrt/sh/scripts/03-convert_translation.sh /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
