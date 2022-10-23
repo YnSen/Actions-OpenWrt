@@ -4,6 +4,9 @@ git clone https://github.com/coolsnowwolf/lede.git openwrt
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
+#get myfiles
+svn export https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings/files ./files
+
 pushd package
 #lienol(管控)
 git clone https://github.com/Lienol/openwrt-package.git
