@@ -72,6 +72,7 @@ popd
 
 #add zh-cn translate
 cp -r package/new/luci-app-wrtbwmon/luci-app-wrtbwmon/po/zh_Hans package/new/luci-app-wrtbwmon/luci-app-wrtbwmon/po/zh-cn
+cp -r package/luci-app-poweroff/po/zh-cn package/luci-app-poweroff/po/zh_Hans
 
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
@@ -86,11 +87,6 @@ cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 rm -rf package/emortal/default-settings/files/99-default-settings
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/immx86.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/config-5.4 ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/target/linux/x86/
-#mkdir -p ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/files/etc/opkg
-#cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/distfeeds.conf ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/files/etc/opkg/
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/99-default-settings ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package/emortal/default-settings/files/
-#cp ~/work/Actions-OpenWrt/Actions-OpenWrt/sh/scripts/03-convert_translation.sh /home/runner/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
-#chmod 0755 *.sh
 mv immx86.config .config
 make defconfig
-#./03-convert_translation.sh
