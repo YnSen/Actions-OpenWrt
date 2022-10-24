@@ -84,7 +84,6 @@ echo 'CONFIG_CRYPTO_AES_NI_INTEL=y' >>./target/linux/x86/64/config-5.4
 sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/emortal/default-settings/files/99-default-settings
 
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
-rm -rf package/emortal/default-settings/files/99-default-settings
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/immx86.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/config-5.4 ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/target/linux/x86/
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/custom ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
