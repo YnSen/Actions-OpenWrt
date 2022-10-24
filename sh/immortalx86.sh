@@ -87,6 +87,7 @@ cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 rm -rf package/emortal/default-settings/files/99-default-settings
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/immx86.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/config-5.4 ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/target/linux/x86/
-cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/99-default-settings ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package/emortal/default-settings/files/
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/lede/custom ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
+sed -i '/uci commit fstab/r custom' ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package/emortal/default-settings/files/99-default-settings
 mv immx86.config .config
 make defconfig
