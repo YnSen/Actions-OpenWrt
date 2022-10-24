@@ -62,16 +62,17 @@ pushd package
 git clone https://github.com/esirplayground/luci-app-poweroff
 #自动关机插件
 git clone https://github.com/sirpdboy/luci-app-autopoweroff
+
+#add zh-cn translate
+cp -r ./luci-app-poweroff/po/zh_Hans ./luci-app-poweroff/po/zh-cn
+cp -r ./new/luci-app-wrtbwmon/luci-app-wrtbwmon/po/zh_Hans ./new/luci-app-wrtbwmon/luci-app-wrtbwmon/po/zh-cn
+
 #腾讯ddns
 git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-ddns
 pushd tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller
 sed -i 's/"admin", "tencentcloud"/"admin", "services", "tencentcloud"/g' tencentddns.lua
 popd
 popd
-
-#add zh-cn translate
-cp -r package/luci-app-poweroff/po/zh_Hans package/luci-app-poweroff/po/zh-cn
-cp -r package/new/luci-app-wrtbwmon/luci-app-wrtbwmon/po/zh_Hans package/new/luci-app-wrtbwmon/luci-app-wrtbwmon/po/zh-cn
 
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
