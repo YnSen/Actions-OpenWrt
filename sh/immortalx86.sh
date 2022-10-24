@@ -69,6 +69,9 @@ sed -i 's/"admin", "tencentcloud"/"admin", "services", "tencentcloud"/g' tencent
 popd
 popd
 
+#add luci-app-poweroff translate
+cp -r package/luci-app-poweroff/po/zh_Hans package/luci-app-poweroff/po/zh-cn
+
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 
