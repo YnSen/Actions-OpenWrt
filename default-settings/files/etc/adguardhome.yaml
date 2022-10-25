@@ -1,0 +1,273 @@
+bind_host: 0.0.0.0
+bind_port: 3000
+beta_bind_port: 0
+users:
+  - name: sen
+    password: $2a$10$Ledr2BZirKsejmFkhXN.feO4dg2wBfMU5mAWGyshl.MZH6NHDtDn2
+auth_attempts: 5
+block_auth_min: 15
+http_proxy: ""
+language: ""
+debug_pprof: false
+web_session_ttl: 720
+dns:
+  bind_hosts:
+    - 0.0.0.0
+  port: 553
+  statistics_interval: 1
+  querylog_enabled: false
+  querylog_file_enabled: true
+  querylog_interval: 24h
+  querylog_size_memory: 1000
+  anonymize_client_ip: false
+  protection_enabled: true
+  blocking_mode: nxdomain
+  blocking_ipv4: ""
+  blocking_ipv6: ""
+  blocked_response_ttl: 10
+  parental_block_host: family-block.dns.adguard.com
+  safebrowsing_block_host: standard-block.dns.adguard.com
+  ratelimit: 0
+  ratelimit_whitelist: []
+  refuse_any: false
+  upstream_dns:
+    - tls://223.6.6.6
+    - tls://1.12.12.12
+    - tls://8.8.4.4
+    - tls://208.67.222.222
+    - tls://208.67.220.220
+  upstream_dns_file: ""
+  bootstrap_dns:
+    - 61.128.128.68
+    - 61.128.192.68
+    - 240e:47:0:701::1
+    - 240e:47:0:702::1
+  all_servers: true
+  fastest_addr: false
+  fastest_timeout: 1s
+  allowed_clients: []
+  disallowed_clients: []
+  blocked_hosts:
+    - version.bind
+    - id.server
+    - hostname.bind
+  trusted_proxies:
+    - 127.0.0.0/8
+    - ::1/128
+  cache_size: 0
+  cache_ttl_min: 0
+  cache_ttl_max: 0
+  cache_optimistic: false
+  bogus_nxdomain: []
+  aaaa_disabled: false
+  enable_dnssec: true
+  edns_client_subnet: true
+  max_goroutines: 300
+  handle_ddr: true
+  ipset: []
+  ipset_file: ""
+  filtering_enabled: true
+  filters_update_interval: 24
+  parental_enabled: false
+  safesearch_enabled: false
+  safebrowsing_enabled: false
+  safebrowsing_cache_size: 1048576
+  safesearch_cache_size: 1048576
+  parental_cache_size: 1048576
+  cache_time: 30
+  rewrites: []
+  blocked_services: []
+  upstream_timeout: 10s
+  private_networks: []
+  use_private_ptr_resolvers: true
+  local_ptr_upstreams: []
+  serve_http3: false
+  use_http3_upstreams: false
+tls:
+  enabled: false
+  server_name: ""
+  force_https: false
+  port_https: 443
+  port_dns_over_tls: 853
+  port_dns_over_quic: 853
+  port_dnscrypt: 0
+  dnscrypt_config_file: ""
+  allow_unencrypted_doh: false
+  strict_sni_check: false
+  certificate_chain: ""
+  private_key: ""
+  certificate_path: ""
+  private_key_path: ""
+filters:
+  - enabled: true
+    url: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
+    name: AdGuard Simplified Domain Names filter
+    id: 1
+  - enabled: true
+    url: https://adaway.org/hosts.txt
+    name: AdAway
+    id: 2
+  - enabled: false
+    url: https://hosts-file.net/ad_servers.txt
+    name: hpHosts - Ad and Tracking servers only
+    id: 3
+  - enabled: false
+    url: https://www.malwaredomainlist.com/hostslist/hosts.txt
+    name: MalwareDomainList.com Hosts List
+    id: 4
+  - enabled: false
+    url: https://raw.githubusercontent.com/vokins/yhosts/master/data/tvbox.txt
+    name: tvbox
+    id: 1575018007
+  - enabled: false
+    url: https://cdn.jsdelivr.net/gh/neoFelhz/neohosts@gh-pages/full/hosts.txt
+    name: neoHosts full
+    id: 1575618240
+  - enabled: false
+    url: https://cdn.jsdelivr.net/gh/neoFelhz/neohosts@gh-pages/basic/hosts.txt
+    name: neoHosts basic
+    id: 1575618241
+  - enabled: false
+    url: http://sbc.io/hosts/hosts
+    name: StevenBlack host basic
+    id: 1575618242
+  - enabled: false
+    url: http://sbc.io/hosts/alternates/fakenews-gambling-porn-social/hosts
+    name: StevenBlack host+fakenews + gambling + porn + social
+    id: 1575618243
+  - enabled: false
+    url: https://cdn.jsdelivr.net/gh/privacy-protection-tools/anti-AD@master/anti-ad-easylist.txt
+    name: anti-AD(Adblock+neohosts+yhosts+cjxlist+adhlist)
+    id: 1577113202
+whitelist_filters: []
+user_rules:
+  - '||bilibili.com^$dnstype=AAAA'
+  - '||bilivideo.com^$dnstype=AAAA'
+  - '||bsgslb.cn^$dnstype=AAAA'
+  - '||netflix.com^$dnstype=AAAA'
+  - '||nflxvideo.net^$dnstype=AAAA'
+  - '||fast.com^$dnstype=AAAA'
+  - '||mega.nz^$dnstype=AAAA'
+  - '||mega.io^$dnstype=AAAA'
+  - '||mega.co.nz^$dnstype=AAAA'
+  - '||vercel.app^$dnstype=AAAA'
+  - '||daum.net^$dnstype=AAAA'
+  - '||daumcdn.net^$dnstype=AAAA'
+  - '||google.com^$dnstype=AAAA'
+  - '||googlevideo.com^$dnstype=AAAA'
+  - '||youtube.com^$dnstype=AAAA'
+  - '||instagram.com^$dnstype=AAAA'
+  - '||facebook.com^$dnstype=AAAA'
+  - '||facebook.net^$dnstype=AAAA'
+  - '||thegay.com^$dnstype=AAAA'
+  - '||disneyplus.com^$dnstype=AAAA'
+  - '||disney.api.edge.bamgrid.com^$dnstype=AAAA'
+  - '||disney.connections.edge.bamgrid.com^$dnstype=AAAA'
+  - '||disney.content.edge.bamgrid.com^$dnstype=AAAA'
+  - '||disney.demdex.net^$dnstype=AAAA'
+  - '||sanalytics.disneyplus.com^$dnstype=AAAA'
+  - '||prod-static.disney-plus.net^$dnstype=AAAA'
+  - '||cdn.registerdisney.go.com^$dnstype=AAAA'
+  - '||www.xue51.com^$dnstype=AAAA'
+  - '||www.xue51.com.wswebpic.com^$dnstype=AAAA'
+  - '@@||pan.quark.cn^$important'
+  - '@@||drive.quark.cn^$important'
+  - '||matrix.org^$dnstype=AAAA'
+  - '||cdninstagram.com^$dnstype=AAAA'
+  - '||fna.fbcdn.net^$dnstype=AAAA'
+  - '||playvids.com^$dnstype=AAAA'
+  - '||stboy.net^$dnstype=AAAA'
+  - '||themoviedb.org^$dnstype=AAAA'
+  - '||imageshack.com^$dnstype=AAAA'
+  - '||gay*^$dnstype=AAAA'
+  - '||*gay^$dnstype=AAAA'
+  - '||*boy^$dnstype=AAAA'
+  - '||*porn^$dnstype=AAAA'
+  - '||porn*^$dnstype=AAAA'
+  - '||tapecontent.net^$dnstype=AAAA'
+  - '||mudvod.tv^$dnstype=AAAA'
+  - '||nivod.tv^$dnstype=AAAA'
+  - '||biggggg.com^$dnstype=AAAA'
+  - '#||cdn^$dnstype=AAAA'
+  - '||cdn*^$dnstype=AAAA'
+  - '||newpppp.com^$dnstype=AAAA'
+  - '||githubusercontent.com^$dnstype=AAAA'
+  - '||reddit*^$dnstype=AAAA'
+  - '||*reddit^$dnstype=AAAA'
+  - '||redd.it^$dnstype=AAAA'
+  - '||twimg.com^$dnstype=AAAA'
+  - '||onedrive*^$dnstype=AAAA'
+  - '||*onedrive^$dnstype=AAAA'
+  - '||sharepoint.com^$dnstype=AAAA'
+  - '||gfycat.com^$dnstype=AAAA'
+  - '||ptt.cc^$dnstype=AAAA'
+  - '||speed.cloudflare.com^$dnstype=AAAA'
+  - '||v2ex.com^$dnstype=AAAA'
+  - '||xiongpapay.xyz^$dnstype=AAAA'
+  - '||cnbl-cdn.bamgrid.com^$dnstype=AAAA'
+  - '||bjzxy010.com^$important'
+  - '@@||activity.e.kuaishou.com^$important'
+  - '@@||kuaishou.com^$important'
+  - '@@||inkuai.com^$important'
+  - '@@||yximgs.com^$important'
+  - '@@||taobao.com^$important'
+  - '@@||tmall.com^$important'
+  - '@@||jwpcdn.com^$important'
+  - '||click-cdn.com^$important'
+  - '||ausoafab.net^$important'
+  - '||cadlsyndicate.com^$important'
+  - '||mp18.cn^$important'
+  - '||tracot.com^$important'
+  - '||alleviatepracticableaddicted.com^$important'
+  - '||org-upgrade.com^$important'
+  - '||twinrdsyn.com^$important'
+  - '||easyads*^$important'
+  - '@@||cdn.nsimg.net^$important'
+  - '@@||syndication.twitter.com^$important'
+  - '@@||upload.cc^$important'
+  - '||t55t.top^$important'
+  - '||uuhvungdag.com^$important'
+  - '||www.yashenggd.com^$important'
+  - '@@||jdsharecode.xyz^$important'
+  - '@@||cdn.exp.xiaomi.com^$important'
+  - '@@||cdn.bootcss.com^$important'
+  - '@@||cdn.ipip.net^$important'
+  - '@@||cdn.nz.lu^$important'
+  - '@@||cdn.cnbj0.fds.api.mi-img.com^$important'
+dhcp:
+  enabled: false
+  interface_name: ""
+  local_domain_name: lan
+  dhcpv4:
+    gateway_ip: ""
+    subnet_mask: ""
+    range_start: ""
+    range_end: ""
+    lease_duration: 86400
+    icmp_timeout_msec: 1000
+    options: []
+  dhcpv6:
+    range_start: ""
+    lease_duration: 86400
+    ra_slaac_only: false
+    ra_allow_slaac: false
+clients:
+  runtime_sources:
+    whois: true
+    arp: true
+    rdns: true
+    dhcp: true
+    hosts: true
+  persistent: []
+log_file: ""
+log_max_backups: 0
+log_max_size: 100
+log_max_age: 3
+log_compress: false
+log_localtime: false
+verbose: false
+os:
+  group: ""
+  user: ""
+  rlimit_nofile: 0
+schema_version: 14
