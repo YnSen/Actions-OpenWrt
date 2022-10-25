@@ -17,6 +17,17 @@ pushd package/feeds/luci/
 ln -sv ../../../feeds/luci/themes/luci-theme-argon ./
 popd
 
+#aliyundrive-webdav
+svn co https://github.com/coolsnowwolf/packages/trunk/multimedia/aliyundrive-webdav feeds/packages/multimedia/aliyundrive-webdav
+pushd package/feeds/packages
+ln -sv ../../../feeds/packages/multimedia/aliyundrive-webdav ./
+popd
+
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-aliyundrive-webdav feeds/luci/applications/luci-app-aliyundrive-webdav
+pushd package/feeds/luci
+ln -sv ../../../feeds/luci/applications/luci-app-aliyundrive-webdav ./
+popd
+
 # 应用过滤
 rm -rf feeds/packages/net/open-app-filter
 rm -rf feeds/luci/applications/luci-app-appfilter
