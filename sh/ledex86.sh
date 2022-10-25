@@ -36,7 +36,7 @@ git clone https://github.com/sirpdboy/luci-app-autopoweroff
 git clone https://github.com/rufengsuixing/luci-app-onliner.git
 
 # ShadowsocksR Plus+
-git clone https://github.com/fw876/helloworld.git
+git clone https://github.com/fw876/helloworld.git lean/helloworld
 
 #Docker lib api
 #git clone https://github.com/lisaac/luci-lib-docker
@@ -103,7 +103,7 @@ pushd package/feeds/packages/
 ln -sv ../../../feeds/packages/utils/filebrowser ./
 popd
 
-# ShadowsocksR Plus+
+#替换xray-core
 rm -rf feeds/packages/net/xray-core
 rm -rf package/feeds/packages/xray-core
 cp -r package/lean/helloworld/xray-core feeds/packages/net/
