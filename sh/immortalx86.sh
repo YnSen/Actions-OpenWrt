@@ -41,10 +41,11 @@ rm -rf feeds/packages/net/softethervpn5
 rm -rf feeds/luci/applications/luci-app-softether
 rm -rf package/feeds/packages/softethervpn
 rm -rf package/feeds/packages/softethervpn5
-rm -rf package/feeds/luci/luci-app-softether
-svn export https://github.com/coolsnowwolf/packages/trunk/net/softethervpn feeds/packages/net/softethervpn
-svn export https://github.com/coolsnowwolf/packages/trunk/net/softethervpn5 feeds/packages/net/softethervpn5
-svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-softethervpn feeds/luci/applications/luci-app-softethervpn
+rm -rf package/feeds/luci/luci-app-softethervpn
+rm -rf package/feeds/luci/luci-app-softethervpn5
+svn co https://github.com/coolsnowwolf/packages/trunk/net/softethervpn feeds/packages/net/softethervpn
+svn co https://github.com/coolsnowwolf/packages/trunk/net/softethervpn5 feeds/packages/net/softethervpn5
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-softethervpn feeds/luci/applications/luci-app-softethervpn
 
 pushd package/feeds/luci/
 ln -sv ../../../feeds/luci/applications/luci-app-softethervpn ./
