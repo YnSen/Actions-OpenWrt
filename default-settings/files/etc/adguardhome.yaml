@@ -31,8 +31,8 @@ dns:
   ratelimit_whitelist: []
   refuse_any: true
   upstream_dns:
-  - '#tls://223.6.6.6'
-  - '#tls://1.12.12.12'
+  - tls://223.6.6.6
+  - tls://1.12.12.12
   - tls://8.8.4.4
   - tls://208.67.222.222
   - tls://208.67.220.220
@@ -113,6 +113,7 @@ filters:
   id: 1661209940
 whitelist_filters: []
 user_rules:
+- '||market.xiaomi.com^$dnstype=AAAA'
 - '||bilibili.com^$dnstype=AAAA'
 - '||bilivideo.com^$dnstype=AAAA'
 - '||bsgslb.cn^$dnstype=AAAA'
