@@ -13,6 +13,7 @@ uci set AdGuardHome.AdGuardHome.binpath='/usr/bin/AdGuardHome'
 uci set AdGuardHome.AdGuardHome.configpath='/etc/adguardhome.yaml'
 uci set AdGuardHome.AdGuardHome.workdir='/usr/bin/AdGuardHomeWork'
 uci set AdGuardHome.AdGuardHome.waitonboot='0'
+uci set AdGuardHome.AdGuardHome.enabled='1'
 uci commit AdGuardHome
 
 # nginx
@@ -74,10 +75,3 @@ uci commit network
 #uci set shadowsocksr.@global[0].gfwlist_url='https://raw.cooluc.com/Loyalsoldier/v2ray-rules-dat/release/gfw.txt'
 #uci set shadowsocksr.@global[0].chnroute_url='https://raw.cooluc.com/QiuSimons/Chnroute/master/dist/chnroute/chnroute.txt'
 #uci commit shadowsocksr
-
-#filebrowseron
-uci set filebrowser.config.enabled='1'
-uci commit filebrowser
-/etc/init.d/filebrowser restart
-/etc/init.d/filebrowser enabled
-
