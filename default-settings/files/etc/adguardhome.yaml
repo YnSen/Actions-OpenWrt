@@ -2,8 +2,8 @@ bind_host: 0.0.0.0
 bind_port: 3000
 beta_bind_port: 0
 users:
-- name: sen
-  password: $2a$10$Ledr2BZirKsejmFkhXN.feO4dg2wBfMU5mAWGyshl.MZH6NHDtDn2
+  - name: sen
+    password: $2a$10$Ledr2BZirKsejmFkhXN.feO4dg2wBfMU5mAWGyshl.MZH6NHDtDn2
 auth_attempts: 5
 block_auth_min: 15
 http_proxy: ""
@@ -12,7 +12,7 @@ debug_pprof: false
 web_session_ttl: 720
 dns:
   bind_hosts:
-  - 0.0.0.0
+    - 0.0.0.0
   port: 553
   statistics_interval: 1
   querylog_enabled: true
@@ -31,29 +31,30 @@ dns:
   ratelimit_whitelist: []
   refuse_any: true
   upstream_dns:
-  - tls://223.6.6.6
-  - tls://1.12.12.12
-  - tls://8.8.4.4
-  - tls://208.67.222.222
-  - tls://208.67.220.220
+    - tls://223.6.6.6
+    - '#tls://1.12.12.12'
+    - tls://8.8.4.4
+    - '#tls://208.67.222.222'
+    - '#tls://208.67.220.220'
+    - 127.0.0.1:5335
   upstream_dns_file: ""
   bootstrap_dns:
-  - 61.128.128.68
-  - 61.128.192.68
-  - 240e:47:0:701::1
-  - 240e:47:0:702::1
+    - 61.128.128.68
+    - 61.128.192.68
+    - 240e:47:0:701::1
+    - 240e:47:0:702::1
   all_servers: true
   fastest_addr: false
   fastest_timeout: 1s
   allowed_clients: []
   disallowed_clients: []
   blocked_hosts:
-  - version.bind
-  - id.server
-  - hostname.bind
+    - version.bind
+    - id.server
+    - hostname.bind
   trusted_proxies:
-  - 127.0.0.0/8
-  - ::1/128
+    - 127.0.0.0/8
+    - ::1/128
   cache_size: 0
   cache_ttl_min: 0
   cache_ttl_max: 0
@@ -61,9 +62,11 @@ dns:
   bogus_nxdomain: []
   aaaa_disabled: false
   enable_dnssec: true
-  edns_client_subnet: true
+  edns_client_subnet: false
   max_goroutines: 300
+  handle_ddr: true
   ipset: []
+  ipset_file: ""
   filtering_enabled: true
   filters_update_interval: 24
   parental_enabled: false
@@ -77,8 +80,10 @@ dns:
   blocked_services: []
   upstream_timeout: 10s
   private_networks: []
-  use_private_ptr_resolvers: true
+  use_private_ptr_resolvers: false
   local_ptr_upstreams: []
+  serve_http3: false
+  use_http3_upstreams: false
 tls:
   enabled: false
   server_name: ""
@@ -95,113 +100,50 @@ tls:
   certificate_path: ""
   private_key_path: ""
 filters:
-- enabled: false
-  url: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
-  name: AdGuard DNS filter
-  id: 1
-- enabled: false
-  url: https://adaway.org/hosts.txt
-  name: AdAway Default Blocklist
-  id: 2
-- enabled: true
-  url: https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt
-  name: adgk
-  id: 1660374259
-- enabled: true
-  url: https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad-pc.txt
-  name: halflife-pc
-  id: 1661209940
+  - enabled: false
+    url: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
+    name: AdGuard DNS filter
+    id: 1
+  - enabled: false
+    url: https://adaway.org/hosts.txt
+    name: AdAway Default Blocklist
+    id: 2
+  - enabled: true
+    url: https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt
+    name: adgk
+    id: 1660374259
+  - enabled: true
+    url: https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad-pc.txt
+    name: halflife-pc
+    id: 1661209940
 whitelist_filters: []
 user_rules:
-- '||market.xiaomi.com^$dnstype=AAAA'
-- '||bilibili.com^$dnstype=AAAA'
-- '||bilivideo.com^$dnstype=AAAA'
-- '||bsgslb.cn^$dnstype=AAAA'
-- '||netflix.com^$dnstype=AAAA'
-- '||nflxvideo.net^$dnstype=AAAA'
-- '||fast.com^$dnstype=AAAA'
-- '||mega.nz^$dnstype=AAAA'
-- '||mega.io^$dnstype=AAAA'
-- '||mega.co.nz^$dnstype=AAAA'
-- '||vercel.app^$dnstype=AAAA'
-- '||daum.net^$dnstype=AAAA'
-- '||daumcdn.net^$dnstype=AAAA'
-- '||google.com^$dnstype=AAAA'
-- '||googlevideo.com^$dnstype=AAAA'
-- '||youtube.com^$dnstype=AAAA'
-- '||instagram.com^$dnstype=AAAA'
-- '||facebook.com^$dnstype=AAAA'
-- '||facebook.net^$dnstype=AAAA'
-- '||thegay.com^$dnstype=AAAA'
-- '||disneyplus.com^$dnstype=AAAA'
-- '||disney.api.edge.bamgrid.com^$dnstype=AAAA'
-- '||disney.connections.edge.bamgrid.com^$dnstype=AAAA'
-- '||disney.content.edge.bamgrid.com^$dnstype=AAAA'
-- '||disney.demdex.net^$dnstype=AAAA'
-- '||sanalytics.disneyplus.com^$dnstype=AAAA'
-- '||prod-static.disney-plus.net^$dnstype=AAAA'
-- '||cdn.registerdisney.go.com^$dnstype=AAAA'
-- '||www.xue51.com^$dnstype=AAAA'
-- '||www.xue51.com.wswebpic.com^$dnstype=AAAA'
-- '||matrix.org^$dnstype=AAAA'
-- '||cdninstagram.com^$dnstype=AAAA'
-- '||fna.fbcdn.net^$dnstype=AAAA'
-- '||playvids.com^$dnstype=AAAA'
-- '||stboy.net^$dnstype=AAAA'
-- '||themoviedb.org^$dnstype=AAAA'
-- '||imageshack.com^$dnstype=AAAA'
-- '||*gay*^$dnstype=AAAA'
-- '||*boy*^$dnstype=AAAA'
-- '||*porn*^$dnstype=AAAA'
-- '||tapecontent.net^$dnstype=AAAA'
-- '||mudvod.tv^$dnstype=AAAA'
-- '||nivod.tv^$dnstype=AAAA'
-- '||biggggg.com^$dnstype=AAAA'
-- '||*cdn*^$dnstype=AAAA'
-- '||newpppp.com^$dnstype=AAAA'
-- '||githubusercontent.com^$dnstype=AAAA'
-- '||*reddit*^$dnstype=AAAA'
-- '||redd.it^$dnstype=AAAA'
-- '||twimg.com^$dnstype=AAAA'
-- '||*onedrive*^$dnstype=AAAA'
-- '||sharepoint.com^$dnstype=AAAA'
-- '||gfycat.com^$dnstype=AAAA'
-- '||ptt.cc^$dnstype=AAAA'
-- '||speed.cloudflare.com^$dnstype=AAAA'
-- '||v2ex.com^$dnstype=AAAA'
-- '||xiongpapay.xyz^$dnstype=AAAA'
-- '||cnbl-cdn.bamgrid.com^$dnstype=AAAA'
-- '||bjzxy010.com^$important'
-- '||click-cdn.com^$important'
-- '||ausoafab.net^$important'
-- '||cadlsyndicate.com^$important'
-- '||mp18.cn^$important'
-- '||tracot.com^$important'
-- '||alleviatepracticableaddicted.com^$important'
-- '||org-upgrade.com^$important'
-- '||twinrdsyn.com^$important'
-- '||easyads*^$important'
-- '||t55t.top^$important'
-- '||uuhvungdag.com^$important'
-- '||www.yashenggd.com^$important'
-- '@@||activity.e.kuaishou.com^$important'
-- '@@||kuaishou.com^$important'
-- '@@||inkuai.com^$important'
-- '@@||yximgs.com^$important'
-- '@@||taobao.com^$important'
-- '@@||tmall.com^$important'
-- '@@||jwpcdn.com^$important'
-- '@@||cdn.nsimg.net^$important'
-- '@@||syndication.twitter.com^$important'
-- '@@||upload.cc^$important'
-- '@@||pan.quark.cn^$important'
-- '@@||drive.quark.cn^$important'
-- '@@||jdsharecode.xyz^$important'
-- '@@||cdn.exp.xiaomi.com^$important'
-- '@@||cdn.bootcss.com^$important'
-- '@@||cdn.ipip.net^$important'
-- '@@||cdn.nz.lu^$important'
-- '@@||cdn.cnbj0.fds.api.mi-img.com^$important'
+  - '||bjzxy010.com^$important'
+  - '||click-cdn.com^$important'
+  - '||ausoafab.net^$important'
+  - '||cadlsyndicate.com^$important'
+  - '||mp18.cn^$important'
+  - '||tracot.com^$important'
+  - '||alleviatepracticableaddicted.com^$important'
+  - '||org-upgrade.com^$important'
+  - '||twinrdsyn.com^$important'
+  - '||easyads*^$important'
+  - '||t55t.top^$important'
+  - '||uuhvungdag.com^$important'
+  - '||www.yashenggd.com^$important'
+  - '@@||activity.e.kuaishou.com^$important'
+  - '@@||kuaishou.com^$important'
+  - '@@||inkuai.com^$important'
+  - '@@||yximgs.com^$important'
+  - '@@||taobao.com^$important'
+  - '@@||tmall.com^$important'
+  - '@@||jwpcdn.com^$important'
+  - '@@||cdn.nsimg.net^$important'
+  - '@@||syndication.twitter.com^$important'
+  - '@@||upload.cc^$important'
+  - '@@||pan.quark.cn^$important'
+  - '@@||drive.quark.cn^$important'
+  - '@@||jdsharecode.xyz^$important'
 dhcp:
   enabled: false
   interface_name: ""
@@ -223,16 +165,16 @@ clients:
   runtime_sources:
     whois: true
     arp: true
-    rdns: true
+    rdns: false
     dhcp: true
     hosts: true
   persistent: []
-log_compress: false
-log_localtime: false
+log_file: ""
 log_max_backups: 0
 log_max_size: 100
 log_max_age: 3
-log_file: ""
+log_compress: false
+log_localtime: false
 verbose: false
 os:
   group: ""
