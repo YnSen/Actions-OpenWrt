@@ -91,6 +91,10 @@ git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app
 rm -rf feeds/packages/net/adguardhome
 svn co https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/net/adguardhome
 
+#sbwml mosdns
+git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
+git clone https://github.com/sbwml/v2ray-geodata package/geodata
+
 #filebrowser
 svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-filebrowser feeds/luci/applications/luci-app-filebrowser
 pushd package/feeds/luci
