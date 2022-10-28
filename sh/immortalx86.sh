@@ -11,7 +11,6 @@ svn export https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packa
 
 #sbwml mosdns
 git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
-git clone https://github.com/sbwml/v2ray-geodata package/geodata
 
 #argon theme
 rm -rf feeds/luci/themes/luci-theme-argon
