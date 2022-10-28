@@ -9,6 +9,10 @@ git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app
 rm -rf ./feeds/packages/net/adguardhome
 svn export https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/net/adguardhome
 
+#sbwml mosdns
+git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
+git clone https://github.com/sbwml/v2ray-geodata package/geodata
+
 #argon theme
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf package/feeds/luci/luci-theme-argon
