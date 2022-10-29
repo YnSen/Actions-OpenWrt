@@ -9,8 +9,11 @@ git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app
 rm -rf ./feeds/packages/net/adguardhome
 svn export https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/net/adguardhome
 
+echo '================================================================'
 #sbwml mosdns
 git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
+cp -rf package/mosdns/mosdns ./feeds/packages/net/
+echo '================================================================'
 
 #argon theme
 rm -rf feeds/luci/themes/luci-theme-argon
