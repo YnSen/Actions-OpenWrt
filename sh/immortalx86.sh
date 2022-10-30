@@ -19,7 +19,7 @@ cp -rf package/mosdns/mosdns ./feeds/packages/net/
 #404 mosdns
 #git clone https://github.com/QiuSimons/openwrt-mos.git package/mosdns
 #cp -rf package/mosdns/mosdns ./feeds/packages/net/
-#cp -rf package/v2ray-geodata ./feeds/packages/net/
+#cp -rf package/mosdns/v2ray-geodata ./feeds/packages/net/
 echo '================================================================'
 
 #argon theme
