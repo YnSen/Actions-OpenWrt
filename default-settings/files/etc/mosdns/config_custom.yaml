@@ -45,8 +45,8 @@ plugins:
   - tag: lazy_cache
     type: cache
     args:
-      size: 20000
-      lazy_cache_ttl: 259200
+      size: 0
+      lazy_cache_ttl: 0
 
   - tag: modify_ttl
     type: ttl
@@ -58,19 +58,22 @@ plugins:
     type: fast_forward
     args:
       upstream:
-        - addr: tls://223.6.6.6
+        - addr: tls://223.5.5.5
+          enable_pipeline: true        
         - addr: tls://1.12.12.12
+          enable_pipeline: true        
 
   - tag: "forward_remote"
     type: fast_forward
     args:
       upstream:
         - addr: tls://8.8.4.4
-          enable_pipeline: false
+          enable_pipeline: true
+          enable_http3: true
         - addr: tls://208.67.222.222
-          enable_pipeline: false
+          enable_pipeline: true
         - addr: tls://208.67.220.220
-          enable_pipeline: false
+          enable_pipeline: true
 
   - tag: query_is_whitelist_domain
     type: query_matcher
