@@ -94,8 +94,10 @@ svn co https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/
 #sbwml mosdns
 git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
-cp -rf package/mosdns/mosdns ./feeds/packages/net/
-cp -rf package/v2ray-geodata ./feeds/packages/net/
+rm -rf feeds/packages/net/mosdns
+rm -rf feeds/packages/net/v2ray-geodata
+cp -r package/mosdns/mosdns ./feeds/packages/net/
+cp -r package/v2ray-geodata ./feeds/packages/net/
 
 #filebrowser
 svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-filebrowser feeds/luci/applications/luci-app-filebrowser
