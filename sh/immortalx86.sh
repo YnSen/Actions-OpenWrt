@@ -12,8 +12,8 @@ svn export https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packa
 echo '================================================================'
 #sbwml mosdns
 git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
-git clone https://github.com/sbwml/v2ray-geodata package/geodata
-cp -rf package/geodata ./feeds/packages/net/
+git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+cp -rf package/v2ray-geodata ./feeds/packages/net/
 cp -rf package/mosdns/mosdns ./feeds/packages/net/
 
 #404 mosdns
