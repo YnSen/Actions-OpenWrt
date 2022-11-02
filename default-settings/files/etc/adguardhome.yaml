@@ -118,6 +118,7 @@ filters:
     id: 1661209940
 whitelist_filters: []
 user_rules:
+  - '||transfer.nz.lu^$important'
   - '||bjzxy010.com^$important'
   - '||click-cdn.com^$important'
   - '||ausoafab.net^$important'
