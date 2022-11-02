@@ -59,12 +59,13 @@ plugins:
     type: fast_forward
     args:
       upstream:
+        - addr: tls://1dot1dot1dot1.cloudflare-dns.com
+          enable_pipeline: false
+          enable_http3: true
         - addr: tls://8.8.4.4
           enable_pipeline: false
           enable_http3: true
-        - addr: tls://208.67.222.222
-          enable_pipeline: false
-        - addr: tls://208.67.220.220
+        - addr: tls://9.9.9.12
           enable_pipeline: false
 
   - tag: query_is_whitelist_domain
