@@ -53,9 +53,9 @@ plugins:
     args:
       upstream:
         - addr: tls://120.53.53.53
-          enable_pipeline: true        
+          enable_pipeline: true
         - addr: tls://1.12.12.12
-          enable_pipeline: true        
+          enable_pipeline: true
 
   - tag: "forward_remote"
     type: fast_forward
