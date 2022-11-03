@@ -112,12 +112,16 @@ filters:
     url: https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt
     name: adgk
     id: 1660374259
-  - enabled: true
-    url: https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad-pc.txt
-    name: halflife-pc
-    id: 1661209940
 whitelist_filters: []
 user_rules:
+  - '||onclickprediction.com^$important'
+  - '||eu.can-get-some.net^$important'
+  - '||jaavnacsdw.com^$important'
+  - '||lebinaphy.com^$important'
+  - '||ee.vogulprecast.com^$important'
+  - '||abtester.net^$important'
+  - '||youshou30.me^$important'
+  - '||vsnime.com^$important'
   - '||transfer.nz.lu^$important'
   - '||bjzxy010.com^$important'
   - '||click-cdn.com^$important'
@@ -145,6 +149,12 @@ user_rules:
   - '@@||pan.quark.cn^$important'
   - '@@||drive.quark.cn^$important'
   - '@@||jdsharecode.xyz^$important'
+  - '||onclickprediction.com^$important'
+  - '||eu.can-get-some.net^$important'
+  - '||jaavnacsdw.com^$important'
+  - '||lebinaphy.com^$important'
+  - '||ee.vogulprecast.com^$important'
+  - ""
 dhcp:
   enabled: false
   interface_name: ""
