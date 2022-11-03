@@ -149,11 +149,6 @@ user_rules:
   - '@@||pan.quark.cn^$important'
   - '@@||drive.quark.cn^$important'
   - '@@||jdsharecode.xyz^$important'
-  - '||onclickprediction.com^$important'
-  - '||eu.can-get-some.net^$important'
-  - '||jaavnacsdw.com^$important'
-  - '||lebinaphy.com^$important'
-  - '||ee.vogulprecast.com^$important'
   - ""
 dhcp:
   enabled: false
