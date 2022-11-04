@@ -40,33 +40,24 @@ data_providers:
   - tag: adlist
     file: "/etc/mosdns/rule/adlist.txt"
     auto_reload: true
-
 plugins:
-  - tag: lazy_cache
-    type: cache
-    args:
-      size: 0
-      lazy_cache_ttl: 0
-
   - tag: "forward_local"
     type: fast_forward
     args:
       upstream:
-        - addr: tls://120.53.53.53
         - addr: tls://1.12.12.12
+        - addr: tls://120.53.53.53
 
   - tag: "forward_remote"
     type: fast_forward
     args:
       upstream:
-        - addr: tls://1dot1dot1dot1.cloudflare-dns.com
-          enable_pipeline: false
-          enable_http3: true
         - addr: tls://8.8.4.4
           enable_pipeline: false
           enable_http3: true
-        - addr: tls://9.9.9.12
+        - addr: tls://1.0.0.1
           enable_pipeline: false
+          enable_http3: true
 
   - tag: query_is_whitelist_domain
     type: query_matcher
@@ -151,8 +142,6 @@ plugins:
           exec:
             - _new_nxdomain_response
             - _return
-
-        - lazy_cache
 
         - if: query_is_greylist_domain
           exec:
