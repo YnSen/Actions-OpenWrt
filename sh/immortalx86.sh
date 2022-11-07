@@ -38,6 +38,11 @@ svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-control-webrestr
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-control-weburl package/openwrt-package/luci-app-control-weburl
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-timecontrol package/openwrt-package/luci-app-timecontrol
 
+cp -r package/openwrt-package/luci-app-timecontrol/po/zh-cn package/openwrt-package/luci-app-timecontrol/po/zh_Hans
+cp -r package/openwrt-package/luci-app-control-timewol/po/zh-cn package/openwrt-package/luci-app-control-timewol/po/zh_Hans
+cp -r package/openwrt-package/luci-app-control-webrestriction/po/zh-cn package/openwrt-package/luci-app-control-webrestriction/po/zh_Hans
+cp -r package/openwrt-package/luci-app-control-weburl/po/zh-cn package/openwrt-package/luci-app-control-weburl/po/zh_Hans
+
 #argon theme
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf package/feeds/luci/luci-theme-argon
