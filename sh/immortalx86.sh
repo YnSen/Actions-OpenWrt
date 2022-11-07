@@ -24,6 +24,20 @@ cp -r package/mosdns/mosdns ./feeds/packages/net/
 #cp -rf package/mosdns/v2ray-geodata ./feeds/packages/net/
 echo '================================================================'
 
+#管控
+rm -rf package/feeds/luci/luci-app-webrestriction
+rm -rf package/feeds/luci/luci-app-timewol
+rm -rf package/feeds/luci/luci-app-weburl
+rm -rf package/feeds/luci/luci-app-timecontrol
+rm -rf feeds/luci/applications/luci-app-timecontrol
+rm -rf feeds/luci/applications/luci-app-weburl
+rm -rf feeds/luci/applications/luci-app-timewol
+rm -rf feeds/luci/applications/luci-app-webrestriction
+svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-control-timewol package/openwrt-package/luci-app-control-timewol
+svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-control-webrestriction package/openwrt-package/luci-app-control-webrestriction
+svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-control-weburl package/openwrt-package/luci-app-control-weburl
+svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-timecontrol package/openwrt-package/luci-app-timecontrol
+
 #argon theme
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf package/feeds/luci/luci-theme-argon
