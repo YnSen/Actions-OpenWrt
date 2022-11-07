@@ -29,7 +29,6 @@ keyword:taobao
 keyword:tmall
 domain:dynv6.com
 domain:ipv6.msftconnecttest.com
-domain:ipv6-test.com
 domain:mi.com
 domain:xiaomi.com
 domain:jd.com
