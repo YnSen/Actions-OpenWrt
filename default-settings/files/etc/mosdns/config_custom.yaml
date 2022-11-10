@@ -47,6 +47,8 @@ plugins:
       upstream:
         - addr: tls://1.12.12.12
         - addr: tls://120.53.53.53
+          idle_timeout: 8
+          trusted: true
 
   - tag: "forward_remote"
     type: fast_forward
@@ -58,6 +60,8 @@ plugins:
         - addr: tls://1.0.0.1
           enable_pipeline: false
           enable_http3: true
+          idle_timeout: 8
+          trusted: true
 
   - tag: query_is_whitelist_domain
     type: query_matcher
