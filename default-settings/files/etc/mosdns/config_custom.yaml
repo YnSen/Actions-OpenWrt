@@ -47,7 +47,6 @@ plugins:
       upstream:
         - addr: tls://1.12.12.12
         - addr: tls://120.53.53.53
-          idle_timeout: 8
           trusted: true
 
   - tag: "forward_remote"
@@ -55,12 +54,11 @@ plugins:
     args:
       upstream:
         - addr: tls://8.8.4.4
-          enable_pipeline: false
+          enable_pipeline: true
           enable_http3: true
         - addr: tls://1.0.0.1
-          enable_pipeline: false
+          enable_pipeline: true
           enable_http3: true
-          idle_timeout: 8
           trusted: true
 
   - tag: query_is_whitelist_domain
@@ -120,8 +118,14 @@ plugins:
   - tag: match_local_ptr
     type: query_matcher
     args:
+      qtype: [12]
       domain:
         - "provider:local_ptr"
+
+  - tag: match_qtype65
+    type: query_matcher
+    args:
+      qtype: [65]
 
   - tag: "main_sequence"
     type: "sequence"
@@ -136,7 +140,7 @@ plugins:
             - forward_local
             - _return
 
-        - if: "query_is_blocklist_domain || query_is_ad_domain || match_local_ptr"
+        - if: "query_is_blocklist_domain || query_is_ad_domain || match_local_ptr || match_qtype65"
           exec:
             - _new_nxdomain_response
             - _return
