@@ -115,18 +115,6 @@ plugins:
       domain:
         - "full:disable-category-ads-all.null"
 
-  - tag: match_local_ptr
-    type: query_matcher
-    args:
-      qtype: [12]
-      domain:
-        - "provider:local_ptr"
-
-  - tag: match_qtype65
-    type: query_matcher
-    args:
-      qtype: [65]
-
   - tag: "main_sequence"
     type: "sequence"
     args:
@@ -140,7 +128,7 @@ plugins:
             - forward_local
             - _return
 
-        - if: "query_is_blocklist_domain || query_is_ad_domain || match_local_ptr || match_qtype65"
+        - if: "query_is_blocklist_domain || query_is_ad_domain"
           exec:
             - _new_nxdomain_response
             - _return
