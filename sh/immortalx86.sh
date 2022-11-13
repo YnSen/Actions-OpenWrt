@@ -98,7 +98,7 @@ svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/l
 rm -rf package/luci-app-openclash/Makefile
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/Makefile package/luci-app-openclash/Makefile
 
-svn export https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings/files ./files
+cp -r ~/work/Actions-OpenWrt/Actions-OpenWrt/default-settings/files ./files
 
 # 流量监视
 git clone -b master --depth 1 https://github.com/brvphoenix/wrtbwmon.git package/new/wrtbwmon
