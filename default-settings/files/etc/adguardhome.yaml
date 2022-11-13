@@ -47,7 +47,8 @@ dns:
   fastest_addr: false
   fastest_timeout: 1s
   allowed_clients: []
-  disallowed_clients: []
+  disallowed_clients:
+    - 192.168.3.176
   blocked_hosts:
     - version.bind
     - id.server
@@ -149,6 +150,7 @@ user_rules:
   - '@@||pan.quark.cn^$important'
   - '@@||drive.quark.cn^$important'
   - '@@||jdsharecode.xyz^$important'
+  - '||s.super-copy.com^$important'
   - ""
 dhcp:
   enabled: false
