@@ -68,6 +68,8 @@ rm -rf package/feeds/packages/open-app-filter
 git clone https://github.com/sbwml/OpenAppFilter --depth=1 package/new/OpenAppFilter
 
 #softethervpn
+ls feeds/luci/applications/ |grep softe
+ls package/feeds/packages/ |grep softe
 rm -rf feeds/packages/net/softethervpn
 rm -rf feeds/packages/net/softethervpn5
 rm -rf feeds/luci/applications/luci-app-softether
@@ -75,11 +77,15 @@ rm -rf package/feeds/packages/softethervpn
 rm -rf package/feeds/packages/softethervpn5
 rm -rf package/feeds/luci/luci-app-softethervpn
 rm -rf package/feeds/luci/luci-app-softethervpn5
+ls feeds/luci/applications/ |grep softe
+ls package/feeds/packages/ |grep softe
 svn co https://github.com/coolsnowwolf/packages/trunk/net/softethervpn feeds/packages/net/softethervpn
 svn co https://github.com/coolsnowwolf/packages/trunk/net/softethervpn5 feeds/packages/net/softethervpn5
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-softethervpn feeds/luci/applications/luci-app-softethervpn
-cp -r feeds/luci/applications/luci-app-softethervpn/po/zh-cn feeds/luci/applications/luci-app-softethervpn/po/zh_Hans
-rm -rf feeds/luci/applications/luci-app-softethervpn/po/zh-cn
+echo '---------------------------'
+ls feeds/luci/applications/ |grep softe
+cp -r ./feeds/luci/applications/luci-app-softethervpn/po/zh-cn feeds/luci/applications/luci-app-softethervpn/po/zh_Hans
+rm -rf ./feeds/luci/applications/luci-app-softethervpn/po/zh-cn
 
 pushd package/feeds/luci/
 ln -sv ../../../feeds/luci/applications/luci-app-softethervpn ./
