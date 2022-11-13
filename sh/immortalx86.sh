@@ -9,7 +9,6 @@ git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app
 rm -rf ./feeds/packages/net/adguardhome
 svn export https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/net/adguardhome
 
-echo '================================================================'
 #sbwml mosdns
 git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
@@ -22,7 +21,6 @@ cp -r package/mosdns/mosdns ./feeds/packages/net/
 #git clone https://github.com/QiuSimons/openwrt-mos.git package/mosdns
 #cp -rf package/mosdns/mosdns ./feeds/packages/net/
 #cp -rf package/mosdns/v2ray-geodata ./feeds/packages/net/
-echo '================================================================'
 
 #管控
 rm -rf package/feeds/luci/luci-app-webrestriction
@@ -81,6 +79,7 @@ svn co https://github.com/coolsnowwolf/packages/trunk/net/softethervpn feeds/pac
 svn co https://github.com/coolsnowwolf/packages/trunk/net/softethervpn5 feeds/packages/net/softethervpn5
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-softethervpn feeds/luci/applications/luci-app-softethervpn
 cp -r feeds/luci/applications/luci-app-softethervpn/po/zh-cn feeds/luci/applications/luci-app-softethervpn/po/zh_Hans
+rm -rf feeds/luci/applications/luci-app-softethervpn/po/zh-cn
 
 pushd package/feeds/luci/
 ln -sv ../../../feeds/luci/applications/luci-app-softethervpn ./
