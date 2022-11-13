@@ -80,6 +80,7 @@ rm -rf package/feeds/luci/luci-app-softethervpn5
 svn co https://github.com/coolsnowwolf/packages/trunk/net/softethervpn feeds/packages/net/softethervpn
 svn co https://github.com/coolsnowwolf/packages/trunk/net/softethervpn5 feeds/packages/net/softethervpn5
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-softethervpn feeds/luci/applications/luci-app-softethervpn
+cp -r feeds/luci/applications/luci-app-softethervpn/po/zh-cn feeds/luci/applications/luci-app-softethervpn/po/zh_Hans
 
 pushd package/feeds/luci/
 ln -sv ../../../feeds/luci/applications/luci-app-softethervpn ./
@@ -110,10 +111,10 @@ git clone https://github.com/esirplayground/luci-app-poweroff.git
 git clone https://github.com/sirpdboy/luci-app-autopoweroff
 
 #腾讯ddns
-git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-ddns
-pushd tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller
-sed -i 's/"admin", "tencentcloud"/"admin", "services", "tencentcloud"/g' tencentddns.lua
-popd
+#git clone https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-ddns
+#pushd tencentcloud-openwrt-plugin-ddns/tencentcloud_ddns/files/luci/controller
+#sed -i 's/"admin", "tencentcloud"/"admin", "services", "tencentcloud"/g' tencentddns.lua
+#popd
 popd
 
 #add zh-cn translate
