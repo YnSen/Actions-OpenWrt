@@ -72,6 +72,7 @@ rm -rf feeds/packages/net/softethervpn
 rm -rf feeds/packages/net/softethervpn5
 rm -rf feeds/luci/applications/luci-app-softether
 rm -rf feeds/luci/applications/luci-app-softethervpn
+rm -rf feeds/luci/applications/luci-app-softethervpn5
 rm -rf package/feeds/packages/softethervpn
 rm -rf package/feeds/packages/softethervpn5
 rm -rf package/feeds/luci/luci-app-softether
