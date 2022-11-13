@@ -23,11 +23,8 @@ keyword:yxygslb
 aegis.qq.com
 otheve.beacon.qq.com
 domain:dynv6.com
-domain:ipv6.msftconnecttest.com
-domain:ipv6-test.com
 keyword:taobao
 keyword:tmall
-domain:dynv6.com
 domain:ipv6.msftconnecttest.com
 domain:mi.com
 domain:xiaomi.com
