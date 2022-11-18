@@ -115,6 +115,7 @@ filters:
     id: 1660374259
 whitelist_filters: []
 user_rules:
+  - '||epg.51zmt.top^$dnstype=AAAA'
   - '||onclickprediction.com^$important'
   - '||eu.can-get-some.net^$important'
   - '||jaavnacsdw.com^$important'
