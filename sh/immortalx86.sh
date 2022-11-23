@@ -104,6 +104,8 @@ rm -rf package/luci-app-openclash/Makefile
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/Makefile package/luci-app-openclash/Makefile
 
 cp -r ~/work/Actions-OpenWrt/Actions-OpenWrt/default-settings/files ./files
+mkdir -p files/etc/opkg
+cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/distfeeds.conf ./files/etc/opkg/
 
 # 流量监视
 git clone -b master --depth 1 https://github.com/brvphoenix/wrtbwmon.git package/new/wrtbwmon
