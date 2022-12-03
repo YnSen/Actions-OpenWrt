@@ -150,7 +150,8 @@ user_rules:
   - '@@||drive.quark.cn^$important'
   - '@@||jdsharecode.xyz^$important'
   - '||s.super-copy.com^$important'
-  - ""
+  - '#||*163.com^$dnstype=AAAA'
+  - '||epg.51zmt.top^$dnstype=AAAA'
 dhcp:
   enabled: false
   interface_name: ""
