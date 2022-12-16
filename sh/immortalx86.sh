@@ -22,6 +22,9 @@ cp -r package/mosdns/mosdns ./feeds/packages/net/
 #cp -rf package/mosdns/mosdns ./feeds/packages/net/
 #cp -rf package/mosdns/v2ray-geodata ./feeds/packages/net/
 
+#speedtestluci
+git clone https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
+
 #管控
 rm -rf package/feeds/luci/luci-app-webrestriction
 rm -rf package/feeds/luci/luci-app-timewol
