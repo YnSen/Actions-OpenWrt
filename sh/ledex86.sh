@@ -95,12 +95,22 @@ rm -rf feeds/packages/net/adguardhome
 svn co https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/net/adguardhome
 
 #sbwml mosdns
-git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
-git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
+find ./ | grep Makefile | grep mosdns | xargs rm -f
 rm -rf feeds/packages/net/mosdns
 rm -rf feeds/packages/net/v2ray-geodata
-cp -r package/mosdns/mosdns ./feeds/packages/net/
+rm -rf package/feeds/packages/mosdns
+rm -rf package/feeds/packages/v2ray-geodata
+git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
+git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 cp -r package/v2ray-geodata ./feeds/packages/net/
+cp -r package/mosdns/mosdns ./feeds/packages/net/
+rm -rf package/v2ray-geodata
+rm -rf package/mosdns/mosdns
+pushd package/feeds/packages/
+ln -sv ../../../feeds/packages/net/mosdns ./
+ln -sv ../../../feeds/packages/net/v2ray-geodata ./
+popd
 
 #filebrowser
 svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-filebrowser feeds/luci/applications/luci-app-filebrowser
