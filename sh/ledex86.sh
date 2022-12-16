@@ -38,6 +38,9 @@ git clone https://github.com/rufengsuixing/luci-app-onliner.git
 # ShadowsocksR Plus+
 git clone https://github.com/fw876/helloworld.git lean/helloworld
 
+#netspeedtest
+git clone https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
+
 #Docker lib api
 #git clone https://github.com/lisaac/luci-lib-docker
 #Docker
