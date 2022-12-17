@@ -34,6 +34,8 @@ popd
 
 #speedtestluci
 git clone https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
+rm -rf package/netspeedtest/luci-app-netspeedtest/po/zh_Hans
+cp -r package/netspeedtest/luci-app-netspeedtest/po/zh-cn package/netspeedtest/luci-app-netspeedtest/po/zh_Hans
 
 #管控
 rm -rf package/feeds/luci/luci-app-webrestriction
