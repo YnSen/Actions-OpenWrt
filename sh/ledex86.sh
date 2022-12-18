@@ -39,7 +39,9 @@ git clone https://github.com/rufengsuixing/luci-app-onliner.git
 git clone https://github.com/fw876/helloworld.git lean/helloworld
 
 #netspeedtest
-#git clone https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
+git clone https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
+rm -rf package/netspeedtest/luci-app-netspeedtest/po/zh_Hans
+cp -r package/netspeedtest/luci-app-netspeedtest/po/zh-cn package/netspeedtest/luci-app-netspeedtest/po/zh_Hans
 
 #Docker lib api
 #git clone https://github.com/lisaac/luci-lib-docker
