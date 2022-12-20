@@ -12,7 +12,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/$(PKG_NAME)/config
 	config PACKAGE_kmod-inet-diag
 	default y if PACKAGE_$(PKG_NAME)
-	
+
 	config PACKAGE_kmod-ipt-nat
 	default y if ! PACKAGE_firewall4
 
