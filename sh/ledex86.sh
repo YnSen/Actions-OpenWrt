@@ -141,6 +141,12 @@ pushd package/feeds/packages/
 ln -sv ../../../feeds/packages/net/speedtest-cli ./
 popd
 
+#流量监视
+rm -rf ./feeds/luci/applications/luci-app-wrtbwmon
+rm -rf package/feeds/luci/luci-app-wrtbwmon
+git clone -b master --depth 1 https://github.com/brvphoenix/wrtbwmon.git package/new/wrtbwmon
+git clone -b master --depth 1 https://github.com/brvphoenix/luci-app-wrtbwmon.git package/new/luci-app-wrtbwmon
+
 # argon主题
 rm -rf ./feeds/luci/themes/luci-theme-argon
 rm -rf package/feeds/luci/luci-theme-argon
