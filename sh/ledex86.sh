@@ -144,7 +144,7 @@ popd
 #流量监视
 rm -rf ./feeds/luci/applications/luci-app-wrtbwmon
 rm -rf package/feeds/luci/luci-app-wrtbwmon
-git clone -b master --depth 1 https://github.com/brvphoenix/wrtbwmon.git package/new/wrtbwmon
+git clone -b new https://github.com/brvphoenix/wrtbwmon.git package/new/wrtbwmon
 git clone https://github.com/brvphoenix/luci-app-wrtbwmon.git package/new/luci-app-wrtbwmon
 pushd package/new/luci-app-wrtbwmon
 git checkout release-1.6.3
