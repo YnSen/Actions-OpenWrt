@@ -124,7 +124,7 @@ mkdir -p files/etc/opkg
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/distfeeds.conf ./files/etc/opkg/
 
 # 流量监视
-git clone -b master --depth 1 https://github.com/brvphoenix/wrtbwmon.git package/new/wrtbwmon
+git clone -b new https://github.com/brvphoenix/wrtbwmon.git package/new/wrtbwmon
 git clone -b master --depth 1 https://github.com/brvphoenix/luci-app-wrtbwmon.git package/new/luci-app-wrtbwmon
 
 pushd package
