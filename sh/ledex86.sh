@@ -9,7 +9,7 @@ svn export https://github.com/YnSen/Actions-OpenWrt/trunk/default-settings/files
 
 pushd package
 #lienol(管控)
-git clone https://github.com/Lienol/openwrt-package.git
+git clone https://github.com/Lienol/openwrt-package.git 
 # KoolProxyR去广告插件
 #git clone https://github.com/jefferymvp/luci-app-koolproxyR
 # 微信推送插件
@@ -39,9 +39,9 @@ git clone https://github.com/rufengsuixing/luci-app-onliner.git
 git clone https://github.com/fw876/helloworld.git lean/helloworld
 
 #netspeedtest
-git clone https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
-rm -rf package/netspeedtest/luci-app-netspeedtest/po/zh_Hans
-cp -r package/netspeedtest/luci-app-netspeedtest/po/zh-cn package/netspeedtest/luci-app-netspeedtest/po/zh_Hans
+#git clone https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
+#rm -rf package/netspeedtest/luci-app-netspeedtest/po/zh_Hans
+#cp -r package/netspeedtest/luci-app-netspeedtest/po/zh-cn package/netspeedtest/luci-app-netspeedtest/po/zh_Hans
 
 #Docker lib api
 #git clone https://github.com/lisaac/luci-lib-docker
