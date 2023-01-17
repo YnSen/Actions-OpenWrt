@@ -53,7 +53,7 @@ uci commit AdGuardHome
 uci set dhcp.lan.ra='disabled'
 uci set dhcp.lan.ndp='disabled'
 uci set dhcp.lan.dhcpv6='disabled'
-uci set dhcp.lan.ra_management='0'
+#uci set dhcp.lan.ra_management='0'
 uci set dhcp.lan.ignore='1'
 uci commit dhcp
 
