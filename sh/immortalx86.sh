@@ -81,7 +81,7 @@ rm -rf feeds/packages/net/open-app-filter
 rm -rf feeds/luci/applications/luci-app-appfilter
 rm -rf package/feeds/luci/luci-app-appfilter
 rm -rf package/feeds/packages/open-app-filter
-git clone https://github.com/sbwml/OpenAppFilter --depth=1 package/new/OpenAppFilter
+#git clone https://github.com/sbwml/OpenAppFilter --depth=1 package/new/OpenAppFilter
 
 #softethervpn
 rm -rf feeds/packages/net/softethervpn
@@ -159,4 +159,4 @@ cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/immx86.config ~/work/Actions-
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/custom ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 sed -i '/uci commit fstab/r custom' ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package/emortal/default-settings/files/99-default-settings
 mv immx86.config .config
-#make defconfig
+make defconfig
