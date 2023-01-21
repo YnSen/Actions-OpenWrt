@@ -17,20 +17,47 @@ uci set AdGuardHome.AdGuardHome.enabled='1'
 uci commit AdGuardHome
 
 # nginx
-uci set nginx.global.uci_enable='true'
-uci del nginx._lan
-uci del nginx._redirect2ssl
-uci add nginx server
-uci rename nginx.@server[0]='_lan'
-uci set nginx._lan.server_name='_lan'
-uci add_list nginx._lan.listen='80 default_server'
-uci add_list nginx._lan.listen='[::]:80 default_server'
+#uci set nginx.global.uci_enable='true'
+#uci del nginx._lan
+#uci del nginx._redirect2ssl
+#uci add nginx server
+#uci rename nginx.@server[0]='_lan'
+#uci set nginx._lan.server_name='_lan'
+#uci add_list nginx._lan.listen='80 default_server'
+#uci add_list nginx._lan.listen='[::]:80 default_server'
 #uci add_list nginx._lan.include='restrict_locally'
-uci add_list nginx._lan.include='conf.d/*.locations'
-uci set nginx._lan.access_log='off; # logd openwrt'
-uci commit nginx
-/etc/init.d/nginx restart
-/etc/init.d/nginx enabled
+#uci add_list nginx._lan.include='conf.d/*.locations'
+#uci set nginx._lan.access_log='off; # logd openwrt'
+#uci commit nginx
+#/etc/init.d/nginx restart
+#/etc/init.d/nginx enabled
+# nginx end
+
+#docker mirror
+#uci add_list dockerd.globals.registry_mirrors='https://hub-mirror.c.163.com'
+#uci commit dockerd
+
+#firewall
+#uci set firewall.@defaults[0].fullcone='1'
+#uci set firewall.@defaults[0].flow_offloading='1'
+#uci commit firewall
+
+#upnp
+#uci set upnpd.config.igdv1='1'
+#uci set upnpd.config.enabled='1'
+#uci del upnpd.config.enable_upnp
+#uci del upnpd.config.enable_natpmp
+#uci commit upnpd
+
+#dnsmasq
+uci set dhcp.@dnsmasq[0].sequential_ip='1'
+uci set dhcp.lan.start='60'
+uci set dhcp.lan.ra='disabled'
+uci set dhcp.lan.ndp='disabled'
+uci set dhcp.lan.dhcpv6='disabled'
+#uci set dhcp.lan.ra_management='0'
+uci set dhcp.lan.ignore='1'
+uci commit dhcp
 
 #openvpn
 sed -i 's,192.168.1.0 255.255.255.0,192.168.6.0 255.255.255.0,g' /etc/config/openvpn
@@ -44,24 +71,11 @@ uci commit openvpn
 #packet_steering
 uci del network.globals.ula_prefix
 uci del network.globals.packet_steering
+uci del network.globals
 uci commit network
 /etc/init.d/network restart
 
-#dnsmasq
-uci set dhcp.lan.ra='disabled'
-uci set dhcp.lan.ndp='disabled'
-uci set dhcp.lan.dhcpv6='disabled'
-uci set dhcp.lan.ra_management='0'
-uci commit dhcp
-
-#turboacc
-uci set turboacc.config.hw_flow='0'
-uci set turboacc.config.sfe_flow='0'
-uci set turboacc.config.sfe_bridge='0'
-uci set turboacc.config.sfe_ipv6='0'
-uci set turboacc.config.fullcone_nat='1'
-uci set turboacc.config.bbr_cca='0'
-uci set turboacc.config.dns_caching='0'
-uci set turboacc.config.sw_flow='0'
-uci commit turboacc
-
+# ssrp
+#uci set shadowsocksr.@global[0].gfwlist_url='https://raw.cooluc.com/Loyalsoldier/v2ray-rules-dat/release/gfw.txt'
+#uci set shadowsocksr.@global[0].chnroute_url='https://raw.cooluc.com/QiuSimons/Chnroute/master/dist/chnroute/chnroute.txt'
+#uci commit shadowsocksr
