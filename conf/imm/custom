@@ -50,6 +50,7 @@ uci commit AdGuardHome
 #uci commit upnpd
 
 #dnsmasq
+uci set dhcp.@dnsmasq[0].dns_redirect='0'
 uci set dhcp.@dnsmasq[0].sequential_ip='1'
 uci set dhcp.lan.start='60'
 uci set dhcp.lan.ra='disabled'
