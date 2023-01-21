@@ -120,8 +120,8 @@ svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/l
 #cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/Makefile package/luci-app-openclash/Makefile
 
 cp -r ~/work/Actions-OpenWrt/Actions-OpenWrt/default-settings/files ./files
-mkdir -p files/etc/opkg
-cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/distfeeds.conf ./files/etc/opkg/
+#mkdir -p files/etc/opkg
+#cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/distfeeds.conf ./files/etc/opkg/
 
 # 流量监视
 git clone -b new https://github.com/brvphoenix/wrtbwmon.git package/new/wrtbwmon
