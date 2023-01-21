@@ -116,8 +116,8 @@ popd
 rm -rf ./feeds/luci/applications/luci-app-openclash
 rm -rf ./package/feeds/luci/luci-app-openclash
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
-rm -rf package/luci-app-openclash/Makefile
-cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/Makefile package/luci-app-openclash/Makefile
+#rm -rf package/luci-app-openclash/Makefile
+#cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/Makefile package/luci-app-openclash/Makefile
 
 cp -r ~/work/Actions-OpenWrt/Actions-OpenWrt/default-settings/files ./files
 mkdir -p files/etc/opkg
@@ -155,8 +155,8 @@ sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/emortal/default-settings/files/99-defa
 
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/immx86.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
-cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/config-5.4 ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/target/linux/x86/
+#cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/config-5.4 ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/target/linux/x86/
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/imm/custom ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 sed -i '/uci commit fstab/r custom' ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package/emortal/default-settings/files/99-default-settings
 mv immx86.config .config
-make defconfig
+#make defconfig
