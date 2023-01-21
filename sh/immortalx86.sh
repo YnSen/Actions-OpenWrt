@@ -148,7 +148,7 @@ cp -r package/luci-app-poweroff/po/zh-cn package/luci-app-poweroff/po/zh_Hans
 sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 
 #添加intel AES支持
-echo 'CONFIG_CRYPTO_AES_NI_INTEL=y' >>./target/linux/x86/64/config-5.4
+#echo 'CONFIG_CRYPTO_AES_NI_INTEL=y' >>./target/linux/x86/64/config-5.4
 
 #删除默认密码
 sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/emortal/default-settings/files/99-default-settings
