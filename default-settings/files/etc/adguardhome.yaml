@@ -153,6 +153,9 @@ user_rules:
   - '#||*163.com^$dnstype=AAAA'
   - '#||epg.51zmt.top^$dnstype=AAAA'
   - '||akamai-images-content.com^$dnstype=AAAA'
+  - '||apple.com^$dnstype=AAAA'
+  - '||mzstatic.com^$dnstype=AAAA'
+  - '||mediaauth.apple.com^$dnstype=AAAA'
 dhcp:
   enabled: false
   interface_name: ""
