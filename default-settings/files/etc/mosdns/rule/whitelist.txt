@@ -8,7 +8,6 @@ keyword:aaplimg
 keyword:aicdn
 keyword:akadns
 keyword:akamai
-keyword:apple
 keyword:douyin
 keyword:fclouddns
 keyword:icloud
