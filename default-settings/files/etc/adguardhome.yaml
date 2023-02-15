@@ -47,7 +47,8 @@ dns:
   fastest_addr: false
   fastest_timeout: 1s
   allowed_clients: []
-  disallowed_clients: []
+  disallowed_clients:
+    - 192.168.3.176
   blocked_hosts:
     - version.bind
     - id.server
@@ -156,6 +157,7 @@ user_rules:
   - '||apple.com^$dnstype=AAAA'
   - '||mzstatic.com^$dnstype=AAAA'
   - '||mediaauth.apple.com^$dnstype=AAAA'
+  - '||api.m.jd.com^$dnstype=AAAA'
 dhcp:
   enabled: false
   interface_name: ""
