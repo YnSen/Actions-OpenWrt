@@ -151,7 +151,7 @@ user_rules:
   - '@@||jdsharecode.xyz^$important'
   - '||s.super-copy.com^$important'
   - '#||*163.com^$dnstype=AAAA'
-  - '||epg.51zmt.top^$dnstype=AAAA'
+  - '#||epg.51zmt.top^$dnstype=AAAA'
   - '||akamai-images-content.com^$dnstype=AAAA'
   - '||apple.com^$dnstype=AAAA'
   - '||mzstatic.com^$dnstype=AAAA'
