@@ -28,4 +28,5 @@ domain:ipv6.msftconnecttest.com
 domain:mi.com
 domain:xiaomi.com
 domain:jd.com
+domain:api.m.jd.com
 domain:dig.bdurl.net
