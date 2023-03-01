@@ -6,8 +6,6 @@ domain:office.com
 domain:redhat.com
 keyword:aaplimg
 keyword:aicdn
-keyword:akadns
-keyword:akamai
 keyword:douyin
 keyword:fclouddns
 keyword:icloud
