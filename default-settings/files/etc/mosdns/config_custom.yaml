@@ -46,20 +46,14 @@ plugins:
     args:
       upstream:
         - addr: tls://1.12.12.12
-        - addr: tls://120.53.53.53
-          trusted: true
 
   - tag: "forward_remote"
     type: fast_forward
     args:
       upstream:
-        - addr: tls://8.8.4.4
+        - addr: udpme://8.8.4.4
           enable_pipeline: true
           enable_http3: true
-        - addr: tls://1.0.0.1
-          enable_pipeline: true
-          enable_http3: true
-          trusted: true
 
   - tag: query_is_whitelist_domain
     type: query_matcher
@@ -115,6 +109,18 @@ plugins:
       domain:
         - "full:disable-category-ads-all.null"
 
+  - tag: match_local_ptr
+    type: query_matcher
+    args:
+      qtype: [12]
+      domain:
+        - "provider:local_ptr"
+
+  - tag: match_qtype65
+    type: query_matcher
+    args:
+      qtype: [65]
+
   - tag: "main_sequence"
     type: "sequence"
     args:
@@ -128,7 +134,7 @@ plugins:
             - forward_local
             - _return
 
-        - if: "query_is_blocklist_domain || query_is_ad_domain"
+        - if: "query_is_blocklist_domain || query_is_ad_domain || match_local_ptr || match_qtype65"
           exec:
             - _new_nxdomain_response
             - _return
@@ -156,7 +162,7 @@ plugins:
           secondary:
             - _prefer_ipv4
             - forward_remote
-          fast_fallback: 200
+          fast_fallback: 600
 
 servers:
   - exec: main_sequence
