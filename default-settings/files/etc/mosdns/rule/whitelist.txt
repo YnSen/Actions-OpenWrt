@@ -17,8 +17,7 @@ keyword:windows
 keyword:xxpkg
 keyword:yximgs
 keyword:yxygslb
-aegis.qq.com
-otheve.beacon.qq.com
+domain:qq.com
 domain:dynv6.com
 keyword:taobao
 keyword:tmall
