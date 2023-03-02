@@ -46,6 +46,7 @@ plugins:
     args:
       upstream:
         - addr: tls://1.12.12.12
+        - addr: tls://120.53.53.53
 
   - tag: "forward_remote"
     type: fast_forward
@@ -54,6 +55,10 @@ plugins:
         - addr: tls://8.8.4.4
           enable_pipeline: true
           enable_http3: true
+        - addr: tls://1.0.0.1
+          enable_pipeline: true
+          enable_http3: true
+          trusted: true
 
   - tag: query_is_whitelist_domain
     type: query_matcher
