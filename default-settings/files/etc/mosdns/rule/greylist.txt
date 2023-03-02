@@ -3,6 +3,8 @@ domain:kernel.org
 keyword:github
 keyword:apple
 keyword:tiktok
-keyword:akadns
-keyword:akamai
+domain:akamaiedge.net
+domain:akadns.net
+domain:edgekey.net
+domain:akamai.net
 domain:ipv6-test.com
