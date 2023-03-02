@@ -51,7 +51,7 @@ plugins:
     type: fast_forward
     args:
       upstream:
-        - addr: udpme://8.8.4.4
+        - addr: tls://8.8.4.4
           enable_pipeline: true
           enable_http3: true
 
