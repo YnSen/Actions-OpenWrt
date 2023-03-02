@@ -47,6 +47,7 @@ plugins:
       upstream:
         - addr: tls://1.12.12.12
         - addr: tls://120.53.53.53
+          trusted: true
 
   - tag: "forward_remote"
     type: fast_forward
