@@ -7,4 +7,3 @@ domain:akamaiedge.net
 domain:akadns.net
 domain:edgekey.net
 domain:akamai.net
-domain:ipv6-test.com
