@@ -1,6 +1,3 @@
-domain:bing.com
-domain:live.com
-domain:msn.com
 domain:ntp.org
 domain:office.com
 domain:redhat.com
