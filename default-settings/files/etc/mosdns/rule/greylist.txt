@@ -1,9 +1,15 @@
+domain:bing.com
+domain:live.com
+domain:msn.com
 domain:gstatic.com
 domain:kernel.org
 keyword:github
+domain:githubusercontent.com
 keyword:apple
 keyword:tiktok
+keyword:bing
 domain:akamaiedge.net
 domain:akadns.net
 domain:edgekey.net
 domain:akamai.net
+domain:microsoft.com
