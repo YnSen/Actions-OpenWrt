@@ -157,6 +157,7 @@ user_rules:
   - '||mzstatic.com^$dnstype=AAAA'
   - '||mediaauth.apple.com^$dnstype=AAAA'
   - '||api.m.jd.com^$dnstype=AAAA'
+  - '||githubusercontent.com^$dnstype=AAAA'
 dhcp:
   enabled: false
   interface_name: ""
