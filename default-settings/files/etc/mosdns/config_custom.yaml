@@ -45,21 +45,15 @@ plugins:
     type: fast_forward
     args:
       upstream:
-        - addr: tls://1.12.12.12
         - addr: tls://120.53.53.53
-          trusted: true
 
   - tag: "forward_remote"
     type: fast_forward
     args:
       upstream:
-        - addr: tls://8.8.4.4
-          enable_pipeline: true
-          enable_http3: true
         - addr: tls://1.0.0.1
-          enable_pipeline: true
-          enable_http3: true
-          trusted: true
+          enable_pipeline: false
+          enable_http3: false
 
   - tag: query_is_whitelist_domain
     type: query_matcher
@@ -147,6 +141,7 @@ plugins:
 
         - if: query_is_greylist_domain
           exec:
+            - _prefer_ipv4
             - forward_remote
             - _return
 
@@ -174,6 +169,10 @@ servers:
   - exec: main_sequence
     listeners:
       - protocol: udp
-        addr: ":5335"
+        addr: "[::1]:5335"
       - protocol: tcp
-        addr: ":5335"
+        addr: "[::1]:5335"
+      - protocol: udp
+        addr: "127.0.0.1:5335"
+      - protocol: tcp
+        addr: "127.0.0.1:5335"
