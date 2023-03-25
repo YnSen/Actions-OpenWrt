@@ -8,6 +8,8 @@ domain:githubusercontent.com
 keyword:apple
 keyword:tiktok
 keyword:bing
+keyword:instagram
+domain:instagram.com
 domain:akamaiedge.net
 domain:akadns.net
 domain:edgekey.net
