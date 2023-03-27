@@ -9,12 +9,12 @@ uci set argon.@global[0].dark_primary='#1B93F2'
 uci commit argon
 
 #AdguardHome
-uci set AdGuardHome.AdGuardHome.binpath='/usr/bin/AdGuardHome'
-uci set AdGuardHome.AdGuardHome.configpath='/etc/adguardhome.yaml'
-uci set AdGuardHome.AdGuardHome.workdir='/usr/bin/AdGuardHomeWork'
-uci set AdGuardHome.AdGuardHome.waitonboot='0'
-uci set AdGuardHome.AdGuardHome.enabled='1'
-uci commit AdGuardHome
+#uci set AdGuardHome.AdGuardHome.binpath='/usr/bin/AdGuardHome'
+#uci set AdGuardHome.AdGuardHome.configpath='/etc/adguardhome.yaml'
+#uci set AdGuardHome.AdGuardHome.workdir='/usr/bin/AdGuardHomeWork'
+#uci set AdGuardHome.AdGuardHome.waitonboot='0'
+#uci set AdGuardHome.AdGuardHome.enabled='1'
+#uci commit AdGuardHome
 
 # nginx
 #uci set nginx.global.uci_enable='true'
