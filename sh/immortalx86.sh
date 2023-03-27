@@ -5,8 +5,8 @@ git checkout v21.02.5
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
 # AdGuardHome
-git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
-cp -r package/luci-app-adguardhome/po/zh-cn package/luci-app-adguardhome/po/zh_Hans
+#git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
+#cp -r package/luci-app-adguardhome/po/zh-cn package/luci-app-adguardhome/po/zh_Hans
 rm -rf ./feeds/packages/net/adguardhome
 svn export https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/net/adguardhome
 
