@@ -71,8 +71,6 @@ uci commit openvpn
 
 #packet_steering
 uci del network.globals.ula_prefix
-uci set network.globals.packet_steering='0'
-#uci del network.globals
 uci commit network
 /etc/init.d/network restart
 
