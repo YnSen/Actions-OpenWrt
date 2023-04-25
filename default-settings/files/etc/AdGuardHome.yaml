@@ -170,10 +170,9 @@ user_rules:
   - '||mediaauth.apple.com^$dnstype=AAAA'
   - '||api.m.jd.com^$dnstype=AAAA'
   - '||*github*^$dnstype=AAAA'
-  - '@@||api.installer.xiaomi.com^$important'
-  - '@@||resolver.msg.xiaomi.net^$important'
+  - '||*google*^$dnstype=AAAA'
   - '@@||clientservices.googleapis.com^$important'
-  - '@@||www.googletagmanager.com^$important'
+  - '@@||*jd*^$important'
   - ""
 dhcp:
   enabled: false
