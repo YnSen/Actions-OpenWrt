@@ -173,7 +173,9 @@ user_rules:
   - '||*google*^$dnstype=AAAA'
   - '@@||clientservices.googleapis.com^$important'
   - '@@||*jd*^$important'
-  - ""
+  - '||www.nblxzl.com^$important'
+  - '||www.hmmjiyt.cc^$important'
+  - '||static-cdn.nextapple.tw^$dnstype=AAAA'
 dhcp:
   enabled: false
   interface_name: ""
