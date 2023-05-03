@@ -1,0 +1,7 @@
+domain:gstatic.com
+domain:kernel.org
+keyword:github
+domain:bing.com
+domain:live.com
+domain:msn.com
+keyword:nextapple
