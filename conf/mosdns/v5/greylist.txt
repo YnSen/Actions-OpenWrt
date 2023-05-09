@@ -1,6 +1,9 @@
 domain:gstatic.com
 domain:kernel.org
 keyword:github
+keyword:aicdn
+keyword:akadns
+keyword:akamai
 domain:bing.com
 domain:live.com
 domain:msn.com
