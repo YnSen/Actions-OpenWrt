@@ -2,9 +2,11 @@ domain:gstatic.com
 domain:kernel.org
 domain:live.com
 keyword:github
+keyword:google
 keyword:aicdn
 keyword:akadns
 keyword:akamai
 keyword:bing
 keyword:microsoft
 keyword:nextapple
+keyword:konami
