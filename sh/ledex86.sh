@@ -22,7 +22,7 @@ git clone https://github.com/zzsj0928/luci-app-pushbot
 # Clash插件
 #git clone https://github.com/frainzy1477/luci-app-clash
 #openclash插件
-svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
+svn co https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash
 
 # SmartDNS插件
 #git clone https://github.com/pymumu/openwrt-smartdns
