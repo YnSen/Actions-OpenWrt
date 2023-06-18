@@ -180,6 +180,6 @@ cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/lede/ledex86.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/lede/custom ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
 sed -i '/uci commit fstab/r custom' ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package/lean/default-settings/files/zzz-default-settings
-
+sed -i 's/6.1/5.15/' ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/target/linux/x86/Makefile
 mv ledex86.config .config
 make defconfig
