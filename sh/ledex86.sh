@@ -171,6 +171,10 @@ sed -i 's/bootstrap/argon/g' feeds/luci/collections/luci/Makefile
 #sed -i 's/root::0:0:99999:7:::/root:$1$ScQIGKsX$q0qEf\/tAQ2wpTR6zIUIjo.:0:0:99999:7:::/g' package/base-files/files/etc/shadow
 #删除默认密码
 sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/lean/default-settings/files/zzz-default-settings
+#删除数据包均衡
+pushd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/package/lean/autocore/files/x86
+sed -i '21,23d' autocore
+popd
 
 cd ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt
 cp ~/work/Actions-OpenWrt/Actions-OpenWrt/conf/lede/ledex86.config ~/work/Actions-OpenWrt/Actions-OpenWrt/openwrt/
