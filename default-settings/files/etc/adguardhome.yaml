@@ -1,39 +1,35 @@
-bind_host: 0.0.0.0
-bind_port: 3000
+http:
+  pprof:
+    port: 6060
+    enabled: false
+  address: 0.0.0.0:3000
+  session_ttl: 720h
 users:
   - name: sen
-    password: $2a$10$Ledr2BZirKsejmFkhXN.feO4dg2wBfMU5mAWGyshl.MZH6NHDtDn2
+    password: $2a$10$GmGEe5p/fElcYL80fsi8ieffWHcgk8HpkgeeDuxxuQxbQogo/VgE.
 auth_attempts: 5
 block_auth_min: 15
 http_proxy: ""
 language: ""
 theme: auto
-debug_pprof: false
-web_session_ttl: 720
 dns:
   bind_hosts:
     - 0.0.0.0
   port: 5336
   anonymize_client_ip: false
-  protection_enabled: true
-  blocking_mode: nxdomain
-  blocking_ipv4: ""
-  blocking_ipv6: ""
-  blocked_response_ttl: 10
-  protection_disabled_until: null
-  parental_block_host: family-block.dns.adguard.com
-  safebrowsing_block_host: standard-block.dns.adguard.com
   ratelimit: 0
   ratelimit_whitelist: []
-  refuse_any: false
+  refuse_any: true
   upstream_dns:
-    - 127.0.0.1:5335
+    - 127.0.0.1:7874
   upstream_dns_file: ""
   bootstrap_dns:
     - 61.128.128.68
     - 61.128.192.68
     - 240e:47:0:701::1
     - 240e:47:0:702::1
+  fallback_dns:
+    - 127.0.0.1:5335
   all_servers: false
   fastest_addr: false
   fastest_timeout: 1s
@@ -63,27 +59,9 @@ dns:
   ipset: []
   ipset_file: ""
   bootstrap_prefer_ipv6: false
-  filtering_enabled: true
-  filters_update_interval: 24
-  parental_enabled: false
-  safebrowsing_enabled: false
-  safebrowsing_cache_size: 1048576
-  safesearch_cache_size: 1048576
-  parental_cache_size: 1048576
-  cache_time: 30
-  safe_search:
-    enabled: false
-    bing: true
-    duckduckgo: true
-    google: true
-    pixabay: true
-    yandex: true
-    youtube: true
-  rewrites: []
-  blocked_services: []
   upstream_timeout: 10s
   private_networks: []
-  use_private_ptr_resolvers: true
+  use_private_ptr_resolvers: false
   local_ptr_upstreams: []
   use_dns64: false
   dns64_prefixes: []
@@ -106,55 +84,31 @@ tls:
   strict_sni_check: false
 querylog:
   ignored: []
-  interval: 168h
+  interval: 24h
   size_memory: 1000
   enabled: true
   file_enabled: true
 statistics:
   ignored: []
-  interval: 168h
+  interval: 24h
   enabled: true
 filters:
   - enabled: false
-    url: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
-    name: AdGuard Simplified Domain Names filter
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt
+    name: AdGuard DNS filter
     id: 1
   - enabled: false
-    url: https://adaway.org/hosts.txt
-    name: AdAway
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_2.txt
+    name: AdAway Default Blocklist
     id: 2
   - enabled: false
-    url: https://hosts-file.net/ad_servers.txt
-    name: hpHosts - Ad and Tracking servers only
-    id: 3
-  - enabled: false
-    url: https://www.malwaredomainlist.com/hostslist/hosts.txt
-    name: MalwareDomainList.com Hosts List
-    id: 4
-  - enabled: false
-    url: https://raw.githubusercontent.com/vokins/yhosts/master/data/tvbox.txt
-    name: tvbox
-    id: 1575018007
-  - enabled: false
-    url: https://cdn.jsdelivr.net/gh/neoFelhz/neohosts@gh-pages/full/hosts.txt
-    name: neoHosts full
-    id: 1575618240
-  - enabled: false
-    url: https://cdn.jsdelivr.net/gh/neoFelhz/neohosts@gh-pages/basic/hosts.txt
-    name: neoHosts basic
-    id: 1575618241
-  - enabled: false
-    url: http://sbc.io/hosts/hosts
-    name: StevenBlack host basic
-    id: 1575618242
-  - enabled: false
-    url: https://cdn.jsdelivr.net/gh/privacy-protection-tools/anti-AD@master/anti-ad-easylist.txt
-    name: anti-AD(Adblock+neohosts+yhosts+cjxlist+adhlist)
-    id: 1577113202
-  - enabled: true
     url: https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt
     name: adgk
-    id: 1686396616
+    id: 1700535474
+  - enabled: true
+    url: https://x.awsl.app/f.txt
+    name: XXXkiler
+    id: 1702252338
 whitelist_filters: []
 user_rules:
   - '||onclickprediction.com^$important'
@@ -207,11 +161,16 @@ user_rules:
   - '||www.nblxzl.com^$important'
   - '||www.hmmjiyt.cc^$important'
   - '||static-cdn.nextapple.tw^$dnstype=AAAA'
-  - '@@||quark.cn^$important'
-  - '@@||*douyin*^$important'
-  - '@@||bytedance.com^$important'
-  - '@@||px.ucweb.com^$important'
-  - '||githubusercontent.com^$dnstype=AAAA'
+  - '||unpkg.com^$dnstype=AAAA'
+  - '||broker.miwifi.com^$important'
+  - '||api.miwifi.com^$important'
+  - '||niivc.xyz^$important'
+  - '@@||*quark*^$important'
+  - '@@||*adjust*^$important'
+  - '@@||*53kf*^$important'
+  - '@@||*lingd.cn^$important'
+  - '@@||*dbankcdn.com^$important'
+  - ""
 dhcp:
   enabled: false
   interface_name: ""
@@ -229,6 +188,36 @@ dhcp:
     lease_duration: 86400
     ra_slaac_only: false
     ra_allow_slaac: false
+filtering:
+  blocking_ipv4: ""
+  blocking_ipv6: ""
+  blocked_services:
+    schedule:
+      time_zone: Local
+    ids: []
+  protection_disabled_until: null
+  safe_search:
+    enabled: false
+    bing: true
+    duckduckgo: true
+    google: true
+    pixabay: true
+    yandex: true
+    youtube: true
+  blocking_mode: default
+  parental_block_host: family-block.dns.adguard.com
+  safebrowsing_block_host: standard-block.dns.adguard.com
+  rewrites: []
+  safebrowsing_cache_size: 1048576
+  safesearch_cache_size: 1048576
+  parental_cache_size: 1048576
+  cache_time: 30
+  filters_update_interval: 24
+  blocked_response_ttl: 10
+  filtering_enabled: true
+  parental_enabled: false
+  safebrowsing_enabled: false
+  protection_enabled: true
 clients:
   runtime_sources:
     whois: true
@@ -237,15 +226,16 @@ clients:
     dhcp: true
     hosts: true
   persistent: []
-log_file: ""
-log_max_backups: 0
-log_max_size: 100
-log_max_age: 3
-log_compress: false
-log_localtime: false
-verbose: false
+log:
+  file: ""
+  max_backups: 0
+  max_size: 100
+  max_age: 3
+  compress: false
+  local_time: false
+  verbose: false
 os:
   group: ""
   user: ""
   rlimit_nofile: 0
-schema_version: 20
+schema_version: 27
