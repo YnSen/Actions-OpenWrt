@@ -102,13 +102,17 @@ filters:
     name: AdAway Default Blocklist
     id: 2
   - enabled: false
-    url: https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt
     name: adgk
     id: 1700535474
+  - enabled: false
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/lingeringsound/10007_auto/master/reward
+    name: "10007"
+    id: 1702252341
   - enabled: true
-    url: https://x.awsl.app/f.txt
-    name: XXXkiler
-    id: 1702252338
+    url: https://neodev.team/adblocker
+    name: neodev
+    id: 1703271822
 whitelist_filters: []
 user_rules:
   - '||onclickprediction.com^$important'
@@ -165,12 +169,24 @@ user_rules:
   - '||broker.miwifi.com^$important'
   - '||api.miwifi.com^$important'
   - '||niivc.xyz^$important'
+  - '||51sxx.cn^$important'
+  - '||ucqe4278.xyz^$important'
+  - '||firsthandtie.com^$important'
+  - '||as.animeporn.click^$important'
+  - '||mgcrs.lsadke.com^$important'
+  - '||mintybug.com^$important'
+  - '||46930.net^$important'
+  - '||kasodon.com^$important'
+  - '||*adnckaojbvih*^$important'
+  - '||*adnckaojbvih*^$dnstype=A'
+  - '||fantasi.one^$important'
+  - '||sl.ero-labs.website^$important'
+  - '||www.8c1gib.top^$important'
   - '@@||*quark*^$important'
   - '@@||*adjust*^$important'
   - '@@||*53kf*^$important'
   - '@@||*lingd.cn^$important'
   - '@@||*dbankcdn.com^$important'
-  - ""
 dhcp:
   enabled: false
   interface_name: ""
