@@ -1,0 +1,34 @@
+name: Update CN IPv4 CIDR
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download and filter IPv4 CIDR
+        run: |
+          curl -s https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/cn.list \
+          | grep -E '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/[0-9]+' \
+          > cn.txt
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+          git add cn.txt
+
+          if git diff --staged --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Update CN IPv4 CIDR"
+            git push
+          fi
