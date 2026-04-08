@@ -1,34 +1,49 @@
-name: Update CN IPv4 CIDR
+name: Update CN IPv4
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 3 * * *"
+
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   update:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
 
-      - name: Download and filter IPv4 CIDR
+      - name: Download CN list
         run: |
-          curl -s https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/cn.list \
+          curl -L https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.list \
           | grep -E '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/[0-9]+' \
-          > cn.txt
+          | sort -u \
+          > ./cn.txt
 
-      - name: Commit changes
+      - name: Check result
+        run: |
+          echo "CIDR count:"
+          wc -l cn.txt
+          head cn.txt
+
+      - name: Commit update
         run: |
           git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
+          git config --global user.email "actions@github.com"
 
           git add cn.txt
 
-          if git diff --staged --quiet; then
+          if git diff --cached --quiet; then
             echo "No changes"
           else
-            git commit -m "Update CN IPv4 CIDR"
-            git push
+            git commit -m "Auto update cn.txt"
+            git push origin main
           fi
